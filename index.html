@@ -11,51 +11,55 @@
             margin: 0;
             padding: 0;
         }
+        /* Fondo general de gala para rellenar la pantalla de la computadora */
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0b1528;
+            background: radial-gradient(circle, #16243d 0%, #090f1a 100%);
             color: #1c2434;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            padding: 20px;
         }
-        /* Contenedor principal estilo celular */
+        /* Tarjeta central elegante con sombras y marcos dorados */
         .invitacion-container {
             width: 100%;
-            max-width: 450px;
+            max-width: 430px;
+            height: 850px;
             background: #ffffff;
-            height: 100vh;
-            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
+            border: 3px solid #bfa15f;
         }
-        /* Botón de música flotante */
+        /* Botón de música flotante refinado */
         .music-btn {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             z-index: 100;
             background: #112344;
             color: white;
-            border: none;
+            border: 2px solid #bfa15f;
             border-radius: 50%;
             width: 45px;
             height: 45px;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: transform 0.2s;
         }
         .music-btn.playing {
             animation: spin 3s linear infinite;
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        /* Estructura de Páginas */
+        /* Estructura de Páginas Internas */
         .pantalla {
             position: absolute;
             top: 0;
@@ -67,11 +71,14 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 30px;
+            padding: 40px 35px;
             text-align: center;
             transform: translateX(100%);
             transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
             z-index: 1;
+            /* Texturas de fondo para que no se vea vacío */
+            background-image: radial-gradient(rgba(191, 161, 95, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
         }
         .pantalla.activa {
             transform: translateX(0);
@@ -82,149 +89,163 @@
             z-index: 1;
         }
 
-        /* Diseños decorativos */
+        /* Marcos y esquineros decorativos clásicos */
+        .marco-decorativo {
+            position: absolute;
+            width: 90%;
+            height: 94%;
+            border: 1px solid rgba(191, 161, 95, 0.3);
+            pointer-events: none;
+            top: 3%;
+            left: 5%;
+            border-radius: 12px;
+        }
+
+        /* Tipografías y Textos */
         .oro-texto {
             color: #bfa15f;
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
         h1 {
             font-family: 'Cinzel', serif;
             font-size: 2.2rem;
             color: #112344;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
         .edad-grande {
             font-family: 'Cinzel', serif;
-            font-size: 6rem;
+            font-size: 6.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, #112344 0%, #bfa15f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1;
-            margin: 20px 0;
+            margin: 15px 0;
         }
-
-        /* Mensaje de Bienvenida */
         .mensaje-bienvenida {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #4a5568;
             font-style: italic;
-            margin: 30px 0;
+            margin: 25px 0;
+            padding: 0 10px;
         }
 
-        /* Galería de fotos explicada */
+        /* Imágenes de Retrato */
         .foto-gala {
-            width: 100%;
-            max-height: 280px;
+            width: 85%;
+            height: 320px;
             object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(17, 35, 68, 0.15);
+            box-shadow: 0 10px 30px rgba(17, 35, 68, 0.2);
             border: 2px solid #bfa15f;
-            margin-bottom: 20px;
+            margin: 15px 0;
         }
         .galeria-etapa {
-            width: 100%;
-            height: 280px;
+            width: 90%;
+            height: 340px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            border: 3px solid #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 4px solid #ffffff;
         }
         .etiqueta-foto {
             background: #112344;
             color: #ffffff;
-            padding: 6px 16px;
+            padding: 8px 20px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 1px;
-            margin-top: 15px;
+            margin-top: 20px;
             border: 1px solid #bfa15f;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Datos de la Invitación */
+        /* Bloques de Información del Evento */
         .bloque-info {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             width: 100%;
         }
         .bloque-info h3 {
             font-family: 'Cinzel', serif;
             font-size: 0.95rem;
             color: #bfa15f;
-            letter-spacing: 2px;
-            margin-bottom: 3px;
+            letter-spacing: 3px;
+            margin-bottom: 4px;
         }
         .bloque-info p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: #112344;
         }
         .alerta-hora {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #cf2a2a;
             font-weight: 600;
-            margin-top: 3px;
+            margin-top: 4px;
         }
 
-        /* Botones de Navegación y Enlaces */
+        /* Botones de Acción e Interactividad */
         .btn-siguiente {
-            background-color: #112344;
+            background: linear-gradient(135deg, #112344 0%, #1a3564 100%);
             color: white;
-            border: none;
-            padding: 14px 35px;
-            border-radius: 25px;
+            border: 1px solid #bfa15f;
+            padding: 15px 35px;
+            border-radius: 30px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             margin-top: 25px;
-            box-shadow: 0 4px 10px rgba(17,35,68,0.2);
-            width: 80%;
-            transition: transform 0.1s;
+            box-shadow: 0 5px 15px rgba(17,35,68,0.3);
+            width: 85%;
+            transition: all 0.2s;
         }
         .btn-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            padding: 14px;
-            margin: 8px 0;
-            border-radius: 25px;
-            font-size: 0.95rem;
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 30px;
+            font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
             transition: transform 0.1s;
         }
         .btn-siguiente:active, .btn-link:active {
             transform: scale(0.97);
         }
-        .btn-maps { background-color: #112344; color: white; }
+        .btn-maps { background-color: #112344; color: white; border: 1px solid #bfa15f; }
         .btn-wsp { background-color: #25D366; color: white; }
 
-        /* Indicador de páginas inferior */
+        /* Puntos Indicadores Inferiores */
         .indicadores {
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             left: 0;
             width: 100%;
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             z-index: 10;
         }
         .punto {
-            width: 8px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
             border-radius: 50%;
             background-color: #cbd5e1;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
-        .punto.activo { background-color: #112344; width: 20px; border-radius: 4px; }
+        .punto.activo { background-color: #bfa15f; width: 22px; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -236,6 +257,7 @@
 
         <!-- PAGINA 1: MENSAJE BREVE -->
         <div class="pantalla activa" id="pag1">
+            <div class="marco-decorativo"></div>
             <p class="oro-texto">BIENVENIDO</p>
             <h1>Una Vida Bendecida</h1>
             <p class="mensaje-bienvenida">
@@ -246,6 +268,7 @@
 
         <!-- PAGINA 2: FOTO DE GALA PRINCIPAL -->
         <div class="pantalla" id="pag2">
+            <div class="marco-decorativo"></div>
             <p class="oro-texto">CELEBREMOS A</p>
             <h1>Enrique Cisneros</h1>
             <div class="edad-grande">50</div>
@@ -253,41 +276,57 @@
             <button class="btn-siguiente" onclick="irAPagina(3)">Ver Historia ⏳</button>
         </div>
 
-        <!-- PAGINAS DE LA HISTORIA (FOTOS PASADO A PRESENTE) -->
-        <!-- FOTO 1: JUVENTUD -->
+        <!-- PAGINAS DE HISTORIA FOTOGRÁFICA -->
         <div class="pantalla" id="pag3">
+            <div class="marco-decorativo"></div>
             <p class="oro-texto">NUESTRA HISTORIA</p>
             <img src="foto1.png" alt="Juventud" class="galeria-etapa">
             <div class="etiqueta-foto">Su Juventud y Metas</div>
             <button class="btn-siguiente" onclick="irAPagina(4)">Siguiente Época ➡️</button>
         </div>
 
-        <!-- FOTO 2: CASACA NIKE -->
         <div class="pantalla" id="pag4">
+            <div class="marco-decorativo"></div>
             <p class="oro-texto">NUESTRA HISTORIA</p>
             <img src="foto2.png" alt="Etapa 2" class="galeria-etapa">
             <div class="etiqueta-foto">Grandes Momentos</div>
             <button class="btn-siguiente" onclick="irAPagina(5)">Siguiente Época ➡️</button>
         </div>
 
-        <!-- FOTO 3: TERNO ANTIGUO -->
         <div class="pantalla" id="pag5">
+            <div class="marco-decorativo"></div>
+                        <p class="oro-texto">NUESTRA HISTORIA</p>
+            <img src="foto1.png" alt="Juventud" class="galeria-etapa">
+            <div class="etiqueta-foto">Su Juventud y Metas</div>
+            <button class="btn-siguiente" onclick="irAPagina(4)">Siguiente Época ➡️</button>
+        </div>
+
+        <div class="pantalla" id="pag4">
+            <div class="marco-decorativo"></div>
+            <p class="oro-texto">NUESTRA HISTORIA</p>
+            <img src="foto2.png" alt="Etapa 2" class="galeria-etapa">
+            <div class="etiqueta-foto">Grandes Momentos</div>
+            <button class="btn-siguiente" onclick="irAPagina(5)">Siguiente Época ➡️</button>
+        </div>
+
+        <div class="pantalla" id="pag5">
+            <div class="marco-decorativo"></div>
             <p class="oro-texto">NUESTRA HISTORIA</p>
             <img src="foto3.png" alt="Etapa 3" class="galeria-etapa">
             <div class="etiqueta-foto">Trayectoria y Familia</div>
             <button class="btn-siguiente" onclick="irAPagina(6)">Siguiente Época ➡️</button>
         </div>
 
-        <!-- FOTO 4: POLO CELESTE -->
         <div class="pantalla" id="pag6">
+            <div class="marco-decorativo"></div>
             <p class="oro-texto">NUESTRA HISTORIA</p>
             <img src="foto4.png" alt="Actualidad" class="galeria-etapa">
             <div class="etiqueta-foto">Su Presente Lleno de Vida</div>
             <button class="btn-siguiente" onclick="irAPagina(7)">Ver Datos del Evento 📍</button>
         </div>
 
-        <!-- PAGINA FINAL: DATOS E INVITACIÓN -->
         <div class="pantalla" id="pag7">
+            <div class="marco-decorativo"></div>
             <p class="oro-texto">TE ESPERAMOS</p>
             
             <div class="bloque-info">
@@ -307,18 +346,15 @@
                 <p>Comas - Perú</p>
             </div>
 
-            <!-- Botón de Google Maps -->
             <a href="https://goo.gl" target="_blank" class="btn-link btn-maps">
                 📍 Ver en Google Maps
             </a>
 
-            <!-- Botón de WhatsApp (Recuerda cambiar el 51999999999 por el número de tu hermana) -->
+            <!-- Recuerda cambiar el 51999999999 por el número real de tu hermana -->
             <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">
                 💬 Confirmar Asistencia por WhatsApp
             </a>
-        </div> <!-- Aquí cierra la última pantalla -->
-
-        <!-- Los puntitos indicadores del fondo de la pantalla -->
+        </div>
         <div class="indicadores">
             <div class="punto activo" id="p1"></div>
             <div class="punto" id="p2"></div>
@@ -328,7 +364,8 @@
             <div class="punto" id="p6"></div>
             <div class="punto" id="p7"></div>
         </div>
-    </div> <!-- Aquí cierra el contenedor principal -->
+    </div>
+
     <script>
         let paginaActual = 1;
         const totalPaginas = 7;
@@ -354,13 +391,12 @@
             paginaActual = numeroPagina;
         }
 
-        // Control de reproducción de la música
         const musica = document.getElementById('bg-music');
         const botonMusica = document.getElementById('music-toggle');
 
         function toggleMusic() {
             if (musica.paused) {
-                musica.play().catch(error => console.log("Se requiere interacción"));
+                musica.play().catch(error => console.log("Interacción requerida"));
                 botonMusica.classList.add('playing');
                 botonMusica.innerText = "⏸️";
             } else {
@@ -370,7 +406,6 @@
             }
         }
 
-        // Inicia música automáticamente al tocar cualquier parte de la pantalla
         document.body.addEventListener('click', () => {
             if(musica.paused && !botonMusica.classList.contains('playing')) {
                 musica.play().catch(() => {});
@@ -381,3 +416,4 @@
     </script>
 </body>
 </html>
+
