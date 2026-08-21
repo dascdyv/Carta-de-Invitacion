@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 50 Años - Enrique Cisneros</title>
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfcfc;
+            color: #1c2434;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Contenedor principal estilo celular */
+        .invitacion-container {
+            width: 100%;
+            max-width: 450px;
+            background: #ffffff;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 40px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        /* Botón flotante de música */
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: #112344; /* Azul Barcelona */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .music-btn.playing {
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Encabezado Principal */
+        header {
+            padding: 40px 20px 20px;
+        }
+        .oro-texto {
+            color: #bfa15f; /* Dorado elegante */
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #112344;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .edad {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #112344;
+            line-height: 1;
+            margin: 15px 0;
+            background: linear-gradient(135deg, #112344 0%, #bfa15f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Foto de Gala Principal */
+        .foto-principal-wrapper {
+            padding: 0 30px;
+            margin-bottom: 30px;
+        }
+        .foto-gala {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(17, 35, 68, 0.15);
+            border: 2px solid #bfa15f;
+        }
+
+        /* Sección de Línea de Tiempo (Transición de Fotos) */
+        .timeline-section {
+            background: #f4f6f9;
+            padding: 30px 20px;
+            margin: 30px 0;
+        }
+        .timeline-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #112344;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .slider-wrapper {
+            position: relative;
+            width: 260px;
+            height: 340px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            border: 3px solid #ffffff;
+        }
+        .slider-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slider-img.active {
+            opacity: 1;
+        }
+
+        /* Datos del Evento */
+        .datos-container {
+            padding: 0 30px;
+        }
+        .dato-bloque {
+            margin-bottom: 25px;
+        }
+        .dato-bloque h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: #bfa15f;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .dato-bloque p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #112344;
+        }
+        .nota-hora {
+            font-size: 0.9rem;
+            color: #cf2a2a;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Botones Interactivos Clickeables */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 85%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .btn:active {
+            transform: scale(0.96);
+        }
+        .btn-maps {
+            background-color: #112344;
+            color: white;
+        }
+        .btn-wsp {
+            background-color: #25D366;
+            color: white;
+        }
+        .btn i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elemento de Audio Oculto -->
+    <audio id="bg-music" src="musica.mp3" loop></audio>
+
+    <div class="invitacion-container">
+        <!-- Botón de Control de Música -->
+        <button class="music-btn" id="music-toggle" onclick="toggleMusic()">🎵</button>
+
+        <header>
+            <p class="oro-texto">ESTÁS INVITADO A CELEBRAR</p>
+            <h1>Enrique Cisneros</h1>
+            <div class="edad">50</div>
+            <p class="oro-texto">AÑOS DE VIDA</p>
+        </header>
+
+        <!-- Foto de Gala Principal realizada por IA -->
+        <div class="foto-principal-wrapper">
+            <img src="foto_gala.png" alt="Enrique Cisneros" class="foto-gala">
+        </div>
+
+        <!-- Línea de tiempo interactiva automática -->
+        <div class="timeline-section">
+            <p class="timeline-title">UN VIAJE EN EL TIEMPO</p>
+            <div class="slider-wrapper">
+                <img src="foto1.png" class="slider-img active" alt="Etapa 1">
+                <img src="foto2.png" class="slider-img" alt="Etapa 2">
+                <img src="foto3.png" class="slider-img" alt="Etapa 3">
+                <img src="foto4.png" class="slider-img" alt="Etapa 4">
+            </div>
+        </div>
+
+        <!-- Información Detallada del Cumpleaños -->
+        <div class="datos-container">
+            <div class="dato-bloque">
+                <h3>CUÁNDO</h3>
+                <p>Sábado, 24 de Octubre</p>
+            </div>
+
+            <div class="dato-bloque">
+                <h3>HORA</h3>
+                <p>9:00 PM</p>
+                <p class="nota-hora">⚠️ Empezará a las 10:00 PM hora exacta</p>
+            </div>
+
+            <div class="dato-bloque">
+                <h3>DÓNDE</h3>
+                <p>Calle 14 n 133 coop. Primavera</p>
+                <p>Comas - Perú</p>
+            </div>
+
+            <!-- BOTÓN INTERACTIVO 1: Abre Google Maps con la dirección exacta -->
+            <a href="https://google.com" target="_blank" class="btn btn-maps">
+                📍 Ver Ubicación en Maps
+            </a>
+
+            <!-- BOTÓN INTERACTIVO 2: Envía mensaje automático de confirmación a la hermana por WhatsApp -->
+            <!-- NOTA: Reemplaza el '51999999999' por el número real de la hermana (debe empezar con código de país, ejemplo: 51 para Perú) -->
+            <a href="https://wa.me¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20número%2050%20de%20Enrique.%20¡Ahí%20nos%20vemos!" target="_blank" class="btn btn-wsp">
+                💬 Confirmar Asistencia
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Lógica del Slider de Transición de Fotos del Pasado al Presente
+        const imagenes = document.querySelectorAll('.slider-img');
+        let indexActual = 0;
+
+        setInterval(() => {
+            imagenes[indexActual].classList.remove('active');
+            indexActual = (indexActual + 1) % imagenes.length;
+            imagenes[indexActual].classList.add('active');
+        }, 3000); // Cambia de foto automáticamente cada 3 segundos
+
+        // Lógica de control de la música
+        const musica = document.getElementById('bg-music');
+        const botonMusica = document.getElementById('music-toggle');
+
+        function toggleMusic() {
+            if (musica.paused) {
+                musica.play().catch(error => console.log("Interacción requerida por el navegador primero."));
+                botonMusica.classList.add('playing');
+                botonMusica.innerText = "⏸️";
+            } else {
+                musica.pause();
+                botonMusica.classList.remove('playing');
+                botonMusica.innerText = "🎵";
+            }
+        }
+
+        // Intenta reproducir automáticamente al primer clic que haga el usuario en cualquier lado de la pantalla
+        document.body.addEventListener('click', () => {
+            if(musica.paused && !botonMusica.classList.contains('playing')) {
+                musica.play().catch(() => {});
+                botonMusica.classList.add('playing');
+                botonMusica.innerText = "⏸️";
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
