@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis 50 Años - Enrique Cisneros</title>
-    <!-- Fuentes elegantes de Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * {
@@ -14,32 +13,31 @@
         }
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #fcfcfc;
+            background-color: #0b1528;
             color: #1c2434;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow: hidden;
         }
         /* Contenedor principal estilo celular */
         .invitacion-container {
             width: 100%;
             max-width: 450px;
             background: #ffffff;
-            min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            height: 100vh;
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
             position: relative;
-            padding-bottom: 40px;
-            text-align: center;
-            overflow-x: hidden;
+            overflow: hidden;
         }
-        /* Botón flotante de música */
+        /* Botón de música flotante */
         .music-btn {
-            position: fixed;
+            position: absolute;
             top: 20px;
             right: 20px;
             z-index: 100;
-            background: #112344; /* Azul Barcelona */
+            background: #112344;
             color: white;
             border: none;
             border-radius: 50%;
@@ -47,7 +45,7 @@
             height: 45px;
             font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -57,190 +55,251 @@
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        /* Encabezado Principal */
-        header {
-            padding: 40px 20px 20px;
-        }
-        .oro-texto {
-            color: #bfa15f; /* Dorado elegante */
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            color: #112344;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-        .edad {
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: #112344;
-            line-height: 1;
-            margin: 15px 0;
-            background: linear-gradient(135deg, #112344 0%, #bfa15f 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Foto de Gala Principal */
-        .foto-principal-wrapper {
-            padding: 0 30px;
-            margin-bottom: 30px;
-        }
-        .foto-gala {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(17, 35, 68, 0.15);
-            border: 2px solid #bfa15f;
-        }
-
-        /* Sección de Línea de Tiempo (Transición de Fotos) */
-        .timeline-section {
-            background: #f4f6f9;
-            padding: 30px 20px;
-            margin: 30px 0;
-        }
-        .timeline-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: #112344;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-        .slider-wrapper {
-            position: relative;
-            width: 260px;
-            height: 340px;
-            margin: 0 auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            border: 3px solid #ffffff;
-        }
-        .slider-img {
+        /* Estructura de Páginas */
+        .pantalla {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 30px;
+            text-align: center;
+            transform: translateX(100%);
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: 1;
         }
-        .slider-img.active {
-            opacity: 1;
+        .pantalla.activa {
+            transform: translateX(0);
+            z-index: 2;
+        }
+        .pantalla.pasada {
+            transform: translateX(-100%);
+            z-index: 1;
         }
 
-        /* Datos del Evento */
-        .datos-container {
-            padding: 0 30px;
-        }
-        .dato-bloque {
-            margin-bottom: 25px;
-        }
-        .dato-bloque h3 {
+        /* Diseños decorativos */
+        .oro-texto {
+            color: #bfa15f;
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #112344;
+            margin-bottom: 10px;
+        }
+        .edad-grande {
+            font-family: 'Cinzel', serif;
+            font-size: 6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #112344 0%, #bfa15f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        /* Mensaje de Bienvenida */
+        .mensaje-bienvenida {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            font-style: italic;
+            margin: 30px 0;
+        }
+
+        /* Galería de fotos explicada */
+        .foto-gala {
+            width: 100%;
+            max-height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(17, 35, 68, 0.15);
+            border: 2px solid #bfa15f;
+            margin-bottom: 20px;
+        }
+        .galeria-etapa {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            border: 3px solid #ffffff;
+        }
+        .etiqueta-foto {
+            background: #112344;
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            border: 1px solid #bfa15f;
+        }
+
+        /* Datos de la Invitación */
+        .bloque-info {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .bloque-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
             color: #bfa15f;
             letter-spacing: 2px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
-        .dato-bloque p {
+        .bloque-info p {
             font-size: 1.1rem;
             font-weight: 600;
             color: #112344;
         }
-        .nota-hora {
-            font-size: 0.9rem;
+        .alerta-hora {
+            font-size: 0.85rem;
             color: #cf2a2a;
             font-weight: 600;
-            margin-top: 4px;
+            margin-top: 3px;
         }
 
-        /* Botones Interactivos Clickeables */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 85%;
-            padding: 15px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: transform 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .btn:active {
-            transform: scale(0.96);
-        }
-        .btn-maps {
+        /* Botones de Navegación y Enlaces */
+        .btn-siguiente {
             background-color: #112344;
             color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(17,35,68,0.2);
+            width: 80%;
+            transition: transform 0.1s;
         }
-        .btn-wsp {
-            background-color: #25D366;
-            color: white;
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.1s;
         }
-        .btn i {
-            margin-right: 10px;
+        .btn-siguiente:active, .btn-link:active {
+            transform: scale(0.97);
         }
+        .btn-maps { background-color: #112344; color: white; }
+        .btn-wsp { background-color: #25D366; color: white; }
+
+        /* Indicador de páginas inferior */
+        .indicadores {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 10;
+        }
+        .punto {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            transition: background-color 0.3s;
+        }
+        .punto.activo { background-color: #112344; width: 20px; border-radius: 4px; }
     </style>
 </head>
 <body>
 
-    <!-- Elemento de Audio Oculto -->
     <audio id="bg-music" src="musica.mp3" loop></audio>
 
     <div class="invitacion-container">
-        <!-- Botón de Control de Música -->
         <button class="music-btn" id="music-toggle" onclick="toggleMusic()">🎵</button>
 
-        <header>
-            <p class="oro-texto">ESTÁS INVITADO A CELEBRAR</p>
+        <!-- PAGINA 1: MENSAJE BREVE -->
+        <div class="pantalla activa" id="pag1">
+            <p class="oro-texto">BIENVENIDO</p>
+            <h1>Una Vida Bendecida</h1>
+            <p class="mensaje-bienvenida">
+                "Hay momentos en la vida que son inolvidables, y compartirlos con las personas que más amamos los hace eternos. Te invito a acompañarme en esta noche tan especial."
+            </p>
+            <button class="btn-siguiente" onclick="irAPagina(2)">Abrir Invitación ✨</button>
+        </div>
+
+        <!-- PAGINA 2: FOTO DE GALA PRINCIPAL -->
+        <div class="pantalla" id="pag2">
+            <p class="oro-texto">CELEBREMOS A</p>
             <h1>Enrique Cisneros</h1>
-            <div class="edad">50</div>
-            <p class="oro-texto">AÑOS DE VIDA</p>
-        </header>
-
-        <!-- Foto de Gala Principal realizada por IA -->
-        <div class="foto-principal-wrapper">
+            <div class="edad-grande">50</div>
             <img src="foto_gala.png" alt="Enrique Cisneros" class="foto-gala">
+            <button class="btn-siguiente" onclick="irAPagina(3)">Ver Historia ⏳</button>
         </div>
 
-        <!-- Línea de tiempo interactiva automática -->
-        <div class="timeline-section">
-            <p class="timeline-title">UN VIAJE EN EL TIEMPO</p>
-            <div class="slider-wrapper">
-                <img src="foto1.png" class="slider-img active" alt="Etapa 1">
-                <img src="foto2.png" class="slider-img" alt="Etapa 2">
-                <img src="foto3.png" class="slider-img" alt="Etapa 3">
-                <img src="foto4.png" class="slider-img" alt="Etapa 4">
-            </div>
+        <!-- PAGINAS DE LA HISTORIA (FOTOS PASADO A PRESENTE) -->
+        <!-- FOTO 1: JUVENTUD -->
+        <div class="pantalla" id="pag3">
+            <p class="oro-texto">NUESTRA HISTORIA</p>
+            <img src="foto1.png" alt="Juventud" class="galeria-etapa">
+            <div class="etiqueta-foto">Su Juventud y Metas</div>
+            <button class="btn-siguiente" onclick="irAPagina(4)">Siguiente Época ➡️</button>
         </div>
 
-        <!-- Información Detallada del Cumpleaños -->
-        <div class="datos-container">
-            <div class="dato-bloque">
+        <!-- FOTO 2: CASACA NIKE -->
+        <div class="pantalla" id="pag4">
+            <p class="oro-texto">NUESTRA HISTORIA</p>
+            <img src="foto2.png" alt="Etapa 2" class="galeria-etapa">
+            <div class="etiqueta-foto">Grandes Momentos</div>
+            <button class="btn-siguiente" onclick="irAPagina(5)">Siguiente Época ➡️</button>
+        </div>
+
+        <!-- FOTO 3: TERNO ANTIGUO -->
+        <div class="pantalla" id="pag5">
+            <p class="oro-texto">NUESTRA HISTORIA</p>
+            <img src="foto3.png" alt="Etapa 3" class="galeria-etapa">
+            <div class="etiqueta-foto">Trayectoria y Familia</div>
+            <button class="btn-siguiente" onclick="irAPagina(6)">Siguiente Época ➡️</button>
+        </div>
+
+        <!-- FOTO 4: POLO CELESTE -->
+        <div class="pantalla" id="pag6">
+            <p class="oro-texto">NUESTRA HISTORIA</p>
+            <img src="foto4.png" alt="Actualidad" class="galeria-etapa">
+            <div class="etiqueta-foto">Su Presente Lleno de Vida</div>
+            <button class="btn-siguiente" onclick="irAPagina(7)">Ver Datos del Evento 📍</button>
+        </div>
+
+        <!-- PAGINA FINAL: DATOS E INVITACIÓN -->
+        <div class="pantalla" id="pag7">
+            <p class="oro-texto">TE ESPERAMOS</p>
+            
+            <div class="bloque-info">
                 <h3>CUÁNDO</h3>
-                <p>Sábado, 24 de Octubre</p>
+                <p>Jueves, 24 de Octubre</p>
             </div>
 
-            <div class="dato-bloque">
+            <div class="bloque-info">
                 <h3>HORA</h3>
                 <p>9:00 PM</p>
-                <p class="nota-hora">⚠️ Empezará a las 10:00 PM hora exacta</p>
+                <p class="alerta-hora">⚠️ Iniciará a las 10:00 PM (Hora Exacta)</p>
             </div>
-            </div> <!-- Cierre de la alerta de la hora -->
 
             <div class="bloque-info">
                 <h3>LUGAR</h3>
@@ -253,11 +312,11 @@
                 📍 Ver en Google Maps
             </a>
 
-            <!-- Botón de WhatsApp -->
+            <!-- Botón de WhatsApp (Recuerda cambiar el 51999999999 por el número de tu hermana) -->
             <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">
                 💬 Confirmar Asistencia por WhatsApp
             </a>
-        </div> <!-- Cierre de la última pantalla -->
+        </div> <!-- Aquí cierra la última pantalla -->
 
         <!-- Los puntitos indicadores del fondo de la pantalla -->
         <div class="indicadores">
@@ -269,8 +328,7 @@
             <div class="punto" id="p6"></div>
             <div class="punto" id="p7"></div>
         </div>
-    </div> <!-- Cierre del contenedor principal -->
-
+    </div> <!-- Aquí cierra el contenedor principal -->
     <script>
         let paginaActual = 1;
         const totalPaginas = 7;
@@ -323,5 +381,3 @@
     </script>
 </body>
 </html>
-
-           
