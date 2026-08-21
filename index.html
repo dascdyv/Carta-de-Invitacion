@@ -79,27 +79,40 @@
         </div>
 
         <!-- PÁGINA 3: DATOS -->
+                <!-- PÁGINA 3: DATOS DE LA CELEBRACIÓN -->
         <div class="pantalla" id="pag3">
             <div class="marco-decorativo"></div>
-            <p class="oro-texto">RECEPCIÓN</p>
-            <div class="bloque-info">
+            <p class="oro-texto">CELEBRACIÓN DE GALA</p>
+            
+            <div class="bloque-info" style="margin-top: 15px;">
                 <h3>CUÁNDO</h3>
                 <p>Sábado, 24 de Octubre</p>
             </div>
+
             <div class="bloque-info">
                 <h3>HORA</h3>
                 <p>Iniciará a las 9:00 PM</p>
             </div>
+
             <div class="bloque-info">
                 <h3>LUGAR</h3>
                 <p>Calle 14 n 133 coop. Primavera</p>
                 <p>Comas</p>
             </div>
-            <div class="grupo-botones">
-                <a href="https://maps.app.goo.gl/RvSGJH6SDPLaYZ889" target="_blank" class="btn-link btn-maps">📍 Ver en Google Maps</a>
-                <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">💬 Confirmar Asistencia por WhatsApp</a>
+
+            <div class="grupo-botones" style="margin-top: 10px;">
+                <a href="https://goo.gl" target="_blank" class="btn-link btn-maps">📍 Ver en Google Maps</a>
+                
+                <!-- Enlace optimizado para saltar directo a la app de WhatsApp en celulares -->
+                <a href="whatsapp://send?phone=51940628577&text=%C2%A1Hola%21+Confirmo+mi+asistencia+al+cumplea%C3%B1os+n%C3%BAmero+50+de+Enrique.+%C2%A1Ah%C3%AD+estar%C3%A9%21" class="btn-link btn-wsp">💬 Confirmar Asistencia por WhatsApp</a>
+                
                 <button class="btn-retroceder" onclick="irAPagina(2)">Atrás</button>
             </div>
+
+            <!-- Frase elegante para rellenar la parte inferior del marco -->
+            <p class="oro-texto" style="font-size: 0.75rem; letter-spacing: 2px; margin-top: 25px; margin-bottom: 5px; opacity: 0.8;">
+                ¡TU PRESENCIA ES NUESTRO MEJOR REGALO!
+            </p>
         </div>
 
         <div class="indicadores">
@@ -127,7 +140,7 @@
 
         function abrirInvitacion() {
             if (musica.paused) { musica.play().catch(err => console.log("Audio bloqueado")); botonMusica.classList.add('playing'); botonMusica.innerText = "⏸️"; }
-                        irAPagina(2);
+            irAPagina(2);
         }
 
         function toggleMusic() {
@@ -142,7 +155,6 @@
                 const nuevoTexto = imagenes[indexActual].getAttribute('data-texto'); if(etiqueta) etiqueta.innerText = nuevoTexto;
             }
         }, 2500);
-            </script>
+    </script>
 </body>
 </html>
-
