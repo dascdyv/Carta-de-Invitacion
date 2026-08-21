@@ -240,44 +240,69 @@
                 <p>9:00 PM</p>
                 <p class="nota-hora">⚠️ Empezará a las 10:00 PM hora exacta</p>
             </div>
+            </div> <!-- Cierre de la alerta de la hora -->
 
-            <div class="dato-bloque">
-                <h3>DÓNDE</h3>
+            <div class="bloque-info">
+                <h3>LUGAR</h3>
                 <p>Calle 14 n 133 coop. Primavera</p>
                 <p>Comas - Perú</p>
             </div>
 
-            <!-- BOTÓN INTERACTIVO 1: Abre Google Maps con la dirección exacta -->
-            <a href="https://google.com" target="_blank" class="btn btn-maps">
-                📍 Ver Ubicación en Maps
+            <!-- Botón de Google Maps -->
+            <a href="https://goo.gl" target="_blank" class="btn-link btn-maps">
+                📍 Ver en Google Maps
             </a>
 
-            <!-- BOTÓN INTERACTIVO 2: Envía mensaje automático de confirmación a la hermana por WhatsApp -->
-            <!-- NOTA: Reemplaza el '51999999999' por el número real de la hermana (debe empezar con código de país, ejemplo: 51 para Perú) -->
-            <a href="https://wa.me¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20número%2050%20de%20Enrique.%20¡Ahí%20nos%20vemos!" target="_blank" class="btn btn-wsp">
-                💬 Confirmar Asistencia
+            <!-- Botón de WhatsApp -->
+            <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">
+                💬 Confirmar Asistencia por WhatsApp
             </a>
+        </div> <!-- Cierre de la última pantalla -->
+
+        <!-- Los puntitos indicadores del fondo de la pantalla -->
+        <div class="indicadores">
+            <div class="punto activo" id="p1"></div>
+            <div class="punto" id="p2"></div>
+            <div class="punto" id="p3"></div>
+            <div class="punto" id="p4"></div>
+            <div class="punto" id="p5"></div>
+            <div class="punto" id="p6"></div>
+            <div class="punto" id="p7"></div>
         </div>
-    </div>
+    </div> <!-- Cierre del contenedor principal -->
 
     <script>
-        // Lógica del Slider de Transición de Fotos del Pasado al Presente
-        const imagenes = document.querySelectorAll('.slider-img');
-        let indexActual = 0;
+        let paginaActual = 1;
+        const totalPaginas = 7;
 
-        setInterval(() => {
-            imagenes[indexActual].classList.remove('active');
-            indexActual = (indexActual + 1) % imagenes.length;
-            imagenes[indexActual].classList.add('active');
-        }, 3000); // Cambia de foto automáticamente cada 3 segundos
+        function irAPagina(numeroPagina) {
+            if(numeroPagina > totalPaginas) return;
 
-        // Lógica de control de la música
+            for (let i = 1; i <= totalPaginas; i++) {
+                const pag = document.getElementById(`pag${i}`);
+                const punto = document.getElementById(`p${i}`);
+                
+                if (i < numeroPagina) {
+                    pag.className = "pantalla pasada";
+                    punto.className = "punto";
+                } else if (i === numeroPagina) {
+                    pag.className = "pantalla activa";
+                    punto.className = "punto activo";
+                } else {
+                    pag.className = "pantalla";
+                    punto.className = "punto";
+                }
+            }
+            paginaActual = numeroPagina;
+        }
+
+        // Control de reproducción de la música
         const musica = document.getElementById('bg-music');
         const botonMusica = document.getElementById('music-toggle');
 
         function toggleMusic() {
             if (musica.paused) {
-                musica.play().catch(error => console.log("Interacción requerida por el navegador primero."));
+                musica.play().catch(error => console.log("Se requiere interacción"));
                 botonMusica.classList.add('playing');
                 botonMusica.innerText = "⏸️";
             } else {
@@ -287,7 +312,7 @@
             }
         }
 
-        // Intenta reproducir automáticamente al primer clic que haga el usuario en cualquier lado de la pantalla
+        // Inicia música automáticamente al tocar cualquier parte de la pantalla
         document.body.addEventListener('click', () => {
             if(musica.paused && !botonMusica.classList.contains('playing')) {
                 musica.play().catch(() => {});
@@ -298,3 +323,5 @@
     </script>
 </body>
 </html>
+
+           
