@@ -6,353 +6,102 @@
     <title>Mis 50 Años - Enrique Cisneros</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: radial-gradient(circle, #16243d 0%, #090f1a 100%);
-            color: #1c2434;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 10px;
-            overflow: hidden;
-        }
-        /* Contenedor estilo tarjeta de gala */
-        .invitacion-container {
-            width: 100%;
-            max-width: 420px;
-            height: 820px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            position: relative;
-            overflow: hidden;
-            border: 3px solid #bfa15f;
-        }
-        /* Elegante efecto de cortinaje superior mediante código */
-        .cortina-superior {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 45px;
-            background: linear-gradient(180deg, #112344 0%, #091326 70%, transparent 100%);
-            border-bottom: 2px solid #bfa15f;
-            z-index: 20;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .cortina-superior::before, .cortina-superior::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 50px;
-            height: 80px;
-            background: #112344;
-            border: 1px solid #bfa15f;
-            border-radius: 0 0 50px 50px;
-            box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background: radial-gradient(circle, #16243d 0%, #090f1a 100%); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 10px; overflow: hidden; }
+        .invitacion-container { width: 100%; max-width: 420px; height: 800px; background: #ffffff; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); position: relative; overflow: hidden; border: 3px solid #bfa15f; }
+        .cortina-superior { position: absolute; top: 0; left: 0; width: 100%; height: 45px; background: linear-gradient(180deg, #112344 0%, #091326 70%, transparent 100%); border-bottom: 2px solid #bfa15f; z-index: 20; }
+        .cortina-superior::before, .cortina-superior::after { content: ""; position: absolute; top: 0; width: 50px; height: 80px; background: #112344; border: 1px solid #bfa15f; border-radius: 0 0 50px 50px; }
         .cortina-superior::before { left: -10px; transform: rotate(-5deg); }
         .cortina-superior::after { right: -10px; transform: rotate(5deg); }
-
-        /* Botón de reproducción musical */
-        .music-btn {
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            z-index: 100;
-            background: #112344;
-            color: white;
-            border: 2px solid #bfa15f;
-            border-radius: 50%;
-            width: 42px;
-            height: 42px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        .music-btn { position: absolute; top: 60px; right: 20px; z-index: 100; background: #112344; color: white; border: 2px solid #bfa15f; border-radius: 50%; width: 42px; height: 42px; font-size: 16px; cursor: pointer; display: flex; justify-content: center; align-items: center; }
         .music-btn.playing { animation: spin 3s linear infinite; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        /* Sistema de Control de Páginas Activas */
-        .pantalla {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 65px 30px 40px;
-            text-align: center;
-            transform: translateX(100%);
-            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-            z-index: 1;
-            background-image: radial-gradient(rgba(191, 161, 95, 0.04) 1px, transparent 0);
-            background-size: 20px 20px;
-        }
+        .pantalla { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 65px 30px 40px; text-align: center; transform: translateX(100%); transition: transform 0.5s ease-in-out; z-index: 1; background-image: radial-gradient(rgba(191, 161, 95, 0.04) 1px, transparent 0); background-size: 20px 20px; }
         .pantalla.activa { transform: translateX(0); z-index: 2; }
         .pantalla.pasada { transform: translateX(-100%); z-index: 1; }
-
-        .marco-decorativo {
-            position: absolute;
-            width: 92%;
-            height: 92%;
-            border: 1px solid rgba(191, 161, 95, 0.25);
-            pointer-events: none;
-            top: 4%;
-            left: 4%;
-            border-radius: 12px;
-        }
-
-        /* Títulos y Tipografía */
-        .oro-texto {
-            color: #bfa15f;
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.1rem;
-            color: #112344;
-            margin-bottom: 4px;
-        }
-        .edad-grande {
-            font-family: 'Cinzel', serif;
-            font-size: 5.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #112344 0%, #bfa15f 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-            margin: 10px 0;
-        }
-        .mensaje-bienvenida {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #4a5568;
-            font-style: italic;
-            margin: 15px 0;
-        }
-
-        /* Estilos de las imágenes */
-        .foto-gala {
-            width: 85%;
-            height: 290px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(17, 35, 68, 0.2);
-            border: 2px solid #bfa15f;
-            margin: 10px 0;
-        }
-        
-        /* Contenedores del carrete de línea de tiempo automática */
-        .slider-wrapper {
-            position: relative;
-            width: 85%;
-            height: 360px;
-            margin: 15px 0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-            border: 4px solid #ffffff;
-        }
-        .slider-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-        }
+        .marco-decorativo { position: absolute; width: 92%; height: 92%; border: 1px solid rgba(191, 161, 95, 0.25); pointer-events: none; top: 4%; left: 4%; border-radius: 12px; }
+        .oro-texto { color: #bfa15f; font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 4px; margin-bottom: 8px; font-weight: 700; }
+        h1 { font-family: 'Cinzel', serif; font-size: 2.1rem; color: #112344; margin-bottom: 4px; }
+        .mensaje-bienvenida { font-size: 1.05rem; line-height: 1.7; color: #4a5568; font-style: italic; margin: 15px 0; }
+        .foto-gala { width: 85%; height: 290px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 25px rgba(17, 35, 68, 0.2); border: 2px solid #bfa15f; margin: 10px 0; }
+        .slider-wrapper { position: relative; width: 85%; height: 360px; margin: 15px 0; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.25); border: 4px solid #ffffff; }
+        .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out; }
         .slider-img.active { opacity: 1; }
-
-        .etiqueta-foto {
-            background: #112344;
-            color: #ffffff;
-            padding: 7px 22px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-top: 10px;
-            border: 1px solid #bfa15f;
-        }
-
-        /* Bloques informativos finales */
+        .etiqueta-foto { background: #112344; color: #ffffff; padding: 7px 22px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; margin-top: 10px; border: 1px solid #bfa15f; }
         .bloque-info { margin-bottom: 18px; width: 100%; }
         .bloque-info h3 { font-family: 'Cinzel', serif; font-size: 0.9rem; color: #bfa15f; letter-spacing: 3px; margin-bottom: 2px; }
         .bloque-info p { font-size: 1.1rem; font-weight: 600; color: #112344; }
-        .alerta-hora { font-size: 0.85rem; color: #cf2a2a; font-weight: 600; margin-top: 2px; }
-
-        /* Botones de navegación */
-        .grupo-botones {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            gap: 10px;
-        }
-        .btn-siguiente {
-            background: linear-gradient(135deg, #112344 0%, #1a3564 100%);
-            color: white;
-            border: 1px solid #bfa15f;
-            padding: 14px 30px;
-            border-radius: 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(17,35,68,0.3);
-            width: 85%;
-            position: relative;
-        }
-        /* Detalle del lazo/moño dorado en el botón de portada */
-        .btn-siguiente.con-lazo::before {
-            content: "🎗️";
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-        }
-        .btn-retroceder {
-            background: transparent;
-            color: #718096;
-            border: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: underline;
-            padding: 5px;
-        }
-        .btn-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 85%;
-            padding: 14px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
+        .grupo-botones { width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 20px; gap: 10px; }
+        .btn-siguiente { background: linear-gradient(135deg, #112344 0%, #1a3564 100%); color: white; border: 1px solid #bfa15f; padding: 14px 30px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; box-shadow: 0 5px 15px rgba(17,35,68,0.3); width: 85%; position: relative; }
+        .btn-siguiente.con-lazo::before { content: "🎗️"; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 1.2rem; }
+        .btn-retroceder { background: transparent; color: #718096; border: none; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: underline; padding: 5px; }
+        .btn-link { display: flex; align-items: center; justify-content: center; width: 85%; padding: 14px; border-radius: 30px; font-size: 0.95rem; font-weight: 600; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
         .btn-maps { background-color: #112344; color: white; border: 1px solid #bfa15f; }
         .btn-wsp { background-color: #25D366; color: white; }
-
-        /* Indicador de páginas */
-        .indicadores {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            z-index: 10;
-        }
+        .indicadores { position: absolute; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: center; gap: 8px; z-index: 10; }
         .punto { width: 8px; height: 8px; border-radius: 50%; background-color: #cbd5e1; transition: all 0.3s; }
         .punto.activo { background-color: #bfa15f; width: 20px; border-radius: 4px; }
     </style>
 </head>
 <body>
-
     <audio id="bg-music" src="musica.mp3" loop></audio>
-
     <div class="invitacion-container">
-        <!-- Cortinaje acogedor superior -->
         <div class="cortina-superior"></div>
-        
         <button class="music-btn" id="music-toggle" onclick="toggleMusic()">🎵</button>
 
-        <!-- PÁGINA 1: PORTADA PRINCIPAL DE IMPACTO -->
+        <!-- PÁGINA 1: PORTADA -->
         <div class="pantalla activa" id="pag1">
             <div class="marco-decorativo"></div>
             <p class="oro-texto">MIS 50 AÑOS</p>
             <h1>Enrique Cisneros</h1>
             <img src="foto_gala.png" alt="Enrique Cisneros" class="foto-gala">
-            <p class="mensaje-bienvenida">
-                "Hay momentos en la vida inolvidables, y compartirlos con quienes más amamos los hace eternos."
-            </p>
+            <p class="mensaje-bienvenida">"Hay momentos en la vida inolvidables, y compartirlos con quienes más amamos los hace eternos."</p>
             <div class="grupo-botones">
-                <button class="btn-siguiente con-lazo" onclick="irAPagina(2)">¡Abrir Invitación! ✨</button>
-                            </div>
+                <button class="btn-siguiente con-lazo" onclick="abrirInvitacion()">¡Abrir Invitación! ✨</button>
+            </div>
         </div>
 
-        <!-- PÁGINA 2: EL CARRETE DE FOTOS AUTOMÁTICO -->
+        <!-- PÁGINA 2: HISTORIA -->
         <div class="pantalla" id="pag2">
             <div class="marco-decorativo"></div>
             <p class="oro-texto">UN VIAJE EN EL TIEMPO</p>
-            
             <div class="slider-wrapper">
-                <img src="foto1.png" class="slider-img active" data-texto="Su Juventud y Grandes Sueños" alt="Etapa 1">
-                <img src="foto2.png" class="slider-img" data-texto="Trayectoria y Lindos Recuerdos" alt="Etapa 2">
-                <img src="foto3.png" class="slider-img" data-texto="Forjando Caminos con Elegancia" alt="Etapa 3">
-                <img src="foto4.png" class="slider-img" data-texto="Su Presente Lleno de Vida" alt="Etapa 4">
+                <img src="foto1.png" class="slider-img active" data-texto="Su Juventud y Grandes Sueños">
+                <img src="foto2.png" class="slider-img" data-texto="Trayectoria y Lindos Recuerdos">
+                <img src="foto3.png" class="slider-img" data-texto="Forjando Caminos con Elegancia">
+                <img src="foto4.png" class="slider-img" data-texto="Su Presente Lleno de Vida">
             </div>
-            
             <div class="etiqueta-foto" id="etiqueta-dinamica">Su Juventud y Grandes Sueños</div>
-
             <div class="grupo-botones">
-                <button class="btn-siguiente" onclick="irAPagina(3)">Ver Datos del Evento 📍</button>
+                <button class="btn-siguiente" onclick="irAPagina(3)">Ver Ubicación y Horario 📍</button>
                 <button class="btn-retroceder" onclick="irAPagina(1)">Atrás</button>
             </div>
         </div>
-        <!-- PÁGINA 3: DATOS FINALES E INVITACIÓN -->
+
+        <!-- PÁGINA 3: DATOS -->
         <div class="pantalla" id="pag3">
             <div class="marco-decorativo"></div>
-            <p class="oro-texto">TE ESPERAMOS</p>
-            
+            <p class="oro-texto">RECEPCIÓN</p>
             <div class="bloque-info">
                 <h3>CUÁNDO</h3>
-                <p>Jueves, 24 de Octubre</p>
+                <p>Sábado, 24 de Octubre</p>
             </div>
-
             <div class="bloque-info">
                 <h3>HORA</h3>
-                <p>9:00 PM</p>
-                <p class="alerta-hora">⚠️ Iniciará a las 10:00 PM (Hora Exacta)</p>
+                <p>Iniciará a las 9:00 PM</p>
             </div>
-
             <div class="bloque-info">
                 <h3>LUGAR</h3>
                 <p>Calle 14 n 133 coop. Primavera</p>
-                <p>Comas - Perú</p>
+                <p>Comas</p>
             </div>
-
             <div class="grupo-botones">
-                <a href="https://goo.gl" target="_blank" class="btn-link btn-maps">
-                    📍 Ver en Google Maps
-                </a>
-
-                <!-- Recuerda cambiar el 51999999999 por el número de tu hermana -->
-                <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">
-                    💬 Confirmar Asistencia por WhatsApp
-                </a>
-                
+                <a href="https://maps.app.goo.gl/RvSGJH6SDPLaYZ889" target="_blank" class="btn-link btn-maps">📍 Ver en Google Maps</a>
+                <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">💬 Confirmar Asistencia por WhatsApp</a>
                 <button class="btn-retroceder" onclick="irAPagina(2)">Atrás</button>
             </div>
         </div>
 
-        <!-- Puntos indicadores inferiores -->
         <div class="indicadores">
             <div class="punto activo" id="p1"></div>
             <div class="punto" id="p2"></div>
@@ -361,69 +110,39 @@
     </div>
 
     <script>
-        let paginaActual = 1;
-        const totalPaginas = 3;
+        let paginaActual = 1; const totalPaginas = 3;
+        const musica = document.getElementById('bg-music');
+        const botonMusica = document.getElementById('music-toggle');
 
         function irAPagina(numeroPagina) {
             if(numeroPagina > totalPaginas || numeroPagina < 1) return;
-
             for (let i = 1; i <= totalPaginas; i++) {
-                const pag = document.getElementById(`pag${i}`);
-                const punto = document.getElementById(`p${i}`);
-                
-                if (i < numeroPagina) {
-                    pag.className = "pantalla pasada";
-                    punto.className = "punto";
-                } else if (i === numeroPagina) {
-                    pag.className = "pantalla activa";
-                    punto.className = "punto activo";
-                } else {
-                    pag.className = "pantalla";
-                    punto.className = "punto";
-                }
+                const pag = document.getElementById(`pag${i}`); const punto = document.getElementById(`p${i}`);
+                if (i < numeroPagina) { pag.className = "pantalla pasada"; punto.className = "punto"; }
+                else if (i === numeroPagina) { pag.className = "pantalla activa"; punto.className = "punto activo"; }
+                else { pag.className = "pantalla"; punto.className = "punto"; }
             }
             paginaActual = numeroPagina;
         }
 
-        // Lógica del Slider de Fotos
-        const imagenes = document.querySelectorAll('.slider-img');
-        const etiqueta = document.getElementById('etiqueta-dinamica');
-        let indexActual = 0;
-
-        setInterval(() => {
-            if(imagenes.length > 0) {
-                imagenes[indexActual].classList.remove('active');
-                indexActual = (indexActual + 1) % imagenes.length;
-                imagenes[indexActual].classList.add('active');
-                
-                const nuevoTexto = imagenes[indexActual].getAttribute('data-texto');
-                if(etiqueta) etiqueta.innerText = nuevoTexto;
-            }
-        }, 2500);
-
-        // Lógica de Audio
-        const musica = document.getElementById('bg-music');
-        const botonMusica = document.getElementById('music-toggle');
-
-        function toggleMusic() {
-            if (musica.paused) {
-                musica.play().catch(err => console.log("Interacción requerida"));
-                botonMusica.classList.add('playing');
-                botonMusica.innerText = "⏸️";
-            } else {
-                musica.pause();
-                botonMusica.classList.remove('playing');
-                botonMusica.innerText = "🎵";
-            }
+        function abrirInvitacion() {
+            if (musica.paused) { musica.play().catch(err => console.log("Audio bloqueado")); botonMusica.classList.add('playing'); botonMusica.innerText = "⏸️"; }
+                        irAPagina(2);
         }
 
-        document.body.addEventListener('click', () => {
-            if(musica.paused && !botonMusica.classList.contains('playing')) {
-                musica.play().catch(() => {});
-                botonMusica.classList.add('playing');
-                botonMusica.innerText = "⏸️";
+        function toggleMusic() {
+            if (musica.paused) { musica.play().catch(err => {}); botonMusica.classList.add('playing'); botonMusica.innerText = "⏸️"; }
+            else { musica.pause(); botonMusica.classList.remove('playing'); botonMusica.innerText = "🎵"; }
+        }
+
+        const imagenes = document.querySelectorAll('.slider-img'); const etiqueta = document.getElementById('etiqueta-dinamica'); let indexActual = 0;
+        setInterval(() => {
+            if(imagenes.length > 0) {
+                imagenes[indexActual].classList.remove('active'); indexActual = (indexActual + 1) % imagenes.length; imagenes[indexActual].classList.add('active');
+                const nuevoTexto = imagenes[indexActual].getAttribute('data-texto'); if(etiqueta) etiqueta.innerText = nuevoTexto;
             }
-        }, { once: true });
-    </script>
+        }, 2500);
+            </script>
 </body>
 </html>
+
