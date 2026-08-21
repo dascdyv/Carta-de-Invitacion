@@ -11,7 +11,6 @@
             margin: 0;
             padding: 0;
         }
-        /* Fondo general de gala para rellenar la pantalla de la computadora */
         body {
             font-family: 'Montserrat', sans-serif;
             background: radial-gradient(circle, #16243d 0%, #090f1a 100%);
@@ -20,46 +19,70 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px;
+            overflow: hidden;
         }
-        /* Tarjeta central elegante con sombras y marcos dorados */
+        /* Contenedor estilo tarjeta de gala */
         .invitacion-container {
             width: 100%;
-            max-width: 430px;
-            height: 850px;
+            max-width: 420px;
+            height: 820px;
             background: #ffffff;
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             position: relative;
             overflow: hidden;
             border: 3px solid #bfa15f;
         }
-        /* Botón de música flotante refinado */
+        /* Elegante efecto de cortinaje superior mediante código */
+        .cortina-superior {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            background: linear-gradient(180deg, #112344 0%, #091326 70%, transparent 100%);
+            border-bottom: 2px solid #bfa15f;
+            z-index: 20;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .cortina-superior::before, .cortina-superior::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: #112344;
+            border: 1px solid #bfa15f;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+        }
+        .cortina-superior::before { left: -10px; transform: rotate(-5deg); }
+        .cortina-superior::after { right: -10px; transform: rotate(5deg); }
+
+        /* Botón de reproducción musical */
         .music-btn {
             position: absolute;
-            top: 25px;
-            right: 25px;
+            top: 60px;
+            right: 20px;
             z-index: 100;
             background: #112344;
             color: white;
             border: 2px solid #bfa15f;
             border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            font-size: 18px;
+            width: 42px;
+            height: 42px;
+            font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.2s;
         }
-        .music-btn.playing {
-            animation: spin 3s linear infinite;
-        }
+        .music-btn.playing { animation: spin 3s linear infinite; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        /* Estructura de Páginas Internas */
+        /* Sistema de Control de Páginas Activas */
         .pantalla {
             position: absolute;
             top: 0;
@@ -71,181 +94,183 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 35px;
+            padding: 65px 30px 40px;
             text-align: center;
             transform: translateX(100%);
-            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
             z-index: 1;
-            /* Texturas de fondo para que no se vea vacío */
-            background-image: radial-gradient(rgba(191, 161, 95, 0.05) 1px, transparent 0);
-            background-size: 24px 24px;
+            background-image: radial-gradient(rgba(191, 161, 95, 0.04) 1px, transparent 0);
+            background-size: 20px 20px;
         }
-        .pantalla.activa {
-            transform: translateX(0);
-            z-index: 2;
-        }
-        .pantalla.pasada {
-            transform: translateX(-100%);
-            z-index: 1;
-        }
+        .pantalla.activa { transform: translateX(0); z-index: 2; }
+        .pantalla.pasada { transform: translateX(-100%); z-index: 1; }
 
-        /* Marcos y esquineros decorativos clásicos */
         .marco-decorativo {
             position: absolute;
-            width: 90%;
-            height: 94%;
-            border: 1px solid rgba(191, 161, 95, 0.3);
+            width: 92%;
+            height: 92%;
+            border: 1px solid rgba(191, 161, 95, 0.25);
             pointer-events: none;
-            top: 3%;
-            left: 5%;
+            top: 4%;
+            left: 4%;
             border-radius: 12px;
         }
 
-        /* Tipografías y Textos */
+        /* Títulos y Tipografía */
         .oro-texto {
             color: #bfa15f;
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             color: #112344;
-            margin-bottom: 5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            margin-bottom: 4px;
         }
         .edad-grande {
             font-family: 'Cinzel', serif;
-            font-size: 6.5rem;
+            font-size: 5.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, #112344 0%, #bfa15f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1;
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .mensaje-bienvenida {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.7;
             color: #4a5568;
             font-style: italic;
-            margin: 25px 0;
-            padding: 0 10px;
-        }
-
-        /* Imágenes de Retrato */
-        .foto-gala {
-            width: 85%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(17, 35, 68, 0.2);
-            border: 2px solid #bfa15f;
             margin: 15px 0;
         }
-        .galeria-etapa {
-            width: 90%;
-            height: 340px;
+
+        /* Estilos de las imágenes */
+        .foto-gala {
+            width: 85%;
+            height: 290px;
             object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(17, 35, 68, 0.2);
+            border: 2px solid #bfa15f;
+            margin: 10px 0;
+        }
+        
+        /* Contenedores del carrete de línea de tiempo automática */
+        .slider-wrapper {
+            position: relative;
+            width: 85%;
+            height: 360px;
+            margin: 15px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             border: 4px solid #ffffff;
         }
+        .slider-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .slider-img.active { opacity: 1; }
+
         .etiqueta-foto {
             background: #112344;
             color: #ffffff;
-            padding: 8px 20px;
+            padding: 7px 22px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 1px;
-            margin-top: 20px;
+            margin-top: 10px;
             border: 1px solid #bfa15f;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Bloques de Información del Evento */
-        .bloque-info {
-            margin-bottom: 22px;
+        /* Bloques informativos finales */
+        .bloque-info { margin-bottom: 18px; width: 100%; }
+        .bloque-info h3 { font-family: 'Cinzel', serif; font-size: 0.9rem; color: #bfa15f; letter-spacing: 3px; margin-bottom: 2px; }
+        .bloque-info p { font-size: 1.1rem; font-weight: 600; color: #112344; }
+        .alerta-hora { font-size: 0.85rem; color: #cf2a2a; font-weight: 600; margin-top: 2px; }
+
+        /* Botones de navegación */
+        .grupo-botones {
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
         }
-        .bloque-info h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            color: #bfa15f;
-            letter-spacing: 3px;
-            margin-bottom: 4px;
-        }
-        .bloque-info p {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #112344;
-        }
-        .alerta-hora {
-            font-size: 0.9rem;
-            color: #cf2a2a;
-            font-weight: 600;
-            margin-top: 4px;
-        }
-
-        /* Botones de Acción e Interactividad */
         .btn-siguiente {
             background: linear-gradient(135deg, #112344 0%, #1a3564 100%);
             color: white;
             border: 1px solid #bfa15f;
-            padding: 15px 35px;
+            padding: 14px 30px;
             border-radius: 30px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 25px;
             box-shadow: 0 5px 15px rgba(17,35,68,0.3);
             width: 85%;
-            transition: all 0.2s;
+            position: relative;
+        }
+        /* Detalle del lazo/moño dorado en el botón de portada */
+        .btn-siguiente.con-lazo::before {
+            content: "🎗️";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+        .btn-retroceder {
+            background: transparent;
+            color: #718096;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 5px;
         }
         .btn-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 90%;
-            padding: 15px;
-            margin: 10px 0;
+            width: 85%;
+            padding: 14px;
             border-radius: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            transition: transform 0.1s;
-        }
-        .btn-siguiente:active, .btn-link:active {
-            transform: scale(0.97);
         }
         .btn-maps { background-color: #112344; color: white; border: 1px solid #bfa15f; }
         .btn-wsp { background-color: #25D366; color: white; }
 
-        /* Puntos Indicadores Inferiores */
+        /* Indicador de páginas */
         .indicadores {
             position: absolute;
-            bottom: 25px;
+            bottom: 20px;
             left: 0;
             width: 100%;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             z-index: 10;
         }
-        .punto {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background-color: #cbd5e1;
-            transition: all 0.3s;
-        }
-        .punto.activo { background-color: #bfa15f; width: 22px; border-radius: 5px; }
+        .punto { width: 8px; height: 8px; border-radius: 50%; background-color: #cbd5e1; transition: all 0.3s; }
+        .punto.activo { background-color: #bfa15f; width: 20px; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -253,79 +278,46 @@
     <audio id="bg-music" src="musica.mp3" loop></audio>
 
     <div class="invitacion-container">
+        <!-- Cortinaje acogedor superior -->
+        <div class="cortina-superior"></div>
+        
         <button class="music-btn" id="music-toggle" onclick="toggleMusic()">🎵</button>
 
-        <!-- PAGINA 1: MENSAJE BREVE -->
+        <!-- PÁGINA 1: PORTADA PRINCIPAL DE IMPACTO -->
         <div class="pantalla activa" id="pag1">
             <div class="marco-decorativo"></div>
-            <p class="oro-texto">BIENVENIDO</p>
-            <h1>Una Vida Bendecida</h1>
+            <p class="oro-texto">MIS 50 AÑOS</p>
+            <h1>Enrique Cisneros</h1>
+            <img src="foto_gala.png" alt="Enrique Cisneros" class="foto-gala">
             <p class="mensaje-bienvenida">
-                "Hay momentos en la vida que son inolvidables, y compartirlos con las personas que más amamos los hace eternos. Te invito a acompañarme en esta noche tan especial."
+                "Hay momentos en la vida inolvidables, y compartirlos con quienes más amamos los hace eternos."
             </p>
-            <button class="btn-siguiente" onclick="irAPagina(2)">Abrir Invitación ✨</button>
+            <div class="grupo-botones">
+                <button class="btn-siguiente con-lazo" onclick="irAPagina(2)">¡Abrir Invitación! ✨</button>
+                            </div>
         </div>
 
-        <!-- PAGINA 2: FOTO DE GALA PRINCIPAL -->
+        <!-- PÁGINA 2: EL CARRETE DE FOTOS AUTOMÁTICO -->
         <div class="pantalla" id="pag2">
             <div class="marco-decorativo"></div>
-            <p class="oro-texto">CELEBREMOS A</p>
-            <h1>Enrique Cisneros</h1>
-            <div class="edad-grande">50</div>
-            <img src="foto_gala.png" alt="Enrique Cisneros" class="foto-gala">
-            <button class="btn-siguiente" onclick="irAPagina(3)">Ver Historia ⏳</button>
-        </div>
+            <p class="oro-texto">UN VIAJE EN EL TIEMPO</p>
+            
+            <div class="slider-wrapper">
+                <img src="foto1.png" class="slider-img active" data-texto="Su Juventud y Grandes Sueños" alt="Etapa 1">
+                <img src="foto2.png" class="slider-img" data-texto="Trayectoria y Lindos Recuerdos" alt="Etapa 2">
+                <img src="foto3.png" class="slider-img" data-texto="Forjando Caminos con Elegancia" alt="Etapa 3">
+                <img src="foto4.png" class="slider-img" data-texto="Su Presente Lleno de Vida" alt="Etapa 4">
+            </div>
+            
+            <div class="etiqueta-foto" id="etiqueta-dinamica">Su Juventud y Grandes Sueños</div>
 
-        <!-- PAGINAS DE HISTORIA FOTOGRÁFICA -->
+            <div class="grupo-botones">
+                <button class="btn-siguiente" onclick="irAPagina(3)">Ver Datos del Evento 📍</button>
+                <button class="btn-retroceder" onclick="irAPagina(1)">Atrás</button>
+            </div>
+        </div>
+        <!-- PÁGINA 3: DATOS FINALES E INVITACIÓN -->
         <div class="pantalla" id="pag3">
-            <div class="marco-decorativo"></div>
-            <p class="oro-texto">NUESTRA HISTORIA</p>
-            <img src="foto1.png" alt="Juventud" class="galeria-etapa">
-            <div class="etiqueta-foto">Su Juventud y Metas</div>
-            <button class="btn-siguiente" onclick="irAPagina(4)">Siguiente Época ➡️</button>
-        </div>
-
-        <div class="pantalla" id="pag4">
-            <div class="marco-decorativo"></div>
-            <p class="oro-texto">NUESTRA HISTORIA</p>
-            <img src="foto2.png" alt="Etapa 2" class="galeria-etapa">
-            <div class="etiqueta-foto">Grandes Momentos</div>
-            <button class="btn-siguiente" onclick="irAPagina(5)">Siguiente Época ➡️</button>
-        </div>
-
-        <div class="pantalla" id="pag5">
-            <div class="marco-decorativo"></div>
-                        <p class="oro-texto">NUESTRA HISTORIA</p>
-            <img src="foto1.png" alt="Juventud" class="galeria-etapa">
-            <div class="etiqueta-foto">Su Juventud y Metas</div>
-            <button class="btn-siguiente" onclick="irAPagina(4)">Siguiente Época ➡️</button>
-        </div>
-
-        <div class="pantalla" id="pag4">
-            <div class="marco-decorativo"></div>
-            <p class="oro-texto">NUESTRA HISTORIA</p>
-            <img src="foto2.png" alt="Etapa 2" class="galeria-etapa">
-            <div class="etiqueta-foto">Grandes Momentos</div>
-            <button class="btn-siguiente" onclick="irAPagina(5)">Siguiente Época ➡️</button>
-        </div>
-
-        <div class="pantalla" id="pag5">
-            <div class="marco-decorativo"></div>
-            <p class="oro-texto">NUESTRA HISTORIA</p>
-            <img src="foto3.png" alt="Etapa 3" class="galeria-etapa">
-            <div class="etiqueta-foto">Trayectoria y Familia</div>
-            <button class="btn-siguiente" onclick="irAPagina(6)">Siguiente Época ➡️</button>
-        </div>
-
-        <div class="pantalla" id="pag6">
-            <div class="marco-decorativo"></div>
-            <p class="oro-texto">NUESTRA HISTORIA</p>
-            <img src="foto4.png" alt="Actualidad" class="galeria-etapa">
-            <div class="etiqueta-foto">Su Presente Lleno de Vida</div>
-            <button class="btn-siguiente" onclick="irAPagina(7)">Ver Datos del Evento 📍</button>
-        </div>
-
-        <div class="pantalla" id="pag7">
             <div class="marco-decorativo"></div>
             <p class="oro-texto">TE ESPERAMOS</p>
             
@@ -346,32 +338,34 @@
                 <p>Comas - Perú</p>
             </div>
 
-            <a href="https://goo.gl" target="_blank" class="btn-link btn-maps">
-                📍 Ver en Google Maps
-            </a>
+            <div class="grupo-botones">
+                <a href="https://goo.gl" target="_blank" class="btn-link btn-maps">
+                    📍 Ver en Google Maps
+                </a>
 
-            <!-- Recuerda cambiar el 51999999999 por el número real de tu hermana -->
-            <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">
-                💬 Confirmar Asistencia por WhatsApp
-            </a>
+                <!-- Recuerda cambiar el 51999999999 por el número de tu hermana -->
+                <a href="https://whatsapp.com" target="_blank" class="btn-link btn-wsp">
+                    💬 Confirmar Asistencia por WhatsApp
+                </a>
+                
+                <button class="btn-retroceder" onclick="irAPagina(2)">Atrás</button>
+            </div>
         </div>
+
+        <!-- Puntos indicadores inferiores -->
         <div class="indicadores">
             <div class="punto activo" id="p1"></div>
             <div class="punto" id="p2"></div>
             <div class="punto" id="p3"></div>
-            <div class="punto" id="p4"></div>
-            <div class="punto" id="p5"></div>
-            <div class="punto" id="p6"></div>
-            <div class="punto" id="p7"></div>
         </div>
     </div>
 
     <script>
         let paginaActual = 1;
-        const totalPaginas = 7;
+        const totalPaginas = 3;
 
         function irAPagina(numeroPagina) {
-            if(numeroPagina > totalPaginas) return;
+            if(numeroPagina > totalPaginas || numeroPagina < 1) return;
 
             for (let i = 1; i <= totalPaginas; i++) {
                 const pag = document.getElementById(`pag${i}`);
@@ -391,12 +385,29 @@
             paginaActual = numeroPagina;
         }
 
+        // Lógica del Slider de Fotos
+        const imagenes = document.querySelectorAll('.slider-img');
+        const etiqueta = document.getElementById('etiqueta-dinamica');
+        let indexActual = 0;
+
+        setInterval(() => {
+            if(imagenes.length > 0) {
+                imagenes[indexActual].classList.remove('active');
+                indexActual = (indexActual + 1) % imagenes.length;
+                imagenes[indexActual].classList.add('active');
+                
+                const nuevoTexto = imagenes[indexActual].getAttribute('data-texto');
+                if(etiqueta) etiqueta.innerText = nuevoTexto;
+            }
+        }, 2500);
+
+        // Lógica de Audio
         const musica = document.getElementById('bg-music');
         const botonMusica = document.getElementById('music-toggle');
 
         function toggleMusic() {
             if (musica.paused) {
-                musica.play().catch(error => console.log("Interacción requerida"));
+                musica.play().catch(err => console.log("Interacción requerida"));
                 botonMusica.classList.add('playing');
                 botonMusica.innerText = "⏸️";
             } else {
@@ -416,4 +427,3 @@
     </script>
 </body>
 </html>
-
