@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
@@ -9,10 +10,7 @@
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <meta
-        name="theme-color"
-        content="#0b1830"
-    >
+    <meta name="theme-color" content="#081426">
 
     <meta
         name="description"
@@ -21,12 +19,10 @@
 
     <!-- =========================================================
          VISTA PREVIA AL COMPARTIR
-         ========================================================= -->
+         Más adelante cambiaremos TU-DOMINIO por la dirección real.
+    ========================================================== -->
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <meta property="og:type" content="website">
 
     <meta
         property="og:title"
@@ -35,42 +31,22 @@
 
     <meta
         property="og:description"
-        content="Tienes una invitación especial. Te esperamos para celebrar juntos."
+        content="Una invitación especial para celebrar juntos sus 50 años."
     >
 
     <meta
         property="og:image"
-        content="https://dasdcyv.github.io/Carta-de-Invitacion/Enrique.cumple.png"
+        content="https://TU-DOMINIO.com/preview.jpg"
     >
 
     <meta
         property="og:url"
-        content="https://dasdcyv.github.io/Carta-de-Invitacion/"
-    >
-
-    <meta
-        property="og:site_name"
-        content="Enrique cumple 50 años"
+        content="https://TU-DOMINIO.com/"
     >
 
     <meta
         name="twitter:card"
         content="summary_large_image"
-    >
-
-    <meta
-        name="twitter:title"
-        content="Enrique cumple 50 años 🎉"
-    >
-
-    <meta
-        name="twitter:description"
-        content="Tienes una invitación especial."
-    >
-
-    <meta
-        name="twitter:image"
-        content="https://dasdcyv.github.io/Carta-de-Invitacion/Enrique.cumple.png"
     >
 
     <title>
@@ -82,50 +58,63 @@
 
         /* =========================================================
            1. VARIABLES
-           ========================================================= */
+        ========================================================== */
 
         :root {
 
-            --azul: #102344;
-            --azul-profundo: #081426;
-            --azul-claro: #203d6d;
+            --azul:
+                #102344;
 
-            --oro: #c5a45b;
-            --oro-claro: #e0c985;
+            --azul-profundo:
+                #07101e;
 
-            --blanco: #ffffff;
+            --azul-medio:
+                #1d3965;
 
-            --gris: #596579;
-            --gris-claro: #eef1f5;
+            --oro:
+                #c5a45b;
 
-            --verde-wsp: #25D366;
+            --oro-claro:
+                #e4cc8d;
+
+            --blanco:
+                #ffffff;
+
+            --gris:
+                #596579;
+
+            --gris-claro:
+                #eef1f5;
+
+            --verde-wsp:
+                #25D366;
+
+            --rojo-suave:
+                #9d5555;
 
             --sombra:
-                0 25px 70px rgba(0, 0, 0, 0.45);
+                0 25px 70px rgba(0, 0, 0, 0.42);
 
-            --radio: 22px;
+            --radio:
+                22px;
 
         }
 
 
         /* =========================================================
            2. RESET
-           ========================================================= */
+        ========================================================== */
 
         * {
-
             box-sizing: border-box;
-
             margin: 0;
             padding: 0;
-
         }
 
 
         html {
 
             width: 100%;
-
             min-height: 100%;
 
             background:
@@ -139,7 +128,6 @@
         body {
 
             width: 100%;
-
             min-height: 100vh;
             min-height: 100dvh;
 
@@ -150,10 +138,10 @@
 
             background:
                 radial-gradient(
-                    circle at 50% 20%,
-                    #20385f 0%,
+                    circle at 50% 15%,
+                    #29466f 0%,
                     #102344 38%,
-                    #070f1d 100%
+                    #070f1c 100%
                 );
 
             color:
@@ -181,21 +169,9 @@
         }
 
 
-        button:focus-visible,
-        a:focus-visible {
-
-            outline:
-                3px solid var(--oro);
-
-            outline-offset:
-                4px;
-
-        }
-
-
         /* =========================================================
            3. PANTALLA DE CARGA
-           ========================================================= */
+        ========================================================== */
 
         #loader {
 
@@ -203,19 +179,20 @@
 
             inset: 0;
 
-            z-index: 9999;
+            z-index: 99999;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             background:
                 radial-gradient(
                     circle at center,
-                    #20385f 0%,
+                    #213a63 0%,
                     #102344 45%,
-                    #070f1d 100%
+                    #060e1a 100%
                 );
 
             transition:
@@ -259,7 +236,7 @@
 
             border:
                 2px solid
-                rgba(197,164,91,0.25);
+                rgba(197, 164, 91, 0.22);
 
             border-top-color:
                 var(--oro);
@@ -279,7 +256,7 @@
                 4px;
 
             font-size:
-                0.72rem;
+                0.7rem;
 
             text-transform:
                 uppercase;
@@ -288,8 +265,8 @@
 
 
         /* =========================================================
-           4. CONTENEDOR GENERAL
-           ========================================================= */
+           4. APLICACIÓN
+        ========================================================== */
 
         .app {
 
@@ -297,12 +274,16 @@
 
             width: 100%;
 
-            min-height: 100vh;
-            min-height: 100dvh;
+            min-height:
+                100vh;
+
+            min-height:
+                100dvh;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             padding:
@@ -331,7 +312,7 @@
                 620px;
 
             background:
-                #ffffff;
+                white;
 
             border:
                 2px solid var(--oro);
@@ -353,7 +334,7 @@
 
         /* =========================================================
            5. FONDO DECORATIVO
-           ========================================================= */
+        ========================================================== */
 
         .fondo-puntos {
 
@@ -361,11 +342,10 @@
 
             inset: 0;
 
-            pointer-events:
-                none;
+            pointer-events: none;
 
             opacity:
-                0.35;
+                0.28;
 
             background-image:
                 radial-gradient(
@@ -387,11 +367,11 @@
             position: absolute;
 
             inset:
-                22px;
+                21px;
 
             border:
                 1px solid
-                rgba(197,164,91,0.35);
+                rgba(197,164,91,0.36);
 
             border-radius:
                 16px;
@@ -400,24 +380,21 @@
                 none;
 
             z-index:
-                20;
+                30;
 
         }
 
 
         /* =========================================================
            6. BOTÓN DE MÚSICA
-           ========================================================= */
+        ========================================================== */
 
         .music-btn {
 
             position: absolute;
 
             top:
-                max(
-                    18px,
-                    env(safe-area-inset-top)
-                );
+                max(18px, env(safe-area-inset-top));
 
             right:
                 18px;
@@ -435,7 +412,8 @@
                 50%;
 
             border:
-                2px solid var(--oro);
+                2px solid
+                var(--oro);
 
             background:
                 var(--azul);
@@ -469,14 +447,6 @@
         }
 
 
-        .music-btn:hover {
-
-            background:
-                var(--azul-claro);
-
-        }
-
-
         .music-btn:active {
 
             transform:
@@ -494,28 +464,105 @@
 
 
         /* =========================================================
-           7. PANTALLAS
-           ========================================================= */
+           7. BOTÓN PARA VOLVER A LA CARTA
+        ========================================================== */
 
-        .pantalla {
+        .carta-btn {
 
             position: absolute;
 
-            inset: 0;
+            top:
+                max(18px, env(safe-area-inset-top));
 
-            z-index: 2;
+            left:
+                18px;
 
-            display: flex;
+            z-index:
+                100;
 
-            flex-direction: column;
+            min-width:
+                46px;
 
-            align-items: center;
+            height:
+                46px;
 
-            justify-content: flex-start;
+            padding:
+                0 13px;
 
-            overflow-y: auto;
+            border-radius:
+                24px;
 
-            overflow-x: hidden;
+            border:
+                1px solid
+                rgba(197,164,91,0.8);
+
+            background:
+                rgba(255,255,255,0.94);
+
+            color:
+                var(--azul);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.76rem;
+
+            font-weight:
+                700;
+
+            cursor:
+                pointer;
+
+            box-shadow:
+                0 6px 18px
+                rgba(0,0,0,0.12);
+
+            transition:
+                transform 0.2s ease;
+
+        }
+
+
+        .carta-btn:active {
+
+            transform:
+                scale(0.94);
+
+        }
+
+
+        /* =========================================================
+           8. PANTALLAS
+        ========================================================== */
+
+        .pantalla {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            z-index:
+                2;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            overflow-y:
+                auto;
+
+            overflow-x:
+                hidden;
 
             padding:
                 82px
@@ -550,17 +597,11 @@
             scrollbar-width:
                 none;
 
-            overscroll-behavior:
-                contain;
-
         }
 
 
         .pantalla::-webkit-scrollbar {
-
-            display:
-                none;
-
+            display: none;
         }
 
 
@@ -595,8 +636,8 @@
 
 
         /* =========================================================
-           8. TIPOGRAFÍA
-           ========================================================= */
+           9. TIPOGRAFÍA
+        ========================================================== */
 
         .etiqueta-oro {
 
@@ -656,7 +697,7 @@
 
             font-size:
                 clamp(
-                    1.55rem,
+                    1.5rem,
                     7vw,
                     2.1rem
                 );
@@ -712,8 +753,8 @@
 
 
         /* =========================================================
-           9. PORTADA
-           ========================================================= */
+           10. PORTADA
+        ========================================================== */
 
         .portada {
 
@@ -726,10 +767,13 @@
         .corona {
 
             font-size:
-                2.2rem;
+                2rem;
 
             margin-bottom:
-                10px;
+                8px;
+
+            color:
+                var(--oro);
 
             animation:
                 flotar 3s ease-in-out infinite;
@@ -740,7 +784,7 @@
         .foto-gala {
 
             width:
-                min(82%, 300px);
+                min(80%, 295px);
 
             aspect-ratio:
                 4 / 4.6;
@@ -755,7 +799,8 @@
                 18px;
 
             border:
-                2px solid var(--oro);
+                2px solid
+                var(--oro);
 
             margin:
                 14px 0 18px;
@@ -770,9 +815,17 @@
         }
 
 
+        .mensaje-bienvenida {
+
+            max-width:
+                340px;
+
+        }
+
+
         /* =========================================================
-           10. BOTONES
-           ========================================================= */
+           11. BOTONES
+        ========================================================== */
 
         .grupo-botones {
 
@@ -789,7 +842,7 @@
                 center;
 
             gap:
-                11px;
+                10px;
 
             margin-top:
                 18px;
@@ -809,7 +862,8 @@
                 30px;
 
             border:
-                1px solid var(--oro);
+                1px solid
+                var(--oro);
 
             padding:
                 13px 22px;
@@ -937,8 +991,8 @@
 
 
         /* =========================================================
-           11. GALERÍA
-           ========================================================= */
+           12. GALERÍA
+        ========================================================== */
 
         .galeria {
 
@@ -969,7 +1023,8 @@
                 hidden;
 
             border:
-                2px solid var(--oro);
+                2px solid
+                var(--oro);
 
             box-shadow:
                 0 15px 30px
@@ -977,9 +1032,6 @@
 
             background:
                 #edf0f4;
-
-            touch-action:
-                pan-y;
 
         }
 
@@ -1011,12 +1063,6 @@
                 opacity 0.7s ease,
                 transform 3s ease;
 
-            user-select:
-                none;
-
-            -webkit-user-drag:
-                none;
-
         }
 
 
@@ -1036,11 +1082,14 @@
             display:
                 inline-block;
 
+            max-width:
+                95%;
+
             margin-top:
                 12px;
 
             padding:
-                7px 18px;
+                8px 17px;
 
             border-radius:
                 20px;
@@ -1052,7 +1101,8 @@
                 var(--azul);
 
             border:
-                1px solid var(--oro);
+                1px solid
+                var(--oro);
 
             font-family:
                 Arial,
@@ -1064,6 +1114,9 @@
 
             font-weight:
                 700;
+
+            line-height:
+                1.35;
 
         }
 
@@ -1129,8 +1182,8 @@
 
 
         /* =========================================================
-           12. INFORMACIÓN
-           ========================================================= */
+           13. INFORMACIÓN
+        ========================================================== */
 
         .info-lista {
 
@@ -1144,7 +1197,7 @@
                 column;
 
             gap:
-                13px;
+                12px;
 
             margin-top:
                 12px;
@@ -1171,7 +1224,8 @@
                 );
 
             border:
-                1px solid #e5e8ed;
+                1px solid
+                #e5e8ed;
 
             box-shadow:
                 0 8px 20px
@@ -1183,7 +1237,7 @@
         .info-icono {
 
             font-size:
-                1.35rem;
+                1.3rem;
 
             margin-bottom:
                 4px;
@@ -1237,8 +1291,8 @@
 
 
         /* =========================================================
-           13. CONFIRMACIÓN
-           ========================================================= */
+           14. CONFIRMACIÓN
+        ========================================================== */
 
         .confirmacion {
 
@@ -1279,8 +1333,8 @@
 
 
         /* =========================================================
-           14. PÁGINA FINAL
-           ========================================================= */
+           15. FINAL
+        ========================================================== */
 
         .final {
 
@@ -1367,8 +1421,8 @@
 
 
         /* =========================================================
-           15. INDICADORES PRINCIPALES
-           ========================================================= */
+           16. INDICADORES
+        ========================================================== */
 
         .indicadores {
 
@@ -1382,10 +1436,7 @@
                 0;
 
             bottom:
-                max(
-                    17px,
-                    env(safe-area-inset-bottom)
-                );
+                max(17px, env(safe-area-inset-bottom));
 
             z-index:
                 50;
@@ -1444,8 +1495,8 @@
 
 
         /* =========================================================
-           16. INTRO / SOBRE
-           ========================================================= */
+           17. CARTA / SOBRE INICIAL
+        ========================================================== */
 
         .intro {
 
@@ -1476,14 +1527,14 @@
             background:
                 radial-gradient(
                     circle at center,
-                    #213a63 0%,
-                    #102344 42%,
+                    #27466f 0%,
+                    #102344 43%,
                     #060e1b 100%
                 );
 
             transition:
-                opacity 0.8s ease,
-                visibility 0.8s ease;
+                opacity 0.7s ease,
+                visibility 0.7s ease;
 
         }
 
@@ -1516,6 +1567,17 @@
         }
 
 
+        /*
+         * NUEVO SOBRE
+         *
+         * La estructura se separa en:
+         * - cuerpo
+         * - carta interior
+         * - solapa
+         *
+         * Esto evita el hueco extraño de la versión anterior.
+         */
+
         .sobre {
 
             position:
@@ -1525,10 +1587,13 @@
                 100%;
 
             aspect-ratio:
-                1.35 / 1;
+                1.42 / 1;
 
-            margin-bottom:
-                30px;
+            margin:
+                0 auto 30px;
+
+            perspective:
+                1000px;
 
         }
 
@@ -1538,43 +1603,39 @@
             position:
                 absolute;
 
-            left:
-                0;
+            inset:
+                15% 0 0 0;
 
-            right:
-                0;
+            border:
+                2px solid
+                var(--oro);
 
-            bottom:
-                0;
-
-            height:
-                74%;
+            border-radius:
+                9px 9px 17px 17px;
 
             background:
                 linear-gradient(
                     145deg,
-                    #ffffff,
-                    #edf0f4
+                    #ffffff 0%,
+                    #f0f2f5 100%
                 );
 
-            border:
-                2px solid var(--oro);
-
-            border-radius:
-                8px
-                8px
-                16px
-                16px;
-
             box-shadow:
-                0 25px 50px
+                0 25px 55px
                 rgba(0,0,0,0.35);
 
             overflow:
                 hidden;
 
+            z-index:
+                2;
+
         }
 
+
+        /*
+         * Pliegues decorativos del sobre.
+         */
 
         .sobre-cuerpo::before,
         .sobre-cuerpo::after {
@@ -1586,16 +1647,16 @@
                 absolute;
 
             bottom:
-                0;
+                -8%;
 
             width:
-                72%;
+                78%;
 
             height:
                 2px;
 
             background:
-                var(--oro);
+                rgba(197,164,91,0.85);
 
         }
 
@@ -1603,7 +1664,7 @@
         .sobre-cuerpo::before {
 
             left:
-                -18%;
+                -19%;
 
             transform:
                 rotate(31deg);
@@ -1614,7 +1675,7 @@
         .sobre-cuerpo::after {
 
             right:
-                -18%;
+                -19%;
 
             transform:
                 rotate(-31deg);
@@ -1622,19 +1683,105 @@
         }
 
 
+        /*
+         * Carta que se encuentra dentro del sobre.
+         */
+
+        .carta-interior {
+
+            position:
+                absolute;
+
+            left:
+                9%;
+
+            right:
+                9%;
+
+            bottom:
+                8%;
+
+            height:
+                68%;
+
+            border-radius:
+                6px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #fffefb,
+                    #f3f0e8
+                );
+
+            border:
+                1px solid
+                rgba(197,164,91,0.55);
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.12);
+
+            z-index:
+                3;
+
+            transform:
+                translateY(58%);
+
+            transition:
+                transform 1s
+                cubic-bezier(.22,.8,.28,1);
+
+        }
+
+
+        .carta-interior::before {
+
+            content:
+                "✦";
+
+            position:
+                absolute;
+
+            top:
+                24%;
+
+            left:
+                50%;
+
+            transform:
+                translateX(-50%);
+
+            color:
+                var(--oro);
+
+            font-size:
+                1.7rem;
+
+        }
+
+
+        /*
+         * Solapa superior.
+         *
+         * En estado cerrado cubre el centro.
+         * Al abrirse se eleva y desaparece sin crear
+         * el vacío visual de la versión anterior.
+         */
+
         .solapa {
 
             position:
                 absolute;
 
             top:
-                8%;
+                15%;
 
             left:
-                5%;
+                0;
 
             width:
-                90%;
+                100%;
 
             height:
                 62%;
@@ -1642,12 +1789,13 @@
             background:
                 linear-gradient(
                     145deg,
-                    #fdfdfd,
-                    #e6e9ee
+                    #ffffff,
+                    #e7e9ed
                 );
 
             border:
-                2px solid var(--oro);
+                2px solid
+                var(--oro);
 
             clip-path:
                 polygon(
@@ -1657,17 +1805,25 @@
                 );
 
             transform-origin:
-                top center;
-
-            transition:
-                transform 1.1s
-                cubic-bezier(.68,-0.25,.2,1.2);
+                50% 0%;
 
             z-index:
-                5;
+                7;
+
+            transition:
+                transform 0.95s
+                cubic-bezier(.2,.75,.25,1),
+                opacity 0.55s ease;
+
+            backface-visibility:
+                hidden;
 
         }
 
+
+        /*
+         * Sello.
+         */
 
         .sello {
 
@@ -1678,16 +1834,16 @@
                 50%;
 
             top:
-                48%;
+                47%;
 
             transform:
-                translate(-50%, -50%);
+                translate(-50%,-50%);
 
             width:
-                72px;
+                70px;
 
             height:
-                72px;
+                70px;
 
             border-radius:
                 50%;
@@ -1696,7 +1852,8 @@
                 var(--azul);
 
             border:
-                2px solid var(--oro);
+                2px solid
+                var(--oro);
 
             color:
                 var(--oro-claro);
@@ -1711,26 +1868,34 @@
                 center;
 
             font-size:
-                1.7rem;
+                1.65rem;
 
             box-shadow:
                 0 8px 18px
-                rgba(0,0,0,0.2);
+                rgba(0,0,0,0.22);
 
             z-index:
                 10;
 
             transition:
-                transform 0.6s ease,
+                transform 0.65s ease,
                 opacity 0.5s ease;
 
         }
 
 
+        /*
+         * ESTADO ABIERTO
+         */
+
         .sobre.abierto .solapa {
 
             transform:
-                rotateX(180deg);
+                rotateX(180deg)
+                translateY(-4px);
+
+            opacity:
+                0.96;
 
             z-index:
                 1;
@@ -1738,10 +1903,18 @@
         }
 
 
+        .sobre.abierto .carta-interior {
+
+            transform:
+                translateY(-28%);
+
+        }
+
+
         .sobre.abierto .sello {
 
             transform:
-                translate(-50%, -50%)
+                translate(-50%,-50%)
                 scale(0);
 
             opacity:
@@ -1805,7 +1978,8 @@
                 30px;
 
             border:
-                1px solid var(--oro);
+                1px solid
+                var(--oro);
 
             background:
                 linear-gradient(
@@ -1850,16 +2024,14 @@
 
 
         /* =========================================================
-           17. ANIMACIONES
-           ========================================================= */
+           18. ANIMACIONES
+        ========================================================== */
 
         @keyframes girar {
 
             to {
-
                 transform:
                     rotate(360deg);
-
             }
 
         }
@@ -1868,10 +2040,8 @@
         @keyframes musicaGirando {
 
             to {
-
                 transform:
                     rotate(360deg);
-
             }
 
         }
@@ -1881,17 +2051,13 @@
 
             0%,
             100% {
-
                 transform:
                     translateY(0);
-
             }
 
             50% {
-
                 transform:
                     translateY(-6px);
-
             }
 
         }
@@ -1901,25 +2067,21 @@
 
             0%,
             100% {
-
                 transform:
                     scale(1);
-
             }
 
             50% {
-
                 transform:
                     scale(1.12);
-
             }
 
         }
 
 
         /* =========================================================
-           18. CELULARES PEQUEÑOS
-           ========================================================= */
+           19. CELULARES PEQUEÑOS
+        ========================================================== */
 
         @media (max-height: 720px) {
 
@@ -1947,10 +2109,10 @@
             .foto-gala {
 
                 width:
-                    min(70%, 235px);
+                    min(68%, 225px);
 
                 margin:
-                    8px 0 12px;
+                    7px 0 11px;
 
             }
 
@@ -1969,7 +2131,7 @@
             .slider {
 
                 max-height:
-                    47dvh;
+                    46dvh;
 
             }
 
@@ -1993,7 +2155,7 @@
             .grupo-botones {
 
                 margin-top:
-                    10px;
+                    9px;
 
                 gap:
                     7px;
@@ -2011,12 +2173,36 @@
 
             }
 
+
+            .sobre-wrapper {
+
+                width:
+                    min(86vw, 340px);
+
+            }
+
+
+            .sobre {
+
+                margin-bottom:
+                    21px;
+
+            }
+
+
+            .intro-subtitulo {
+
+                margin-bottom:
+                    17px;
+
+            }
+
         }
 
 
         /* =========================================================
-           19. CELULARES MUY PEQUEÑOS
-           ========================================================= */
+           20. TELÉFONOS MUY PEQUEÑOS
+        ========================================================== */
 
         @media (max-width: 360px) {
 
@@ -2050,7 +2236,7 @@
             .foto-gala {
 
                 width:
-                    65%;
+                    64%;
 
             }
 
@@ -2063,12 +2249,23 @@
 
             }
 
+
+            .carta-btn {
+
+                padding:
+                    0 10px;
+
+                font-size:
+                    0.7rem;
+
+            }
+
         }
 
 
         /* =========================================================
-           20. ESCRITORIO
-           ========================================================= */
+           21. ESCRITORIO
+        ========================================================== */
 
         @media (min-width: 700px) {
 
@@ -2094,12 +2291,20 @@
 
             }
 
+
+            .carta-btn:hover {
+
+                transform:
+                    translateY(-2px);
+
+            }
+
         }
 
 
         /* =========================================================
-           21. MENOS ANIMACIÓN
-           ========================================================= */
+           22. MENOS ANIMACIÓN
+        ========================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -2129,19 +2334,14 @@
 
 
     <!-- =========================================================
-         PANTALLA DE CARGA
-         ========================================================= -->
+         CARGA
+    ========================================================== -->
 
-    <div
-        id="loader"
-        aria-hidden="true"
-    >
+    <div id="loader">
 
         <div class="loader-contenido">
 
-            <div
-                class="loader-anillo"
-            ></div>
+            <div class="loader-anillo"></div>
 
             <div class="loader-texto">
                 Preparando la invitación
@@ -2153,34 +2353,30 @@
 
 
     <!-- =========================================================
-         INTRO / SOBRE
-         ========================================================= -->
+         CARTA / SOBRE INICIAL
+    ========================================================== -->
 
     <section
         class="intro"
         id="intro"
-        aria-label="Introducción de la invitación"
+        aria-label="Carta de invitación"
     >
 
         <div class="sobre-wrapper">
+
 
             <div
                 class="sobre"
                 id="sobre"
             >
 
-                <div
-                    class="sobre-cuerpo"
-                ></div>
+                <div class="sobre-cuerpo"></div>
 
-                <div
-                    class="solapa"
-                ></div>
+                <div class="carta-interior"></div>
 
-                <div
-                    class="sello"
-                    aria-hidden="true"
-                >
+                <div class="solapa"></div>
+
+                <div class="sello">
                     ✦
                 </div>
 
@@ -2193,7 +2389,7 @@
 
 
             <p class="intro-subtitulo">
-                Tienes una invitación especial
+                Una celebración, una vida y muchos recuerdos
             </p>
 
 
@@ -2205,41 +2401,50 @@
                 💌 Abrir invitación
             </button>
 
+
         </div>
 
     </section>
 
 
     <!-- =========================================================
-         APLICACIÓN
-         ========================================================= -->
+         APLICACIÓN PRINCIPAL
+    ========================================================== -->
 
     <main class="app">
 
+
         <div class="invitacion">
 
-            <div
-                class="fondo-puntos"
-                aria-hidden="true"
-            ></div>
 
+            <div class="fondo-puntos"></div>
 
-            <div
-                class="marco"
-                aria-hidden="true"
-            ></div>
+            <div class="marco"></div>
 
 
             <!-- =================================================
-                 BOTÓN DE MÚSICA
-                 ================================================== -->
+                 VOLVER A LA CARTA
+            ================================================== -->
+
+            <button
+                class="carta-btn"
+                id="volverCarta"
+                type="button"
+                aria-label="Volver a la carta inicial"
+            >
+                💌 Carta
+            </button>
+
+
+            <!-- =================================================
+                 MÚSICA
+            ================================================== -->
 
             <button
                 class="music-btn"
                 id="musicToggle"
                 type="button"
-                aria-label="Activar música"
-                aria-pressed="false"
+                aria-label="Activar o pausar música"
             >
                 🎵
             </button>
@@ -2247,18 +2452,15 @@
 
             <!-- =================================================
                  PÁGINA 1 - PORTADA
-                 ================================================== -->
+            ================================================== -->
 
             <section
                 class="pantalla activa portada"
                 id="pag1"
-                aria-label="Portada"
             >
 
-                <div
-                    class="corona"
-                    aria-hidden="true"
-                >
+
+                <div class="corona">
                     ✦
                 </div>
 
@@ -2276,21 +2478,25 @@
 
                 <img
                     src="foto_gala.png"
-                    alt="Enrique Cisneros, homenajeado de la celebración"
+                    alt="Enrique Cisneros"
                     class="foto-gala"
                     loading="eager"
-                    decoding="async"
                 >
 
 
-                <p class="texto-italico">
-                    "Hay momentos en la vida inolvidables,
-                    y compartirlos con quienes más amamos
-                    los hace eternos."
+                <p class="texto-italico mensaje-bienvenida">
+
+                    "La vida se construye con momentos,
+                    caminos y personas que dejan huella.
+                    Hoy quiero celebrar medio siglo de
+                    recuerdos y agradecer a quienes han
+                    sido parte de ellos."
+
                 </p>
 
 
                 <div class="grupo-botones">
+
 
                     <button
                         class="btn btn-principal"
@@ -2300,20 +2506,22 @@
                         Continuar ✨
                     </button>
 
+
                 </div>
+
 
             </section>
 
 
             <!-- =================================================
-                 PÁGINA 2 - HISTORIA / GALERÍA
-                 ================================================== -->
+                 PÁGINA 2 - HISTORIA
+            ================================================== -->
 
             <section
                 class="pantalla"
                 id="pag2"
-                aria-label="Galería de recuerdos"
             >
+
 
                 <p class="etiqueta-oro">
                     Un viaje en el tiempo
@@ -2321,68 +2529,83 @@
 
 
                 <h2>
-                    Momentos que cuentan una vida
+                    Una vida hecha de momentos
                 </h2>
+
+
+                <p
+                    class="texto"
+                    style="margin-bottom: 10px;"
+                >
+                    Cada fotografía guarda una etapa,
+                    un recuerdo y una pequeña parte
+                    del camino recorrido.
+                </p>
 
 
                 <div class="galeria">
 
+
                     <div
                         class="slider"
                         id="slider"
-                        aria-live="polite"
                     >
+
+
+                        <!-- FOTO 1 -->
 
                         <img
                             src="foto1.png"
                             class="slider-img activa"
-                            alt="Recuerdo de Enrique"
-                            data-texto="Su juventud y grandes sueños"
-                            loading="eager"
-                            decoding="async"
+                            alt="Enrique durante su juventud"
+                            data-texto="Sus primeros logros, cuando comenzaba a construir sus propios caminos."
+                            loading="lazy"
                         >
 
+
+                        <!-- FOTO 2 -->
 
                         <img
                             src="foto2.png"
                             class="slider-img"
-                            alt="Recuerdo de Enrique"
-                            data-texto="Trayectoria y lindos recuerdos"
+                            alt="Enrique durante una etapa de su juventud"
+                            data-texto="Los años fueron pasando y la vida comenzó a llenarse de nuevas experiencias y recuerdos."
                             loading="lazy"
-                            decoding="async"
                         >
 
+
+                        <!-- FOTO 3 -->
 
                         <img
                             src="foto3.png"
                             class="slider-img"
-                            alt="Recuerdo de Enrique"
-                            data-texto="Forjando caminos con elegancia"
+                            alt="Enrique acompañando un momento especial"
+                            data-texto="También hubo momentos especiales para compartir y acompañar a quienes forman parte de su historia."
                             loading="lazy"
-                            decoding="async"
                         >
 
+
+                        <!-- FOTO 4 -->
 
                         <img
                             src="foto4.png"
                             class="slider-img"
-                            alt="Recuerdo de Enrique"
-                            data-texto="Su presente lleno de vida"
+                            alt="Enrique en una etapa más reciente"
+                            data-texto="Con el paso de los años, nuevas etapas, nuevas historias y muchas razones para seguir sonriendo."
                             loading="lazy"
-                            decoding="async"
                         >
 
 
-                        <!-- NUEVA FOTO -->
+                        <!-- FOTO 5 -->
 
                         <img
                             src="Enrique.cumple.png"
                             class="slider-img"
-                            alt="Enrique celebrando junto a familiares y amigos"
-                            data-texto="Un recuerdo especial de su cumpleaños"
+                            alt="Enrique durante una celebración"
+                            data-texto="Y aquí estamos: celebrando la vida, los recuerdos y todo lo que todavía está por venir."
                             loading="lazy"
-                            decoding="async"
                         >
+
 
                     </div>
 
@@ -2391,20 +2614,21 @@
                         class="texto-foto"
                         id="textoFoto"
                     >
-                        Su juventud y grandes sueños
+                        Sus primeros logros, cuando comenzaba a construir sus propios caminos.
                     </div>
 
 
                     <div
                         class="controles-galeria"
                         id="controlesGaleria"
-                        aria-label="Seleccionar fotografía"
                     ></div>
+
 
                 </div>
 
 
                 <div class="grupo-botones">
+
 
                     <button
                         class="btn btn-principal"
@@ -2423,20 +2647,22 @@
                         Atrás
                     </button>
 
+
                 </div>
+
 
             </section>
 
 
             <!-- =================================================
                  PÁGINA 3 - INFORMACIÓN
-                 ================================================== -->
+            ================================================== -->
 
             <section
                 class="pantalla"
                 id="pag3"
-                aria-label="Información de la celebración"
             >
+
 
                 <p class="etiqueta-oro">
                     Celebración de gala
@@ -2453,18 +2679,13 @@
 
                     <div class="info-card">
 
-                        <div
-                            class="info-icono"
-                            aria-hidden="true"
-                        >
+                        <div class="info-icono">
                             📅
                         </div>
-
 
                         <div class="info-titulo">
                             Cuándo
                         </div>
-
 
                         <div class="info-texto">
                             Sábado, 24 de Octubre
@@ -2475,18 +2696,13 @@
 
                     <div class="info-card">
 
-                        <div
-                            class="info-icono"
-                            aria-hidden="true"
-                        >
+                        <div class="info-icono">
                             🕘
                         </div>
-
 
                         <div class="info-titulo">
                             Hora
                         </div>
-
 
                         <div class="info-texto">
                             Iniciará a las 9:00 PM
@@ -2497,18 +2713,13 @@
 
                     <div class="info-card">
 
-                        <div
-                            class="info-icono"
-                            aria-hidden="true"
-                        >
+                        <div class="info-icono">
                             📍
                         </div>
-
 
                         <div class="info-titulo">
                             Lugar
                         </div>
-
 
                         <div class="info-texto">
                             Calle 14 n.º 133<br>
@@ -2517,6 +2728,7 @@
                         </div>
 
                     </div>
+
 
                 </div>
 
@@ -2529,18 +2741,16 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="btn btn-maps"
-                        aria-label="Abrir ubicación de la celebración en Google Maps"
                     >
                         📍 Ver ubicación en Google Maps
                     </a>
 
 
                     <a
-                        href="https://wa.me/51940628577?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20n%C3%BAmero%2050%20de%20Enrique.%20%C2%A1Ah%C3%AD%20estar%C3%A9%21"
+                        href="https://wa.me/51925188802?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20n%C3%BAmero%2050%20de%20Enrique.%20%C2%A1Ah%C3%AD%20estar%C3%A9%21"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="btn btn-wsp"
-                        aria-label="Confirmar asistencia por WhatsApp"
                     >
                         💬 Confirmar asistencia
                     </a>
@@ -2578,25 +2788,24 @@
                         Atrás
                     </button>
 
+
                 </div>
+
 
             </section>
 
 
             <!-- =================================================
-                 PÁGINA 4 - CIERRE
-                 ================================================== -->
+                 PÁGINA 4 - FINAL
+            ================================================== -->
 
             <section
                 class="pantalla final"
                 id="pag4"
-                aria-label="Mensaje final"
             >
 
-                <div
-                    class="final-corazones"
-                    aria-hidden="true"
-                >
+
+                <div class="final-corazones">
                     🥂
                 </div>
 
@@ -2611,23 +2820,25 @@
                 </h2>
 
 
-                <div
-                    class="final-linea"
-                    aria-hidden="true"
-                ></div>
+                <div class="final-linea"></div>
 
 
                 <p class="texto-italico">
-                    Tu presencia es el mejor regalo
-                    que le puedes dar a Enrique
-                    en este día tan especial.
+
+                    Que estos 50 años sean solo el comienzo
+                    de muchos recuerdos más, rodeado de
+                    las personas que hacen especial cada
+                    etapa de la vida.
+
                 </p>
 
 
                 <p class="frase-final">
-                    Gracias por ser parte de su vida
+
+                    Gracias por ser parte de su historia
                     y por acompañarlo en este momento
                     tan importante.
+
                 </p>
 
 
@@ -2638,6 +2849,7 @@
 
                 <div class="grupo-botones">
 
+
                     <button
                         class="btn btn-principal"
                         type="button"
@@ -2646,14 +2858,25 @@
                         Volver al inicio ✦
                     </button>
 
+
+                    <button
+                        class="btn btn-atras"
+                        type="button"
+                        onclick="irAPagina(3)"
+                    >
+                        Atrás
+                    </button>
+
+
                 </div>
+
 
             </section>
 
 
             <!-- =================================================
                  INDICADORES
-                 ================================================== -->
+            ================================================== -->
 
             <div
                 class="indicadores"
@@ -2661,23 +2884,16 @@
                 aria-hidden="true"
             >
 
-                <span
-                    class="indicador activo"
-                ></span>
+                <span class="indicador activo"></span>
 
-                <span
-                    class="indicador"
-                ></span>
+                <span class="indicador"></span>
 
-                <span
-                    class="indicador"
-                ></span>
+                <span class="indicador"></span>
 
-                <span
-                    class="indicador"
-                ></span>
+                <span class="indicador"></span>
 
             </div>
+
 
         </div>
 
@@ -2686,7 +2902,7 @@
 
     <!-- =========================================================
          MÚSICA
-         ========================================================= -->
+    ========================================================== -->
 
     <audio
         id="bgMusic"
@@ -2698,13 +2914,14 @@
 
     <!-- =========================================================
          JAVASCRIPT
-         ========================================================= -->
+    ========================================================== -->
 
     <script>
 
+
         /* =========================================================
-           VARIABLES PRINCIPALES
-           ========================================================= */
+           VARIABLES
+        ========================================================== */
 
         const totalPaginas = 4;
 
@@ -2716,11 +2933,9 @@
 
         let touchStartX = 0;
 
-        let touchStartY = 0;
-
         let touchEndX = 0;
 
-        let touchEndY = 0;
+        let cartaAbierta = false;
 
 
         const intro =
@@ -2733,6 +2948,10 @@
 
         const btnAbrir =
             document.getElementById("btnAbrir");
+
+
+        const volverCarta =
+            document.getElementById("volverCarta");
 
 
         const musica =
@@ -2765,7 +2984,7 @@
 
         /* =========================================================
            CARGA
-           ========================================================= */
+        ========================================================== */
 
         window.addEventListener("load", () => {
 
@@ -2773,7 +2992,7 @@
 
                 loader.classList.add("oculto");
 
-            }, 500);
+            }, 450);
 
 
             prepararGaleria();
@@ -2782,13 +3001,25 @@
 
 
         /* =========================================================
-           ABRIR SOBRE
-           ========================================================= */
+           ABRIR CARTA
+        ========================================================== */
 
         btnAbrir.addEventListener("click", () => {
 
+            if (cartaAbierta) {
+                return;
+            }
+
+
+            cartaAbierta = true;
+
+
             sobre.classList.add("abierto");
 
+
+            /*
+             * Damos tiempo a la animación del sobre.
+             */
 
             setTimeout(() => {
 
@@ -2796,56 +3027,61 @@
 
                 iniciarMusica();
 
-            }, 850);
+            }, 900);
 
         });
 
 
         /* =========================================================
+           VOLVER A LA CARTA
+        ========================================================== */
+
+        volverCarta.addEventListener("click", volverALaCarta);
+
+
+        function volverALaCarta() {
+
+            detenerGaleria();
+
+            intro.classList.remove("oculta");
+
+            /*
+             * Reiniciamos el sobre para que pueda
+             * volver a abrirse correctamente.
+             */
+
+            sobre.classList.remove("abierto");
+
+            cartaAbierta = false;
+
+        }
+
+
+        /* =========================================================
            MÚSICA
-           ========================================================= */
+        ========================================================== */
 
         function actualizarBotonMusica() {
 
-            if (!musica) return;
+            if (!musica) {
+                return;
+            }
 
 
             if (musica.paused) {
 
-                musicToggle.textContent =
-                    "🎵";
+                musicToggle.textContent = "🎵";
 
                 musicToggle.classList.remove(
                     "playing"
                 );
 
-                musicToggle.setAttribute(
-                    "aria-label",
-                    "Activar música"
-                );
-
-                musicToggle.setAttribute(
-                    "aria-pressed",
-                    "false"
-                );
-
             } else {
 
-                musicToggle.textContent =
-                    "⏸️";
+                musicToggle.textContent = "⏸️";
 
                 musicToggle.classList.add(
                     "playing"
-                );
-
-                musicToggle.setAttribute(
-                    "aria-label",
-                    "Pausar música"
-                );
-
-                musicToggle.setAttribute(
-                    "aria-pressed",
-                    "true"
                 );
 
             }
@@ -2855,7 +3091,9 @@
 
         function iniciarMusica() {
 
-            if (!musica) return;
+            if (!musica) {
+                return;
+            }
 
 
             musica
@@ -2876,7 +3114,9 @@
 
         function alternarMusica() {
 
-            if (!musica) return;
+            if (!musica) {
+                return;
+            }
 
 
             if (musica.paused) {
@@ -2907,21 +3147,9 @@
         );
 
 
-        musica.addEventListener(
-            "play",
-            actualizarBotonMusica
-        );
-
-
-        musica.addEventListener(
-            "pause",
-            actualizarBotonMusica
-        );
-
-
         /* =========================================================
            CAMBIAR DE PÁGINA
-           ========================================================= */
+        ========================================================== */
 
         function irAPagina(numero) {
 
@@ -2949,9 +3177,7 @@
 
 
             if (!actual || !siguiente) {
-
                 return;
-
             }
 
 
@@ -2965,15 +3191,23 @@
             );
 
 
-            paginaActual =
-                numero;
+            paginaActual = numero;
 
 
             actualizarIndicadores();
 
 
+            /*
+             * Volver arriba de la nueva pantalla.
+             */
+
             siguiente.scrollTop = 0;
 
+
+            /*
+             * La galería solo se mueve cuando
+             * estamos en la página 2.
+             */
 
             if (paginaActual === 2) {
 
@@ -2990,7 +3224,7 @@
 
         /* =========================================================
            INDICADORES
-           ========================================================= */
+        ========================================================== */
 
         function actualizarIndicadores() {
 
@@ -3005,8 +3239,7 @@
 
                     indicador.classList.toggle(
                         "activo",
-                        index ===
-                        paginaActual - 1
+                        index === paginaActual - 1
                     );
 
                 }
@@ -3016,8 +3249,8 @@
 
 
         /* =========================================================
-           GALERÍA
-           ========================================================= */
+           PREPARAR GALERÍA
+        ========================================================== */
 
         function prepararGaleria() {
 
@@ -3031,8 +3264,7 @@
             }
 
 
-            controlesGaleria.innerHTML =
-                "";
+            controlesGaleria.innerHTML = "";
 
 
             imagenes.forEach(
@@ -3044,12 +3276,12 @@
                         );
 
 
-                    punto.className =
-                        "dot-galeria";
-
-
                     punto.type =
                         "button";
+
+
+                    punto.className =
+                        "dot-galeria";
 
 
                     punto.setAttribute(
@@ -3089,15 +3321,12 @@
 
             mostrarFoto(0);
 
-
-            if (paginaActual === 2) {
-
-                iniciarGaleria();
-
-            }
-
         }
 
+
+        /* =========================================================
+           MOSTRAR FOTO
+        ========================================================== */
 
         function mostrarFoto(indice) {
 
@@ -3115,8 +3344,7 @@
                 (
                     indice +
                     imagenes.length
-                )
-                %
+                ) %
                 imagenes.length;
 
 
@@ -3142,8 +3370,7 @@
             ) {
 
                 textoFoto.textContent =
-                    imagenActual.dataset.texto ||
-                    "";
+                    imagenActual.dataset.texto || "";
 
             }
 
@@ -3168,6 +3395,10 @@
         }
 
 
+        /* =========================================================
+           SIGUIENTE FOTO
+        ========================================================== */
+
         function siguienteFoto() {
 
             mostrarFoto(
@@ -3176,6 +3407,10 @@
 
         }
 
+
+        /* =========================================================
+           GALERÍA AUTOMÁTICA
+        ========================================================== */
 
         function iniciarGaleria() {
 
@@ -3209,22 +3444,14 @@
 
         /* =========================================================
            SWIPE
-           ========================================================= */
+        ========================================================== */
 
         invitacion.addEventListener(
             "touchstart",
             (evento) => {
 
-                const touch =
-                    evento.changedTouches[0];
-
-
                 touchStartX =
-                    touch.screenX;
-
-
-                touchStartY =
-                    touch.screenY;
+                    evento.changedTouches[0].screenX;
 
             },
             {
@@ -3237,17 +3464,8 @@
             "touchend",
             (evento) => {
 
-                const touch =
-                    evento.changedTouches[0];
-
-
                 touchEndX =
-                    touch.screenX;
-
-
-                touchEndY =
-                    touch.screenY;
-
+                    evento.changedTouches[0].screenX;
 
                 procesarSwipe();
 
@@ -3260,24 +3478,12 @@
 
         function procesarSwipe() {
 
-            const diferenciaX =
-                touchEndX -
-                touchStartX;
+            const diferencia =
+                touchEndX - touchStartX;
 
-
-            const diferenciaY =
-                touchEndY -
-                touchStartY;
-
-
-            /*
-             * Si el movimiento vertical es mayor,
-             * dejamos que el usuario siga desplazándose.
-             */
 
             if (
-                Math.abs(diferenciaY) >
-                Math.abs(diferenciaX)
+                Math.abs(diferencia) < 60
             ) {
 
                 return;
@@ -3286,19 +3492,10 @@
 
 
             /*
-             * Evitamos movimientos accidentales.
+             * Izquierda = siguiente.
              */
 
-            if (
-                Math.abs(diferenciaX) < 70
-            ) {
-
-                return;
-
-            }
-
-
-            if (diferenciaX < 0) {
+            if (diferencia < 0) {
 
                 if (
                     paginaActual <
@@ -3311,17 +3508,30 @@
 
                 }
 
+                return;
+
+            }
+
+
+            /*
+             * Derecha = atrás.
+             */
+
+            if (paginaActual > 1) {
+
+                irAPagina(
+                    paginaActual - 1
+                );
+
             } else {
 
-                if (
-                    paginaActual > 1
-                ) {
+                /*
+                 * Si estamos en la primera
+                 * página, deslizar hacia la
+                 * derecha vuelve a la carta.
+                 */
 
-                    irAPagina(
-                        paginaActual - 1
-                    );
-
-                }
+                volverALaCarta();
 
             }
 
@@ -3330,16 +3540,28 @@
 
         /* =========================================================
            TECLADO
-           ========================================================= */
+        ========================================================== */
 
         document.addEventListener(
             "keydown",
             (evento) => {
 
+
+                /*
+                 * Si la carta está visible,
+                 * Escape la mantiene cerrada.
+                 */
+
+                if (!intro.classList.contains("oculta")) {
+
+                    return;
+
+                }
+
+
                 if (
                     evento.key === "ArrowRight" &&
-                    paginaActual <
-                    totalPaginas
+                    paginaActual < totalPaginas
                 ) {
 
                     irAPagina(
@@ -3350,30 +3572,18 @@
 
 
                 if (
-                    evento.key === "ArrowLeft" &&
-                    paginaActual > 1
+                    evento.key === "ArrowLeft"
                 ) {
 
-                    irAPagina(
-                        paginaActual - 1
-                    );
+                    if (paginaActual > 1) {
 
-                }
-
-
-                if (
-                    evento.key === "Escape"
-                ) {
-
-                    if (
-                        !intro.classList.contains(
-                            "oculta"
-                        )
-                    ) {
-
-                        intro.classList.add(
-                            "oculta"
+                        irAPagina(
+                            paginaActual - 1
                         );
+
+                    } else {
+
+                        volverALaCarta();
 
                     }
 
@@ -3384,55 +3594,27 @@
 
 
         /* =========================================================
-           PAUSAR GALERÍA CUANDO LA PÁGINA NO ESTÁ VISIBLE
-           ========================================================= */
+           VISIBILIDAD DE LA PÁGINA
+        ========================================================== */
 
         document.addEventListener(
             "visibilitychange",
             () => {
 
-                if (
-                    document.hidden
-                ) {
+                /*
+                 * Si el navegador pausa la música,
+                 * sincronizamos el botón.
+                 */
 
-                    detenerGaleria();
-
-                } else if (
-                    paginaActual === 2
-                ) {
-
-                    iniciarGaleria();
-
-                }
+                actualizarBotonMusica();
 
             }
         );
 
-
-        /* =========================================================
-           SI EL USUARIO CAMBIA DE TAMAÑO / ORIENTACIÓN
-           ========================================================= */
-
-        window.addEventListener(
-            "resize",
-            () => {
-
-                const pantallaActual =
-                    document.getElementById(
-                        `pag${paginaActual}`
-                    );
-
-
-                if (pantallaActual) {
-
-                    pantallaActual.scrollTop = 0;
-
-                }
-
-            }
-        );
 
     </script>
 
+
 </body>
+
 </html>
