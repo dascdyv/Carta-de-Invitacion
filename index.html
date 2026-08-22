@@ -1,556 +1,3438 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0b1830">
-<meta name="description" content="Invitación especial para celebrar los 50 años de Enrique Cisneros.">
 
-<!-- Vista previa al compartir el link. Cuando subas esto a GitHub Pages,
-     revisa que las URLs de abajo apunten a tu repo real. -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Enrique cumple 50 años 🎉">
-<meta property="og:description" content="Tienes una invitación especial. Te esperamos para celebrar juntos.">
-<meta property="og:image" content="https://dasdcyv.github.io/Carta-de-Invitacion/foto_gala.png">
-<meta property="og:url" content="https://dasdcyv.github.io/Carta-de-Invitacion/">
-<meta property="og:site_name" content="Enrique cumple 50 años">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Enrique cumple 50 años 🎉">
-<meta name="twitter:description" content="Tienes una invitación especial.">
-<meta name="twitter:image" content="https://dasdcyv.github.io/Carta-de-Invitacion/foto_gala.png">
+    <meta charset="UTF-8">
 
-<title>Enrique cumple 50 años 🎉</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
 
-<style>
-/* 1. VARIABLES */
-:root {
-  --azul: #102344;
-  --azul-profundo: #081426;
-  --azul-claro: #203d6d;
-  --oro: #c5a45b;
-  --oro-claro: #e0c985;
-  --gris: #596579;
-  --verde-wsp: #25D366;
-  --sombra: 0 25px 70px rgba(0, 0, 0, 0.45);
-  --radio: 22px;
-}
+    <meta
+        name="theme-color"
+        content="#0b1830"
+    >
 
-/* 2. RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { width: 100%; min-height: 100%; background: var(--azul-profundo); scroll-behavior: smooth; }
-body {
-  width: 100%; min-height: 100vh; min-height: 100dvh;
-  font-family: Georgia, "Times New Roman", serif;
-  background: radial-gradient(circle at 50% 20%, #20385f 0%, #102344 38%, #070f1d 100%);
-  color: var(--azul);
-  overflow-x: hidden;
-}
-button, a { -webkit-tap-highlight-color: transparent; }
-button { font-family: inherit; }
-button:focus-visible, a:focus-visible { outline: 3px solid var(--oro); outline-offset: 4px; }
+    <meta
+        name="description"
+        content="Invitación especial para celebrar los 50 años de Enrique Cisneros."
+    >
 
-/* 3. PANTALLA DE CARGA */
-#loader {
-  position: fixed; inset: 0; z-index: 9999;
-  display: flex; align-items: center; justify-content: center;
-  background: radial-gradient(circle at center, #20385f 0%, #102344 45%, #070f1d 100%);
-  transition: opacity 0.7s ease, visibility 0.7s ease;
-}
-#loader.oculto { opacity: 0; visibility: hidden; pointer-events: none; }
-.loader-contenido { text-align: center; color: white; }
-.loader-anillo {
-  width: 48px; height: 48px; margin: 0 auto 22px; border-radius: 50%;
-  border: 2px solid rgba(197,164,91,0.25); border-top-color: var(--oro);
-  animation: girar 1s linear infinite;
-}
-.loader-texto { color: var(--oro-claro); letter-spacing: 4px; font-size: 0.72rem; text-transform: uppercase; }
+    <!-- =========================================================
+         VISTA PREVIA AL COMPARTIR
+         ========================================================= -->
 
-/* 4. CONTENEDOR GENERAL */
-.app {
-  position: relative; width: 100%; min-height: 100vh; min-height: 100dvh;
-  display: flex; align-items: center; justify-content: center;
-  padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right))
-           max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
-}
-.invitacion {
-  position: relative; width: min(100%, 440px); height: min(900px, calc(100dvh - 24px)); min-height: 620px;
-  background: #ffffff; border: 2px solid var(--oro); border-radius: var(--radio);
-  overflow: hidden; box-shadow: var(--sombra); isolation: isolate;
-}
+    <meta
+        property="og:type"
+        content="website"
+    >
 
-/* 5. FONDO DECORATIVO */
-.fondo-puntos {
-  position: absolute; inset: 0; pointer-events: none; opacity: 0.35;
-  background-image: radial-gradient(rgba(197,164,91,0.18) 1px, transparent 1px);
-  background-size: 24px 24px; z-index: 0;
-}
-.marco { position: absolute; inset: 22px; border: 1px solid rgba(197,164,91,0.35); border-radius: 16px; pointer-events: none; z-index: 20; }
+    <meta
+        property="og:title"
+        content="Enrique cumple 50 años 🎉"
+    >
 
-/* 6. BOTÓN DE MÚSICA */
-.music-btn {
-  position: absolute; top: max(18px, env(safe-area-inset-top)); right: 18px; z-index: 100;
-  width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--oro);
-  background: var(--azul); color: white; display: flex; align-items: center; justify-content: center;
-  font-size: 18px; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-.music-btn:hover { background: var(--azul-claro); }
-.music-btn:active { transform: scale(0.92); }
-.music-btn.playing { animation: musicaGirando 4s linear infinite; }
+    <meta
+        property="og:description"
+        content="Tienes una invitación especial. Te esperamos para celebrar juntos."
+    >
 
-/* 7. PANTALLAS */
-.pantalla {
-  position: absolute; inset: 0; z-index: 2;
-  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-  overflow-y: auto; overflow-x: hidden;
-  padding: 82px 42px 82px; text-align: center;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
-  opacity: 0; visibility: hidden; transform: translateX(30px) scale(0.985);
-  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
-  scrollbar-width: none; overscroll-behavior: contain;
-}
-.pantalla::-webkit-scrollbar { display: none; }
-.pantalla.activa { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 5; }
+    <meta
+        property="og:image"
+        content="https://dasdcyv.github.io/Carta-de-Invitacion/Enrique.cumple.png"
+    >
 
-/* 8. TIPOGRAFÍA */
-.etiqueta-oro { color: var(--oro); font-size: clamp(0.72rem, 2.5vw, 0.92rem); letter-spacing: 4px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; }
-h1 { color: var(--azul); font-size: clamp(2rem, 9vw, 3rem); line-height: 1.05; margin-bottom: 10px; font-weight: 700; }
-h2 { color: var(--azul); font-size: clamp(1.55rem, 7vw, 2.1rem); line-height: 1.15; margin-bottom: 12px; }
-.texto { color: var(--gris); font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.7; }
-.texto-italico { color: #536071; font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.7; font-style: italic; }
+    <meta
+        property="og:url"
+        content="https://dasdcyv.github.io/Carta-de-Invitacion/"
+    >
 
-/* 9. PORTADA */
-.portada { justify-content: center; }
-.corona { font-size: 2.2rem; margin-bottom: 10px; animation: flotar 3s ease-in-out infinite; }
-.foto-gala {
-  width: min(82%, 300px); aspect-ratio: 4 / 4.6; object-fit: cover; object-position: center;
-  border-radius: 18px; border: 2px solid var(--oro); margin: 14px 0 18px;
-  box-shadow: 0 15px 35px rgba(16,35,68,0.18); background: #eee;
-}
+    <meta
+        property="og:site_name"
+        content="Enrique cumple 50 años"
+    >
 
-/* 10. BOTONES */
-.grupo-botones { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 11px; margin-top: 18px; }
-.btn {
-  width: min(100%, 340px); min-height: 50px; border-radius: 30px; border: 1px solid var(--oro);
-  padding: 13px 22px; display: flex; align-items: center; justify-content: center; gap: 8px;
-  font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; font-weight: 700;
-  cursor: pointer; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn:active { transform: scale(0.97); }
-.btn-principal { color: white; background: linear-gradient(135deg, #0d1f3b, #1f3d6d); box-shadow: 0 9px 22px rgba(16,35,68,0.25); }
-.btn-maps { color: white; background: var(--azul); }
-.btn-wsp { color: white; background: var(--verde-wsp); border-color: var(--verde-wsp); }
-.btn-atras { border: none; background: transparent; color: #738096; text-decoration: underline; min-height: 38px; }
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
 
-/* 11. GALERÍA */
-.galeria { width: 100%; margin-top: 8px; }
-.slider {
-  position: relative; width: 100%; aspect-ratio: 4 / 4.6; border-radius: 18px; overflow: hidden;
-  border: 2px solid var(--oro); box-shadow: 0 15px 30px rgba(0,0,0,0.18); background: #edf0f4; touch-action: pan-y;
-}
-.slider-img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  opacity: 0; transform: scale(1.04); transition: opacity 0.7s ease, transform 3s ease;
-  user-select: none; -webkit-user-drag: none;
-}
-.slider-img.activa { opacity: 1; transform: scale(1); }
-.texto-foto {
-  display: inline-block; margin-top: 12px; padding: 7px 18px; border-radius: 20px; color: white;
-  background: var(--azul); border: 1px solid var(--oro); font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.82rem; font-weight: 700;
-}
-.controles-galeria { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 13px; }
-.dot-galeria { width: 8px; height: 8px; border-radius: 50%; background: #cbd5e1; transition: all 0.3s ease; border: none; cursor: pointer; }
-.dot-galeria.activa { width: 24px; border-radius: 10px; background: var(--oro); }
+    <meta
+        name="twitter:title"
+        content="Enrique cumple 50 años 🎉"
+    >
 
-/* 12. INFORMACIÓN */
-.info-lista { width: 100%; display: flex; flex-direction: column; gap: 13px; margin-top: 12px; }
-.info-card {
-  width: 100%; padding: 15px 17px; border-radius: 15px;
-  background: linear-gradient(135deg, #ffffff, #f7f8fa); border: 1px solid #e5e8ed;
-  box-shadow: 0 8px 20px rgba(16,35,68,0.06);
-}
-.info-icono { font-size: 1.35rem; margin-bottom: 4px; }
-.info-titulo { color: var(--oro); font-size: 0.75rem; letter-spacing: 3px; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; }
-.info-texto { color: var(--azul); font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.45; font-weight: 700; }
+    <meta
+        name="twitter:description"
+        content="Tienes una invitación especial."
+    >
 
-/* 13. CONFIRMACIÓN */
-.confirmacion {
-  margin-top: 5px; padding: 14px 17px; width: 100%; border-radius: 15px;
-  background: rgba(37,211,102,0.08); border: 1px solid rgba(37,211,102,0.25);
-  color: #41604b; font-family: Arial, Helvetica, sans-serif; font-size: 0.84rem; line-height: 1.5;
-}
+    <meta
+        name="twitter:image"
+        content="https://dasdcyv.github.io/Carta-de-Invitacion/Enrique.cumple.png"
+    >
 
-/* 14. PÁGINA FINAL */
-.final { justify-content: center; }
-.final-corazones { font-size: 2rem; margin-bottom: 18px; animation: latido 1.8s ease-in-out infinite; }
-.final-linea { width: 70px; height: 2px; background: var(--oro); margin: 14px auto 20px; }
-.firma { margin-top: 22px; color: var(--oro); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; }
-.frase-final { margin-top: 18px; color: var(--gris); font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; line-height: 1.7; font-style: italic; }
+    <title>
+        Enrique cumple 50 años 🎉
+    </title>
 
-/* 15. INDICADORES PRINCIPALES */
-.indicadores {
-  position: absolute; left: 0; right: 0; bottom: max(17px, env(safe-area-inset-bottom)); z-index: 50;
-  display: flex; align-items: center; justify-content: center; gap: 7px; pointer-events: none;
-}
-.indicador { width: 7px; height: 7px; border-radius: 50%; background: #cbd5e1; transition: width 0.3s ease, background 0.3s ease; }
-.indicador.activo { width: 23px; border-radius: 10px; background: var(--oro); }
 
-/* 16. INTRO / SOBRE */
-.intro {
-  position: fixed; inset: 0; z-index: 5000;
-  display: flex; align-items: center; justify-content: center;
-  padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
-           max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
-  background: radial-gradient(circle at center, #213a63 0%, #102344 42%, #060e1b 100%);
-  transition: opacity 0.8s ease, visibility 0.8s ease;
-}
-.intro.oculta { opacity: 0; visibility: hidden; pointer-events: none; }
-.sobre-wrapper { width: min(90vw, 380px); text-align: center; color: white; }
+    <style>
 
-/* La invitación necesita "perspective" en el contenedor del sobre para que la
-   solapa gire en 3D y se vea como si se abriera. Sin esto, rotateX() se aplana
-   y parece un simple volteo en vez de una apertura real. */
-.sobre { position: relative; width: 100%; aspect-ratio: 1.35 / 1; margin-bottom: 30px; perspective: 900px; }
+        /* =========================================================
+           1. VARIABLES
+           ========================================================= */
 
-.sobre-cuerpo {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 76%;
-  background: linear-gradient(145deg, #ffffff, #edf0f4); border: 2px solid var(--oro);
-  border-radius: 8px 8px 16px 16px; box-shadow: 0 25px 50px rgba(0,0,0,0.35); overflow: hidden;
-}
-.sobre-cuerpo::before, .sobre-cuerpo::after { content: ""; position: absolute; bottom: 0; width: 72%; height: 2px; background: var(--oro); }
-.sobre-cuerpo::before { left: -18%; transform: rotate(31deg); }
-.sobre-cuerpo::after { right: -18%; transform: rotate(-31deg); }
+        :root {
 
-.solapa {
-  position: absolute; top: 24%; left: 0; width: 100%; height: 44%;
-  background: linear-gradient(145deg, #fdfdfd, #e6e9ee); border: 2px solid var(--oro);
-  clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top center;
-  transition: transform 1.1s cubic-bezier(.68,-0.25,.2,1.2); backface-visibility: hidden; z-index: 5;
-}
-.sello {
-  position: absolute; left: 50%; top: 62%; transform: translate(-50%, -50%);
-  width: 72px; height: 72px; border-radius: 50%; background: var(--azul); border: 2px solid var(--oro);
-  color: var(--oro-claro); display: flex; align-items: center; justify-content: center; font-size: 1.7rem;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2); z-index: 10;
-  transition: transform 0.6s ease, opacity 0.5s ease;
-}
-.sobre.abierto .solapa { transform: rotateX(180deg); z-index: 1; }
-.sobre.abierto .sello { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+            --azul: #102344;
+            --azul-profundo: #081426;
+            --azul-claro: #203d6d;
 
-.intro-titulo { color: var(--oro-claro); font-size: clamp(1.3rem, 6vw, 1.7rem); letter-spacing: 2px; margin-bottom: 8px; }
-.intro-subtitulo { color: rgba(255,255,255,0.78); font-family: Arial, Helvetica, sans-serif; font-size: 0.92rem; margin-bottom: 24px; }
-.btn-abrir {
-  margin: auto; width: min(100%, 300px); min-height: 52px; border-radius: 30px; border: 1px solid var(--oro);
-  background: linear-gradient(135deg, #172d50, #244879); color: white;
-  font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25); transition: transform 0.2s ease;
-}
-.btn-abrir:active { transform: scale(0.97); }
+            --oro: #c5a45b;
+            --oro-claro: #e0c985;
 
-/* 17. ANIMACIONES */
-@keyframes girar { to { transform: rotate(360deg); } }
-@keyframes musicaGirando { to { transform: rotate(360deg); } }
-@keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-@keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+            --blanco: #ffffff;
 
-/* 18. CELULARES PEQUEÑOS */
-@media (max-height: 720px) {
-  .invitacion { min-height: 0; height: calc(100dvh - 16px); }
-  .pantalla { padding: 70px 28px 65px; }
-  .foto-gala { width: min(70%, 235px); margin: 8px 0 12px; }
-  .info-lista { gap: 8px; }
-  .info-card { padding: 10px 13px; }
-  .grupo-botones { margin-top: 10px; gap: 7px; }
-  .btn { min-height: 44px; padding: 10px 17px; }
-}
+            --gris: #596579;
+            --gris-claro: #eef1f5;
 
-/* 19. CELULARES MUY PEQUEÑOS */
-@media (max-width: 360px) {
-  .pantalla { padding-left: 25px; padding-right: 25px; }
-  .marco { inset: 13px; }
-  h1 { font-size: 1.85rem; }
-  .foto-gala { width: 65%; }
-  .texto, .texto-italico { font-size: 0.88rem; }
-}
+            --verde-wsp: #25D366;
 
-/* 20. ESCRITORIO */
-@media (min-width: 700px) {
-  .invitacion { height: min(900px, calc(100dvh - 40px)); }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(16,35,68,0.18); }
-}
+            --sombra:
+                0 25px 70px rgba(0, 0, 0, 0.45);
 
-/* 21. MENOS ANIMACIÓN */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-}
-</style>
+            --radio: 22px;
+
+        }
+
+
+        /* =========================================================
+           2. RESET
+           ========================================================= */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        html {
+
+            width: 100%;
+
+            min-height: 100%;
+
+            background:
+                var(--azul-profundo);
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            width: 100%;
+
+            min-height: 100vh;
+            min-height: 100dvh;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    #20385f 0%,
+                    #102344 38%,
+                    #070f1d 100%
+                );
+
+            color:
+                var(--azul);
+
+            overflow-x: hidden;
+
+        }
+
+
+        button,
+        a {
+
+            -webkit-tap-highlight-color:
+                transparent;
+
+        }
+
+
+        button {
+
+            font-family:
+                inherit;
+
+        }
+
+
+        button:focus-visible,
+        a:focus-visible {
+
+            outline:
+                3px solid var(--oro);
+
+            outline-offset:
+                4px;
+
+        }
+
+
+        /* =========================================================
+           3. PANTALLA DE CARGA
+           ========================================================= */
+
+        #loader {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #20385f 0%,
+                    #102344 45%,
+                    #070f1d 100%
+                );
+
+            transition:
+                opacity 0.7s ease,
+                visibility 0.7s ease;
+
+        }
+
+
+        #loader.oculto {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+        .loader-contenido {
+
+            text-align: center;
+
+            color:
+                white;
+
+        }
+
+
+        .loader-anillo {
+
+            width: 48px;
+            height: 48px;
+
+            margin:
+                0 auto 22px;
+
+            border-radius:
+                50%;
+
+            border:
+                2px solid
+                rgba(197,164,91,0.25);
+
+            border-top-color:
+                var(--oro);
+
+            animation:
+                girar 1s linear infinite;
+
+        }
+
+
+        .loader-texto {
+
+            color:
+                var(--oro-claro);
+
+            letter-spacing:
+                4px;
+
+            font-size:
+                0.72rem;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        /* =========================================================
+           4. CONTENEDOR GENERAL
+           ========================================================= */
+
+        .app {
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: 100vh;
+            min-height: 100dvh;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding:
+                max(12px, env(safe-area-inset-top))
+                max(12px, env(safe-area-inset-right))
+                max(12px, env(safe-area-inset-bottom))
+                max(12px, env(safe-area-inset-left));
+
+        }
+
+
+        .invitacion {
+
+            position: relative;
+
+            width:
+                min(100%, 440px);
+
+            height:
+                min(
+                    900px,
+                    calc(100dvh - 24px)
+                );
+
+            min-height:
+                620px;
+
+            background:
+                #ffffff;
+
+            border:
+                2px solid var(--oro);
+
+            border-radius:
+                var(--radio);
+
+            overflow:
+                hidden;
+
+            box-shadow:
+                var(--sombra);
+
+            isolation:
+                isolate;
+
+        }
+
+
+        /* =========================================================
+           5. FONDO DECORATIVO
+           ========================================================= */
+
+        .fondo-puntos {
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events:
+                none;
+
+            opacity:
+                0.35;
+
+            background-image:
+                radial-gradient(
+                    rgba(197,164,91,0.18) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                24px 24px;
+
+            z-index:
+                0;
+
+        }
+
+
+        .marco {
+
+            position: absolute;
+
+            inset:
+                22px;
+
+            border:
+                1px solid
+                rgba(197,164,91,0.35);
+
+            border-radius:
+                16px;
+
+            pointer-events:
+                none;
+
+            z-index:
+                20;
+
+        }
+
+
+        /* =========================================================
+           6. BOTÓN DE MÚSICA
+           ========================================================= */
+
+        .music-btn {
+
+            position: absolute;
+
+            top:
+                max(
+                    18px,
+                    env(safe-area-inset-top)
+                );
+
+            right:
+                18px;
+
+            z-index:
+                100;
+
+            width:
+                46px;
+
+            height:
+                46px;
+
+            border-radius:
+                50%;
+
+            border:
+                2px solid var(--oro);
+
+            background:
+                var(--azul);
+
+            color:
+                white;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-size:
+                18px;
+
+            cursor:
+                pointer;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.18);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .music-btn:hover {
+
+            background:
+                var(--azul-claro);
+
+        }
+
+
+        .music-btn:active {
+
+            transform:
+                scale(0.92);
+
+        }
+
+
+        .music-btn.playing {
+
+            animation:
+                musicaGirando 4s linear infinite;
+
+        }
+
+
+        /* =========================================================
+           7. PANTALLAS
+           ========================================================= */
+
+        .pantalla {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: flex-start;
+
+            overflow-y: auto;
+
+            overflow-x: hidden;
+
+            padding:
+                82px
+                42px
+                82px;
+
+            text-align:
+                center;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #fbfcfe 100%
+                );
+
+            opacity:
+                0;
+
+            visibility:
+                hidden;
+
+            transform:
+                translateX(30px)
+                scale(0.985);
+
+            transition:
+                opacity 0.45s ease,
+                transform 0.45s ease,
+                visibility 0.45s ease;
+
+            scrollbar-width:
+                none;
+
+            overscroll-behavior:
+                contain;
+
+        }
+
+
+        .pantalla::-webkit-scrollbar {
+
+            display:
+                none;
+
+        }
+
+
+        .pantalla.activa {
+
+            opacity:
+                1;
+
+            visibility:
+                visible;
+
+            transform:
+                translateX(0)
+                scale(1);
+
+            z-index:
+                5;
+
+        }
+
+
+        .pantalla.saliendo {
+
+            opacity:
+                0;
+
+            transform:
+                translateX(-30px)
+                scale(0.985);
+
+        }
+
+
+        /* =========================================================
+           8. TIPOGRAFÍA
+           ========================================================= */
+
+        .etiqueta-oro {
+
+            color:
+                var(--oro);
+
+            font-size:
+                clamp(
+                    0.72rem,
+                    2.5vw,
+                    0.92rem
+                );
+
+            letter-spacing:
+                4px;
+
+            font-weight:
+                bold;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        h1 {
+
+            color:
+                var(--azul);
+
+            font-size:
+                clamp(
+                    2rem,
+                    9vw,
+                    3rem
+                );
+
+            line-height:
+                1.05;
+
+            margin-bottom:
+                10px;
+
+            font-weight:
+                700;
+
+        }
+
+
+        h2 {
+
+            color:
+                var(--azul);
+
+            font-size:
+                clamp(
+                    1.55rem,
+                    7vw,
+                    2.1rem
+                );
+
+            line-height:
+                1.15;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .texto {
+
+            color:
+                var(--gris);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                1rem;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .texto-italico {
+
+            color:
+                #536071;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                1rem;
+
+            line-height:
+                1.7;
+
+            font-style:
+                italic;
+
+        }
+
+
+        /* =========================================================
+           9. PORTADA
+           ========================================================= */
+
+        .portada {
+
+            justify-content:
+                center;
+
+        }
+
+
+        .corona {
+
+            font-size:
+                2.2rem;
+
+            margin-bottom:
+                10px;
+
+            animation:
+                flotar 3s ease-in-out infinite;
+
+        }
+
+
+        .foto-gala {
+
+            width:
+                min(82%, 300px);
+
+            aspect-ratio:
+                4 / 4.6;
+
+            object-fit:
+                cover;
+
+            object-position:
+                center;
+
+            border-radius:
+                18px;
+
+            border:
+                2px solid var(--oro);
+
+            margin:
+                14px 0 18px;
+
+            box-shadow:
+                0 15px 35px
+                rgba(16,35,68,0.18);
+
+            background:
+                #eee;
+
+        }
+
+
+        /* =========================================================
+           10. BOTONES
+           ========================================================= */
+
+        .grupo-botones {
+
+            width:
+                100%;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            gap:
+                11px;
+
+            margin-top:
+                18px;
+
+        }
+
+
+        .btn {
+
+            width:
+                min(100%, 340px);
+
+            min-height:
+                50px;
+
+            border-radius:
+                30px;
+
+            border:
+                1px solid var(--oro);
+
+            padding:
+                13px 22px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.95rem;
+
+            font-weight:
+                700;
+
+            cursor:
+                pointer;
+
+            text-decoration:
+                none;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .btn:active {
+
+            transform:
+                scale(0.97);
+
+        }
+
+
+        .btn-principal {
+
+            color:
+                white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0d1f3b,
+                    #1f3d6d
+                );
+
+            box-shadow:
+                0 9px 22px
+                rgba(16,35,68,0.25);
+
+        }
+
+
+        .btn-secundario {
+
+            background:
+                white;
+
+            color:
+                var(--azul);
+
+            border-color:
+                rgba(16,35,68,0.2);
+
+        }
+
+
+        .btn-maps {
+
+            color:
+                white;
+
+            background:
+                var(--azul);
+
+        }
+
+
+        .btn-wsp {
+
+            color:
+                white;
+
+            background:
+                var(--verde-wsp);
+
+            border-color:
+                var(--verde-wsp);
+
+        }
+
+
+        .btn-atras {
+
+            border:
+                none;
+
+            background:
+                transparent;
+
+            color:
+                #738096;
+
+            text-decoration:
+                underline;
+
+            min-height:
+                38px;
+
+        }
+
+
+        /* =========================================================
+           11. GALERÍA
+           ========================================================= */
+
+        .galeria {
+
+            width:
+                100%;
+
+            margin-top:
+                8px;
+
+        }
+
+
+        .slider {
+
+            position:
+                relative;
+
+            width:
+                100%;
+
+            aspect-ratio:
+                4 / 4.6;
+
+            border-radius:
+                18px;
+
+            overflow:
+                hidden;
+
+            border:
+                2px solid var(--oro);
+
+            box-shadow:
+                0 15px 30px
+                rgba(0,0,0,0.18);
+
+            background:
+                #edf0f4;
+
+            touch-action:
+                pan-y;
+
+        }
+
+
+        .slider-img {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            opacity:
+                0;
+
+            transform:
+                scale(1.04);
+
+            transition:
+                opacity 0.7s ease,
+                transform 3s ease;
+
+            user-select:
+                none;
+
+            -webkit-user-drag:
+                none;
+
+        }
+
+
+        .slider-img.activa {
+
+            opacity:
+                1;
+
+            transform:
+                scale(1);
+
+        }
+
+
+        .texto-foto {
+
+            display:
+                inline-block;
+
+            margin-top:
+                12px;
+
+            padding:
+                7px 18px;
+
+            border-radius:
+                20px;
+
+            color:
+                white;
+
+            background:
+                var(--azul);
+
+            border:
+                1px solid var(--oro);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.82rem;
+
+            font-weight:
+                700;
+
+        }
+
+
+        .controles-galeria {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            margin-top:
+                13px;
+
+        }
+
+
+        .dot-galeria {
+
+            width:
+                8px;
+
+            height:
+                8px;
+
+            border-radius:
+                50%;
+
+            background:
+                #cbd5e1;
+
+            transition:
+                all 0.3s ease;
+
+            border:
+                none;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .dot-galeria.activa {
+
+            width:
+                24px;
+
+            border-radius:
+                10px;
+
+            background:
+                var(--oro);
+
+        }
+
+
+        /* =========================================================
+           12. INFORMACIÓN
+           ========================================================= */
+
+        .info-lista {
+
+            width:
+                100%;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                13px;
+
+            margin-top:
+                12px;
+
+        }
+
+
+        .info-card {
+
+            width:
+                100%;
+
+            padding:
+                15px 17px;
+
+            border-radius:
+                15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #f7f8fa
+                );
+
+            border:
+                1px solid #e5e8ed;
+
+            box-shadow:
+                0 8px 20px
+                rgba(16,35,68,0.06);
+
+        }
+
+
+        .info-icono {
+
+            font-size:
+                1.35rem;
+
+            margin-bottom:
+                4px;
+
+        }
+
+
+        .info-titulo {
+
+            color:
+                var(--oro);
+
+            font-size:
+                0.75rem;
+
+            letter-spacing:
+                3px;
+
+            font-weight:
+                bold;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                5px;
+
+        }
+
+
+        .info-texto {
+
+            color:
+                var(--azul);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                1rem;
+
+            line-height:
+                1.45;
+
+            font-weight:
+                700;
+
+        }
+
+
+        /* =========================================================
+           13. CONFIRMACIÓN
+           ========================================================= */
+
+        .confirmacion {
+
+            margin-top:
+                5px;
+
+            padding:
+                14px 17px;
+
+            width:
+                100%;
+
+            border-radius:
+                15px;
+
+            background:
+                rgba(37,211,102,0.08);
+
+            border:
+                1px solid
+                rgba(37,211,102,0.25);
+
+            color:
+                #41604b;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.84rem;
+
+            line-height:
+                1.5;
+
+        }
+
+
+        /* =========================================================
+           14. PÁGINA FINAL
+           ========================================================= */
+
+        .final {
+
+            justify-content:
+                center;
+
+        }
+
+
+        .final-corazones {
+
+            font-size:
+                2rem;
+
+            margin-bottom:
+                18px;
+
+            animation:
+                latido 1.8s ease-in-out infinite;
+
+        }
+
+
+        .final-linea {
+
+            width:
+                70px;
+
+            height:
+                2px;
+
+            background:
+                var(--oro);
+
+            margin:
+                14px auto 20px;
+
+        }
+
+
+        .firma {
+
+            margin-top:
+                22px;
+
+            color:
+                var(--oro);
+
+            font-size:
+                0.8rem;
+
+            letter-spacing:
+                3px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .frase-final {
+
+            margin-top:
+                18px;
+
+            color:
+                var(--gris);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.95rem;
+
+            line-height:
+                1.7;
+
+            font-style:
+                italic;
+
+        }
+
+
+        /* =========================================================
+           15. INDICADORES PRINCIPALES
+           ========================================================= */
+
+        .indicadores {
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            right:
+                0;
+
+            bottom:
+                max(
+                    17px,
+                    env(safe-area-inset-bottom)
+                );
+
+            z-index:
+                50;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                7px;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .indicador {
+
+            width:
+                7px;
+
+            height:
+                7px;
+
+            border-radius:
+                50%;
+
+            background:
+                #cbd5e1;
+
+            transition:
+                width 0.3s ease,
+                background 0.3s ease;
+
+        }
+
+
+        .indicador.activo {
+
+            width:
+                23px;
+
+            border-radius:
+                10px;
+
+            background:
+                var(--oro);
+
+        }
+
+
+        /* =========================================================
+           16. INTRO / SOBRE
+           ========================================================= */
+
+        .intro {
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            z-index:
+                5000;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                max(20px, env(safe-area-inset-top))
+                max(20px, env(safe-area-inset-right))
+                max(20px, env(safe-area-inset-bottom))
+                max(20px, env(safe-area-inset-left));
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #213a63 0%,
+                    #102344 42%,
+                    #060e1b 100%
+                );
+
+            transition:
+                opacity 0.8s ease,
+                visibility 0.8s ease;
+
+        }
+
+
+        .intro.oculta {
+
+            opacity:
+                0;
+
+            visibility:
+                hidden;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .sobre-wrapper {
+
+            width:
+                min(90vw, 380px);
+
+            text-align:
+                center;
+
+            color:
+                white;
+
+        }
+
+
+        .sobre {
+
+            position:
+                relative;
+
+            width:
+                100%;
+
+            aspect-ratio:
+                1.35 / 1;
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        .sobre-cuerpo {
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            right:
+                0;
+
+            bottom:
+                0;
+
+            height:
+                74%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #edf0f4
+                );
+
+            border:
+                2px solid var(--oro);
+
+            border-radius:
+                8px
+                8px
+                16px
+                16px;
+
+            box-shadow:
+                0 25px 50px
+                rgba(0,0,0,0.35);
+
+            overflow:
+                hidden;
+
+        }
+
+
+        .sobre-cuerpo::before,
+        .sobre-cuerpo::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            bottom:
+                0;
+
+            width:
+                72%;
+
+            height:
+                2px;
+
+            background:
+                var(--oro);
+
+        }
+
+
+        .sobre-cuerpo::before {
+
+            left:
+                -18%;
+
+            transform:
+                rotate(31deg);
+
+        }
+
+
+        .sobre-cuerpo::after {
+
+            right:
+                -18%;
+
+            transform:
+                rotate(-31deg);
+
+        }
+
+
+        .solapa {
+
+            position:
+                absolute;
+
+            top:
+                8%;
+
+            left:
+                5%;
+
+            width:
+                90%;
+
+            height:
+                62%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #fdfdfd,
+                    #e6e9ee
+                );
+
+            border:
+                2px solid var(--oro);
+
+            clip-path:
+                polygon(
+                    0 0,
+                    100% 0,
+                    50% 100%
+                );
+
+            transform-origin:
+                top center;
+
+            transition:
+                transform 1.1s
+                cubic-bezier(.68,-0.25,.2,1.2);
+
+            z-index:
+                5;
+
+        }
+
+
+        .sello {
+
+            position:
+                absolute;
+
+            left:
+                50%;
+
+            top:
+                48%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width:
+                72px;
+
+            height:
+                72px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--azul);
+
+            border:
+                2px solid var(--oro);
+
+            color:
+                var(--oro-claro);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-size:
+                1.7rem;
+
+            box-shadow:
+                0 8px 18px
+                rgba(0,0,0,0.2);
+
+            z-index:
+                10;
+
+            transition:
+                transform 0.6s ease,
+                opacity 0.5s ease;
+
+        }
+
+
+        .sobre.abierto .solapa {
+
+            transform:
+                rotateX(180deg);
+
+            z-index:
+                1;
+
+        }
+
+
+        .sobre.abierto .sello {
+
+            transform:
+                translate(-50%, -50%)
+                scale(0);
+
+            opacity:
+                0;
+
+        }
+
+
+        .intro-titulo {
+
+            color:
+                var(--oro-claro);
+
+            font-size:
+                clamp(
+                    1.3rem,
+                    6vw,
+                    1.7rem
+                );
+
+            letter-spacing:
+                2px;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .intro-subtitulo {
+
+            color:
+                rgba(255,255,255,0.78);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.92rem;
+
+            margin-bottom:
+                24px;
+
+        }
+
+
+        .btn-abrir {
+
+            margin:
+                auto;
+
+            width:
+                min(100%, 300px);
+
+            min-height:
+                52px;
+
+            border-radius:
+                30px;
+
+            border:
+                1px solid var(--oro);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #172d50,
+                    #244879
+                );
+
+            color:
+                white;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.95rem;
+
+            font-weight:
+                700;
+
+            cursor:
+                pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,0.25);
+
+            transition:
+                transform 0.2s ease;
+
+        }
+
+
+        .btn-abrir:active {
+
+            transform:
+                scale(0.97);
+
+        }
+
+
+        /* =========================================================
+           17. ANIMACIONES
+           ========================================================= */
+
+        @keyframes girar {
+
+            to {
+
+                transform:
+                    rotate(360deg);
+
+            }
+
+        }
+
+
+        @keyframes musicaGirando {
+
+            to {
+
+                transform:
+                    rotate(360deg);
+
+            }
+
+        }
+
+
+        @keyframes flotar {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-6px);
+
+            }
+
+        }
+
+
+        @keyframes latido {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.12);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           18. CELULARES PEQUEÑOS
+           ========================================================= */
+
+        @media (max-height: 720px) {
+
+            .invitacion {
+
+                min-height:
+                    0;
+
+                height:
+                    calc(100dvh - 16px);
+
+            }
+
+
+            .pantalla {
+
+                padding:
+                    70px
+                    28px
+                    65px;
+
+            }
+
+
+            .foto-gala {
+
+                width:
+                    min(70%, 235px);
+
+                margin:
+                    8px 0 12px;
+
+            }
+
+
+            .mensaje-bienvenida {
+
+                font-size:
+                    0.9rem;
+
+                line-height:
+                    1.45;
+
+            }
+
+
+            .slider {
+
+                max-height:
+                    47dvh;
+
+            }
+
+
+            .info-lista {
+
+                gap:
+                    8px;
+
+            }
+
+
+            .info-card {
+
+                padding:
+                    10px 13px;
+
+            }
+
+
+            .grupo-botones {
+
+                margin-top:
+                    10px;
+
+                gap:
+                    7px;
+
+            }
+
+
+            .btn {
+
+                min-height:
+                    44px;
+
+                padding:
+                    10px 17px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           19. CELULARES MUY PEQUEÑOS
+           ========================================================= */
+
+        @media (max-width: 360px) {
+
+            .pantalla {
+
+                padding-left:
+                    25px;
+
+                padding-right:
+                    25px;
+
+            }
+
+
+            .marco {
+
+                inset:
+                    13px;
+
+            }
+
+
+            h1 {
+
+                font-size:
+                    1.85rem;
+
+            }
+
+
+            .foto-gala {
+
+                width:
+                    65%;
+
+            }
+
+
+            .texto,
+            .texto-italico {
+
+                font-size:
+                    0.88rem;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           20. ESCRITORIO
+           ========================================================= */
+
+        @media (min-width: 700px) {
+
+            .invitacion {
+
+                height:
+                    min(
+                        900px,
+                        calc(100dvh - 40px)
+                    );
+
+            }
+
+
+            .btn:hover {
+
+                transform:
+                    translateY(-2px);
+
+                box-shadow:
+                    0 12px 28px
+                    rgba(16,35,68,0.18);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           21. MENOS ANIMACIÓN
+           ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
 
-<div id="loader" aria-hidden="true">
-  <div class="loader-contenido">
-    <div class="loader-anillo"></div>
-    <div class="loader-texto">Preparando la invitación</div>
-  </div>
-</div>
 
-<section class="intro" id="intro" aria-label="Introducción de la invitación">
-  <div class="sobre-wrapper">
-    <div class="sobre" id="sobre">
-      <div class="sobre-cuerpo"></div>
-      <div class="solapa"></div>
-      <div class="sello" aria-hidden="true">✦</div>
+    <!-- =========================================================
+         PANTALLA DE CARGA
+         ========================================================= -->
+
+    <div
+        id="loader"
+        aria-hidden="true"
+    >
+
+        <div class="loader-contenido">
+
+            <div
+                class="loader-anillo"
+            ></div>
+
+            <div class="loader-texto">
+                Preparando la invitación
+            </div>
+
+        </div>
+
     </div>
-    <h2 class="intro-titulo">Enrique cumple 50 años</h2>
-    <p class="intro-subtitulo">Tienes una invitación especial</p>
-    <button class="btn-abrir" id="btnAbrir" type="button">💌 Abrir invitación</button>
-  </div>
-</section>
 
-<main class="app">
-  <div class="invitacion">
-    <div class="fondo-puntos" aria-hidden="true"></div>
-    <div class="marco" aria-hidden="true"></div>
 
-    <button class="music-btn" id="musicToggle" type="button" aria-label="Activar música" aria-pressed="false">🎵</button>
+    <!-- =========================================================
+         INTRO / SOBRE
+         ========================================================= -->
 
-    <!-- PÁGINA 1: PORTADA -->
-    <section class="pantalla activa portada" id="pag1" aria-label="Portada">
-      <div class="corona" aria-hidden="true">✦</div>
-      <p class="etiqueta-oro">Mis 50 años</p>
-      <h1>Enrique<br>Cisneros</h1>
-      <img src="foto_gala.png" alt="Enrique Cisneros, homenajeado de la celebración" class="foto-gala" loading="eager" decoding="async">
-      <p class="texto-italico">"Hay momentos en la vida inolvidables, y compartirlos con quienes más amamos los hace eternos."</p>
-      <div class="grupo-botones">
-        <button class="btn btn-principal" type="button" onclick="irAPagina(2)">Continuar ✨</button>
-      </div>
+    <section
+        class="intro"
+        id="intro"
+        aria-label="Introducción de la invitación"
+    >
+
+        <div class="sobre-wrapper">
+
+            <div
+                class="sobre"
+                id="sobre"
+            >
+
+                <div
+                    class="sobre-cuerpo"
+                ></div>
+
+                <div
+                    class="solapa"
+                ></div>
+
+                <div
+                    class="sello"
+                    aria-hidden="true"
+                >
+                    ✦
+                </div>
+
+            </div>
+
+
+            <h2 class="intro-titulo">
+                Enrique cumple 50 años
+            </h2>
+
+
+            <p class="intro-subtitulo">
+                Tienes una invitación especial
+            </p>
+
+
+            <button
+                class="btn-abrir"
+                id="btnAbrir"
+                type="button"
+            >
+                💌 Abrir invitación
+            </button>
+
+        </div>
+
     </section>
 
-    <!-- PÁGINA 2: HISTORIA / GALERÍA -->
-    <section class="pantalla" id="pag2" aria-label="Galería de recuerdos">
-      <p class="etiqueta-oro">Un viaje en el tiempo</p>
-      <h2>Momentos que cuentan una vida</h2>
-      <div class="galeria">
-        <div class="slider" id="slider" aria-live="polite">
-          <img src="foto_de_joven.png" class="slider-img activa" alt="Recuerdo de Enrique" data-texto="Su juventud y grandes sueños" loading="eager" decoding="async">
-          <img src="foto_con_diploma.png" class="slider-img" alt="Recuerdo de Enrique" data-texto="Trayectoria y lindos recuerdos" loading="lazy" decoding="async">
-          <img src="foto_graduacion.png" class="slider-img" alt="Recuerdo de Enrique" data-texto="Forjando caminos con elegancia" loading="lazy" decoding="async">
-          <img src="foto_actual.png" class="slider-img" alt="Recuerdo de Enrique" data-texto="Su presente lleno de vida" loading="lazy" decoding="async">
+
+    <!-- =========================================================
+         APLICACIÓN
+         ========================================================= -->
+
+    <main class="app">
+
+        <div class="invitacion">
+
+            <div
+                class="fondo-puntos"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="marco"
+                aria-hidden="true"
+            ></div>
+
+
+            <!-- =================================================
+                 BOTÓN DE MÚSICA
+                 ================================================== -->
+
+            <button
+                class="music-btn"
+                id="musicToggle"
+                type="button"
+                aria-label="Activar música"
+                aria-pressed="false"
+            >
+                🎵
+            </button>
+
+
+            <!-- =================================================
+                 PÁGINA 1 - PORTADA
+                 ================================================== -->
+
+            <section
+                class="pantalla activa portada"
+                id="pag1"
+                aria-label="Portada"
+            >
+
+                <div
+                    class="corona"
+                    aria-hidden="true"
+                >
+                    ✦
+                </div>
+
+
+                <p class="etiqueta-oro">
+                    Mis 50 años
+                </p>
+
+
+                <h1>
+                    Enrique<br>
+                    Cisneros
+                </h1>
+
+
+                <img
+                    src="foto_gala.png"
+                    alt="Enrique Cisneros, homenajeado de la celebración"
+                    class="foto-gala"
+                    loading="eager"
+                    decoding="async"
+                >
+
+
+                <p class="texto-italico">
+                    "Hay momentos en la vida inolvidables,
+                    y compartirlos con quienes más amamos
+                    los hace eternos."
+                </p>
+
+
+                <div class="grupo-botones">
+
+                    <button
+                        class="btn btn-principal"
+                        type="button"
+                        onclick="irAPagina(2)"
+                    >
+                        Continuar ✨
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PÁGINA 2 - HISTORIA / GALERÍA
+                 ================================================== -->
+
+            <section
+                class="pantalla"
+                id="pag2"
+                aria-label="Galería de recuerdos"
+            >
+
+                <p class="etiqueta-oro">
+                    Un viaje en el tiempo
+                </p>
+
+
+                <h2>
+                    Momentos que cuentan una vida
+                </h2>
+
+
+                <div class="galeria">
+
+                    <div
+                        class="slider"
+                        id="slider"
+                        aria-live="polite"
+                    >
+
+                        <img
+                            src="foto1.png"
+                            class="slider-img activa"
+                            alt="Recuerdo de Enrique"
+                            data-texto="Su juventud y grandes sueños"
+                            loading="eager"
+                            decoding="async"
+                        >
+
+
+                        <img
+                            src="foto2.png"
+                            class="slider-img"
+                            alt="Recuerdo de Enrique"
+                            data-texto="Trayectoria y lindos recuerdos"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <img
+                            src="foto3.png"
+                            class="slider-img"
+                            alt="Recuerdo de Enrique"
+                            data-texto="Forjando caminos con elegancia"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <img
+                            src="foto4.png"
+                            class="slider-img"
+                            alt="Recuerdo de Enrique"
+                            data-texto="Su presente lleno de vida"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <!-- NUEVA FOTO -->
+
+                        <img
+                            src="Enrique.cumple.png"
+                            class="slider-img"
+                            alt="Enrique celebrando junto a familiares y amigos"
+                            data-texto="Un recuerdo especial de su cumpleaños"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+
+                    <div
+                        class="texto-foto"
+                        id="textoFoto"
+                    >
+                        Su juventud y grandes sueños
+                    </div>
+
+
+                    <div
+                        class="controles-galeria"
+                        id="controlesGaleria"
+                        aria-label="Seleccionar fotografía"
+                    ></div>
+
+                </div>
+
+
+                <div class="grupo-botones">
+
+                    <button
+                        class="btn btn-principal"
+                        type="button"
+                        onclick="irAPagina(3)"
+                    >
+                        Ver los detalles 📍
+                    </button>
+
+
+                    <button
+                        class="btn btn-atras"
+                        type="button"
+                        onclick="irAPagina(1)"
+                    >
+                        Atrás
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PÁGINA 3 - INFORMACIÓN
+                 ================================================== -->
+
+            <section
+                class="pantalla"
+                id="pag3"
+                aria-label="Información de la celebración"
+            >
+
+                <p class="etiqueta-oro">
+                    Celebración de gala
+                </p>
+
+
+                <h2>
+                    Nos vemos para celebrar
+                </h2>
+
+
+                <div class="info-lista">
+
+
+                    <div class="info-card">
+
+                        <div
+                            class="info-icono"
+                            aria-hidden="true"
+                        >
+                            📅
+                        </div>
+
+
+                        <div class="info-titulo">
+                            Cuándo
+                        </div>
+
+
+                        <div class="info-texto">
+                            Sábado, 24 de Octubre
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div
+                            class="info-icono"
+                            aria-hidden="true"
+                        >
+                            🕘
+                        </div>
+
+
+                        <div class="info-titulo">
+                            Hora
+                        </div>
+
+
+                        <div class="info-texto">
+                            Iniciará a las 9:00 PM
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div
+                            class="info-icono"
+                            aria-hidden="true"
+                        >
+                            📍
+                        </div>
+
+
+                        <div class="info-titulo">
+                            Lugar
+                        </div>
+
+
+                        <div class="info-texto">
+                            Calle 14 n.º 133<br>
+                            Coop. Primavera<br>
+                            Comas
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grupo-botones">
+
+
+                    <a
+                        href="https://maps.app.goo.gl/RvSGJH6SDPLaYZ889"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-maps"
+                        aria-label="Abrir ubicación de la celebración en Google Maps"
+                    >
+                        📍 Ver ubicación en Google Maps
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/51940628577?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20n%C3%BAmero%2050%20de%20Enrique.%20%C2%A1Ah%C3%AD%20estar%C3%A9%21"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-wsp"
+                        aria-label="Confirmar asistencia por WhatsApp"
+                    >
+                        💬 Confirmar asistencia
+                    </a>
+
+
+                </div>
+
+
+                <div class="confirmacion">
+
+                    Al tocar el botón de WhatsApp,
+                    se abrirá una conversación para
+                    confirmar tu asistencia.
+
+                </div>
+
+
+                <div class="grupo-botones">
+
+
+                    <button
+                        class="btn btn-principal"
+                        type="button"
+                        onclick="irAPagina(4)"
+                    >
+                        Continuar 💙
+                    </button>
+
+
+                    <button
+                        class="btn btn-atras"
+                        type="button"
+                        onclick="irAPagina(2)"
+                    >
+                        Atrás
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PÁGINA 4 - CIERRE
+                 ================================================== -->
+
+            <section
+                class="pantalla final"
+                id="pag4"
+                aria-label="Mensaje final"
+            >
+
+                <div
+                    class="final-corazones"
+                    aria-hidden="true"
+                >
+                    🥂
+                </div>
+
+
+                <p class="etiqueta-oro">
+                    Con cariño
+                </p>
+
+
+                <h2>
+                    ¡Nos vemos pronto!
+                </h2>
+
+
+                <div
+                    class="final-linea"
+                    aria-hidden="true"
+                ></div>
+
+
+                <p class="texto-italico">
+                    Tu presencia es el mejor regalo
+                    que le puedes dar a Enrique
+                    en este día tan especial.
+                </p>
+
+
+                <p class="frase-final">
+                    Gracias por ser parte de su vida
+                    y por acompañarlo en este momento
+                    tan importante.
+                </p>
+
+
+                <div class="firma">
+                    Enrique · 50 años
+                </div>
+
+
+                <div class="grupo-botones">
+
+                    <button
+                        class="btn btn-principal"
+                        type="button"
+                        onclick="irAPagina(1)"
+                    >
+                        Volver al inicio ✦
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 INDICADORES
+                 ================================================== -->
+
+            <div
+                class="indicadores"
+                id="indicadores"
+                aria-hidden="true"
+            >
+
+                <span
+                    class="indicador activo"
+                ></span>
+
+                <span
+                    class="indicador"
+                ></span>
+
+                <span
+                    class="indicador"
+                ></span>
+
+                <span
+                    class="indicador"
+                ></span>
+
+            </div>
+
         </div>
-        <div class="texto-foto" id="textoFoto">Su juventud y grandes sueños</div>
-        <div class="controles-galeria" id="controlesGaleria" aria-label="Seleccionar fotografía"></div>
-      </div>
-      <div class="grupo-botones">
-        <button class="btn btn-principal" type="button" onclick="irAPagina(3)">Ver los detalles 📍</button>
-        <button class="btn btn-atras" type="button" onclick="irAPagina(1)">Atrás</button>
-      </div>
-    </section>
 
-    <!-- PÁGINA 3: INFORMACIÓN -->
-    <section class="pantalla" id="pag3" aria-label="Información de la celebración">
-      <p class="etiqueta-oro">Celebración de gala</p>
-      <h2>Nos vemos para celebrar</h2>
-      <div class="info-lista">
-        <div class="info-card">
-          <div class="info-icono" aria-hidden="true">📅</div>
-          <div class="info-titulo">Cuándo</div>
-          <div class="info-texto">Sábado, 24 de Octubre</div>
-        </div>
-        <div class="info-card">
-          <div class="info-icono" aria-hidden="true">🕘</div>
-          <div class="info-titulo">Hora</div>
-          <div class="info-texto">Iniciará a las 9:00 PM</div>
-        </div>
-        <div class="info-card">
-          <div class="info-icono" aria-hidden="true">📍</div>
-          <div class="info-titulo">Lugar</div>
-          <div class="info-texto">Calle 14 n.º 133<br>Coop. Primavera<br>Comas</div>
-        </div>
-      </div>
-      <div class="grupo-botones">
-        <a href="https://maps.app.goo.gl/RvSGJH6SDPLaYZ889" target="_blank" rel="noopener noreferrer" class="btn btn-maps" aria-label="Abrir ubicación de la celebración en Google Maps">📍 Ver ubicación en Google Maps</a>
-        <a href="https://wa.me/51925188802?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20n%C3%BAmero%2050%20de%20Enrique.%20%C2%A1Ah%C3%AD%20estar%C3%A9%21" target="_blank" rel="noopener noreferrer" class="btn btn-wsp" aria-label="Confirmar asistencia por WhatsApp">💬 Confirmar asistencia</a>
-      </div>
-      <div class="confirmacion">Al tocar el botón de WhatsApp, se abrirá una conversación para confirmar tu asistencia.</div>
-      <div class="grupo-botones">
-        <button class="btn btn-principal" type="button" onclick="irAPagina(4)">Continuar 💙</button>
-        <button class="btn btn-atras" type="button" onclick="irAPagina(2)">Atrás</button>
-      </div>
-    </section>
+    </main>
 
-    <!-- PÁGINA 4: CIERRE -->
-    <section class="pantalla final" id="pag4" aria-label="Mensaje final">
-      <div class="final-corazones" aria-hidden="true">🥂</div>
-      <p class="etiqueta-oro">Con cariño</p>
-      <h2>¡Nos vemos pronto!</h2>
-      <div class="final-linea" aria-hidden="true"></div>
-      <p class="texto-italico">Tu presencia es el mejor regalo que le puedes dar a Enrique en este día tan especial.</p>
-      <p class="frase-final">Gracias por ser parte de su vida y por acompañarlo en este momento tan importante.</p>
-      <div class="firma">Enrique · 50 años</div>
-      <div class="grupo-botones">
-        <button class="btn btn-principal" type="button" onclick="irAPagina(1)">Volver al inicio ✦</button>
-      </div>
-    </section>
 
-    <div class="indicadores" id="indicadores" aria-hidden="true">
-      <span class="indicador activo"></span>
-      <span class="indicador"></span>
-      <span class="indicador"></span>
-      <span class="indicador"></span>
-    </div>
-  </div>
-</main>
+    <!-- =========================================================
+         MÚSICA
+         ========================================================= -->
 
-<audio id="bgMusic" src="musica.mp3" loop preload="metadata"></audio>
+    <audio
+        id="bgMusic"
+        src="musica.mp3"
+        loop
+        preload="metadata"
+    ></audio>
 
-<script>
-const totalPaginas = 4;
-let paginaActual = 1;
-let indiceFoto = 0;
-let intervaloGaleria = null;
-let touchStartX = 0, touchStartY = 0, touchEndX = 0, touchEndY = 0;
 
-const intro = document.getElementById("intro");
-const sobre = document.getElementById("sobre");
-const btnAbrir = document.getElementById("btnAbrir");
-const musica = document.getElementById("bgMusic");
-const musicToggle = document.getElementById("musicToggle");
-const loader = document.getElementById("loader");
-const invitacion = document.querySelector(".invitacion");
-const imagenes = document.querySelectorAll(".slider-img");
-const textoFoto = document.getElementById("textoFoto");
-const controlesGaleria = document.getElementById("controlesGaleria");
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
 
-/* CARGA */
-window.addEventListener("load", () => {
-  setTimeout(() => { loader.classList.add("oculto"); }, 500);
-  prepararGaleria();
-});
+    <script>
 
-/* ABRIR SOBRE: el timeout (1150ms) es un poco más largo que la animación
-   de la solapa (1.1s) para que termine de abrirse antes de que
-   desaparezca toda la pantalla de introducción. */
-btnAbrir.addEventListener("click", () => {
-  sobre.classList.add("abierto");
-  setTimeout(() => {
-    intro.classList.add("oculta");
-    iniciarMusica();
-  }, 1150);
-});
+        /* =========================================================
+           VARIABLES PRINCIPALES
+           ========================================================= */
 
-/* MÚSICA */
-function actualizarBotonMusica() {
-  if (!musica) return;
-  if (musica.paused) {
-    musicToggle.textContent = "🎵";
-    musicToggle.classList.remove("playing");
-    musicToggle.setAttribute("aria-label", "Activar música");
-    musicToggle.setAttribute("aria-pressed", "false");
-  } else {
-    musicToggle.textContent = "⏸️";
-    musicToggle.classList.add("playing");
-    musicToggle.setAttribute("aria-label", "Pausar música");
-    musicToggle.setAttribute("aria-pressed", "true");
-  }
-}
-function iniciarMusica() {
-  if (!musica) return;
-  musica.play().then(actualizarBotonMusica).catch(actualizarBotonMusica);
-}
-function alternarMusica() {
-  if (!musica) return;
-  if (musica.paused) { musica.play().then(actualizarBotonMusica).catch(() => {}); }
-  else { musica.pause(); actualizarBotonMusica(); }
-}
-musicToggle.addEventListener("click", alternarMusica);
-musica.addEventListener("play", actualizarBotonMusica);
-musica.addEventListener("pause", actualizarBotonMusica);
+        const totalPaginas = 4;
 
-/* CAMBIAR DE PÁGINA */
-function irAPagina(numero) {
-  if (numero < 1 || numero > totalPaginas || numero === paginaActual) return;
-  const actual = document.getElementById(`pag${paginaActual}`);
-  const siguiente = document.getElementById(`pag${numero}`);
-  if (!actual || !siguiente) return;
-  actual.classList.remove("activa");
-  siguiente.classList.add("activa");
-  paginaActual = numero;
-  actualizarIndicadores();
-  siguiente.scrollTop = 0;
-  if (paginaActual === 2) iniciarGaleria(); else detenerGaleria();
-}
+        let paginaActual = 1;
 
-/* INDICADORES */
-function actualizarIndicadores() {
-  document.querySelectorAll(".indicador").forEach((ind, i) => ind.classList.toggle("activo", i === paginaActual - 1));
-}
+        let indiceFoto = 0;
 
-/* GALERÍA */
-function prepararGaleria() {
-  if (!imagenes || imagenes.length === 0) return;
-  controlesGaleria.innerHTML = "";
-  imagenes.forEach((_, index) => {
-    const punto = document.createElement("button");
-    punto.className = "dot-galeria";
-    punto.type = "button";
-    punto.setAttribute("aria-label", `Ver fotografía ${index + 1}`);
-    if (index === 0) punto.classList.add("activa");
-    punto.addEventListener("click", () => { mostrarFoto(index); iniciarGaleria(); });
-    controlesGaleria.appendChild(punto);
-  });
-  mostrarFoto(0);
-  if (paginaActual === 2) iniciarGaleria();
-}
-function mostrarFoto(indice) {
-  if (!imagenes || imagenes.length === 0) return;
-  indiceFoto = (indice + imagenes.length) % imagenes.length;
-  imagenes.forEach((img, i) => img.classList.toggle("activa", i === indiceFoto));
-  const actual = imagenes[indiceFoto];
-  if (actual && textoFoto) textoFoto.textContent = actual.dataset.texto || "";
-  document.querySelectorAll(".dot-galeria").forEach((p, i) => p.classList.toggle("activa", i === indiceFoto));
-}
-function siguienteFoto() { mostrarFoto(indiceFoto + 1); }
-function iniciarGaleria() { detenerGaleria(); intervaloGaleria = setInterval(siguienteFoto, 4000); }
-function detenerGaleria() { if (intervaloGaleria) { clearInterval(intervaloGaleria); intervaloGaleria = null; } }
+        let intervaloGaleria = null;
 
-/* SWIPE */
-invitacion.addEventListener("touchstart", (e) => {
-  const t = e.changedTouches[0];
-  touchStartX = t.screenX; touchStartY = t.screenY;
-}, { passive: true });
-invitacion.addEventListener("touchend", (e) => {
-  const t = e.changedTouches[0];
-  touchEndX = t.screenX; touchEndY = t.screenY;
-  procesarSwipe();
-}, { passive: true });
-function procesarSwipe() {
-  const dx = touchEndX - touchStartX, dy = touchEndY - touchStartY;
-  if (Math.abs(dy) > Math.abs(dx)) return;
-  if (Math.abs(dx) < 70) return;
-  if (dx < 0) { if (paginaActual < totalPaginas) irAPagina(paginaActual + 1); }
-  else { if (paginaActual > 1) irAPagina(paginaActual - 1); }
-}
+        let touchStartX = 0;
 
-/* TECLADO */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowRight" && paginaActual < totalPaginas) irAPagina(paginaActual + 1);
-  if (e.key === "ArrowLeft" && paginaActual > 1) irAPagina(paginaActual - 1);
-  if (e.key === "Escape" && !intro.classList.contains("oculta")) intro.classList.add("oculta");
-});
+        let touchStartY = 0;
 
-/* PAUSAR GALERÍA CUANDO LA PÁGINA NO ESTÁ VISIBLE */
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) detenerGaleria();
-  else if (paginaActual === 2) iniciarGaleria();
-});
+        let touchEndX = 0;
 
-/* RESIZE */
-window.addEventListener("resize", () => {
-  const pantallaActual = document.getElementById(`pag${paginaActual}`);
-  if (pantallaActual) pantallaActual.scrollTop = 0;
-});
-</script>
+        let touchEndY = 0;
+
+
+        const intro =
+            document.getElementById("intro");
+
+
+        const sobre =
+            document.getElementById("sobre");
+
+
+        const btnAbrir =
+            document.getElementById("btnAbrir");
+
+
+        const musica =
+            document.getElementById("bgMusic");
+
+
+        const musicToggle =
+            document.getElementById("musicToggle");
+
+
+        const loader =
+            document.getElementById("loader");
+
+
+        const invitacion =
+            document.querySelector(".invitacion");
+
+
+        const imagenes =
+            document.querySelectorAll(".slider-img");
+
+
+        const textoFoto =
+            document.getElementById("textoFoto");
+
+
+        const controlesGaleria =
+            document.getElementById("controlesGaleria");
+
+
+        /* =========================================================
+           CARGA
+           ========================================================= */
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                loader.classList.add("oculto");
+
+            }, 500);
+
+
+            prepararGaleria();
+
+        });
+
+
+        /* =========================================================
+           ABRIR SOBRE
+           ========================================================= */
+
+        btnAbrir.addEventListener("click", () => {
+
+            sobre.classList.add("abierto");
+
+
+            setTimeout(() => {
+
+                intro.classList.add("oculta");
+
+                iniciarMusica();
+
+            }, 850);
+
+        });
+
+
+        /* =========================================================
+           MÚSICA
+           ========================================================= */
+
+        function actualizarBotonMusica() {
+
+            if (!musica) return;
+
+
+            if (musica.paused) {
+
+                musicToggle.textContent =
+                    "🎵";
+
+                musicToggle.classList.remove(
+                    "playing"
+                );
+
+                musicToggle.setAttribute(
+                    "aria-label",
+                    "Activar música"
+                );
+
+                musicToggle.setAttribute(
+                    "aria-pressed",
+                    "false"
+                );
+
+            } else {
+
+                musicToggle.textContent =
+                    "⏸️";
+
+                musicToggle.classList.add(
+                    "playing"
+                );
+
+                musicToggle.setAttribute(
+                    "aria-label",
+                    "Pausar música"
+                );
+
+                musicToggle.setAttribute(
+                    "aria-pressed",
+                    "true"
+                );
+
+            }
+
+        }
+
+
+        function iniciarMusica() {
+
+            if (!musica) return;
+
+
+            musica
+                .play()
+                .then(() => {
+
+                    actualizarBotonMusica();
+
+                })
+                .catch(() => {
+
+                    actualizarBotonMusica();
+
+                });
+
+        }
+
+
+        function alternarMusica() {
+
+            if (!musica) return;
+
+
+            if (musica.paused) {
+
+                musica
+                    .play()
+                    .then(() => {
+
+                        actualizarBotonMusica();
+
+                    })
+                    .catch(() => {});
+
+            } else {
+
+                musica.pause();
+
+                actualizarBotonMusica();
+
+            }
+
+        }
+
+
+        musicToggle.addEventListener(
+            "click",
+            alternarMusica
+        );
+
+
+        musica.addEventListener(
+            "play",
+            actualizarBotonMusica
+        );
+
+
+        musica.addEventListener(
+            "pause",
+            actualizarBotonMusica
+        );
+
+
+        /* =========================================================
+           CAMBIAR DE PÁGINA
+           ========================================================= */
+
+        function irAPagina(numero) {
+
+            if (
+                numero < 1 ||
+                numero > totalPaginas ||
+                numero === paginaActual
+            ) {
+
+                return;
+
+            }
+
+
+            const actual =
+                document.getElementById(
+                    `pag${paginaActual}`
+                );
+
+
+            const siguiente =
+                document.getElementById(
+                    `pag${numero}`
+                );
+
+
+            if (!actual || !siguiente) {
+
+                return;
+
+            }
+
+
+            actual.classList.remove(
+                "activa"
+            );
+
+
+            siguiente.classList.add(
+                "activa"
+            );
+
+
+            paginaActual =
+                numero;
+
+
+            actualizarIndicadores();
+
+
+            siguiente.scrollTop = 0;
+
+
+            if (paginaActual === 2) {
+
+                iniciarGaleria();
+
+            } else {
+
+                detenerGaleria();
+
+            }
+
+        }
+
+
+        /* =========================================================
+           INDICADORES
+           ========================================================= */
+
+        function actualizarIndicadores() {
+
+            const indicadores =
+                document.querySelectorAll(
+                    ".indicador"
+                );
+
+
+            indicadores.forEach(
+                (indicador, index) => {
+
+                    indicador.classList.toggle(
+                        "activo",
+                        index ===
+                        paginaActual - 1
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           GALERÍA
+           ========================================================= */
+
+        function prepararGaleria() {
+
+            if (
+                !imagenes ||
+                imagenes.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+            controlesGaleria.innerHTML =
+                "";
+
+
+            imagenes.forEach(
+                (_, index) => {
+
+                    const punto =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    punto.className =
+                        "dot-galeria";
+
+
+                    punto.type =
+                        "button";
+
+
+                    punto.setAttribute(
+                        "aria-label",
+                        `Ver fotografía ${index + 1}`
+                    );
+
+
+                    if (index === 0) {
+
+                        punto.classList.add(
+                            "activa"
+                        );
+
+                    }
+
+
+                    punto.addEventListener(
+                        "click",
+                        () => {
+
+                            mostrarFoto(index);
+
+                            iniciarGaleria();
+
+                        }
+                    );
+
+
+                    controlesGaleria.appendChild(
+                        punto
+                    );
+
+                }
+            );
+
+
+            mostrarFoto(0);
+
+
+            if (paginaActual === 2) {
+
+                iniciarGaleria();
+
+            }
+
+        }
+
+
+        function mostrarFoto(indice) {
+
+            if (
+                !imagenes ||
+                imagenes.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+            indiceFoto =
+                (
+                    indice +
+                    imagenes.length
+                )
+                %
+                imagenes.length;
+
+
+            imagenes.forEach(
+                (imagen, index) => {
+
+                    imagen.classList.toggle(
+                        "activa",
+                        index === indiceFoto
+                    );
+
+                }
+            );
+
+
+            const imagenActual =
+                imagenes[indiceFoto];
+
+
+            if (
+                imagenActual &&
+                textoFoto
+            ) {
+
+                textoFoto.textContent =
+                    imagenActual.dataset.texto ||
+                    "";
+
+            }
+
+
+            const puntos =
+                document.querySelectorAll(
+                    ".dot-galeria"
+                );
+
+
+            puntos.forEach(
+                (punto, index) => {
+
+                    punto.classList.toggle(
+                        "activa",
+                        index === indiceFoto
+                    );
+
+                }
+            );
+
+        }
+
+
+        function siguienteFoto() {
+
+            mostrarFoto(
+                indiceFoto + 1
+            );
+
+        }
+
+
+        function iniciarGaleria() {
+
+            detenerGaleria();
+
+
+            intervaloGaleria =
+                setInterval(
+                    siguienteFoto,
+                    4000
+                );
+
+        }
+
+
+        function detenerGaleria() {
+
+            if (intervaloGaleria) {
+
+                clearInterval(
+                    intervaloGaleria
+                );
+
+                intervaloGaleria =
+                    null;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SWIPE
+           ========================================================= */
+
+        invitacion.addEventListener(
+            "touchstart",
+            (evento) => {
+
+                const touch =
+                    evento.changedTouches[0];
+
+
+                touchStartX =
+                    touch.screenX;
+
+
+                touchStartY =
+                    touch.screenY;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        invitacion.addEventListener(
+            "touchend",
+            (evento) => {
+
+                const touch =
+                    evento.changedTouches[0];
+
+
+                touchEndX =
+                    touch.screenX;
+
+
+                touchEndY =
+                    touch.screenY;
+
+
+                procesarSwipe();
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        function procesarSwipe() {
+
+            const diferenciaX =
+                touchEndX -
+                touchStartX;
+
+
+            const diferenciaY =
+                touchEndY -
+                touchStartY;
+
+
+            /*
+             * Si el movimiento vertical es mayor,
+             * dejamos que el usuario siga desplazándose.
+             */
+
+            if (
+                Math.abs(diferenciaY) >
+                Math.abs(diferenciaX)
+            ) {
+
+                return;
+
+            }
+
+
+            /*
+             * Evitamos movimientos accidentales.
+             */
+
+            if (
+                Math.abs(diferenciaX) < 70
+            ) {
+
+                return;
+
+            }
+
+
+            if (diferenciaX < 0) {
+
+                if (
+                    paginaActual <
+                    totalPaginas
+                ) {
+
+                    irAPagina(
+                        paginaActual + 1
+                    );
+
+                }
+
+            } else {
+
+                if (
+                    paginaActual > 1
+                ) {
+
+                    irAPagina(
+                        paginaActual - 1
+                    );
+
+                }
+
+            }
+
+        }
+
+
+        /* =========================================================
+           TECLADO
+           ========================================================= */
+
+        document.addEventListener(
+            "keydown",
+            (evento) => {
+
+                if (
+                    evento.key === "ArrowRight" &&
+                    paginaActual <
+                    totalPaginas
+                ) {
+
+                    irAPagina(
+                        paginaActual + 1
+                    );
+
+                }
+
+
+                if (
+                    evento.key === "ArrowLeft" &&
+                    paginaActual > 1
+                ) {
+
+                    irAPagina(
+                        paginaActual - 1
+                    );
+
+                }
+
+
+                if (
+                    evento.key === "Escape"
+                ) {
+
+                    if (
+                        !intro.classList.contains(
+                            "oculta"
+                        )
+                    ) {
+
+                        intro.classList.add(
+                            "oculta"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           PAUSAR GALERÍA CUANDO LA PÁGINA NO ESTÁ VISIBLE
+           ========================================================= */
+
+        document.addEventListener(
+            "visibilitychange",
+            () => {
+
+                if (
+                    document.hidden
+                ) {
+
+                    detenerGaleria();
+
+                } else if (
+                    paginaActual === 2
+                ) {
+
+                    iniciarGaleria();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           SI EL USUARIO CAMBIA DE TAMAÑO / ORIENTACIÓN
+           ========================================================= */
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                const pantallaActual =
+                    document.getElementById(
+                        `pag${paginaActual}`
+                    );
+
+
+                if (pantallaActual) {
+
+                    pantallaActual.scrollTop = 0;
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 </html>
