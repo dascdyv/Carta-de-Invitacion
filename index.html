@@ -12,7 +12,7 @@
 
     <meta
         name="theme-color"
-        content="#081426"
+        content="#0a1730"
     >
 
     <meta
@@ -21,8 +21,8 @@
     >
 
     <!-- =========================================================
-         VISTA PREVIA AL COMPARTIR
-         MÁS ADELANTE cambiaremos TU-DOMINIO por la dirección real.
+         PREVISUALIZACIÓN AL COMPARTIR
+         CAMBIAREMOS ESTOS DATOS CUANDO TENGAMOS LA URL DEFINITIVA
     ========================================================== -->
 
     <meta
@@ -37,7 +37,7 @@
 
     <meta
         property="og:description"
-        content="Una invitación especial para celebrar juntos sus 50 años."
+        content="Una celebración, una vida y muchos recuerdos."
     >
 
     <meta
@@ -75,13 +75,16 @@
                 #07101e;
 
             --azul-medio:
-                #1d3965;
+                #1e3a65;
+
+            --azul-suave:
+                #294a7a;
 
             --oro:
-                #c5a45b;
+                #c7a65b;
 
             --oro-claro:
-                #e4cc8d;
+                #e5cd8d;
 
             --blanco:
                 #ffffff;
@@ -96,7 +99,7 @@
                 #25D366;
 
             --sombra:
-                0 25px 70px rgba(0, 0, 0, 0.42);
+                0 25px 70px rgba(0, 0, 0, 0.38);
 
             --radio:
                 22px;
@@ -107,31 +110,47 @@
            2. RESET
         ========================================================== */
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        *,
+        *::before,
+        *::after {
+
+            box-sizing:
+                border-box;
+
+            margin:
+                0;
+
+            padding:
+                0;
         }
 
 
         html {
 
-            width: 100%;
-            min-height: 100%;
+            width:
+                100%;
+
+            min-height:
+                100%;
 
             background:
                 var(--azul-profundo);
 
-            scroll-behavior: smooth;
+            scroll-behavior:
+                smooth;
         }
 
 
         body {
 
-            width: 100%;
+            width:
+                100%;
 
-            min-height: 100vh;
-            min-height: 100dvh;
+            min-height:
+                100vh;
+
+            min-height:
+                100dvh;
 
             font-family:
                 Georgia,
@@ -140,16 +159,17 @@
 
             background:
                 radial-gradient(
-                    circle at 50% 15%,
+                    circle at 50% 10%,
                     #29466f 0%,
-                    #102344 38%,
-                    #070f1c 100%
+                    #102344 42%,
+                    #060e1b 100%
                 );
 
             color:
                 var(--azul);
 
-            overflow-x: hidden;
+            overflow-x:
+                hidden;
         }
 
 
@@ -162,7 +182,9 @@
 
 
         button {
-            font-family: inherit;
+
+            font-family:
+                inherit;
         }
 
 
@@ -172,44 +194,55 @@
 
         #loader {
 
-            position: fixed;
+            position:
+                fixed;
 
-            inset: 0;
+            inset:
+                0;
 
-            z-index: 99999;
+            z-index:
+                99999;
 
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
-            justify-content: center;
+            align-items:
+                center;
+
+            justify-content:
+                center;
 
             background:
                 radial-gradient(
                     circle at center,
-                    #213a63 0%,
+                    #29466f 0%,
                     #102344 45%,
                     #060e1a 100%
                 );
 
             transition:
-                opacity 0.7s ease,
-                visibility 0.7s ease;
+                opacity 0.6s ease,
+                visibility 0.6s ease;
         }
 
 
         #loader.oculto {
 
-            opacity: 0;
+            opacity:
+                0;
 
-            visibility: hidden;
+            visibility:
+                hidden;
 
-            pointer-events: none;
+            pointer-events:
+                none;
         }
 
 
         .loader-contenido {
 
-            text-align: center;
+            text-align:
+                center;
 
             color:
                 white;
@@ -218,17 +251,21 @@
 
         .loader-anillo {
 
-            width: 48px;
-            height: 48px;
+            width:
+                46px;
+
+            height:
+                46px;
 
             margin:
-                0 auto 22px;
+                0 auto 20px;
 
-            border-radius: 50%;
+            border-radius:
+                50%;
 
             border:
                 2px solid
-                rgba(197,164,91,0.22);
+                rgba(199,166,91,0.22);
 
             border-top-color:
                 var(--oro);
@@ -243,11 +280,16 @@
             color:
                 var(--oro-claro);
 
-            letter-spacing:
-                4px;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
             font-size:
-                0.7rem;
+                0.68rem;
+
+            letter-spacing:
+                3px;
 
             text-transform:
                 uppercase;
@@ -260,9 +302,11 @@
 
         .app {
 
-            position: relative;
+            position:
+                relative;
 
-            width: 100%;
+            width:
+                100%;
 
             min-height:
                 100vh;
@@ -270,22 +314,27 @@
             min-height:
                 100dvh;
 
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
-            justify-content: center;
+            align-items:
+                center;
+
+            justify-content:
+                center;
 
             padding:
-                max(12px, env(safe-area-inset-top))
-                max(12px, env(safe-area-inset-right))
-                max(12px, env(safe-area-inset-bottom))
-                max(12px, env(safe-area-inset-left));
+                max(10px, env(safe-area-inset-top))
+                max(10px, env(safe-area-inset-right))
+                max(10px, env(safe-area-inset-bottom))
+                max(10px, env(safe-area-inset-left));
         }
 
 
         .invitacion {
 
-            position: relative;
+            position:
+                relative;
 
             width:
                 min(100%, 440px);
@@ -293,18 +342,26 @@
             height:
                 min(
                     900px,
-                    calc(100dvh - 24px)
+                    calc(100dvh - 20px)
                 );
 
             min-height:
-                620px;
+                600px;
 
             background:
-                white;
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #fbfcfe 100%
+                );
+
+            /*
+             * ELIMINAMOS EL ANTIGUO BORDE DORADO.
+             * La tarjeta ahora tiene una sombra elegante.
+             */
 
             border:
-                2px solid
-                var(--oro);
+                none;
 
             border-radius:
                 var(--radio);
@@ -321,47 +378,56 @@
 
 
         /* =========================================================
-           5. DECORACIÓN
+           5. DECORACIÓN INTERIOR
         ========================================================== */
 
         .fondo-puntos {
 
-            position: absolute;
+            position:
+                absolute;
 
-            inset: 0;
+            inset:
+                0;
 
-            pointer-events: none;
+            pointer-events:
+                none;
 
             opacity:
-                0.28;
+                0.22;
 
             background-image:
                 radial-gradient(
-                    rgba(197,164,91,0.18) 1px,
+                    rgba(199,166,91,0.16) 1px,
                     transparent 1px
                 );
 
             background-size:
-                24px 24px;
+                25px 25px;
 
             z-index:
                 0;
         }
 
 
+        /*
+         * Sustituimos el antiguo marco dorado completo
+         * por una decoración muchísimo más discreta.
+         */
+
         .marco {
 
-            position: absolute;
+            position:
+                absolute;
 
             inset:
-                21px;
+                16px;
 
             border:
                 1px solid
-                rgba(197,164,91,0.36);
+                rgba(199,166,91,0.14);
 
             border-radius:
-                16px;
+                18px;
 
             pointer-events:
                 none;
@@ -372,43 +438,41 @@
 
 
         /* =========================================================
-           6. BOTÓN DE CARTA
+           6. BOTÓN "CARTA"
         ========================================================== */
 
         .carta-btn {
 
-            position: absolute;
+            position:
+                absolute;
 
             top:
                 max(
-                    18px,
+                    15px,
                     env(safe-area-inset-top)
                 );
 
             left:
-                18px;
+                15px;
 
             z-index:
                 100;
 
-            min-width:
-                46px;
-
             height:
-                46px;
+                42px;
 
             padding:
                 0 13px;
 
-            border-radius:
-                24px;
-
             border:
                 1px solid
-                rgba(197,164,91,0.8);
+                rgba(199,166,91,0.65);
+
+            border-radius:
+                22px;
 
             background:
-                rgba(255,255,255,0.94);
+                rgba(255,255,255,0.92);
 
             color:
                 var(--azul);
@@ -419,7 +483,7 @@
                 sans-serif;
 
             font-size:
-                0.76rem;
+                0.74rem;
 
             font-weight:
                 700;
@@ -429,10 +493,11 @@
 
             box-shadow:
                 0 6px 18px
-                rgba(0,0,0,0.12);
+                rgba(0,0,0,0.10);
 
             transition:
-                transform 0.2s ease;
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
 
@@ -449,31 +514,32 @@
 
         .music-btn {
 
-            position: absolute;
+            position:
+                absolute;
 
             top:
                 max(
-                    18px,
+                    15px,
                     env(safe-area-inset-top)
                 );
 
             right:
-                18px;
+                15px;
 
             z-index:
                 100;
 
             width:
-                46px;
+                42px;
 
             height:
-                46px;
+                42px;
 
             border-radius:
                 50%;
 
             border:
-                2px solid
+                1px solid
                 var(--oro);
 
             background:
@@ -492,14 +558,14 @@
                 center;
 
             font-size:
-                18px;
+                17px;
 
             cursor:
                 pointer;
 
             box-shadow:
-                0 8px 20px
-                rgba(0,0,0,0.18);
+                0 7px 18px
+                rgba(0,0,0,0.16);
 
             transition:
                 transform 0.2s ease;
@@ -516,8 +582,7 @@
         .music-btn.playing {
 
             animation:
-                musicaGirando
-                4s linear infinite;
+                musicaGirando 4s linear infinite;
         }
 
 
@@ -527,25 +592,32 @@
 
         .pantalla {
 
-            position: absolute;
+            position:
+                absolute;
 
-            inset: 0;
+            inset:
+                0;
 
-            z-index: 2;
+            z-index:
+                2;
 
-            display: flex;
+            display:
+                flex;
 
-            flex-direction: column;
+            flex-direction:
+                column;
 
-            align-items: center;
+            align-items:
+                center;
 
-            overflow-y: auto;
-            overflow-x: hidden;
+            overflow-y:
+                auto;
+
+            overflow-x:
+                hidden;
 
             padding:
-                82px
-                42px
-                82px;
+                72px 38px 68px;
 
             text-align:
                 center;
@@ -564,13 +636,13 @@
                 hidden;
 
             transform:
-                translateX(30px)
-                scale(0.985);
+                translateX(25px)
+                scale(0.99);
 
             transition:
-                opacity 0.45s ease,
-                transform 0.45s ease,
-                visibility 0.45s ease;
+                opacity 0.4s ease,
+                transform 0.4s ease,
+                visibility 0.4s ease;
 
             scrollbar-width:
                 none;
@@ -578,7 +650,9 @@
 
 
         .pantalla::-webkit-scrollbar {
-            display: none;
+
+            display:
+                none;
         }
 
 
@@ -610,9 +684,9 @@
 
             font-size:
                 clamp(
-                    0.72rem,
+                    0.7rem,
                     2.5vw,
-                    0.92rem
+                    0.9rem
                 );
 
             letter-spacing:
@@ -659,9 +733,9 @@
 
             font-size:
                 clamp(
-                    1.5rem,
+                    1.45rem,
                     7vw,
-                    2.1rem
+                    2.05rem
                 );
 
             line-height:
@@ -686,7 +760,7 @@
                 1rem;
 
             line-height:
-                1.7;
+                1.65;
         }
 
 
@@ -704,7 +778,7 @@
                 1rem;
 
             line-height:
-                1.7;
+                1.65;
 
             font-style:
                 italic;
@@ -734,15 +808,14 @@
                 var(--oro);
 
             animation:
-                flotar
-                3s ease-in-out infinite;
+                flotar 3s ease-in-out infinite;
         }
 
 
         .foto-gala {
 
             width:
-                min(80%, 295px);
+                min(78%, 285px);
 
             aspect-ratio:
                 4 / 4.6;
@@ -758,14 +831,14 @@
 
             border:
                 2px solid
-                var(--oro);
+                rgba(199,166,91,0.72);
 
             margin:
-                14px 0 18px;
+                12px 0 16px;
 
             box-shadow:
                 0 15px 35px
-                rgba(16,35,68,0.18);
+                rgba(16,35,68,0.16);
 
             background:
                 #eee;
@@ -798,10 +871,10 @@
                 center;
 
             gap:
-                10px;
+                9px;
 
             margin-top:
-                18px;
+                17px;
         }
 
 
@@ -811,7 +884,7 @@
                 min(100%, 340px);
 
             min-height:
-                50px;
+                49px;
 
             border-radius:
                 30px;
@@ -821,7 +894,7 @@
                 var(--oro);
 
             padding:
-                13px 22px;
+                12px 21px;
 
             display:
                 flex;
@@ -841,7 +914,7 @@
                 sans-serif;
 
             font-size:
-                0.95rem;
+                0.94rem;
 
             font-weight:
                 700;
@@ -874,12 +947,12 @@
                 linear-gradient(
                     135deg,
                     #0d1f3b,
-                    #1f3d6d
+                    #244879
                 );
 
             box-shadow:
                 0 9px 22px
-                rgba(16,35,68,0.25);
+                rgba(16,35,68,0.22);
         }
 
 
@@ -921,7 +994,10 @@
                 underline;
 
             min-height:
-                38px;
+                36px;
+
+            box-shadow:
+                none;
         }
 
 
@@ -957,12 +1033,12 @@
                 hidden;
 
             border:
-                2px solid
-                var(--oro);
+                1px solid
+                rgba(199,166,91,0.65);
 
             box-shadow:
                 0 15px 30px
-                rgba(0,0,0,0.18);
+                rgba(0,0,0,0.15);
 
             background:
                 #edf0f4;
@@ -990,10 +1066,10 @@
                 0;
 
             transform:
-                scale(1.04);
+                scale(1.035);
 
             transition:
-                opacity 0.7s ease,
+                opacity 0.65s ease,
                 transform 3s ease;
         }
 
@@ -1014,7 +1090,7 @@
                 inline-block;
 
             max-width:
-                95%;
+                96%;
 
             margin-top:
                 12px;
@@ -1033,7 +1109,7 @@
 
             border:
                 1px solid
-                var(--oro);
+                rgba(199,166,91,0.75);
 
             font-family:
                 Arial,
@@ -1041,13 +1117,13 @@
                 sans-serif;
 
             font-size:
-                0.82rem;
+                0.81rem;
 
             font-weight:
                 700;
 
             line-height:
-                1.35;
+                1.4;
         }
 
 
@@ -1124,7 +1200,7 @@
                 column;
 
             gap:
-                12px;
+                11px;
 
             margin-top:
                 12px;
@@ -1137,7 +1213,7 @@
                 100%;
 
             padding:
-                15px 17px;
+                14px 16px;
 
             border-radius:
                 15px;
@@ -1155,14 +1231,14 @@
 
             box-shadow:
                 0 8px 20px
-                rgba(16,35,68,0.06);
+                rgba(16,35,68,0.05);
         }
 
 
         .info-icono {
 
             font-size:
-                1.3rem;
+                1.25rem;
 
             margin-bottom:
                 4px;
@@ -1175,7 +1251,7 @@
                 var(--oro);
 
             font-size:
-                0.75rem;
+                0.73rem;
 
             letter-spacing:
                 3px;
@@ -1202,7 +1278,7 @@
                 sans-serif;
 
             font-size:
-                1rem;
+                0.98rem;
 
             line-height:
                 1.45;
@@ -1222,7 +1298,7 @@
                 5px;
 
             padding:
-                14px 17px;
+                13px 16px;
 
             width:
                 100%;
@@ -1231,11 +1307,11 @@
                 15px;
 
             background:
-                rgba(37,211,102,0.08);
+                rgba(37,211,102,0.07);
 
             border:
                 1px solid
-                rgba(37,211,102,0.25);
+                rgba(37,211,102,0.22);
 
             color:
                 #41604b;
@@ -1246,7 +1322,7 @@
                 sans-serif;
 
             font-size:
-                0.84rem;
+                0.83rem;
 
             line-height:
                 1.5;
@@ -1270,11 +1346,10 @@
                 2rem;
 
             margin-bottom:
-                18px;
+                17px;
 
             animation:
-                latido
-                1.8s ease-in-out infinite;
+                latido 1.8s ease-in-out infinite;
         }
 
 
@@ -1297,13 +1372,13 @@
         .firma {
 
             margin-top:
-                22px;
+                21px;
 
             color:
                 var(--oro);
 
             font-size:
-                0.8rem;
+                0.78rem;
 
             letter-spacing:
                 3px;
@@ -1316,7 +1391,7 @@
         .frase-final {
 
             margin-top:
-                18px;
+                17px;
 
             color:
                 var(--gris);
@@ -1327,10 +1402,10 @@
                 sans-serif;
 
             font-size:
-                0.95rem;
+                0.94rem;
 
             line-height:
-                1.7;
+                1.65;
 
             font-style:
                 italic;
@@ -1354,7 +1429,7 @@
 
             bottom:
                 max(
-                    17px,
+                    14px,
                     env(safe-area-inset-bottom)
                 );
 
@@ -1414,19 +1489,11 @@
         /* =========================================================
            17. CARTA / SOBRE INICIAL
            
-           ESTA ES LA PARTE REHECHA.
-           
-           La clave es que:
-           
-           .sobre-stage
-              └── .sobre
-                   ├── fondo
-                   ├── carta
-                   ├── frente
-                   ├── solapa
-                   └── sello
-           
-           Todo vive dentro de un espacio con tamaño fijo.
+           ESTA ES LA PARTE COMPLETAMENTE REHECHA.
+
+           El sobre tiene un escenario de tamaño fijo.
+           Nada de lo que ocurre dentro del sobre mueve
+           el título, subtítulo o botón.
         ========================================================== */
 
         .intro {
@@ -1450,28 +1517,16 @@
                 center;
 
             padding:
-                max(
-                    20px,
-                    env(safe-area-inset-top)
-                )
-                max(
-                    20px,
-                    env(safe-area-inset-right)
-                )
-                max(
-                    20px,
-                    env(safe-area-inset-bottom)
-                )
-                max(
-                    20px,
-                    env(safe-area-inset-left)
-                );
+                max(18px, env(safe-area-inset-top))
+                max(18px, env(safe-area-inset-right))
+                max(18px, env(safe-area-inset-bottom))
+                max(18px, env(safe-area-inset-left));
 
             background:
                 radial-gradient(
-                    circle at center,
+                    circle at 50% 20%,
                     #29466f 0%,
-                    #102344 43%,
+                    #102344 44%,
                     #060e1b 100%
                 );
 
@@ -1479,8 +1534,8 @@
                 auto;
 
             transition:
-                opacity 0.7s ease,
-                visibility 0.7s ease;
+                opacity 0.65s ease,
+                visibility 0.65s ease;
         }
 
 
@@ -1508,12 +1563,6 @@
             flex:
                 0 0 auto;
 
-            text-align:
-                center;
-
-            color:
-                white;
-
             display:
                 flex;
 
@@ -1522,14 +1571,17 @@
 
             align-items:
                 center;
+
+            text-align:
+                center;
         }
 
 
         /*
-         * ESPACIO RESERVADO PARA EL SOBRE.
+         * ESPACIO FIJO.
          *
-         * Esto es importante:
-         * el sobre NO modifica la posición del texto.
+         * Este espacio NO cambia cuando la carta
+         * se abre.
          */
 
         .sobre-stage {
@@ -1538,35 +1590,37 @@
                 relative;
 
             width:
-                min(
-                    100%,
-                    350px
+                100%;
+
+            height:
+                clamp(
+                    155px,
+                    45vw,
+                    205px
                 );
 
-            aspect-ratio:
-                1.45 / 1;
+            margin:
+                0 auto 22px;
 
             flex:
                 0 0 auto;
-
-            margin:
-                0 auto 26px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
         }
 
+
+        /*
+         * SOBRE
+         */
 
         .sobre {
 
             position:
-                relative;
+                absolute;
+
+            left:
+                0;
+
+            bottom:
+                0;
 
             width:
                 100%;
@@ -1576,14 +1630,49 @@
 
             perspective:
                 1200px;
-
-            transform:
-                translateZ(0);
         }
 
 
         /*
-         * FONDO DEL SOBRE
+         * SOMBRA DEL SOBRE
+         */
+
+        .sobre::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            left:
+                8%;
+
+            right:
+                8%;
+
+            bottom:
+                -9px;
+
+            height:
+                18px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(0,0,0,0.22);
+
+            filter:
+                blur(10px);
+
+            z-index:
+                0;
+        }
+
+
+        /*
+         * CUERPO BASE
          */
 
         .sobre-fondo {
@@ -1592,25 +1681,25 @@
                 absolute;
 
             inset:
-                10% 0 0;
+                16% 0 0;
 
             border:
-                2px solid
-                var(--oro);
+                1px solid
+                rgba(199,166,91,0.85);
 
             border-radius:
-                9px 9px 17px 17px;
+                7px 7px 17px 17px;
 
             background:
                 linear-gradient(
                     145deg,
                     #ffffff 0%,
-                    #edf0f4 100%
+                    #eef1f4 100%
                 );
 
             box-shadow:
-                0 25px 55px
-                rgba(0,0,0,0.35);
+                0 18px 40px
+                rgba(0,0,0,0.25);
 
             z-index:
                 1;
@@ -1620,7 +1709,8 @@
         /*
          * CARTA INTERIOR
          *
-         * Está detrás del frente del sobre.
+         * Está inicialmente escondida detrás
+         * del frente del sobre.
          */
 
         .carta-interior {
@@ -1629,13 +1719,13 @@
                 absolute;
 
             left:
-                10%;
+                9%;
 
-            right:
-                10%;
+            width:
+                82%;
 
             bottom:
-                8%;
+                9%;
 
             height:
                 68%;
@@ -1647,34 +1737,37 @@
                 linear-gradient(
                     180deg,
                     #fffefb,
-                    #f3f0e8
+                    #f4f0e7
                 );
 
             border:
                 1px solid
-                rgba(197,164,91,0.55);
+                rgba(199,166,91,0.55);
 
             box-shadow:
                 0 8px 20px
-                rgba(0,0,0,0.16);
+                rgba(0,0,0,0.14);
 
             z-index:
                 2;
 
             transform:
-                translateY(54%);
+                translateY(57%);
 
             transition:
-                transform
-                0.95s
+                transform 0.85s
                 cubic-bezier(
                     .22,
                     .8,
-                    .28,
+                    .25,
                     1
                 );
         }
 
+
+        /*
+         * Pequeño detalle de la tarjeta.
+         */
 
         .carta-interior::before {
 
@@ -1697,19 +1790,15 @@
                 var(--oro);
 
             font-size:
-                clamp(
-                    1.2rem,
-                    6vw,
-                    1.7rem
-                );
+                1.25rem;
         }
 
 
         /*
          * FRENTE DEL SOBRE
          *
-         * Este elemento tapa la parte inferior
-         * de la carta cuando está cerrada.
+         * Esta capa siempre está por encima
+         * de la tarjeta mientras está cerrado.
          */
 
         .sobre-frente {
@@ -1729,16 +1818,9 @@
             height:
                 72%;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #ffffff,
-                    #e8ebef
-                );
-
             border:
-                2px solid
-                var(--oro);
+                1px solid
+                rgba(199,166,91,0.85);
 
             border-top:
                 none;
@@ -1746,16 +1828,23 @@
             border-radius:
                 0 0 17px 17px;
 
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #e9edf1
+                );
+
             overflow:
                 hidden;
 
             z-index:
-                4;
+                5;
         }
 
 
         /*
-         * Pliegues del frente.
+         * LÍNEAS DE LOS PLIEGUES
          */
 
         .sobre-frente::before,
@@ -1768,23 +1857,23 @@
                 absolute;
 
             bottom:
-                6%;
+                5%;
 
             width:
-                82%;
+                85%;
 
             height:
-                2px;
+                1px;
 
             background:
-                rgba(197,164,91,0.82);
+                rgba(199,166,91,0.72);
         }
 
 
         .sobre-frente::before {
 
             left:
-                -20%;
+                -22%;
 
             transform:
                 rotate(31deg);
@@ -1794,7 +1883,7 @@
         .sobre-frente::after {
 
             right:
-                -20%;
+                -22%;
 
             transform:
                 rotate(-31deg);
@@ -1804,8 +1893,8 @@
         /*
          * SOLAPA SUPERIOR
          *
-         * Es la capa que cubre la carta cuando
-         * el sobre está cerrado.
+         * En lugar de crear un triángulo gigante,
+         * la solapa está limitada al escenario.
          */
 
         .solapa {
@@ -1814,7 +1903,7 @@
                 absolute;
 
             top:
-                10%;
+                16%;
 
             left:
                 0;
@@ -1823,24 +1912,26 @@
                 100%;
 
             height:
-                62%;
+                53%;
 
             background:
                 linear-gradient(
                     145deg,
                     #ffffff,
-                    #e7e9ed
+                    #e9edf1
                 );
-
-            border:
-                2px solid
-                var(--oro);
 
             clip-path:
                 polygon(
                     0 0,
                     100% 0,
                     50% 100%
+                );
+
+            filter:
+                drop-shadow(
+                    0 1px 0
+                    rgba(199,166,91,0.9)
                 );
 
             transform-origin:
@@ -1850,8 +1941,7 @@
                 7;
 
             transition:
-                transform
-                0.95s
+                transform 0.85s
                 cubic-bezier(
                     .2,
                     .75,
@@ -1874,26 +1964,23 @@
                 50%;
 
             top:
-                48%;
+                43%;
 
             transform:
-                translate(
-                    -50%,
-                    -50%
-                );
+                translate(-50%, -50%);
 
             width:
                 clamp(
-                    54px,
-                    18vw,
-                    70px
+                    50px,
+                    15vw,
+                    64px
                 );
 
             height:
                 clamp(
-                    54px,
-                    18vw,
-                    70px
+                    50px,
+                    15vw,
+                    64px
                 );
 
             border-radius:
@@ -1919,24 +2006,18 @@
                 center;
 
             font-size:
-                clamp(
-                    1.3rem,
-                    6vw,
-                    1.65rem
-                );
+                1.45rem;
 
             box-shadow:
-                0 8px 18px
-                rgba(0,0,0,0.22);
+                0 7px 18px
+                rgba(0,0,0,0.20);
 
             z-index:
                 10;
 
             transition:
-                transform
-                0.55s ease,
-                opacity
-                0.4s ease;
+                transform 0.5s ease,
+                opacity 0.35s ease;
         }
 
 
@@ -1957,18 +2038,15 @@
         .sobre.abierto .carta-interior {
 
             transform:
-                translateY(-10%);
+                translateY(-18%);
         }
 
 
         .sobre.abierto .sello {
 
             transform:
-                translate(
-                    -50%,
-                    -50%
-                )
-                scale(0);
+                translate(-50%, -50%)
+                scale(0.15);
 
             opacity:
                 0;
@@ -1976,10 +2054,10 @@
 
 
         /*
-         * TEXTO DE LA CARTA
+         * TEXTO
          *
-         * Está completamente fuera del sobre.
-         * Por eso nunca será tapado por la animación.
+         * Está FUERA del escenario del sobre.
+         * Por eso jamás será cubierto por la animación.
          */
 
         .intro-titulo {
@@ -1995,19 +2073,19 @@
 
             font-size:
                 clamp(
-                    1.3rem,
+                    1.35rem,
                     6vw,
-                    1.7rem
+                    1.75rem
                 );
 
             line-height:
-                1.15;
+                1.1;
 
             letter-spacing:
-                1.5px;
+                1px;
 
             margin:
-                0 10px 8px;
+                0 8px 8px;
         }
 
 
@@ -2020,12 +2098,7 @@
                 20;
 
             color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.78
-                );
+                rgba(255,255,255,0.80);
 
             font-family:
                 Arial,
@@ -2035,18 +2108,18 @@
             font-size:
                 clamp(
                     0.8rem,
-                    3.8vw,
-                    0.92rem
+                    3.7vw,
+                    0.94rem
                 );
 
             line-height:
-                1.45;
+                1.4;
 
             max-width:
                 320px;
 
             margin:
-                0 auto 20px;
+                0 auto 18px;
         }
 
 
@@ -2065,14 +2138,14 @@
                 );
 
             min-height:
-                52px;
-
-            border-radius:
-                30px;
+                51px;
 
             border:
                 1px solid
                 var(--oro);
+
+            border-radius:
+                30px;
 
             background:
                 linear-gradient(
@@ -2090,7 +2163,7 @@
                 sans-serif;
 
             font-size:
-                0.95rem;
+                0.94rem;
 
             font-weight:
                 700;
@@ -2100,7 +2173,7 @@
 
             box-shadow:
                 0 10px 25px
-                rgba(0,0,0,0.25);
+                rgba(0,0,0,0.22);
 
             transition:
                 transform 0.2s ease,
@@ -2122,6 +2195,7 @@
         @keyframes girar {
 
             to {
+
                 transform:
                     rotate(360deg);
             }
@@ -2131,6 +2205,7 @@
         @keyframes musicaGirando {
 
             to {
+
                 transform:
                     rotate(360deg);
             }
@@ -2141,11 +2216,13 @@
 
             0%,
             100% {
+
                 transform:
                     translateY(0);
             }
 
             50% {
+
                 transform:
                     translateY(-6px);
             }
@@ -2156,11 +2233,13 @@
 
             0%,
             100% {
+
                 transform:
                     scale(1);
             }
 
             50% {
+
                 transform:
                     scale(1.12);
             }
@@ -2168,49 +2247,42 @@
 
 
         /* =========================================================
-           19. CELULARES PEQUEÑOS
+           19. TELÉFONOS CON POCA ALTURA
         ========================================================== */
 
         @media (max-height: 720px) {
 
             .invitacion {
 
+                height:
+                    calc(100dvh - 12px);
+
                 min-height:
                     0;
-
-                height:
-                    calc(
-                        100dvh - 16px
-                    );
             }
 
 
             .pantalla {
 
                 padding:
-                    70px
-                    28px
-                    65px;
+                    66px 26px 60px;
             }
 
 
             .foto-gala {
 
                 width:
-                    min(
-                        68%,
-                        225px
-                    );
+                    min(66%, 220px);
 
                 margin:
-                    7px 0 11px;
+                    7px 0 10px;
             }
 
 
             .mensaje-bienvenida {
 
                 font-size:
-                    0.9rem;
+                    0.88rem;
 
                 line-height:
                     1.45;
@@ -2220,7 +2292,7 @@
             .slider {
 
                 max-height:
-                    46dvh;
+                    45dvh;
             }
 
 
@@ -2244,22 +2316,22 @@
                     9px;
 
                 gap:
-                    7px;
+                    6px;
             }
 
 
             .btn {
 
                 min-height:
-                    44px;
+                    43px;
 
                 padding:
-                    10px 17px;
+                    9px 16px;
             }
 
 
             /*
-             * SOBRE MÁS PEQUEÑO EN CELULARES BAJOS
+             * SOBRE MÁS COMPACTO
              */
 
             .sobre-wrapper {
@@ -2274,22 +2346,29 @@
 
             .sobre-stage {
 
+                height:
+                    clamp(
+                        140px,
+                        42vw,
+                        175px
+                    );
+
                 margin-bottom:
-                    19px;
+                    17px;
             }
 
 
             .intro-subtitulo {
 
                 margin-bottom:
-                    15px;
+                    13px;
             }
 
 
             .btn-abrir {
 
                 min-height:
-                    48px;
+                    47px;
             }
         }
 
@@ -2303,31 +2382,31 @@
             .pantalla {
 
                 padding-left:
-                    25px;
+                    23px;
 
                 padding-right:
-                    25px;
+                    23px;
             }
 
 
             .marco {
 
                 inset:
-                    13px;
+                    12px;
             }
 
 
             h1 {
 
                 font-size:
-                    1.85rem;
+                    1.82rem;
             }
 
 
             .foto-gala {
 
                 width:
-                    64%;
+                    63%;
             }
 
 
@@ -2335,23 +2414,9 @@
             .texto-italico {
 
                 font-size:
-                    0.88rem;
+                    0.87rem;
             }
 
-
-            .carta-btn {
-
-                padding:
-                    0 10px;
-
-                font-size:
-                    0.7rem;
-            }
-
-
-            /*
-             * REDUCCIÓN EXTRA DEL SOBRE
-             */
 
             .sobre-wrapper {
 
@@ -2362,35 +2427,38 @@
 
             .sobre-stage {
 
+                height:
+                    145px;
+
                 margin-bottom:
-                    16px;
+                    15px;
             }
 
 
             .intro-titulo {
 
                 font-size:
-                    1.25rem;
+                    1.24rem;
             }
 
 
             .intro-subtitulo {
 
                 font-size:
-                    0.78rem;
+                    0.77rem;
 
                 margin-bottom:
-                    13px;
+                    12px;
             }
 
 
             .btn-abrir {
 
                 min-height:
-                    46px;
+                    45px;
 
                 font-size:
-                    0.88rem;
+                    0.87rem;
             }
         }
 
@@ -2406,9 +2474,7 @@
                 height:
                     min(
                         900px,
-                        calc(
-                            100dvh - 40px
-                        )
+                        calc(100dvh - 36px)
                     );
             }
 
@@ -2420,7 +2486,7 @@
 
                 box-shadow:
                     0 12px 28px
-                    rgba(16,35,68,0.18);
+                    rgba(16,35,68,0.17);
             }
 
 
@@ -2428,6 +2494,10 @@
 
                 transform:
                     translateY(-2px);
+
+                box-shadow:
+                    0 9px 22px
+                    rgba(0,0,0,0.14);
             }
 
 
@@ -2438,7 +2508,7 @@
 
                 box-shadow:
                     0 14px 30px
-                    rgba(0,0,0,0.3);
+                    rgba(0,0,0,0.28);
             }
         }
 
@@ -2491,7 +2561,6 @@
     </div>
 
 
-
     <!-- =========================================================
          CARTA / SOBRE INICIAL
     ========================================================== -->
@@ -2505,12 +2574,9 @@
         <div class="sobre-wrapper">
 
 
-            <!--
-                ESPACIO CONTROLADO DEL SOBRE.
-
-                El texto de abajo NO depende de la posición
-                de la carta interior.
-            -->
+            <!-- =================================================
+                 ESCENARIO FIJO DEL SOBRE
+            ================================================== -->
 
             <div class="sobre-stage">
 
@@ -2519,27 +2585,13 @@
                     id="sobre"
                 >
 
-                    <!-- Fondo -->
-
                     <div class="sobre-fondo"></div>
-
-
-                    <!-- Carta interior -->
 
                     <div class="carta-interior"></div>
 
-
-                    <!-- Frente -->
-
                     <div class="sobre-frente"></div>
 
-
-                    <!-- Solapa -->
-
                     <div class="solapa"></div>
-
-
-                    <!-- Sello -->
 
                     <div class="sello">
                         ✦
@@ -2575,7 +2627,6 @@
         </div>
 
     </section>
-
 
 
     <!-- =========================================================
@@ -2618,7 +2669,6 @@
             >
                 🎵
             </button>
-
 
 
             <!-- =================================================
@@ -2680,7 +2730,6 @@
             </section>
 
 
-
             <!-- =================================================
                  PÁGINA 2 - HISTORIA
             ================================================== -->
@@ -2712,7 +2761,6 @@
 
                 <div class="galeria">
 
-
                     <div
                         class="slider"
                         id="slider"
@@ -2736,7 +2784,7 @@
                             src="foto2.png"
                             class="slider-img"
                             alt="Enrique durante una etapa de su juventud"
-                            data-texto="Los años fueron pasando y, poco a poco, la vida se fue llenando de nuevas experiencias, aprendizajes y recuerdos."
+                            data-texto="Los años fueron pasando y, poco a poco, la vida se fue llenando de nuevas experiencias, aprendizajes y recuerdos compartidos."
                             loading="lazy"
                         >
 
@@ -2747,7 +2795,7 @@
                             src="foto3.png"
                             class="slider-img"
                             alt="Enrique durante un momento especial"
-                            data-texto="También estuvieron esos momentos hermosos en los que compartir y acompañar a las personas importantes hizo aún más especial el camino."
+                            data-texto="También estuvieron esos momentos hermosos en los que acompañar y compartir con las personas importantes hizo aún más especial el camino."
                             loading="lazy"
                         >
 
@@ -2794,7 +2842,6 @@
 
                 <div class="grupo-botones">
 
-
                     <button
                         class="btn btn-principal"
                         type="button"
@@ -2815,7 +2862,6 @@
                 </div>
 
             </section>
-
 
 
             <!-- =================================================
@@ -2895,7 +2941,6 @@
                 </div>
 
 
-
                 <div class="grupo-botones">
 
 
@@ -2932,7 +2977,6 @@
 
                 <div class="grupo-botones">
 
-
                     <button
                         class="btn btn-principal"
                         type="button"
@@ -2953,7 +2997,6 @@
                 </div>
 
             </section>
-
 
 
             <!-- =================================================
@@ -3009,7 +3052,6 @@
 
                 <div class="grupo-botones">
 
-
                     <button
                         class="btn btn-principal"
                         type="button"
@@ -3032,7 +3074,6 @@
             </section>
 
 
-
             <!-- =================================================
                  INDICADORES
             ================================================== -->
@@ -3044,8 +3085,11 @@
             >
 
                 <span class="indicador activo"></span>
+
                 <span class="indicador"></span>
+
                 <span class="indicador"></span>
+
                 <span class="indicador"></span>
 
             </div>
@@ -3053,7 +3097,6 @@
         </div>
 
     </main>
-
 
 
     <!-- =========================================================
@@ -3068,13 +3111,11 @@
     ></audio>
 
 
-
     <!-- =========================================================
          JAVASCRIPT
     ========================================================== -->
 
     <script>
-
 
         /* =========================================================
            VARIABLES
@@ -3100,70 +3141,37 @@
         ========================================================== */
 
         const intro =
-            document.getElementById(
-                "intro"
-            );
-
+            document.getElementById("intro");
 
         const sobre =
-            document.getElementById(
-                "sobre"
-            );
-
+            document.getElementById("sobre");
 
         const btnAbrir =
-            document.getElementById(
-                "btnAbrir"
-            );
-
+            document.getElementById("btnAbrir");
 
         const volverCarta =
-            document.getElementById(
-                "volverCarta"
-            );
-
+            document.getElementById("volverCarta");
 
         const musica =
-            document.getElementById(
-                "bgMusic"
-            );
-
+            document.getElementById("bgMusic");
 
         const musicToggle =
-            document.getElementById(
-                "musicToggle"
-            );
-
+            document.getElementById("musicToggle");
 
         const loader =
-            document.getElementById(
-                "loader"
-            );
-
+            document.getElementById("loader");
 
         const invitacion =
-            document.querySelector(
-                ".invitacion"
-            );
-
+            document.querySelector(".invitacion");
 
         const imagenes =
-            document.querySelectorAll(
-                ".slider-img"
-            );
-
+            document.querySelectorAll(".slider-img");
 
         const textoFoto =
-            document.getElementById(
-                "textoFoto"
-            );
-
+            document.getElementById("textoFoto");
 
         const controlesGaleria =
-            document.getElementById(
-                "controlesGaleria"
-            );
-
+            document.getElementById("controlesGaleria");
 
 
         /* =========================================================
@@ -3192,7 +3200,6 @@
         );
 
 
-
         /* =========================================================
            ABRIR CARTA
         ========================================================== */
@@ -3215,9 +3222,9 @@
 
 
                 /*
-                 * Dejamos que la animación
-                 * del sobre se vea antes
-                 * de desaparecer.
+                 * Dejamos que el invitado vea
+                 * la apertura antes de pasar
+                 * a la invitación.
                  */
 
                 setTimeout(
@@ -3227,16 +3234,14 @@
                             "oculta"
                         );
 
-
                         iniciarMusica();
 
                     },
-                    950
+                    900
                 );
 
             }
         );
-
 
 
         /* =========================================================
@@ -3254,18 +3259,13 @@
             detenerGaleria();
 
 
-            /*
-             * Regresamos siempre a la
-             * primera página.
-             */
-
             paginaActual = 1;
 
             actualizarIndicadores();
 
 
             /*
-             * Mostramos la carta.
+             * Mostramos primero la carta.
              */
 
             intro.classList.remove(
@@ -3274,8 +3274,8 @@
 
 
             /*
-             * Reiniciamos completamente
-             * la animación del sobre.
+             * Reiniciamos la carta
+             * a estado cerrado.
              */
 
             sobre.classList.remove(
@@ -3285,8 +3285,20 @@
 
             cartaAbierta = false;
 
-        }
 
+            /*
+             * Volvemos al principio
+             * de la pantalla 1.
+             */
+
+            const portada =
+                document.getElementById("pag1");
+
+            if (portada) {
+                portada.scrollTop = 0;
+            }
+
+        }
 
 
         /* =========================================================
@@ -3323,7 +3335,6 @@
         }
 
 
-
         function iniciarMusica() {
 
             if (!musica) {
@@ -3349,7 +3360,6 @@
                 );
 
         }
-
 
 
         function alternarMusica() {
@@ -3389,7 +3399,6 @@
             "click",
             alternarMusica
         );
-
 
 
         /* =========================================================
@@ -3463,7 +3472,6 @@
         }
 
 
-
         /* =========================================================
            INDICADORES
         ========================================================== */
@@ -3492,7 +3500,6 @@
             );
 
         }
-
 
 
         /* =========================================================
@@ -3558,7 +3565,6 @@
                                 index
                             );
 
-
                             iniciarGaleria();
 
                         }
@@ -3576,7 +3582,6 @@
             mostrarFoto(0);
 
         }
-
 
 
         function mostrarFoto(indice) {
@@ -3654,7 +3659,6 @@
         }
 
 
-
         function siguienteFoto() {
 
             mostrarFoto(
@@ -3662,7 +3666,6 @@
             );
 
         }
-
 
 
         function iniciarGaleria() {
@@ -3679,7 +3682,6 @@
         }
 
 
-
         function detenerGaleria() {
 
             if (
@@ -3690,14 +3692,12 @@
                     intervaloGaleria
                 );
 
-
                 intervaloGaleria =
                     null;
 
             }
 
         }
-
 
 
         /* =========================================================
@@ -3735,7 +3735,6 @@
                 passive: true
             }
         );
-
 
 
         function procesarSwipe() {
@@ -3793,7 +3792,7 @@
 
                 /*
                  * Desde la página 1,
-                 * derecha = volver a carta.
+                 * volver a la carta.
                  */
 
                 volverALaCarta();
@@ -3801,7 +3800,6 @@
             }
 
         }
-
 
 
         /* =========================================================
@@ -3814,7 +3812,7 @@
 
                 /*
                  * Si la carta está visible,
-                 * no cambiamos páginas.
+                 * no cambiamos las páginas.
                  */
 
                 if (
@@ -3868,7 +3866,6 @@
 
             }
         );
-
 
 
         /* =========================================================
