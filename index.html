@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
@@ -9,18 +10,27 @@
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <meta name="theme-color" content="#0b1830">
+    <meta
+        name="theme-color"
+        content="#0b1830"
+    >
 
-    <!-- =========================================================
-         INFORMACIÓN AL COMPARTIR
-         Más adelante reemplazaremos estas URLs por las reales.
-    ========================================================== -->
+    <meta
+        name="description"
+        content="Invitación especial para celebrar los 50 años de Enrique Cisneros."
+    >
 
-    <meta property="og:type" content="website">
+    <!-- PREVISUALIZACIÓN AL COMPARTIR -->
+    <meta
+        property="og:type"
+        content="website"
+    >
+
     <meta
         property="og:title"
         content="Enrique cumple 50 años 🎉"
     >
+
     <meta
         property="og:description"
         content="Una celebración, una vida y muchos recuerdos."
@@ -47,35 +57,34 @@
     <style>
 
         /* =========================================================
-           1. VARIABLES
+           VARIABLES
         ========================================================== */
 
         :root {
 
             --azul: #102344;
-            --azul-profundo: #071221;
-            --azul-medio: #1b355d;
+            --azul-oscuro: #071221;
+            --azul-medio: #1d3a64;
 
-            --oro: #c7a75c;
-            --oro-claro: #e7d49b;
+            --oro: #c8a95e;
+            --oro-claro: #ead79f;
 
             --blanco: #ffffff;
             --blanco-suave: #f7f8fa;
 
-            --gris: #5d6878;
-            --gris-claro: #e8ebef;
+            --gris: #596579;
 
-            --verde-wsp: #25d366;
+            --verde: #25d366;
 
             --sombra:
-                0 25px 70px rgba(0, 0, 0, 0.35);
+                0 25px 70px rgba(0, 0, 0, 0.28);
 
-            --radio: 20px;
+            --radio: 22px;
         }
 
 
         /* =========================================================
-           2. RESET
+           RESET
         ========================================================== */
 
         * {
@@ -88,11 +97,13 @@
         html {
             width: 100%;
             min-height: 100%;
-            background: var(--azul-profundo);
+            background: var(--azul-oscuro);
+            scroll-behavior: smooth;
         }
 
 
         body {
+
             width: 100%;
             min-height: 100vh;
             min-height: 100dvh;
@@ -104,13 +115,11 @@
 
             background:
                 radial-gradient(
-                    circle at 50% 20%,
-                    #294873 0%,
-                    #142c50 38%,
+                    circle at 50% 10%,
+                    #31527f 0%,
+                    #17345d 35%,
                     #071221 100%
                 );
-
-            color: var(--azul);
 
             overflow-x: hidden;
         }
@@ -118,7 +127,9 @@
 
         button,
         a {
-            -webkit-tap-highlight-color: transparent;
+
+            -webkit-tap-highlight-color:
+                transparent;
         }
 
 
@@ -128,7 +139,107 @@
 
 
         /* =========================================================
-           3. LOADER
+           DECORACIÓN DEL FONDO
+        ========================================================== */
+
+        .decoracion-fondo {
+
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 1;
+        }
+
+
+        .estrella {
+
+            position: absolute;
+
+            color:
+                rgba(234, 215, 159, 0.45);
+
+            font-size: 18px;
+
+            animation:
+                flotarDecoracion
+                5s ease-in-out infinite;
+        }
+
+
+        .estrella:nth-child(1) {
+            top: 9%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+
+        .estrella:nth-child(2) {
+            top: 18%;
+            right: 9%;
+            animation-delay: 1s;
+            font-size: 13px;
+        }
+
+
+        .estrella:nth-child(3) {
+            top: 72%;
+            left: 7%;
+            animation-delay: 2s;
+            font-size: 14px;
+        }
+
+
+        .estrella:nth-child(4) {
+            top: 82%;
+            right: 10%;
+            animation-delay: 1.5s;
+            font-size: 20px;
+        }
+
+
+        .estrella:nth-child(5) {
+            top: 48%;
+            left: 4%;
+            animation-delay: 3s;
+            font-size: 11px;
+        }
+
+
+        .estrella:nth-child(6) {
+            top: 56%;
+            right: 4%;
+            animation-delay: 2.5s;
+            font-size: 12px;
+        }
+
+
+        @keyframes flotarDecoracion {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0.45;
+            }
+
+            50% {
+                transform:
+                    translateY(-12px)
+                    rotate(8deg);
+
+                opacity: 0.8;
+            }
+        }
+
+
+        /* =========================================================
+           LOADER
         ========================================================== */
 
         #loader {
@@ -145,8 +256,8 @@
             background:
                 radial-gradient(
                     circle at center,
-                    #294873 0%,
-                    #142c50 45%,
+                    #31527f 0%,
+                    #17345d 45%,
                     #071221 100%
                 );
 
@@ -157,6 +268,7 @@
 
 
         #loader.oculto {
+
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
@@ -171,17 +283,19 @@
 
         .loader-anillo {
 
-            width: 46px;
-            height: 46px;
+            width: 45px;
+            height: 45px;
 
             margin: 0 auto 20px;
 
             border-radius: 50%;
 
             border:
-                2px solid rgba(199, 167, 92, 0.25);
+                2px solid
+                rgba(200,169,94,0.25);
 
-            border-top-color: var(--oro);
+            border-top-color:
+                var(--oro);
 
             animation:
                 girar 1s linear infinite;
@@ -197,7 +311,7 @@
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.7rem;
+            font-size: 0.68rem;
 
             letter-spacing: 4px;
 
@@ -205,13 +319,17 @@
         }
 
 
+        @keyframes girar {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+        }
+
+
         /* =========================================================
-           4. INTRODUCCIÓN / CARTA
-           
-           IMPORTANTE:
-           Esta parte fue reconstruida desde cero.
-           No usamos la solapa anterior que causaba los
-           problemas de desbordamiento.
+           INTRODUCCIÓN
         ========================================================== */
 
         .intro {
@@ -233,22 +351,21 @@
 
             background:
                 radial-gradient(
-                    circle at 50% 25%,
-                    #294873 0%,
-                    #142c50 43%,
+                    circle at 50% 18%,
+                    #31527f 0%,
+                    #17345d 38%,
                     #071221 100%
                 );
 
             transition:
-                opacity 0.8s ease,
-                visibility 0.8s ease;
+                opacity 0.7s ease,
+                visibility 0.7s ease;
         }
 
 
         .intro.oculta {
 
             opacity: 0;
-
             visibility: hidden;
 
             pointer-events: none;
@@ -257,74 +374,84 @@
 
         .intro-contenido {
 
-            width: min(100%, 430px);
+            position: relative;
+
+            z-index: 5;
+
+            width: min(92vw, 430px);
 
             min-height: 100%;
 
             display: flex;
+
             flex-direction: column;
 
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
 
             color: white;
-        }
 
-
-        /*
-         * ESPACIO CONTROLADO PARA LA CARTA.
-         *
-         * La carta jamás puede empujar el título
-         * ni el botón.
-         */
-
-        .carta-escenario {
-
-            position: relative;
-
-            width: min(88vw, 360px);
-
-            height: min(48vw, 185px);
-
-            min-height: 145px;
-
-            margin-bottom: 30px;
+            padding:
+                25px 0;
         }
 
 
         /* =========================================================
-           CARTA CERRADA
+           SOBRES / CARTA INICIAL
+           
+           IMPORTANTE:
+           Ya NO utilizamos clip-path ni transformaciones 3D.
+           El sobre tiene un tamaño fijo dentro de su escenario.
         ========================================================== */
 
-        .carta {
+        .sobre-escenario {
 
-            position: absolute;
+            position: relative;
 
-            left: 50%;
-            bottom: 0;
+            width: min(86vw, 350px);
 
-            width: 100%;
-            height: 100%;
+            height: 225px;
 
-            transform:
-                translateX(-50%);
+            margin-bottom: 25px;
 
-            perspective: 1000px;
+            display: flex;
 
-            filter:
-                drop-shadow(
-                    0 18px 25px rgba(0,0,0,0.25)
-                );
+            align-items: center;
+
+            justify-content: center;
         }
 
 
-        /*
-         * CUERPO PRINCIPAL
-         */
+        .sobre {
 
-        .carta-cuerpo {
+            position: relative;
+
+            width: 100%;
+
+            height: 190px;
+
+            border-radius: 15px;
+
+            filter:
+                drop-shadow(
+                    0 18px 25px
+                    rgba(0,0,0,0.27)
+                );
+
+            transition:
+                transform 0.7s ease,
+                opacity 0.7s ease;
+        }
+
+
+        /* =========================================================
+           SOBRE CERRADO
+        ========================================================== */
+
+        .sobre-cuerpo {
 
             position: absolute;
 
@@ -332,13 +459,13 @@
             right: 0;
             bottom: 0;
 
-            height: 78%;
+            height: 150px;
 
             border-radius:
-                6px
-                6px
-                15px
-                15px;
+                8px
+                8px
+                16px
+                16px;
 
             background:
                 linear-gradient(
@@ -348,158 +475,58 @@
                 );
 
             border:
-                1px solid rgba(199,167,92,0.8);
+                2px solid
+                rgba(200,169,94,0.9);
 
             overflow: hidden;
 
-            z-index: 1;
+            z-index: 2;
         }
 
 
-        /*
-         * LÍNEAS DECORATIVAS DEL SOBRE
-         */
+        /* Líneas inferiores del sobre */
 
-        .carta-cuerpo::before,
-        .carta-cuerpo::after {
+        .sobre-cuerpo::before,
+        .sobre-cuerpo::after {
 
             content: "";
 
             position: absolute;
 
-            bottom: 0;
+            bottom: -1px;
 
-            width: 65%;
+            width: 62%;
 
-            height: 1.5px;
+            height: 2px;
 
             background:
-                rgba(199,167,92,0.8);
+                rgba(200,169,94,0.85);
         }
 
 
-        .carta-cuerpo::before {
+        .sobre-cuerpo::before {
 
-            left: -13%;
+            left: -10%;
 
             transform:
                 rotate(31deg);
         }
 
 
-        .carta-cuerpo::after {
+        .sobre-cuerpo::after {
 
-            right: -13%;
+            right: -10%;
 
             transform:
                 rotate(-31deg);
         }
 
 
-        /*
-         * PAPEL QUE APARECE AL ABRIR
-         */
+        /* =========================================================
+           TRIÁNGULO SUPERIOR
+        ========================================================== */
 
-        .carta-papel {
-
-            position: absolute;
-
-            left: 8%;
-            right: 8%;
-
-            bottom: 8%;
-
-            height: 74%;
-
-            padding: 18px 15px;
-
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #fffefa,
-                    #f7f3e8
-                );
-
-            border:
-                1px solid rgba(199,167,92,0.65);
-
-            border-radius: 6px;
-
-            color: var(--azul);
-
-            box-shadow:
-                0 5px 15px rgba(0,0,0,0.12);
-
-            /*
-             * Al inicio está detrás del cuerpo.
-             */
-
-            z-index: 0;
-
-            transform:
-                translateY(15px)
-                scale(0.95);
-
-            opacity: 0;
-
-            transition:
-                transform 0.9s cubic-bezier(.2,.8,.2,1),
-                opacity 0.5s ease;
-        }
-
-
-        .carta-papel-simbolo {
-
-            color: var(--oro);
-
-            font-size: 1.3rem;
-
-            margin-bottom: 5px;
-        }
-
-
-        .carta-papel-titulo {
-
-            font-size: 0.82rem;
-
-            font-weight: bold;
-
-            color: var(--azul);
-
-            margin-bottom: 4px;
-        }
-
-
-        .carta-papel-texto {
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            font-size: 0.65rem;
-
-            line-height: 1.4;
-
-            color: var(--gris);
-        }
-
-
-        /*
-         * SOLAPA SUPERIOR.
-         *
-         * Esta es mucho más pequeña y estable.
-         */
-
-        .carta-solapa {
+        .sobre-solapa {
 
             position: absolute;
 
@@ -507,17 +534,18 @@
             left: 0;
 
             width: 100%;
-            height: 54%;
+            height: 105px;
 
             background:
                 linear-gradient(
                     145deg,
                     #ffffff,
-                    #eef1f4
+                    #f0f2f5
                 );
 
             border:
-                1px solid rgba(199,167,92,0.8);
+                2px solid
+                rgba(200,169,94,0.9);
 
             clip-path:
                 polygon(
@@ -526,163 +554,128 @@
                     50% 100%
                 );
 
-            transform-origin: top center;
-
-            z-index: 4;
+            z-index: 5;
 
             transition:
-                transform 0.9s
-                cubic-bezier(.65,.05,.35,1);
+                opacity 0.45s ease,
+                transform 0.55s ease;
         }
 
 
-        /*
-         * PEQUEÑO SELLO
-         */
+        /* =========================================================
+           SELLO
+        ========================================================== */
 
-        .carta-sello {
+        .sobre-sello {
 
             position: absolute;
 
             left: 50%;
-            top: 45%;
-
-            width: 58px;
-            height: 58px;
+            top: 76px;
 
             transform:
                 translate(-50%, -50%);
 
+            width: 62px;
+            height: 62px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             border-radius: 50%;
 
-            background: var(--azul);
+            background:
+                var(--azul);
 
             border:
-                2px solid var(--oro);
+                2px solid
+                var(--oro);
 
-            color: var(--oro-claro);
+            color:
+                var(--oro-claro);
 
-            font-size: 1.35rem;
+            font-size: 1.45rem;
 
             box-shadow:
-                0 7px 15px rgba(0,0,0,0.18);
+                0 9px 22px
+                rgba(0,0,0,0.2);
 
             z-index: 10;
 
             transition:
-                transform 0.6s ease,
+                transform 0.45s ease,
                 opacity 0.4s ease;
         }
 
 
-        /*
-         * CARTA ABIERTA
-         */
+        /* =========================================================
+           ANIMACIÓN DEL SOBRE
+        ========================================================== */
 
-        .carta.abierta .carta-solapa {
-
-            transform:
-                rotateX(180deg);
-
-            z-index: 0;
-        }
-
-
-        .carta.abierta .carta-papel {
-
-            opacity: 1;
+        .sobre.abriendo {
 
             transform:
-                translateY(-22px)
-                scale(1);
-
-            z-index: 2;
-        }
-
-
-        .carta.abierta .carta-sello {
-
-            transform:
-                translate(-50%, -50%)
-                scale(0);
+                translateY(-12px)
+                scale(0.96);
 
             opacity: 0;
         }
 
 
-        /*
-         * Una vez abierta, el cuerpo se mantiene
-         * en su sitio. No afecta al contenido inferior.
-         */
+        .sobre.abriendo
+        .sobre-solapa {
 
-        .carta.abierta {
-
-            animation:
-                cartaFlotando 0.9s ease forwards;
+            opacity: 0;
         }
 
 
-        @keyframes cartaFlotando {
+        .sobre.abriendo
+        .sobre-sello {
 
-            0% {
-                transform:
-                    translateX(-50%)
-                    translateY(0);
-            }
+            transform:
+                translate(-50%, -50%)
+                scale(0.5);
 
-            100% {
-                transform:
-                    translateX(-50%)
-                    translateY(-8px);
-            }
+            opacity: 0;
         }
 
 
         /* =========================================================
-           TEXTO DE INTRODUCCIÓN
+           TÍTULO PRINCIPAL
         ========================================================== */
 
         .intro-titulo {
 
-            position: relative;
+            max-width: 380px;
 
-            z-index: 20;
-
-            max-width: 350px;
-
-            color: var(--oro-claro);
+            color:
+                var(--oro-claro);
 
             font-size:
                 clamp(
-                    1.65rem,
-                    7vw,
-                    2.25rem
+                    1.75rem,
+                    8vw,
+                    2.5rem
                 );
 
             line-height: 1.08;
 
-            margin-bottom: 8px;
+            margin-bottom: 9px;
 
-            letter-spacing: 0.5px;
+            text-shadow:
+                0 2px 12px
+                rgba(0,0,0,0.15);
         }
 
 
         .intro-subtitulo {
 
-            position: relative;
-
-            z-index: 20;
-
-            max-width: 320px;
-
-            margin-bottom: 22px;
+            max-width: 340px;
 
             color:
-                rgba(255,255,255,0.82);
+                rgba(255,255,255,0.84);
 
             font-family:
                 Arial,
@@ -693,10 +686,12 @@
                 clamp(
                     0.82rem,
                     3.5vw,
-                    0.96rem
+                    0.98rem
                 );
 
             line-height: 1.5;
+
+            margin-bottom: 22px;
         }
 
 
@@ -706,24 +701,22 @@
 
         .btn-abrir {
 
-            position: relative;
+            width:
+                min(100%, 310px);
 
-            z-index: 20;
-
-            width: min(100%, 300px);
-
-            min-height: 52px;
+            min-height: 54px;
 
             border-radius: 30px;
 
             border:
-                1px solid var(--oro);
+                1px solid
+                var(--oro);
 
             background:
                 linear-gradient(
                     135deg,
                     #183257,
-                    #244675
+                    #274a78
                 );
 
             color: white;
@@ -733,14 +726,15 @@
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.95rem;
+            font-size: 0.96rem;
 
             font-weight: 700;
 
             cursor: pointer;
 
             box-shadow:
-                0 10px 25px rgba(0,0,0,0.24);
+                0 12px 28px
+                rgba(0,0,0,0.25);
 
             transition:
                 transform 0.2s ease,
@@ -763,29 +757,35 @@
                     translateY(-2px);
 
                 box-shadow:
-                    0 14px 30px rgba(0,0,0,0.28);
+                    0 16px 32px
+                    rgba(0,0,0,0.3);
             }
         }
 
 
         /* =========================================================
-           MENSAJE QUE APARECE DESPUÉS DE ABRIR
+           CARTA ABIERTA
+           
+           Este es el nuevo sistema:
+           NO se mueve el sobre debajo del texto.
+           Simplemente aparece una tarjeta independiente.
         ========================================================== */
 
-        .mensaje-carta {
+        .carta-mensaje {
 
             position: fixed;
 
             inset: 0;
 
-            z-index: 6000;
+            z-index: 7000;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            padding: 25px;
+            padding: 24px;
 
             background:
                 rgba(7,18,33,0.88);
@@ -797,54 +797,74 @@
             pointer-events: none;
 
             transition:
-                opacity 0.5s ease,
-                visibility 0.5s ease;
+                opacity 0.45s ease,
+                visibility 0.45s ease;
         }
 
 
-        .mensaje-carta.visible {
+        .carta-mensaje.visible {
 
             opacity: 1;
 
             visibility: visible;
+
+            pointer-events: auto;
         }
 
 
-        .mensaje-carta-contenido {
+        .carta-contenido {
 
-            width: min(90vw, 360px);
+            position: relative;
 
-            padding: 35px 28px;
+            width:
+                min(92vw, 390px);
+
+            max-height:
+                min(82dvh, 650px);
+
+            overflow-y: auto;
+
+            padding:
+                38px 27px 30px;
 
             text-align: center;
+
+            border-radius: 20px;
 
             background:
                 linear-gradient(
                     145deg,
-                    #ffffff,
+                    #fffefa,
                     #f5f7f9
                 );
 
-            border-radius: 18px;
+            border:
+                1px solid
+                rgba(200,169,94,0.8);
 
             box-shadow:
-                0 25px 60px rgba(0,0,0,0.35);
-
-            border:
-                1px solid rgba(199,167,92,0.65);
+                0 30px 70px
+                rgba(0,0,0,0.4);
 
             transform:
-                translateY(20px)
-                scale(0.95);
+                translateY(35px)
+                scale(0.94);
 
             transition:
-                transform 0.55s
+                transform 0.6s
                 cubic-bezier(.2,.8,.2,1);
+
+            scrollbar-width: none;
         }
 
 
-        .mensaje-carta.visible
-        .mensaje-carta-contenido {
+        .carta-contenido::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .carta-mensaje.visible
+        .carta-contenido {
 
             transform:
                 translateY(0)
@@ -852,48 +872,210 @@
         }
 
 
-        .mensaje-carta-simbolo {
+        /* Decoración superior */
 
-            color: var(--oro);
+        .carta-adornos {
 
-            font-size: 2rem;
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-bottom: 15px;
+
+            color:
+                var(--oro);
+
+            font-size: 1.15rem;
+        }
+
+
+        .carta-linea {
+
+            width: 48px;
+
+            height: 1px;
+
+            background:
+                var(--oro);
+        }
+
+
+        .carta-titulo {
+
+            color:
+                var(--azul);
+
+            font-size:
+                clamp(
+                    1.55rem,
+                    7vw,
+                    2rem
+                );
+
+            line-height: 1.15;
 
             margin-bottom: 12px;
         }
 
 
-        .mensaje-carta h2 {
+        .carta-subtitulo {
 
-            color: var(--azul);
-
-            font-size: 1.55rem;
-
-            margin-bottom: 13px;
-        }
-
-
-        .mensaje-carta p {
-
-            color: var(--gris);
+            color:
+                var(--oro);
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.94rem;
+            font-size: 0.72rem;
 
-            line-height: 1.65;
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .carta-texto {
+
+            color:
+                var(--gris);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                clamp(
+                    0.9rem,
+                    3.5vw,
+                    0.98rem
+                );
+
+            line-height: 1.75;
+
+            margin-bottom: 15px;
+        }
+
+
+        .carta-destacado {
+
+            margin:
+                18px 0;
+
+            padding:
+                15px 17px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(200,169,94,0.09);
+
+            border:
+                1px solid
+                rgba(200,169,94,0.25);
+
+            color:
+                var(--azul);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                0.95rem;
+
+            line-height: 1.6;
+
+            font-style: italic;
+        }
+
+
+        .carta-firma {
+
+            color:
+                var(--oro);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                0.95rem;
+
+            margin:
+                16px 0 22px;
+        }
+
+
+        .btn-continuar {
+
+            width: 100%;
+
+            min-height: 52px;
+
+            border-radius: 28px;
+
+            border:
+                1px solid
+                var(--oro);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #102344,
+                    #244675
+                );
+
+            color: white;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.94rem;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(16,35,68,0.22);
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .btn-continuar:active {
+
+            transform:
+                scale(0.97);
         }
 
 
         /* =========================================================
-           5. APLICACIÓN PRINCIPAL
+           APLICACIÓN PRINCIPAL
         ========================================================== */
 
         .app {
 
             position: relative;
+
+            z-index: 2;
 
             width: 100%;
 
@@ -917,7 +1099,8 @@
 
             position: relative;
 
-            width: min(100%, 440px);
+            width:
+                min(100%, 440px);
 
             height:
                 min(
@@ -927,20 +1110,23 @@
 
             min-height: 600px;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
-            border-radius: var(--radio);
+            border-radius:
+                var(--radio);
 
             overflow: hidden;
 
-            box-shadow: var(--sombra);
+            box-shadow:
+                var(--sombra);
 
             isolation: isolate;
         }
 
 
         /* =========================================================
-           FONDO DECORATIVO
+           DECORACIÓN INTERNA
         ========================================================== */
 
         .fondo-puntos {
@@ -951,39 +1137,42 @@
 
             pointer-events: none;
 
-            opacity: 0.28;
+            opacity: 0.25;
 
             background-image:
                 radial-gradient(
-                    rgba(199,167,92,0.2) 1px,
+                    rgba(199,167,92,0.22)
+                    1px,
                     transparent 1px
                 );
 
-            background-size: 25px 25px;
+            background-size:
+                24px 24px;
 
             z-index: 0;
         }
 
 
         /*
-         * MARCO INTERNO MUCHO MÁS DISCRETO.
-         * Ya no habrá un borde dorado gigante.
+         * Eliminamos el marco dorado fuerte.
+         * Ahora es apenas perceptible.
          */
 
         .marco {
 
             position: absolute;
 
-            inset: 15px;
+            inset: 16px;
 
             border:
-                1px solid rgba(199,167,92,0.18);
+                1px solid
+                rgba(199,167,92,0.14);
 
             border-radius: 15px;
 
             pointer-events: none;
 
-            z-index: 30;
+            z-index: 20;
         }
 
 
@@ -995,8 +1184,8 @@
 
             position: absolute;
 
-            top: 18px;
-            right: 18px;
+            top: 17px;
+            right: 17px;
 
             z-index: 100;
 
@@ -1006,13 +1195,16 @@
             border-radius: 50%;
 
             border:
-                1px solid var(--oro);
+                1px solid
+                var(--oro);
 
-            background: var(--azul);
+            background:
+                var(--azul);
 
             color: white;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -1021,7 +1213,8 @@
             cursor: pointer;
 
             box-shadow:
-                0 7px 18px rgba(0,0,0,0.15);
+                0 7px 18px
+                rgba(0,0,0,0.15);
 
             transition:
                 transform 0.2s ease;
@@ -1038,7 +1231,52 @@
         .music-btn.playing {
 
             animation:
-                musicaGirando 4s linear infinite;
+                musicaGirando
+                4s linear infinite;
+        }
+
+
+        /* =========================================================
+           BOTÓN CARTA
+        ========================================================== */
+
+        .carta-btn {
+
+            position: absolute;
+
+            top: 17px;
+            left: 17px;
+
+            z-index: 100;
+
+            min-height: 38px;
+
+            padding:
+                8px 13px;
+
+            border-radius: 22px;
+
+            border:
+                1px solid
+                rgba(199,167,92,0.55);
+
+            background:
+                rgba(255,255,255,0.92);
+
+            color:
+                var(--azul);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.75rem;
+
+            font-weight: 700;
+
+            cursor: pointer;
         }
 
 
@@ -1064,9 +1302,9 @@
             overflow-x: hidden;
 
             padding:
-                78px
+                76px
                 38px
-                78px;
+                76px;
 
             text-align: center;
 
@@ -1119,7 +1357,8 @@
 
         .etiqueta-oro {
 
-            color: var(--oro);
+            color:
+                var(--oro);
 
             font-size:
                 clamp(
@@ -1140,7 +1379,8 @@
 
         h1 {
 
-            color: var(--azul);
+            color:
+                var(--azul);
 
             font-size:
                 clamp(
@@ -1157,7 +1397,8 @@
 
         h2 {
 
-            color: var(--azul);
+            color:
+                var(--azul);
 
             font-size:
                 clamp(
@@ -1174,7 +1415,8 @@
 
         .texto {
 
-            color: var(--gris);
+            color:
+                var(--gris);
 
             font-family:
                 Arial,
@@ -1189,14 +1431,16 @@
 
         .texto-italico {
 
-            color: #536071;
+            color:
+                #536071;
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.98rem;
+            font-size:
+                0.98rem;
 
             line-height: 1.65;
 
@@ -1216,39 +1460,49 @@
 
         .corona {
 
-            color: var(--oro);
+            color:
+                var(--oro);
 
             font-size: 2rem;
 
             margin-bottom: 8px;
 
             animation:
-                flotar 3s ease-in-out infinite;
+                flotar
+                3s ease-in-out infinite;
         }
 
 
         .foto-gala {
 
-            width: min(82%, 285px);
+            width:
+                min(82%, 285px);
 
-            aspect-ratio: 4 / 4.6;
+            aspect-ratio:
+                4 / 4.6;
 
-            object-fit: cover;
+            object-fit:
+                cover;
 
-            object-position: center;
+            object-position:
+                center;
 
-            border-radius: 17px;
+            border-radius:
+                17px;
 
             border:
-                1px solid rgba(199,167,92,0.7);
+                1px solid
+                rgba(199,167,92,0.7);
 
             margin:
                 14px 0 18px;
 
             box-shadow:
-                0 15px 35px rgba(16,35,68,0.18);
+                0 15px 35px
+                rgba(16,35,68,0.18);
 
-            background: #eee;
+            background:
+                #eee;
         }
 
 
@@ -1274,14 +1528,16 @@
 
         .btn {
 
-            width: min(100%, 340px);
+            width:
+                min(100%, 340px);
 
             min-height: 49px;
 
             border-radius: 30px;
 
             border:
-                1px solid var(--oro);
+                1px solid
+                var(--oro);
 
             padding:
                 12px 20px;
@@ -1298,7 +1554,8 @@
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.94rem;
+            font-size:
+                0.94rem;
 
             font-weight: 700;
 
@@ -1331,18 +1588,21 @@
                 );
 
             box-shadow:
-                0 9px 22px rgba(16,35,68,0.2);
+                0 9px 22px
+                rgba(16,35,68,0.2);
         }
 
 
-        .btn-secundario {
+        .btn-carta {
 
-            background: white;
+            background:
+                rgba(199,167,92,0.08);
 
-            color: var(--azul);
+            color:
+                var(--azul);
 
             border-color:
-                rgba(16,35,68,0.2);
+                rgba(199,167,92,0.45);
         }
 
 
@@ -1350,7 +1610,8 @@
 
             color: white;
 
-            background: var(--azul);
+            background:
+                var(--azul);
         }
 
 
@@ -1358,9 +1619,11 @@
 
             color: white;
 
-            background: var(--verde-wsp);
+            background:
+                var(--verde);
 
-            border-color: var(--verde-wsp);
+            border-color:
+                var(--verde);
         }
 
 
@@ -1370,9 +1633,11 @@
 
             background: transparent;
 
-            color: #738096;
+            color:
+                #738096;
 
-            text-decoration: underline;
+            text-decoration:
+                underline;
 
             min-height: 38px;
         }
@@ -1396,19 +1661,24 @@
 
             width: 100%;
 
-            aspect-ratio: 4 / 4.6;
+            aspect-ratio:
+                4 / 4.6;
 
-            border-radius: 17px;
+            border-radius:
+                17px;
 
             overflow: hidden;
 
             border:
-                1px solid rgba(199,167,92,0.65);
+                1px solid
+                rgba(199,167,92,0.65);
 
             box-shadow:
-                0 15px 30px rgba(0,0,0,0.14);
+                0 15px 30px
+                rgba(0,0,0,0.14);
 
-            background: #edf0f4;
+            background:
+                #edf0f4;
         }
 
 
@@ -1425,7 +1695,8 @@
 
             opacity: 0;
 
-            transform: scale(1.03);
+            transform:
+                scale(1.03);
 
             transition:
                 opacity 0.7s ease,
@@ -1437,7 +1708,8 @@
 
             opacity: 1;
 
-            transform: scale(1);
+            transform:
+                scale(1);
         }
 
 
@@ -1452,21 +1724,25 @@
             padding:
                 7px 17px;
 
-            border-radius: 20px;
+            border-radius:
+                20px;
 
             color: white;
 
-            background: var(--azul);
+            background:
+                var(--azul);
 
             border:
-                1px solid rgba(199,167,92,0.65);
+                1px solid
+                rgba(199,167,92,0.65);
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.8rem;
+            font-size:
+                0.8rem;
 
             font-weight: 700;
         }
@@ -1496,7 +1772,8 @@
 
             border-radius: 50%;
 
-            background: #cbd5e1;
+            background:
+                #cbd5e1;
 
             cursor: pointer;
 
@@ -1511,7 +1788,8 @@
 
             border-radius: 10px;
 
-            background: var(--oro);
+            background:
+                var(--oro);
         }
 
 
@@ -1540,7 +1818,8 @@
             padding:
                 14px 16px;
 
-            border-radius: 15px;
+            border-radius:
+                15px;
 
             background:
                 linear-gradient(
@@ -1550,51 +1829,65 @@
                 );
 
             border:
-                1px solid #e5e8ed;
+                1px solid
+                #e5e8ed;
 
             box-shadow:
-                0 8px 20px rgba(16,35,68,0.05);
+                0 8px 20px
+                rgba(16,35,68,0.05);
         }
 
 
         .info-icono {
 
-            font-size: 1.3rem;
+            font-size:
+                1.3rem;
 
-            margin-bottom: 4px;
+            margin-bottom:
+                4px;
         }
 
 
         .info-titulo {
 
-            color: var(--oro);
+            color:
+                var(--oro);
 
-            font-size: 0.72rem;
+            font-size:
+                0.72rem;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
 
-            margin-bottom: 5px;
+            margin-bottom:
+                5px;
         }
 
 
         .info-texto {
 
-            color: var(--azul);
+            color:
+                var(--azul);
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.98rem;
+            font-size:
+                0.98rem;
 
-            line-height: 1.45;
+            line-height:
+                1.45;
 
-            font-weight: 700;
+            font-weight:
+                700;
         }
 
 
@@ -1604,62 +1897,75 @@
 
         .confirmacion {
 
-            margin-top: 6px;
+            margin-top:
+                6px;
 
             padding:
                 13px 16px;
 
             width: 100%;
 
-            border-radius: 15px;
+            border-radius:
+                15px;
 
             background:
                 rgba(37,211,102,0.07);
 
             border:
-                1px solid rgba(37,211,102,0.22);
+                1px solid
+                rgba(37,211,102,0.22);
 
-            color: #41604b;
+            color:
+                #41604b;
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.82rem;
+            font-size:
+                0.82rem;
 
-            line-height: 1.5;
+            line-height:
+                1.5;
         }
 
 
         /* =========================================================
-           PÁGINA FINAL
+           FINAL
         ========================================================== */
 
         .final {
 
-            justify-content: center;
+            justify-content:
+                center;
         }
 
 
         .final-corazones {
 
-            font-size: 2rem;
+            font-size:
+                2rem;
 
-            margin-bottom: 18px;
+            margin-bottom:
+                18px;
 
             animation:
-                latido 1.8s ease-in-out infinite;
+                latido
+                1.8s ease-in-out infinite;
         }
 
 
         .final-linea {
 
-            width: 70px;
+            width:
+                70px;
 
-            height: 2px;
+            height:
+                2px;
 
-            background: var(--oro);
+            background:
+                var(--oro);
 
             margin:
                 14px auto 20px;
@@ -1668,34 +1974,44 @@
 
         .firma {
 
-            margin-top: 22px;
+            margin-top:
+                22px;
 
-            color: var(--oro);
+            color:
+                var(--oro);
 
-            font-size: 0.8rem;
+            font-size:
+                0.8rem;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
         }
 
 
         .frase-final {
 
-            margin-top: 18px;
+            margin-top:
+                18px;
 
-            color: var(--gris);
+            color:
+                var(--gris);
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.94rem;
+            font-size:
+                0.94rem;
 
-            line-height: 1.7;
+            line-height:
+                1.7;
 
-            font-style: italic;
+            font-style:
+                italic;
         }
 
 
@@ -1705,7 +2021,8 @@
 
         .indicadores {
 
-            position: absolute;
+            position:
+                absolute;
 
             left: 0;
             right: 0;
@@ -1721,7 +2038,8 @@
 
             gap: 7px;
 
-            pointer-events: none;
+            pointer-events:
+                none;
         }
 
 
@@ -1732,7 +2050,8 @@
 
             border-radius: 50%;
 
-            background: #cbd5e1;
+            background:
+                #cbd5e1;
 
             transition:
                 width 0.3s ease,
@@ -1744,25 +2063,54 @@
 
             width: 23px;
 
-            border-radius: 10px;
+            border-radius:
+                10px;
 
-            background: var(--oro);
+            background:
+                var(--oro);
         }
 
 
         /* =========================================================
-           BOTÓN PARA VOLVER A VER LA CARTA
+           ANIMACIONES
         ========================================================== */
 
-        .btn-carta {
+        @keyframes flotar {
 
-            border:
-                1px solid rgba(199,167,92,0.4);
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
 
-            background:
-                rgba(199,167,92,0.08);
+            50% {
+                transform:
+                    translateY(-6px);
+            }
+        }
 
-            color: var(--azul);
+
+        @keyframes latido {
+
+            0%,
+            100% {
+                transform:
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    scale(1.12);
+            }
+        }
+
+
+        @keyframes musicaGirando {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
         }
 
 
@@ -1772,31 +2120,53 @@
 
         @media (max-height: 720px) {
 
-            .intro {
+            .sobre-escenario {
 
-                padding-top: 12px;
-                padding-bottom: 12px;
+                width:
+                    min(82vw, 315px);
+
+                height:
+                    190px;
+
+                margin-bottom:
+                    15px;
             }
 
 
-            .carta-escenario {
+            .sobre {
 
-                width: min(78vw, 300px);
-
-                height: min(40vw, 150px);
-
-                min-height: 125px;
-
-                margin-bottom: 20px;
+                height:
+                    160px;
             }
 
 
-            .carta-sello {
+            .sobre-cuerpo {
 
-                width: 48px;
-                height: 48px;
+                height:
+                    125px;
+            }
 
-                font-size: 1.1rem;
+
+            .sobre-solapa {
+
+                height:
+                    88px;
+            }
+
+
+            .sobre-sello {
+
+                width:
+                    50px;
+
+                height:
+                    50px;
+
+                top:
+                    63px;
+
+                font-size:
+                    1.1rem;
             }
 
 
@@ -1804,8 +2174,8 @@
 
                 font-size:
                     clamp(
-                        1.4rem,
-                        6.5vw,
+                        1.45rem,
+                        7vw,
                         1.9rem
                     );
             }
@@ -1813,21 +2183,35 @@
 
             .intro-subtitulo {
 
-                margin-bottom: 15px;
+                margin-bottom:
+                    15px;
 
-                font-size: 0.8rem;
+                font-size:
+                    0.8rem;
             }
 
 
             .btn-abrir {
 
-                min-height: 47px;
+                min-height:
+                    48px;
+            }
+
+
+            .carta-contenido {
+
+                max-height:
+                    86dvh;
+
+                padding:
+                    30px 22px 24px;
             }
 
 
             .invitacion {
 
-                min-height: 0;
+                min-height:
+                    0;
 
                 height:
                     calc(100dvh - 16px);
@@ -1845,7 +2229,8 @@
 
             .foto-gala {
 
-                width: min(70%, 225px);
+                width:
+                    min(70%, 225px);
 
                 margin:
                     8px 0 12px;
@@ -1854,13 +2239,15 @@
 
             .slider {
 
-                max-height: 47dvh;
+                max-height:
+                    47dvh;
             }
 
 
             .info-lista {
 
-                gap: 8px;
+                gap:
+                    8px;
             }
 
 
@@ -1873,15 +2260,18 @@
 
             .grupo-botones {
 
-                margin-top: 9px;
+                margin-top:
+                    9px;
 
-                gap: 7px;
+                gap:
+                    7px;
             }
 
 
             .btn {
 
-                min-height: 43px;
+                min-height:
+                    43px;
 
                 padding:
                     9px 16px;
@@ -1895,50 +2285,82 @@
 
         @media (max-width: 360px) {
 
-            .carta-escenario {
+            .sobre-escenario {
 
-                width: 82vw;
+                width:
+                    84vw;
 
-                height: 140px;
+                height:
+                    170px;
+            }
+
+
+            .sobre {
+
+                height:
+                    145px;
+            }
+
+
+            .sobre-cuerpo {
+
+                height:
+                    113px;
+            }
+
+
+            .sobre-solapa {
+
+                height:
+                    80px;
+            }
+
+
+            .sobre-sello {
+
+                width:
+                    46px;
+
+                height:
+                    46px;
+
+                top:
+                    57px;
+
+                font-size:
+                    1rem;
+            }
+
+
+            .intro-titulo {
+
+                font-size:
+                    1.4rem;
             }
 
 
             .pantalla {
 
-                padding-left: 24px;
-                padding-right: 24px;
+                padding-left:
+                    24px;
+
+                padding-right:
+                    24px;
             }
 
 
             .marco {
 
-                inset: 11px;
-            }
-
-
-            h1 {
-
-                font-size: 1.8rem;
-            }
-
-
-            .foto-gala {
-
-                width: 64%;
+                inset:
+                    11px;
             }
 
 
             .texto,
             .texto-italico {
 
-                font-size: 0.88rem;
-            }
-
-
-            .mensaje-carta-contenido {
-
-                padding:
-                    28px 22px;
+                font-size:
+                    0.88rem;
             }
         }
 
@@ -1965,7 +2387,8 @@
                     translateY(-2px);
 
                 box-shadow:
-                    0 12px 28px rgba(16,35,68,0.16);
+                    0 12px 28px
+                    rgba(16,35,68,0.16);
             }
         }
 
@@ -2000,6 +2423,22 @@
 
 
     <!-- =========================================================
+         DECORACIONES DEL FONDO
+    ========================================================== -->
+
+    <div class="decoracion-fondo">
+
+        <span class="estrella">✦</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">✧</span>
+
+    </div>
+
+
+    <!-- =========================================================
          LOADER
     ========================================================== -->
 
@@ -2025,58 +2464,26 @@
     <section
         class="intro"
         id="intro"
+        aria-label="Invitación inicial"
     >
 
         <div class="intro-contenido">
 
 
-            <!-- =================================================
-                 ESCENARIO CONTROLADO DE LA CARTA
-            ================================================== -->
+            <!-- SOBRE -->
 
-            <div class="carta-escenario">
+            <div class="sobre-escenario">
 
                 <div
-                    class="carta"
-                    id="carta"
+                    class="sobre"
+                    id="sobre"
                 >
 
+                    <div class="sobre-cuerpo"></div>
 
-                    <!-- PAPEL INTERIOR -->
+                    <div class="sobre-solapa"></div>
 
-                    <div class="carta-papel">
-
-                        <div class="carta-papel-simbolo">
-                            ✦
-                        </div>
-
-                        <div class="carta-papel-titulo">
-                            Una invitación especial
-                        </div>
-
-                        <div class="carta-papel-texto">
-                            Hay momentos que merecen
-                            ser celebrados y compartidos
-                            con quienes hacen especial
-                            nuestro camino.
-                        </div>
-
-                    </div>
-
-
-                    <!-- CUERPO DEL SOBRE -->
-
-                    <div class="carta-cuerpo"></div>
-
-
-                    <!-- SOLAPA -->
-
-                    <div class="carta-solapa"></div>
-
-
-                    <!-- SELLO -->
-
-                    <div class="carta-sello">
+                    <div class="sobre-sello">
                         ✦
                     </div>
 
@@ -2085,9 +2492,7 @@
             </div>
 
 
-            <!-- =================================================
-                 TEXTO
-            ================================================== -->
+            <!-- TÍTULO -->
 
             <h1 class="intro-titulo">
                 Enrique cumple 50 años
@@ -2099,9 +2504,7 @@
             </p>
 
 
-            <!-- =================================================
-                 BOTÓN
-            ================================================== -->
+            <!-- BOTÓN -->
 
             <button
                 class="btn-abrir"
@@ -2118,31 +2521,99 @@
 
 
     <!-- =========================================================
-         MENSAJE QUE APARECE AL ABRIR
+         CARTA / MENSAJE
+         
+         NO desaparece automáticamente.
+         El usuario decide cuándo continuar.
     ========================================================== -->
 
     <section
-        class="mensaje-carta"
-        id="mensajeCarta"
+        class="carta-mensaje"
+        id="cartaMensaje"
         aria-hidden="true"
     >
 
-        <div class="mensaje-carta-contenido">
+        <div class="carta-contenido">
 
-            <div class="mensaje-carta-simbolo">
-                ✦
+
+            <div class="carta-adornos">
+
+                <span>✦</span>
+
+                <span class="carta-linea"></span>
+
+                <span>🥂</span>
+
+                <span class="carta-linea"></span>
+
+                <span>✦</span>
+
             </div>
 
-            <h2>
+
+            <p class="carta-subtitulo">
+                Una invitación especial
+            </p>
+
+
+            <h2 class="carta-titulo">
                 Un día para recordar
             </h2>
 
-            <p>
+
+            <p class="carta-texto">
+
                 Cincuenta años de historias,
-                aprendizajes, personas queridas
-                y momentos que hoy merecen
-                ser celebrados.
+                aprendizajes, sueños y momentos
+                compartidos.
+
             </p>
+
+
+            <p class="carta-texto">
+
+                Hoy celebramos mucho más que una fecha.
+                Celebramos el camino recorrido,
+                las personas que han dejado huella
+                y todos esos recuerdos que hacen
+                especial una vida.
+
+            </p>
+
+
+            <div class="carta-destacado">
+
+                “Que esta nueva etapa llegue
+                acompañada de alegría, nuevos sueños
+                y muchos momentos inolvidables
+                junto a quienes más quieres.”
+
+            </div>
+
+
+            <p class="carta-texto">
+
+                Enrique, gracias por permitirnos
+                compartir contigo este momento
+                tan especial.
+
+            </p>
+
+
+            <p class="carta-firma">
+                Con cariño,<br>
+                quienes celebramos contigo 💙
+            </p>
+
+
+            <button
+                class="btn-continuar"
+                id="btnContinuar"
+                type="button"
+            >
+                ✨ Continuar con la invitación
+            </button>
+
 
         </div>
 
@@ -2163,9 +2634,18 @@
             <div class="marco"></div>
 
 
-            <!-- =================================================
-                 MÚSICA
-            ================================================== -->
+            <!-- BOTÓN CARTA -->
+
+            <button
+                class="carta-btn"
+                id="volverCarta"
+                type="button"
+            >
+                💌 Carta
+            </button>
+
+
+            <!-- MÚSICA -->
 
             <button
                 class="music-btn"
@@ -2211,10 +2691,13 @@
 
 
                 <p class="texto-italico">
-                    "La vida se vuelve más especial
-                    cuando podemos compartir sus
-                    mejores momentos con las personas
-                    que queremos."
+
+                    “La vida se construye con momentos,
+                    caminos y personas que dejan huella.
+                    Hoy quiero celebrar medio siglo de
+                    recuerdos y agradecer a quienes han
+                    sido parte de este hermoso camino.”
+
                 </p>
 
 
@@ -2243,7 +2726,7 @@
 
 
             <!-- =================================================
-                 PÁGINA 2 - HISTORIA
+                 PÁGINA 2
             ================================================== -->
 
             <section
@@ -2273,7 +2756,6 @@
 
                 <div class="galeria">
 
-
                     <div
                         class="slider"
                         id="slider"
@@ -2297,7 +2779,7 @@
                             src="foto2.png"
                             class="slider-img"
                             alt="Enrique en una etapa de su juventud"
-                            data-texto="Los años fueron pasando y la vida se fue llenando de nuevos caminos."
+                            data-texto="Los años fueron pasando y la vida se fue llenando de nuevos caminos y momentos compartidos."
                             loading="lazy"
                         >
 
@@ -2308,7 +2790,7 @@
                             src="foto3.png"
                             class="slider-img"
                             alt="Enrique en una celebración especial"
-                            data-texto="Compartiendo momentos importantes junto a las personas que hicieron especial cada etapa."
+                            data-texto="Acompañando y compartiendo momentos importantes que hicieron especial cada etapa."
                             loading="lazy"
                         >
 
@@ -2324,13 +2806,13 @@
                         >
 
 
-                        <!-- FOTO DEL CUMPLEAÑOS -->
+                        <!-- FOTO 5 -->
 
                         <img
                             src="Enrique.cumple.png"
                             class="slider-img"
                             alt="Enrique compartiendo un cumpleaños"
-                            data-texto="Y hoy, celebramos todo lo vivido y todos los momentos que aún están por venir."
+                            data-texto="Y hoy celebramos todo lo vivido y todos los momentos que aún están por venir."
                             loading="lazy"
                         >
 
@@ -2341,7 +2823,8 @@
                         class="texto-foto"
                         id="textoFoto"
                     >
-                        Desde joven, construyendo sueños
+                        Desde joven,
+                        construyendo sueños
                         y dejando huella.
                     </div>
 
@@ -2379,7 +2862,7 @@
 
 
             <!-- =================================================
-                 PÁGINA 3 - INFORMACIÓN
+                 PÁGINA 3
             ================================================== -->
 
             <section
@@ -2451,9 +2934,11 @@
                         </div>
 
                         <div class="info-texto">
+
                             Calle 14 n.º 133<br>
                             Coop. Primavera<br>
                             Comas
+
                         </div>
 
                     </div>
@@ -2501,7 +2986,6 @@
 
                 <div class="grupo-botones">
 
-
                     <button
                         class="btn btn-principal"
                         type="button"
@@ -2525,7 +3009,7 @@
 
 
             <!-- =================================================
-                 PÁGINA 4 - FINAL
+                 PÁGINA 4
             ================================================== -->
 
             <section
@@ -2552,17 +3036,21 @@
 
 
                 <p class="texto-italico">
+
                     Tu presencia es el mejor regalo
                     que le puedes dar a Enrique
                     en este día tan especial.
+
                 </p>
 
 
                 <p class="frase-final">
+
                     Gracias por ser parte de su vida,
                     por acompañarlo en este camino
                     y por compartir con él este
                     momento tan importante.
+
                 </p>
 
 
@@ -2572,7 +3060,6 @@
 
 
                 <div class="grupo-botones">
-
 
                     <button
                         class="btn btn-principal"
@@ -2613,6 +3100,7 @@
 
             </div>
 
+
         </div>
 
     </main>
@@ -2636,6 +3124,7 @@
 
     <script>
 
+
         /* =========================================================
            VARIABLES
         ========================================================== */
@@ -2652,160 +3141,197 @@
 
         let touchEndX = 0;
 
-        let cartaEnProceso = false;
+
+        const loader =
+            document.getElementById("loader");
 
 
         const intro =
             document.getElementById("intro");
 
-        const carta =
-            document.getElementById("carta");
+
+        const sobre =
+            document.getElementById("sobre");
+
 
         const btnAbrir =
             document.getElementById("btnAbrir");
 
-        const mensajeCarta =
-            document.getElementById("mensajeCarta");
+
+        const cartaMensaje =
+            document.getElementById("cartaMensaje");
+
+
+        const btnContinuar =
+            document.getElementById("btnContinuar");
+
+
+        const volverCarta =
+            document.getElementById("volverCarta");
+
 
         const musica =
             document.getElementById("bgMusic");
 
+
         const musicToggle =
             document.getElementById("musicToggle");
 
-        const loader =
-            document.getElementById("loader");
 
         const invitacion =
             document.querySelector(".invitacion");
 
 
-        /* =========================================================
-           CARGA INICIAL
-        ========================================================== */
-
-        window.addEventListener("load", () => {
-
-            setTimeout(() => {
-
-                loader.classList.add("oculto");
-
-            }, 450);
+        const imagenes =
+            document.querySelectorAll(".slider-img");
 
 
-            prepararGaleria();
+        const textoFoto =
+            document.getElementById("textoFoto");
 
-        });
+
+        const controlesGaleria =
+            document.getElementById(
+                "controlesGaleria"
+            );
 
 
         /* =========================================================
-           ABRIR CARTA
+           CARGA
         ========================================================== */
 
-        btnAbrir.addEventListener("click", abrirCarta);
+        window.addEventListener(
+            "load",
+            () => {
 
+                setTimeout(
+                    () => {
 
-        function abrirCarta() {
+                        loader.classList.add(
+                            "oculto"
+                        );
 
-            if (cartaEnProceso) {
-                return;
-            }
-
-            cartaEnProceso = true;
-
-
-            /*
-             * Abrimos el sobre.
-             */
-
-            carta.classList.add("abierta");
-
-
-            /*
-             * Esperamos a que la animación
-             * de la carta sea visible.
-             */
-
-            setTimeout(() => {
-
-                mensajeCarta.classList.add("visible");
-
-                mensajeCarta.setAttribute(
-                    "aria-hidden",
-                    "false"
+                    },
+                    450
                 );
 
-            }, 700);
+
+                prepararGaleria();
+
+            }
+        );
 
 
-            /*
-             * Después mostramos la invitación.
-             */
+        /* =========================================================
+           ABRIR LA CARTA
+           
+           IMPORTANTE:
+           Aquí NO iniciamos la música.
+           
+           Primero mostramos la carta.
+           El usuario debe pulsar "Continuar".
+        ========================================================== */
 
-            setTimeout(() => {
+        btnAbrir.addEventListener(
+            "click",
+            () => {
 
-                mensajeCarta.classList.remove(
+                sobre.classList.add(
+                    "abriendo"
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        cartaMensaje.classList.add(
+                            "visible"
+                        );
+
+                        cartaMensaje.setAttribute(
+                            "aria-hidden",
+                            "false"
+                        );
+
+                    },
+                    500
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           CONTINUAR CON LA INVITACIÓN
+           
+           Como este botón fue presionado por el usuario,
+           aquí podemos iniciar la música.
+        ========================================================== */
+
+        btnContinuar.addEventListener(
+            "click",
+            () => {
+
+                cartaMensaje.classList.remove(
                     "visible"
                 );
 
-                mensajeCarta.setAttribute(
+
+                cartaMensaje.setAttribute(
                     "aria-hidden",
                     "true"
                 );
 
 
-                setTimeout(() => {
+                setTimeout(
+                    () => {
 
-                    intro.classList.add("oculta");
+                        intro.classList.add(
+                            "oculta"
+                        );
 
-                    iniciarMusica();
 
-                    cartaEnProceso = false;
+                        iniciarMusica();
 
-                }, 450);
+                    },
+                    400
+                );
 
-            }, 2800);
-
-        }
+            }
+        );
 
 
         /* =========================================================
            VOLVER A MOSTRAR LA CARTA
         ========================================================== */
 
+        volverCarta.addEventListener(
+            "click",
+            mostrarCartaNuevamente
+        );
+
+
         function mostrarCartaNuevamente() {
 
-            /*
-             * Ocultamos temporalmente
-             * la invitación.
-             */
-
-            intro.classList.remove("oculta");
+            intro.classList.remove(
+                "oculta"
+            );
 
 
-            /*
-             * Reiniciamos la carta.
-             */
-
-            carta.classList.remove("abierta");
-
-
-            /*
-             * Nos aseguramos de que el mensaje
-             * esté oculto.
-             */
-
-            mensajeCarta.classList.remove(
+            cartaMensaje.classList.remove(
                 "visible"
             );
 
-            mensajeCarta.setAttribute(
-                "aria-hidden",
-                "true"
+
+            sobre.classList.remove(
+                "abriendo"
             );
 
 
-            cartaEnProceso = false;
+            cartaMensaje.setAttribute(
+                "aria-hidden",
+                "true"
+            );
 
         }
 
@@ -2823,22 +3349,26 @@
 
             musica
                 .play()
-                .then(() => {
+                .then(
+                    () => {
 
-                    musicToggle.textContent =
-                        "⏸️";
+                        musicToggle.textContent =
+                            "⏸️";
 
-                    musicToggle.classList.add(
-                        "playing"
-                    );
+                        musicToggle.classList.add(
+                            "playing"
+                        );
 
-                })
-                .catch(() => {
+                    }
+                )
+                .catch(
+                    () => {
 
-                    musicToggle.textContent =
-                        "🎵";
+                        musicToggle.textContent =
+                            "🎵";
 
-                });
+                    }
+                );
 
         }
 
@@ -2854,24 +3384,32 @@
 
                 musica
                     .play()
-                    .then(() => {
+                    .then(
+                        () => {
 
-                        musicToggle.textContent =
-                            "⏸️";
+                            musicToggle.textContent =
+                                "⏸️";
 
-                        musicToggle.classList.add(
-                            "playing"
-                        );
+                            musicToggle.classList.add(
+                                "playing"
+                            );
 
-                    })
-                    .catch(() => {});
+                        }
+                    )
+                    .catch(
+                        () => {}
+                    );
 
-            } else {
+            }
+
+            else {
 
                 musica.pause();
 
+
                 musicToggle.textContent =
                     "🎵";
+
 
                 musicToggle.classList.remove(
                     "playing"
@@ -2889,7 +3427,7 @@
 
 
         /* =========================================================
-           CAMBIO DE PÁGINA
+           CAMBIAR DE PÁGINA
         ========================================================== */
 
         function irAPagina(numero) {
@@ -2915,7 +3453,10 @@
                 );
 
 
-            if (!actual || !siguiente) {
+            if (
+                !actual ||
+                !siguiente
+            ) {
                 return;
             }
 
@@ -2930,7 +3471,8 @@
             );
 
 
-            paginaActual = numero;
+            paginaActual =
+                numero;
 
 
             actualizarIndicadores();
@@ -2939,16 +3481,15 @@
             siguiente.scrollTop = 0;
 
 
-            /*
-             * La galería solamente se mueve
-             * mientras estamos en la página 2.
-             */
-
-            if (paginaActual === 2) {
+            if (
+                paginaActual === 2
+            ) {
 
                 iniciarGaleria();
 
-            } else {
+            }
+
+            else {
 
                 detenerGaleria();
 
@@ -2970,11 +3511,15 @@
 
 
             indicadores.forEach(
-                (indicador, index) => {
+                (
+                    indicador,
+                    index
+                ) => {
 
                     indicador.classList.toggle(
                         "activo",
-                        index === paginaActual - 1
+                        index ===
+                        paginaActual - 1
                     );
 
                 }
@@ -2987,24 +3532,6 @@
            GALERÍA
         ========================================================== */
 
-        const imagenes =
-            document.querySelectorAll(
-                ".slider-img"
-            );
-
-
-        const textoFoto =
-            document.getElementById(
-                "textoFoto"
-            );
-
-
-        const controlesGaleria =
-            document.getElementById(
-                "controlesGaleria"
-            );
-
-
         function prepararGaleria() {
 
             if (
@@ -3015,13 +3542,11 @@
             }
 
 
-            /*
-             * Creamos automáticamente
-             * los indicadores de la galería.
-             */
-
             imagenes.forEach(
-                (_, index) => {
+                (
+                    _,
+                    index
+                ) => {
 
                     const punto =
                         document.createElement(
@@ -3029,7 +3554,9 @@
                         );
 
 
-                    punto.type = "button";
+                    punto.type =
+                        "button";
+
 
                     punto.className =
                         "dot-galeria";
@@ -3041,7 +3568,9 @@
                     );
 
 
-                    if (index === 0) {
+                    if (
+                        index === 0
+                    ) {
 
                         punto.classList.add(
                             "activa"
@@ -3054,7 +3583,10 @@
                         "click",
                         () => {
 
-                            mostrarFoto(index);
+                            mostrarFoto(
+                                index
+                            );
+
 
                             iniciarGaleria();
 
@@ -3094,7 +3626,10 @@
 
 
             imagenes.forEach(
-                (imagen, index) => {
+                (
+                    imagen,
+                    index
+                ) => {
 
                     imagen.classList.toggle(
                         "activa",
@@ -3128,7 +3663,10 @@
 
 
             puntos.forEach(
-                (punto, index) => {
+                (
+                    punto,
+                    index
+                ) => {
 
                     punto.classList.toggle(
                         "activa",
@@ -3166,13 +3704,17 @@
 
         function detenerGaleria() {
 
-            if (intervaloGaleria) {
+            if (
+                intervaloGaleria
+            ) {
 
                 clearInterval(
                     intervaloGaleria
                 );
 
-                intervaloGaleria = null;
+
+                intervaloGaleria =
+                    null;
 
             }
 
@@ -3180,7 +3722,7 @@
 
 
         /* =========================================================
-           SWIPE / DESLIZAR
+           SWIPE
         ========================================================== */
 
         invitacion.addEventListener(
@@ -3206,6 +3748,7 @@
                     evento.changedTouches[0]
                     .screenX;
 
+
                 procesarSwipe();
 
             },
@@ -3225,47 +3768,32 @@
             if (
                 Math.abs(diferencia) < 60
             ) {
+
                 return;
-            }
-
-
-            /*
-             * Hacia la izquierda:
-             * siguiente página.
-             */
-
-            if (diferencia < 0) {
-
-                if (
-                    paginaActual <
-                    totalPaginas
-                ) {
-
-                    irAPagina(
-                        paginaActual + 1
-                    );
-
-                }
 
             }
 
 
-            /*
-             * Hacia la derecha:
-             * página anterior.
-             */
+            if (
+                diferencia < 0 &&
+                paginaActual < totalPaginas
+            ) {
 
-            else {
+                irAPagina(
+                    paginaActual + 1
+                );
 
-                if (
-                    paginaActual > 1
-                ) {
+            }
 
-                    irAPagina(
-                        paginaActual - 1
-                    );
 
-                }
+            else if (
+                diferencia > 0 &&
+                paginaActual > 1
+            ) {
+
+                irAPagina(
+                    paginaActual - 1
+                );
 
             }
 
@@ -3280,23 +3808,22 @@
             "keydown",
             (evento) => {
 
-                /*
-                 * No cambiamos páginas mientras
-                 * la carta inicial está visible.
-                 */
-
                 if (
                     !intro.classList.contains(
                         "oculta"
                     )
                 ) {
+
                     return;
+
                 }
 
 
                 if (
-                    evento.key === "ArrowRight" &&
-                    paginaActual < totalPaginas
+                    evento.key ===
+                    "ArrowRight" &&
+                    paginaActual <
+                    totalPaginas
                 ) {
 
                     irAPagina(
@@ -3307,7 +3834,8 @@
 
 
                 if (
-                    evento.key === "ArrowLeft" &&
+                    evento.key ===
+                    "ArrowLeft" &&
                     paginaActual > 1
                 ) {
 
@@ -3320,8 +3848,8 @@
             }
         );
 
-
     </script>
 
 </body>
+
 </html>
