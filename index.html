@@ -10,21 +10,13 @@
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <meta
-        name="theme-color"
-        content="#0b1830"
-    >
+    <meta name="theme-color" content="#0b1830">
 
-    <meta
-        name="description"
-        content="Invitación especial para celebrar los 50 años de Enrique Cisneros."
-    >
+    <!-- =====================================================
+         INFORMACIÓN PARA COMPARTIR
+    ====================================================== -->
 
-    <!-- PREVISUALIZACIÓN AL COMPARTIR -->
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <meta property="og:type" content="website">
 
     <meta
         property="og:title"
@@ -36,9 +28,10 @@
         content="Una celebración, una vida y muchos recuerdos."
     >
 
+    <!-- Más adelante cambiaremos esto por la URL real -->
     <meta
         property="og:image"
-        content="https://TU-DOMINIO.com/preview.jpg"
+        content="https://TU-DOMINIO.com/Enrique.cumple.png"
     >
 
     <meta
@@ -56,36 +49,37 @@
 
     <style>
 
-        /* =========================================================
+        /* =====================================================
            VARIABLES
-        ========================================================== */
+        ====================================================== */
 
         :root {
 
-            --azul: #102344;
-            --azul-oscuro: #071221;
-            --azul-medio: #1d3a64;
+            --azul-fondo: #0b1d36;
+            --azul: #142e55;
+            --azul-medio: #1d3d6b;
 
-            --oro: #c8a95e;
-            --oro-claro: #ead79f;
+            --dorado: #d8bb6a;
+            --dorado-claro: #f0d991;
 
             --blanco: #ffffff;
-            --blanco-suave: #f7f8fa;
+            --blanco-suave: #f8f9fb;
 
-            --gris: #596579;
+            --gris: #647084;
 
-            --verde: #25d366;
+            --verde: #25D366;
 
             --sombra:
-                0 25px 70px rgba(0, 0, 0, 0.28);
+                0 25px 70px rgba(0, 0, 0, 0.35);
 
             --radio: 22px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            RESET
-        ========================================================== */
+        ====================================================== */
 
         * {
             box-sizing: border-box;
@@ -97,8 +91,7 @@
         html {
             width: 100%;
             min-height: 100%;
-            background: var(--azul-oscuro);
-            scroll-behavior: smooth;
+            background: var(--azul-fondo);
         }
 
 
@@ -114,14 +107,18 @@
                 serif;
 
             background:
+
                 radial-gradient(
-                    circle at 50% 10%,
-                    #31527f 0%,
-                    #17345d 35%,
-                    #071221 100%
+                    circle at 50% 15%,
+                    #294b79 0%,
+                    #142e55 38%,
+                    #071426 100%
                 );
 
+            color: var(--azul);
+
             overflow-x: hidden;
+
         }
 
 
@@ -130,6 +127,7 @@
 
             -webkit-tap-highlight-color:
                 transparent;
+
         }
 
 
@@ -138,146 +136,104 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            DECORACIÓN DEL FONDO
-        ========================================================== */
+        ====================================================== */
 
-        .decoracion-fondo {
+        body::before {
+
+            content: "";
 
             position: fixed;
-            inset: 0;
+
+            width: 280px;
+            height: 280px;
+
+            top: -120px;
+            left: -100px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(216, 187, 106, 0.08);
 
             pointer-events: none;
 
-            overflow: hidden;
-
-            z-index: 1;
         }
 
 
-        .estrella {
+        body::after {
 
-            position: absolute;
+            content: "";
 
-            color:
-                rgba(234, 215, 159, 0.45);
+            position: fixed;
 
-            font-size: 18px;
+            width: 320px;
+            height: 320px;
 
-            animation:
-                flotarDecoracion
-                5s ease-in-out infinite;
+            right: -150px;
+            bottom: -150px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(216, 187, 106, 0.06);
+
+            pointer-events: none;
+
         }
 
 
-        .estrella:nth-child(1) {
-            top: 9%;
-            left: 8%;
-            animation-delay: 0s;
-        }
-
-
-        .estrella:nth-child(2) {
-            top: 18%;
-            right: 9%;
-            animation-delay: 1s;
-            font-size: 13px;
-        }
-
-
-        .estrella:nth-child(3) {
-            top: 72%;
-            left: 7%;
-            animation-delay: 2s;
-            font-size: 14px;
-        }
-
-
-        .estrella:nth-child(4) {
-            top: 82%;
-            right: 10%;
-            animation-delay: 1.5s;
-            font-size: 20px;
-        }
-
-
-        .estrella:nth-child(5) {
-            top: 48%;
-            left: 4%;
-            animation-delay: 3s;
-            font-size: 11px;
-        }
-
-
-        .estrella:nth-child(6) {
-            top: 56%;
-            right: 4%;
-            animation-delay: 2.5s;
-            font-size: 12px;
-        }
-
-
-        @keyframes flotarDecoracion {
-
-            0%,
-            100% {
-                transform:
-                    translateY(0)
-                    rotate(0deg);
-
-                opacity: 0.45;
-            }
-
-            50% {
-                transform:
-                    translateY(-12px)
-                    rotate(8deg);
-
-                opacity: 0.8;
-            }
-        }
-
-
-        /* =========================================================
-           LOADER
-        ========================================================== */
+        /* =====================================================
+           CARGADOR
+        ====================================================== */
 
         #loader {
 
             position: fixed;
+
             inset: 0;
 
-            z-index: 99999;
+            z-index: 9999;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             background:
+
                 radial-gradient(
                     circle at center,
-                    #31527f 0%,
-                    #17345d 45%,
-                    #071221 100%
+                    #294b79 0%,
+                    #142e55 45%,
+                    #071426 100%
                 );
 
             transition:
-                opacity 0.6s ease,
-                visibility 0.6s ease;
+                opacity .6s ease,
+                visibility .6s ease;
+
         }
 
 
         #loader.oculto {
 
             opacity: 0;
+
             visibility: hidden;
+
             pointer-events: none;
+
         }
 
 
         .loader-contenido {
+
             text-align: center;
+
             color: white;
+
         }
 
 
@@ -286,99 +242,101 @@
             width: 45px;
             height: 45px;
 
-            margin: 0 auto 20px;
+            margin: 0 auto 18px;
 
             border-radius: 50%;
 
             border:
                 2px solid
-                rgba(200,169,94,0.25);
+                rgba(216,187,106,.25);
 
             border-top-color:
-                var(--oro);
+                var(--dorado);
 
             animation:
                 girar 1s linear infinite;
+
         }
 
 
         .loader-texto {
 
-            color: var(--oro-claro);
+            color:
+                var(--dorado-claro);
+
+            letter-spacing: 3px;
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.68rem;
-
-            letter-spacing: 4px;
+            font-size: .7rem;
 
             text-transform: uppercase;
+
         }
 
 
-        @keyframes girar {
-
-            to {
-                transform:
-                    rotate(360deg);
-            }
-        }
-
-
-        /* =========================================================
+        /* =====================================================
            INTRODUCCIÓN
-        ========================================================== */
+        ====================================================== */
 
         .intro {
 
             position: fixed;
+
             inset: 0;
 
             z-index: 5000;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             padding:
-                max(20px, env(safe-area-inset-top))
-                max(20px, env(safe-area-inset-right))
-                max(20px, env(safe-area-inset-bottom))
-                max(20px, env(safe-area-inset-left));
+                20px;
 
             background:
+
                 radial-gradient(
                     circle at 50% 18%,
-                    #31527f 0%,
-                    #17345d 38%,
-                    #071221 100%
+                    #294b79 0%,
+                    #142e55 45%,
+                    #071426 100%
                 );
 
             transition:
-                opacity 0.7s ease,
-                visibility 0.7s ease;
+                opacity .7s ease,
+                visibility .7s ease;
+
+            overflow-y: auto;
+
         }
 
 
         .intro.oculta {
 
             opacity: 0;
+
             visibility: hidden;
 
             pointer-events: none;
+
         }
 
 
+        /* =====================================================
+           CONTENEDOR DE INTRO
+        ====================================================== */
+
         .intro-contenido {
 
-            position: relative;
-
-            z-index: 5;
-
-            width: min(92vw, 430px);
+            width: min(
+                100%,
+                480px
+            );
 
             min-height: 100%;
 
@@ -392,80 +350,56 @@
 
             text-align: center;
 
-            color: white;
-
             padding:
-                25px 0;
+                25px 10px;
+
         }
 
 
-        /* =========================================================
-           SOBRES / CARTA INICIAL
+        /* =====================================================
+           ESCENA DE LA CARTA
            
            IMPORTANTE:
-           Ya NO utilizamos clip-path ni transformaciones 3D.
-           El sobre tiene un tamaño fijo dentro de su escenario.
-        ========================================================== */
+           Todo está contenido dentro de este bloque.
+           Ya no existen elementos que se salgan
+           y tapen el texto.
+        ====================================================== */
 
-        .sobre-escenario {
+        .carta-escena {
 
             position: relative;
 
-            width: min(86vw, 350px);
+            width: min(
+                88vw,
+                390px
+            );
 
             height: 225px;
 
-            margin-bottom: 25px;
+            margin-bottom: 30px;
 
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
         }
 
+
+        /* =====================================================
+           SOBRE CERRADO
+        ====================================================== */
 
         .sobre {
 
-            position: relative;
-
-            width: 100%;
-
-            height: 190px;
-
-            border-radius: 15px;
-
-            filter:
-                drop-shadow(
-                    0 18px 25px
-                    rgba(0,0,0,0.27)
-                );
-
-            transition:
-                transform 0.7s ease,
-                opacity 0.7s ease;
-        }
-
-
-        /* =========================================================
-           SOBRE CERRADO
-        ========================================================== */
-
-        .sobre-cuerpo {
-
             position: absolute;
 
-            left: 0;
-            right: 0;
+            left: 50%;
             bottom: 0;
 
-            height: 150px;
+            transform:
+                translateX(-50%);
+
+            width: 100%;
+            height: 185px;
 
             border-radius:
-                8px
-                8px
-                16px
-                16px;
+                0 0 18px 18px;
 
             background:
                 linear-gradient(
@@ -475,77 +409,60 @@
                 );
 
             border:
-                2px solid
-                rgba(200,169,94,0.9);
+                2px solid var(--dorado);
+
+            box-shadow:
+                0 20px 40px
+                rgba(0,0,0,.25);
 
             overflow: hidden;
 
-            z-index: 2;
         }
 
 
-        /* Líneas inferiores del sobre */
+        /* Parte inferior decorativa del sobre */
 
-        .sobre-cuerpo::before,
-        .sobre-cuerpo::after {
+        .sobre::before {
 
             content: "";
 
             position: absolute;
 
-            bottom: -1px;
-
-            width: 62%;
+            left: 0;
+            right: 0;
+            bottom: 0;
 
             height: 2px;
 
             background:
-                rgba(200,169,94,0.85);
+                rgba(216,187,106,.7);
+
         }
 
 
-        .sobre-cuerpo::before {
-
-            left: -10%;
-
-            transform:
-                rotate(31deg);
-        }
-
-
-        .sobre-cuerpo::after {
-
-            right: -10%;
-
-            transform:
-                rotate(-31deg);
-        }
-
-
-        /* =========================================================
-           TRIÁNGULO SUPERIOR
-        ========================================================== */
+        /* =====================================================
+           SOLAPA DEL SOBRE
+        ====================================================== */
 
         .sobre-solapa {
 
             position: absolute;
 
-            top: 0;
-            left: 0;
+            top: -1px;
+            left: -2px;
 
-            width: 100%;
-            height: 105px;
+            width:
+                calc(100% + 4px);
+
+            height: 115px;
 
             background:
-                linear-gradient(
-                    145deg,
-                    #ffffff,
-                    #f0f2f5
-                );
 
-            border:
-                2px solid
-                rgba(200,169,94,0.9);
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f1f3f6
+                );
 
             clip-path:
                 polygon(
@@ -554,30 +471,79 @@
                     50% 100%
                 );
 
-            z-index: 5;
+            border-top:
+                2px solid var(--dorado);
 
-            transition:
-                opacity 0.45s ease,
-                transform 0.55s ease;
+            z-index: 3;
+
         }
 
 
-        /* =========================================================
-           SELLO
-        ========================================================== */
+        /* =====================================================
+           LÍNEAS INFERIORES DEL SOBRE
+        ====================================================== */
 
-        .sobre-sello {
+        .sobre-linea-izquierda,
+        .sobre-linea-derecha {
+
+            position: absolute;
+
+            bottom: 0;
+
+            width: 53%;
+
+            height: 2px;
+
+            background:
+                var(--dorado);
+
+            z-index: 4;
+
+        }
+
+
+        .sobre-linea-izquierda {
+
+            left: -7%;
+
+            transform:
+                rotate(31deg);
+
+            transform-origin:
+                left center;
+
+        }
+
+
+        .sobre-linea-derecha {
+
+            right: -7%;
+
+            transform:
+                rotate(-31deg);
+
+            transform-origin:
+                right center;
+
+        }
+
+
+        /* =====================================================
+           SELLO
+        ====================================================== */
+
+        .sello {
 
             position: absolute;
 
             left: 50%;
-            top: 76px;
+            top: 72px;
 
             transform:
                 translate(-50%, -50%);
 
-            width: 62px;
-            height: 62px;
+            width: 66px;
+            height: 66px;
 
             display: flex;
 
@@ -590,92 +556,51 @@
                 var(--azul);
 
             border:
-                2px solid
-                var(--oro);
+                2px solid var(--dorado);
 
             color:
-                var(--oro-claro);
+                var(--dorado-claro);
 
-            font-size: 1.45rem;
+            font-size: 1.6rem;
 
             box-shadow:
-                0 9px 22px
-                rgba(0,0,0,0.2);
+                0 8px 20px
+                rgba(0,0,0,.25);
 
-            z-index: 10;
+            z-index: 5;
 
-            transition:
-                transform 0.45s ease,
-                opacity 0.4s ease;
         }
 
 
-        /* =========================================================
-           ANIMACIÓN DEL SOBRE
-        ========================================================== */
-
-        .sobre.abriendo {
-
-            transform:
-                translateY(-12px)
-                scale(0.96);
-
-            opacity: 0;
-        }
-
-
-        .sobre.abriendo
-        .sobre-solapa {
-
-            opacity: 0;
-        }
-
-
-        .sobre.abriendo
-        .sobre-sello {
-
-            transform:
-                translate(-50%, -50%)
-                scale(0.5);
-
-            opacity: 0;
-        }
-
-
-        /* =========================================================
-           TÍTULO PRINCIPAL
-        ========================================================== */
+        /* =====================================================
+           TEXTO DE INTRODUCCIÓN
+        ====================================================== */
 
         .intro-titulo {
 
-            max-width: 380px;
-
             color:
-                var(--oro-claro);
+                var(--dorado-claro);
 
             font-size:
                 clamp(
-                    1.75rem,
+                    1.8rem,
                     8vw,
-                    2.5rem
+                    2.8rem
                 );
 
-            line-height: 1.08;
+            line-height: 1.05;
 
-            margin-bottom: 9px;
+            margin-bottom: 12px;
 
-            text-shadow:
-                0 2px 12px
-                rgba(0,0,0,0.15);
+            max-width: 450px;
+
         }
 
 
         .intro-subtitulo {
 
-            max-width: 340px;
-
             color:
-                rgba(255,255,255,0.84);
+                rgba(255,255,255,.82);
 
             font-family:
                 Arial,
@@ -684,269 +609,251 @@
 
             font-size:
                 clamp(
-                    0.82rem,
-                    3.5vw,
-                    0.98rem
+                    .9rem,
+                    4vw,
+                    1.05rem
                 );
 
             line-height: 1.5;
 
-            margin-bottom: 22px;
+            margin-bottom: 24px;
+
         }
 
 
-        /* =========================================================
-           BOTÓN ABRIR
-        ========================================================== */
+        /* =====================================================
+           BOTONES
+        ====================================================== */
 
-        .btn-abrir {
+        .btn {
 
-            width:
-                min(100%, 310px);
+            border: none;
 
-            min-height: 54px;
+            cursor: pointer;
+
+            text-decoration: none;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            min-height: 52px;
+
+            padding:
+                13px 24px;
 
             border-radius: 30px;
-
-            border:
-                1px solid
-                var(--oro);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #183257,
-                    #274a78
-                );
-
-            color: white;
 
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.96rem;
+            font-size: .95rem;
 
             font-weight: 700;
 
-            cursor: pointer;
-
-            box-shadow:
-                0 12px 28px
-                rgba(0,0,0,0.25);
-
             transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+                transform .2s ease,
+                box-shadow .2s ease;
+
         }
 
 
-        .btn-abrir:active {
+        .btn:active {
 
             transform:
-                scale(0.97);
+                scale(.97);
+
         }
 
 
-        @media (hover:hover) {
+        .btn-intro {
 
-            .btn-abrir:hover {
+            width:
+                min(
+                    100%,
+                    330px
+                );
 
-                transform:
-                    translateY(-2px);
+            color: white;
 
-                box-shadow:
-                    0 16px 32px
-                    rgba(0,0,0,0.3);
-            }
+            background:
+                linear-gradient(
+                    135deg,
+                    #18345d,
+                    #284c7d
+                );
+
+            border:
+                1px solid var(--dorado);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,.22);
+
         }
 
 
-        /* =========================================================
-           CARTA ABIERTA
+        .btn-principal {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #10294c,
+                    #244a7b
+                );
+
+            border:
+                1px solid var(--dorado);
+
+            box-shadow:
+                0 10px 24px
+                rgba(16,35,68,.20);
+
+        }
+
+
+        .btn-secundario {
+
+            background: white;
+
+            color: var(--azul);
+
+            border:
+                1px solid
+                rgba(20,46,85,.18);
+
+        }
+
+
+        .btn-maps {
+
+            color: white;
+
+            background:
+                var(--azul);
+
+        }
+
+
+        .btn-wsp {
+
+            color: white;
+
+            background:
+                var(--verde);
+
+            border-color:
+                var(--verde);
+
+        }
+
+
+        .btn-atras {
+
+            background: transparent;
+
+            color: #718096;
+
+            text-decoration:
+                underline;
+
+            border: none;
+
+            min-height: 40px;
+
+        }
+
+
+        /* =====================================================
+           CARTA INTERIOR
            
-           Este es el nuevo sistema:
-           NO se mueve el sobre debajo del texto.
-           Simplemente aparece una tarjeta independiente.
-        ========================================================== */
+           Esta aparece DESPUÉS de tocar Abrir.
+           No se anima sobre el título.
+        ====================================================== */
 
         .carta-mensaje {
 
-            position: fixed;
+            display: none;
 
-            inset: 0;
-
-            z-index: 7000;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 24px;
+            width:
+                min(
+                    100%,
+                    390px
+                );
 
             background:
-                rgba(7,18,33,0.88);
+                linear-gradient(
+                    145deg,
+                    #fffdf7,
+                    #f7f3e8
+                );
 
-            opacity: 0;
+            border-radius:
+                20px;
 
-            visibility: hidden;
+            border:
+                1px solid
+                rgba(216,187,106,.75);
 
-            pointer-events: none;
+            padding:
+                35px 28px;
 
-            transition:
-                opacity 0.45s ease,
-                visibility 0.45s ease;
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,.30);
+
+            text-align: center;
+
+            animation:
+                aparecerCarta .55s ease;
+
         }
 
 
         .carta-mensaje.visible {
 
-            opacity: 1;
+            display: block;
 
-            visibility: visible;
-
-            pointer-events: auto;
         }
 
 
-        .carta-contenido {
+        .carta-icono {
 
-            position: relative;
+            font-size: 2rem;
 
-            width:
-                min(92vw, 390px);
+            margin-bottom: 16px;
 
-            max-height:
-                min(82dvh, 650px);
-
-            overflow-y: auto;
-
-            padding:
-                38px 27px 30px;
-
-            text-align: center;
-
-            border-radius: 20px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #fffefa,
-                    #f5f7f9
-                );
-
-            border:
-                1px solid
-                rgba(200,169,94,0.8);
-
-            box-shadow:
-                0 30px 70px
-                rgba(0,0,0,0.4);
-
-            transform:
-                translateY(35px)
-                scale(0.94);
-
-            transition:
-                transform 0.6s
-                cubic-bezier(.2,.8,.2,1);
-
-            scrollbar-width: none;
         }
 
 
-        .carta-contenido::-webkit-scrollbar {
-            display: none;
-        }
-
-
-        .carta-mensaje.visible
-        .carta-contenido {
-
-            transform:
-                translateY(0)
-                scale(1);
-        }
-
-
-        /* Decoración superior */
-
-        .carta-adornos {
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 10px;
-
-            margin-bottom: 15px;
-
-            color:
-                var(--oro);
-
-            font-size: 1.15rem;
-        }
-
-
-        .carta-linea {
-
-            width: 48px;
-
-            height: 1px;
-
-            background:
-                var(--oro);
-        }
-
-
-        .carta-titulo {
+        .carta-mensaje h2 {
 
             color:
                 var(--azul);
 
             font-size:
                 clamp(
-                    1.55rem,
-                    7vw,
+                    1.5rem,
+                    6vw,
                     2rem
                 );
 
-            line-height: 1.15;
+            margin-bottom: 16px;
 
-            margin-bottom: 12px;
         }
 
 
-        .carta-subtitulo {
+        .carta-mensaje p {
 
             color:
-                var(--oro);
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            font-size: 0.72rem;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            font-weight: bold;
-
-            margin-bottom: 20px;
-        }
-
-
-        .carta-texto {
-
-            color:
-                var(--gris);
+                #596579;
 
             font-family:
                 Arial,
@@ -954,128 +861,38 @@
                 sans-serif;
 
             font-size:
-                clamp(
-                    0.9rem,
-                    3.5vw,
-                    0.98rem
-                );
+                .98rem;
 
-            line-height: 1.75;
+            line-height: 1.7;
 
-            margin-bottom: 15px;
-        }
+            margin-bottom: 23px;
 
-
-        .carta-destacado {
-
-            margin:
-                18px 0;
-
-            padding:
-                15px 17px;
-
-            border-radius: 14px;
-
-            background:
-                rgba(200,169,94,0.09);
-
-            border:
-                1px solid
-                rgba(200,169,94,0.25);
-
-            color:
-                var(--azul);
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size:
-                0.95rem;
-
-            line-height: 1.6;
-
-            font-style: italic;
         }
 
 
         .carta-firma {
 
             color:
-                var(--oro);
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
+                var(--dorado);
 
             font-size:
-                0.95rem;
+                .78rem;
 
-            margin:
-                16px 0 22px;
+            letter-spacing: 3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom: 24px;
+
         }
 
 
-        .btn-continuar {
-
-            width: 100%;
-
-            min-height: 52px;
-
-            border-radius: 28px;
-
-            border:
-                1px solid
-                var(--oro);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #102344,
-                    #244675
-                );
-
-            color: white;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            font-size:
-                0.94rem;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 10px 25px
-                rgba(16,35,68,0.22);
-
-            transition:
-                transform 0.2s ease;
-        }
-
-
-        .btn-continuar:active {
-
-            transform:
-                scale(0.97);
-        }
-
-
-        /* =========================================================
-           APLICACIÓN PRINCIPAL
-        ========================================================== */
+        /* =====================================================
+           APP PRINCIPAL
+        ====================================================== */
 
         .app {
-
-            position: relative;
-
-            z-index: 2;
 
             width: 100%;
 
@@ -1088,10 +905,8 @@
             justify-content: center;
 
             padding:
-                max(10px, env(safe-area-inset-top))
-                max(10px, env(safe-area-inset-right))
-                max(10px, env(safe-area-inset-bottom))
-                max(10px, env(safe-area-inset-left));
+                12px;
+
         }
 
 
@@ -1100,18 +915,25 @@
             position: relative;
 
             width:
-                min(100%, 440px);
+                min(
+                    100%,
+                    440px
+                );
 
             height:
                 min(
                     900px,
-                    calc(100dvh - 20px)
+                    calc(100dvh - 24px)
                 );
 
-            min-height: 600px;
+            min-height: 620px;
 
             background:
-                #ffffff;
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #fafbfd
+                );
 
             border-radius:
                 var(--radio);
@@ -1122,12 +944,13 @@
                 var(--sombra);
 
             isolation: isolate;
+
         }
 
 
-        /* =========================================================
-           DECORACIÓN INTERNA
-        ========================================================== */
+        /* =====================================================
+           DECORACIÓN INTERIOR
+        ====================================================== */
 
         .fondo-puntos {
 
@@ -1137,152 +960,63 @@
 
             pointer-events: none;
 
-            opacity: 0.25;
+            opacity: .45;
 
             background-image:
+
                 radial-gradient(
-                    rgba(199,167,92,0.22)
+                    rgba(216,187,106,.17)
                     1px,
                     transparent 1px
                 );
 
             background-size:
-                24px 24px;
+                25px 25px;
 
             z-index: 0;
+
         }
 
 
-        /*
-         * Eliminamos el marco dorado fuerte.
-         * Ahora es apenas perceptible.
-         */
-
-        .marco {
+        .decoracion-esquina {
 
             position: absolute;
 
-            inset: 16px;
-
-            border:
-                1px solid
-                rgba(199,167,92,0.14);
-
-            border-radius: 15px;
-
-            pointer-events: none;
-
-            z-index: 20;
-        }
-
-
-        /* =========================================================
-           BOTÓN MÚSICA
-        ========================================================== */
-
-        .music-btn {
-
-            position: absolute;
-
-            top: 17px;
-            right: 17px;
-
-            z-index: 100;
-
-            width: 44px;
-            height: 44px;
+            width: 120px;
+            height: 120px;
 
             border-radius: 50%;
 
             border:
                 1px solid
-                var(--oro);
+                rgba(216,187,106,.20);
 
-            background:
-                var(--azul);
+            pointer-events: none;
 
-            color: white;
+            z-index: 1;
 
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            font-size: 17px;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 7px 18px
-                rgba(0,0,0,0.15);
-
-            transition:
-                transform 0.2s ease;
         }
 
 
-        .music-btn:active {
+        .decoracion-1 {
 
-            transform:
-                scale(0.92);
+            top: -65px;
+            left: -65px;
+
         }
 
 
-        .music-btn.playing {
+        .decoracion-2 {
 
-            animation:
-                musicaGirando
-                4s linear infinite;
+            right: -65px;
+            bottom: -65px;
+
         }
 
 
-        /* =========================================================
-           BOTÓN CARTA
-        ========================================================== */
-
-        .carta-btn {
-
-            position: absolute;
-
-            top: 17px;
-            left: 17px;
-
-            z-index: 100;
-
-            min-height: 38px;
-
-            padding:
-                8px 13px;
-
-            border-radius: 22px;
-
-            border:
-                1px solid
-                rgba(199,167,92,0.55);
-
-            background:
-                rgba(255,255,255,0.92);
-
-            color:
-                var(--azul);
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            font-size:
-                0.75rem;
-
-            font-weight: 700;
-
-            cursor: pointer;
-        }
-
-
-        /* =========================================================
+        /* =====================================================
            PANTALLAS
-        ========================================================== */
+        ====================================================== */
 
         .pantalla {
 
@@ -1299,20 +1033,19 @@
             align-items: center;
 
             overflow-y: auto;
+
             overflow-x: hidden;
 
             padding:
-                76px
-                38px
-                76px;
+                78px 36px 78px;
 
             text-align: center;
 
             background:
                 linear-gradient(
                     180deg,
-                    #ffffff 0%,
-                    #fbfcfe 100%
+                    #ffffff,
+                    #fbfcfe
                 );
 
             opacity: 0;
@@ -1320,15 +1053,15 @@
             visibility: hidden;
 
             transform:
-                translateX(25px)
-                scale(0.99);
+                translateX(25px);
 
             transition:
-                opacity 0.45s ease,
-                transform 0.45s ease,
-                visibility 0.45s ease;
+                opacity .4s ease,
+                transform .4s ease,
+                visibility .4s ease;
 
             scrollbar-width: none;
+
         }
 
 
@@ -1344,36 +1077,87 @@
             visibility: visible;
 
             transform:
-                translateX(0)
-                scale(1);
+                translateX(0);
 
             z-index: 5;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
+           BOTÓN MÚSICA
+        ====================================================== */
+
+        .music-btn {
+
+            position: absolute;
+
+            top: 18px;
+            right: 18px;
+
+            z-index: 100;
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid var(--dorado);
+
+            background:
+                var(--azul);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 17px;
+
+            cursor: pointer;
+
+        }
+
+
+        .music-btn.playing {
+
+            animation:
+                musicaGirando 4s linear infinite;
+
+        }
+
+
+        /* =====================================================
            TIPOGRAFÍA
-        ========================================================== */
+        ====================================================== */
 
         .etiqueta-oro {
 
             color:
-                var(--oro);
+                var(--dorado);
 
             font-size:
                 clamp(
-                    0.7rem,
+                    .7rem,
                     2.5vw,
-                    0.9rem
+                    .88rem
                 );
 
-            letter-spacing: 4px;
+            letter-spacing:
+                4px;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
 
-            margin-bottom: 10px;
+            margin-bottom:
+                10px;
+
         }
 
 
@@ -1389,9 +1173,12 @@
                     3rem
                 );
 
-            line-height: 1.05;
+            line-height:
+                1.05;
 
-            margin-bottom: 10px;
+            margin-bottom:
+                10px;
+
         }
 
 
@@ -1407,9 +1194,12 @@
                     2.1rem
                 );
 
-            line-height: 1.15;
+            line-height:
+                1.15;
 
-            margin-bottom: 12px;
+            margin-bottom:
+                13px;
+
         }
 
 
@@ -1423,9 +1213,12 @@
                 Helvetica,
                 sans-serif;
 
-            font-size: 1rem;
+            font-size:
+                1rem;
 
-            line-height: 1.7;
+            line-height:
+                1.65;
+
         }
 
 
@@ -1440,43 +1233,53 @@
                 sans-serif;
 
             font-size:
-                0.98rem;
+                .98rem;
 
-            line-height: 1.65;
+            line-height:
+                1.65;
 
-            font-style: italic;
+            font-style:
+                italic;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            PORTADA
-        ========================================================== */
+        ====================================================== */
 
         .portada {
 
-            justify-content: center;
+            justify-content:
+                center;
+
         }
 
 
         .corona {
 
             color:
-                var(--oro);
+                var(--dorado);
 
-            font-size: 2rem;
+            font-size:
+                2rem;
 
-            margin-bottom: 8px;
+            margin-bottom:
+                8px;
 
             animation:
-                flotar
-                3s ease-in-out infinite;
+                flotar 3s ease-in-out infinite;
+
         }
 
 
         .foto-gala {
 
             width:
-                min(82%, 285px);
+                min(
+                    82%,
+                    300px
+                );
 
             aspect-ratio:
                 4 / 4.6;
@@ -1488,27 +1291,28 @@
                 center;
 
             border-radius:
-                17px;
+                18px;
 
             border:
-                1px solid
-                rgba(199,167,92,0.7);
+                2px solid
+                var(--dorado);
 
             margin:
                 14px 0 18px;
 
             box-shadow:
                 0 15px 35px
-                rgba(16,35,68,0.18);
+                rgba(16,35,68,.18);
 
             background:
                 #eee;
+
         }
 
 
-        /* =========================================================
-           BOTONES
-        ========================================================== */
+        /* =====================================================
+           GRUPO DE BOTONES
+        ====================================================== */
 
         .grupo-botones {
 
@@ -1523,135 +1327,32 @@
             gap: 10px;
 
             margin-top: 18px;
+
         }
 
 
-        .btn {
+        .grupo-botones .btn {
 
             width:
-                min(100%, 340px);
-
-            min-height: 49px;
-
-            border-radius: 30px;
-
-            border:
-                1px solid
-                var(--oro);
-
-            padding:
-                12px 20px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 8px;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            font-size:
-                0.94rem;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            text-decoration: none;
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-
-        .btn:active {
-
-            transform:
-                scale(0.97);
-        }
-
-
-        .btn-principal {
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0d1f3b,
-                    #1f3d6d
+                min(
+                    100%,
+                    340px
                 );
 
-            box-shadow:
-                0 9px 22px
-                rgba(16,35,68,0.2);
         }
 
 
-        .btn-carta {
-
-            background:
-                rgba(199,167,92,0.08);
-
-            color:
-                var(--azul);
-
-            border-color:
-                rgba(199,167,92,0.45);
-        }
-
-
-        .btn-maps {
-
-            color: white;
-
-            background:
-                var(--azul);
-        }
-
-
-        .btn-wsp {
-
-            color: white;
-
-            background:
-                var(--verde);
-
-            border-color:
-                var(--verde);
-        }
-
-
-        .btn-atras {
-
-            border: none;
-
-            background: transparent;
-
-            color:
-                #738096;
-
-            text-decoration:
-                underline;
-
-            min-height: 38px;
-        }
-
-
-        /* =========================================================
+        /* =====================================================
            GALERÍA
-        ========================================================== */
+        ====================================================== */
 
         .galeria {
 
             width: 100%;
 
-            margin-top: 8px;
+            margin-top:
+                8px;
+
         }
 
 
@@ -1665,20 +1366,21 @@
                 4 / 4.6;
 
             border-radius:
-                17px;
+                18px;
 
             overflow: hidden;
 
             border:
                 1px solid
-                rgba(199,167,92,0.65);
+                var(--dorado);
 
             box-shadow:
                 0 15px 30px
-                rgba(0,0,0,0.14);
+                rgba(0,0,0,.16);
 
             background:
                 #edf0f4;
+
         }
 
 
@@ -1699,8 +1401,9 @@
                 scale(1.03);
 
             transition:
-                opacity 0.7s ease,
+                opacity .7s ease,
                 transform 3s ease;
+
         }
 
 
@@ -1710,16 +1413,17 @@
 
             transform:
                 scale(1);
+
         }
 
 
         .texto-foto {
 
-            display: inline-block;
+            display:
+                inline-block;
 
-            max-width: 95%;
-
-            margin-top: 12px;
+            margin-top:
+                12px;
 
             padding:
                 7px 17px;
@@ -1734,7 +1438,7 @@
 
             border:
                 1px solid
-                rgba(199,167,92,0.65);
+                var(--dorado);
 
             font-family:
                 Arial,
@@ -1742,9 +1446,11 @@
                 sans-serif;
 
             font-size:
-                0.8rem;
+                .8rem;
 
-            font-weight: 700;
+            font-weight:
+                700;
+
         }
 
 
@@ -1752,12 +1458,14 @@
 
             display: flex;
 
-            align-items: center;
-            justify-content: center;
+            justify-content:
+                center;
 
             gap: 8px;
 
-            margin-top: 13px;
+            margin-top:
+                13px;
+
         }
 
 
@@ -1766,36 +1474,35 @@
             width: 8px;
             height: 8px;
 
-            padding: 0;
+            border-radius: 50%;
 
             border: none;
-
-            border-radius: 50%;
 
             background:
                 #cbd5e1;
 
-            cursor: pointer;
-
             transition:
-                all 0.3s ease;
+                all .3s ease;
+
         }
 
 
         .dot-galeria.activa {
 
-            width: 24px;
+            width: 23px;
 
-            border-radius: 10px;
+            border-radius:
+                10px;
 
             background:
-                var(--oro);
+                var(--dorado);
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            INFORMACIÓN
-        ========================================================== */
+        ====================================================== */
 
         .info-lista {
 
@@ -1807,7 +1514,9 @@
 
             gap: 12px;
 
-            margin-top: 12px;
+            margin-top:
+                12px;
+
         }
 
 
@@ -1834,7 +1543,8 @@
 
             box-shadow:
                 0 8px 20px
-                rgba(16,35,68,0.05);
+                rgba(16,35,68,.06);
+
         }
 
 
@@ -1845,16 +1555,17 @@
 
             margin-bottom:
                 4px;
+
         }
 
 
         .info-titulo {
 
             color:
-                var(--oro);
+                var(--dorado);
 
             font-size:
-                0.72rem;
+                .72rem;
 
             letter-spacing:
                 3px;
@@ -1867,6 +1578,7 @@
 
             margin-bottom:
                 5px;
+
         }
 
 
@@ -1881,24 +1593,25 @@
                 sans-serif;
 
             font-size:
-                0.98rem;
+                .98rem;
 
             line-height:
                 1.45;
 
             font-weight:
                 700;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            CONFIRMACIÓN
-        ========================================================== */
+        ====================================================== */
 
         .confirmacion {
 
             margin-top:
-                6px;
+                5px;
 
             padding:
                 13px 16px;
@@ -1909,11 +1622,11 @@
                 15px;
 
             background:
-                rgba(37,211,102,0.07);
+                rgba(37,211,102,.07);
 
             border:
                 1px solid
-                rgba(37,211,102,0.22);
+                rgba(37,211,102,.20);
 
             color:
                 #41604b;
@@ -1924,21 +1637,23 @@
                 sans-serif;
 
             font-size:
-                0.82rem;
+                .82rem;
 
             line-height:
                 1.5;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            FINAL
-        ========================================================== */
+        ====================================================== */
 
         .final {
 
             justify-content:
                 center;
+
         }
 
 
@@ -1951,8 +1666,8 @@
                 18px;
 
             animation:
-                latido
-                1.8s ease-in-out infinite;
+                latido 1.8s ease-in-out infinite;
+
         }
 
 
@@ -1965,10 +1680,11 @@
                 2px;
 
             background:
-                var(--oro);
+                var(--dorado);
 
             margin:
                 14px auto 20px;
+
         }
 
 
@@ -1978,16 +1694,17 @@
                 22px;
 
             color:
-                var(--oro);
+                var(--dorado);
 
             font-size:
-                0.8rem;
+                .8rem;
 
             letter-spacing:
                 3px;
 
             text-transform:
                 uppercase;
+
         }
 
 
@@ -2005,19 +1722,20 @@
                 sans-serif;
 
             font-size:
-                0.94rem;
+                .95rem;
 
             line-height:
                 1.7;
 
             font-style:
                 italic;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            INDICADORES
-        ========================================================== */
+        ====================================================== */
 
         .indicadores {
 
@@ -2027,19 +1745,24 @@
             left: 0;
             right: 0;
 
-            bottom: 17px;
+            bottom:
+                18px;
 
-            z-index: 50;
+            z-index:
+                50;
 
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
-            justify-content: center;
+            justify-content:
+                center;
 
-            gap: 7px;
+            gap:
+                7px;
 
             pointer-events:
                 none;
+
         }
 
 
@@ -2048,60 +1771,43 @@
             width: 7px;
             height: 7px;
 
-            border-radius: 50%;
+            border-radius:
+                50%;
 
             background:
                 #cbd5e1;
 
             transition:
-                width 0.3s ease,
-                background 0.3s ease;
+                all .3s ease;
+
         }
 
 
         .indicador.activo {
 
-            width: 23px;
+            width:
+                23px;
 
             border-radius:
                 10px;
 
             background:
-                var(--oro);
+                var(--dorado);
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            ANIMACIONES
-        ========================================================== */
+        ====================================================== */
 
-        @keyframes flotar {
+        @keyframes girar {
 
-            0%,
-            100% {
+            to {
                 transform:
-                    translateY(0);
+                    rotate(360deg);
             }
 
-            50% {
-                transform:
-                    translateY(-6px);
-            }
-        }
-
-
-        @keyframes latido {
-
-            0%,
-            100% {
-                transform:
-                    scale(1);
-            }
-
-            50% {
-                transform:
-                    scale(1.12);
-            }
         }
 
 
@@ -2111,231 +1817,259 @@
                 transform:
                     rotate(360deg);
             }
+
         }
 
 
-        /* =========================================================
+        @keyframes flotar {
+
+            0%, 100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-5px);
+            }
+
+        }
+
+
+        @keyframes latido {
+
+            0%, 100% {
+                transform:
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    scale(1.1);
+            }
+
+        }
+
+
+        @keyframes aparecerCarta {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px)
+                    scale(.97);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* =====================================================
            CELULARES PEQUEÑOS
-        ========================================================== */
+        ====================================================== */
 
         @media (max-height: 720px) {
 
-            .sobre-escenario {
+            .intro-contenido {
+
+                padding:
+                    15px 8px;
+
+            }
+
+
+            .carta-escena {
 
                 width:
-                    min(82vw, 315px);
+                    min(
+                        82vw,
+                        330px
+                    );
 
                 height:
-                    190px;
+                    185px;
 
                 margin-bottom:
-                    15px;
+                    20px;
+
             }
 
 
             .sobre {
 
                 height:
-                    160px;
-            }
+                    155px;
 
-
-            .sobre-cuerpo {
-
-                height:
-                    125px;
             }
 
 
             .sobre-solapa {
 
                 height:
-                    88px;
+                    95px;
+
             }
 
 
-            .sobre-sello {
+            .sello {
 
                 width:
-                    50px;
+                    55px;
 
                 height:
-                    50px;
+                    55px;
 
                 top:
-                    63px;
+                    60px;
 
                 font-size:
-                    1.1rem;
+                    1.3rem;
+
             }
 
 
             .intro-titulo {
 
                 font-size:
-                    clamp(
-                        1.45rem,
-                        7vw,
-                        1.9rem
-                    );
+                    1.7rem;
+
             }
 
 
             .intro-subtitulo {
 
                 margin-bottom:
-                    15px;
+                    16px;
 
-                font-size:
-                    0.8rem;
-            }
-
-
-            .btn-abrir {
-
-                min-height:
-                    48px;
-            }
-
-
-            .carta-contenido {
-
-                max-height:
-                    86dvh;
-
-                padding:
-                    30px 22px 24px;
-            }
-
-
-            .invitacion {
-
-                min-height:
-                    0;
-
-                height:
-                    calc(100dvh - 16px);
             }
 
 
             .pantalla {
 
                 padding:
-                    68px
-                    27px
-                    63px;
+                    70px 28px 65px;
+
             }
 
 
             .foto-gala {
 
                 width:
-                    min(70%, 225px);
+                    min(
+                        70%,
+                        230px
+                    );
 
                 margin:
                     8px 0 12px;
-            }
 
-
-            .slider {
-
-                max-height:
-                    47dvh;
-            }
-
-
-            .info-lista {
-
-                gap:
-                    8px;
-            }
-
-
-            .info-card {
-
-                padding:
-                    10px 13px;
             }
 
 
             .grupo-botones {
 
                 margin-top:
-                    9px;
+                    10px;
 
                 gap:
                     7px;
+
             }
 
 
             .btn {
 
                 min-height:
-                    43px;
+                    45px;
 
                 padding:
-                    9px 16px;
+                    10px 17px;
+
             }
+
         }
 
 
-        /* =========================================================
-           TELÉFONOS MUY PEQUEÑOS
-        ========================================================== */
+        /* =====================================================
+           CELULARES MUY PEQUEÑOS
+        ====================================================== */
 
         @media (max-width: 360px) {
 
-            .sobre-escenario {
+            .intro {
+
+                padding:
+                    12px;
+
+            }
+
+
+            .carta-escena {
 
                 width:
-                    84vw;
+                    82vw;
 
                 height:
                     170px;
+
             }
 
 
             .sobre {
 
                 height:
-                    145px;
-            }
+                    140px;
 
-
-            .sobre-cuerpo {
-
-                height:
-                    113px;
             }
 
 
             .sobre-solapa {
 
                 height:
-                    80px;
+                    82px;
+
             }
 
 
-            .sobre-sello {
+            .sello {
 
                 width:
-                    46px;
+                    50px;
 
                 height:
-                    46px;
+                    50px;
 
                 top:
-                    57px;
+                    52px;
 
-                font-size:
-                    1rem;
             }
 
 
             .intro-titulo {
 
                 font-size:
-                    1.4rem;
+                    1.5rem;
+
+            }
+
+
+            .intro-subtitulo {
+
+                font-size:
+                    .85rem;
+
             }
 
 
@@ -2346,13 +2080,23 @@
 
                 padding-right:
                     24px;
+
             }
 
 
-            .marco {
+            h1 {
 
-                inset:
-                    11px;
+                font-size:
+                    1.85rem;
+
+            }
+
+
+            .foto-gala {
+
+                width:
+                    65%;
+
             }
 
 
@@ -2360,26 +2104,18 @@
             .texto-italico {
 
                 font-size:
-                    0.88rem;
+                    .88rem;
+
             }
+
         }
 
 
-        /* =========================================================
-           ESCRITORIO
-        ========================================================== */
+        /* =====================================================
+           COMPUTADOR
+        ====================================================== */
 
         @media (min-width: 700px) {
-
-            .invitacion {
-
-                height:
-                    min(
-                        900px,
-                        calc(100dvh - 40px)
-                    );
-            }
-
 
             .btn:hover {
 
@@ -2388,14 +2124,16 @@
 
                 box-shadow:
                     0 12px 28px
-                    rgba(16,35,68,0.16);
+                    rgba(16,35,68,.18);
+
             }
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            MENOS ANIMACIÓN
-        ========================================================== */
+        ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -2404,14 +2142,16 @@
             *::after {
 
                 animation-duration:
-                    0.01ms !important;
+                    .01ms !important;
 
                 animation-iteration-count:
                     1 !important;
 
                 transition-duration:
-                    0.01ms !important;
+                    .01ms !important;
+
             }
+
         }
 
     </style>
@@ -2422,25 +2162,9 @@
 <body>
 
 
-    <!-- =========================================================
-         DECORACIONES DEL FONDO
-    ========================================================== -->
-
-    <div class="decoracion-fondo">
-
-        <span class="estrella">✦</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">✧</span>
-
-    </div>
-
-
-    <!-- =========================================================
-         LOADER
-    ========================================================== -->
+    <!-- =====================================================
+         CARGADOR
+    ====================================================== -->
 
     <div id="loader">
 
@@ -2457,33 +2181,48 @@
     </div>
 
 
-    <!-- =========================================================
+
+    <!-- =====================================================
          INTRODUCCIÓN
-    ========================================================== -->
+    ====================================================== -->
 
     <section
         class="intro"
         id="intro"
-        aria-label="Invitación inicial"
     >
 
         <div class="intro-contenido">
 
 
-            <!-- SOBRE -->
+            <!-- =================================================
+                 ESCENA DEL SOBRE
+            ================================================== -->
 
-            <div class="sobre-escenario">
+            <div
+                class="carta-escena"
+                id="cartaEscena"
+            >
 
                 <div
                     class="sobre"
                     id="sobre"
                 >
 
-                    <div class="sobre-cuerpo"></div>
+                    <div
+                        class="sobre-solapa"
+                    ></div>
 
-                    <div class="sobre-solapa"></div>
+                    <div
+                        class="sobre-linea-izquierda"
+                    ></div>
 
-                    <div class="sobre-sello">
+                    <div
+                        class="sobre-linea-derecha"
+                    ></div>
+
+                    <div
+                        class="sello"
+                    >
                         ✦
                     </div>
 
@@ -2492,22 +2231,35 @@
             </div>
 
 
-            <!-- TÍTULO -->
 
-            <h1 class="intro-titulo">
-                Enrique cumple 50 años
+            <!-- =================================================
+                 TÍTULO INICIAL
+            ================================================== -->
+
+            <h1
+                class="intro-titulo"
+                id="introTitulo"
+            >
+                Enrique cumple
+                <br>
+                50 años
             </h1>
 
 
-            <p class="intro-subtitulo">
+            <p
+                class="intro-subtitulo"
+                id="introSubtitulo"
+            >
                 Una celebración, una vida y muchos recuerdos.
             </p>
 
 
-            <!-- BOTÓN -->
+            <!-- =================================================
+                 BOTÓN ABRIR
+            ================================================== -->
 
             <button
-                class="btn-abrir"
+                class="btn btn-intro"
                 id="btnAbrir"
                 type="button"
             >
@@ -2515,104 +2267,44 @@
             </button>
 
 
-        </div>
 
-    </section>
+            <!-- =================================================
+                 CARTA INTERIOR
+            ================================================== -->
 
-
-    <!-- =========================================================
-         CARTA / MENSAJE
-         
-         NO desaparece automáticamente.
-         El usuario decide cuándo continuar.
-    ========================================================== -->
-
-    <section
-        class="carta-mensaje"
-        id="cartaMensaje"
-        aria-hidden="true"
-    >
-
-        <div class="carta-contenido">
-
-
-            <div class="carta-adornos">
-
-                <span>✦</span>
-
-                <span class="carta-linea"></span>
-
-                <span>🥂</span>
-
-                <span class="carta-linea"></span>
-
-                <span>✦</span>
-
-            </div>
-
-
-            <p class="carta-subtitulo">
-                Una invitación especial
-            </p>
-
-
-            <h2 class="carta-titulo">
-                Un día para recordar
-            </h2>
-
-
-            <p class="carta-texto">
-
-                Cincuenta años de historias,
-                aprendizajes, sueños y momentos
-                compartidos.
-
-            </p>
-
-
-            <p class="carta-texto">
-
-                Hoy celebramos mucho más que una fecha.
-                Celebramos el camino recorrido,
-                las personas que han dejado huella
-                y todos esos recuerdos que hacen
-                especial una vida.
-
-            </p>
-
-
-            <div class="carta-destacado">
-
-                “Que esta nueva etapa llegue
-                acompañada de alegría, nuevos sueños
-                y muchos momentos inolvidables
-                junto a quienes más quieres.”
-
-            </div>
-
-
-            <p class="carta-texto">
-
-                Enrique, gracias por permitirnos
-                compartir contigo este momento
-                tan especial.
-
-            </p>
-
-
-            <p class="carta-firma">
-                Con cariño,<br>
-                quienes celebramos contigo 💙
-            </p>
-
-
-            <button
-                class="btn-continuar"
-                id="btnContinuar"
-                type="button"
+            <div
+                class="carta-mensaje"
+                id="cartaMensaje"
             >
-                ✨ Continuar con la invitación
-            </button>
+
+                <div class="carta-icono">
+                    ✨
+                </div>
+
+                <h2>
+                    Una celebración especial
+                </h2>
+
+                <p>
+                    Cincuenta años de historias,
+                    aprendizajes y momentos compartidos.
+                    Hoy queremos celebrar la vida
+                    y la alegría de Enrique.
+                </p>
+
+                <div class="carta-firma">
+                    Con cariño
+                </div>
+
+                <button
+                    class="btn btn-principal"
+                    id="btnContinuar"
+                    type="button"
+                >
+                    Continuar ✨
+                </button>
+
+            </div>
 
 
         </div>
@@ -2620,32 +2312,34 @@
     </section>
 
 
-    <!-- =========================================================
+
+    <!-- =====================================================
          APLICACIÓN PRINCIPAL
-    ========================================================== -->
+    ====================================================== -->
 
     <main class="app">
+
 
         <div class="invitacion">
 
 
+            <!-- DECORACIONES -->
+
             <div class="fondo-puntos"></div>
 
-            <div class="marco"></div>
+            <div
+                class="decoracion-esquina decoracion-1"
+            ></div>
+
+            <div
+                class="decoracion-esquina decoracion-2"
+            ></div>
 
 
-            <!-- BOTÓN CARTA -->
 
-            <button
-                class="carta-btn"
-                id="volverCarta"
-                type="button"
-            >
-                💌 Carta
-            </button>
-
-
-            <!-- MÚSICA -->
+            <!-- =================================================
+                 MÚSICA
+            ================================================== -->
 
             <button
                 class="music-btn"
@@ -2655,6 +2349,7 @@
             >
                 🎵
             </button>
+
 
 
             <!-- =================================================
@@ -2670,11 +2365,9 @@
                     ✦
                 </div>
 
-
                 <p class="etiqueta-oro">
                     Mis 50 años
                 </p>
-
 
                 <h1>
                     Enrique<br>
@@ -2691,13 +2384,10 @@
 
 
                 <p class="texto-italico">
-
-                    “La vida se construye con momentos,
-                    caminos y personas que dejan huella.
-                    Hoy quiero celebrar medio siglo de
-                    recuerdos y agradecer a quienes han
-                    sido parte de este hermoso camino.”
-
+                    "Cincuenta años de vida,
+                    recuerdos y aprendizajes;
+                    hoy celebramos todo lo vivido
+                    y los momentos que aún están por venir."
                 </p>
 
 
@@ -2711,22 +2401,14 @@
                         Continuar ✨
                     </button>
 
-
-                    <button
-                        class="btn btn-carta"
-                        type="button"
-                        onclick="mostrarCartaNuevamente()"
-                    >
-                        💌 Volver a abrir la carta
-                    </button>
-
                 </div>
 
             </section>
 
 
+
             <!-- =================================================
-                 PÁGINA 2
+                 PÁGINA 2 - GALERÍA
             ================================================== -->
 
             <section
@@ -2738,23 +2420,13 @@
                     Un viaje en el tiempo
                 </p>
 
-
                 <h2>
-                    Una vida, muchos momentos
+                    Momentos que cuentan una vida
                 </h2>
 
 
-                <p
-                    class="texto"
-                    style="margin-bottom: 12px;"
-                >
-                    Cada fotografía guarda una etapa,
-                    un recuerdo y una parte de la historia
-                    que hoy celebramos.
-                </p>
-
-
                 <div class="galeria">
+
 
                     <div
                         class="slider"
@@ -2767,7 +2439,7 @@
                         <img
                             src="foto1.png"
                             class="slider-img activa"
-                            alt="Enrique durante su juventud"
+                            alt="Enrique en su juventud"
                             data-texto="Desde joven, construyendo sueños y dejando huella."
                             loading="lazy"
                         >
@@ -2779,7 +2451,7 @@
                             src="foto2.png"
                             class="slider-img"
                             alt="Enrique en una etapa de su juventud"
-                            data-texto="Los años fueron pasando y la vida se fue llenando de nuevos caminos y momentos compartidos."
+                            data-texto="Los años pasan, y cada etapa trae nuevos recuerdos."
                             loading="lazy"
                         >
 
@@ -2789,8 +2461,8 @@
                         <img
                             src="foto3.png"
                             class="slider-img"
-                            alt="Enrique en una celebración especial"
-                            data-texto="Acompañando y compartiendo momentos importantes que hicieron especial cada etapa."
+                            alt="Enrique acompañando un momento especial"
+                            data-texto="Junto a quienes ama, compartiendo momentos que quedan para siempre."
                             loading="lazy"
                         >
 
@@ -2801,7 +2473,7 @@
                             src="foto4.png"
                             class="slider-img"
                             alt="Enrique en una etapa más reciente"
-                            data-texto="Una nueva etapa, nuevas experiencias y la misma esencia de siempre."
+                            data-texto="Una nueva etapa, más experiencias y muchas razones para sonreír."
                             loading="lazy"
                         >
 
@@ -2811,10 +2483,11 @@
                         <img
                             src="Enrique.cumple.png"
                             class="slider-img"
-                            alt="Enrique compartiendo un cumpleaños"
-                            data-texto="Y hoy celebramos todo lo vivido y todos los momentos que aún están por venir."
+                            alt="Enrique celebrando un cumpleaños"
+                            data-texto="Y hoy, celebramos su historia y todo lo hermoso que aún está por venir."
                             loading="lazy"
                         >
+
 
                     </div>
 
@@ -2823,9 +2496,7 @@
                         class="texto-foto"
                         id="textoFoto"
                     >
-                        Desde joven,
-                        construyendo sueños
-                        y dejando huella.
+                        Desde joven, construyendo sueños y dejando huella.
                     </div>
 
 
@@ -2834,10 +2505,13 @@
                         id="controlesGaleria"
                     ></div>
 
+
                 </div>
 
 
+
                 <div class="grupo-botones">
+
 
                     <button
                         class="btn btn-principal"
@@ -2856,13 +2530,15 @@
                         Atrás
                     </button>
 
+
                 </div>
 
             </section>
 
 
+
             <!-- =================================================
-                 PÁGINA 3
+                 PÁGINA 3 - INFORMACIÓN
             ================================================== -->
 
             <section
@@ -2883,8 +2559,6 @@
                 <div class="info-lista">
 
 
-                    <!-- FECHA -->
-
                     <div class="info-card">
 
                         <div class="info-icono">
@@ -2902,7 +2576,6 @@
                     </div>
 
 
-                    <!-- HORA -->
 
                     <div class="info-card">
 
@@ -2921,7 +2594,6 @@
                     </div>
 
 
-                    <!-- LUGAR -->
 
                     <div class="info-card">
 
@@ -2934,22 +2606,20 @@
                         </div>
 
                         <div class="info-texto">
-
                             Calle 14 n.º 133<br>
                             Coop. Primavera<br>
                             Comas
-
                         </div>
 
                     </div>
 
+
                 </div>
+
 
 
                 <div class="grupo-botones">
 
-
-                    <!-- GOOGLE MAPS -->
 
                     <a
                         href="https://maps.app.goo.gl/RvSGJH6SDPLaYZ889"
@@ -2961,8 +2631,6 @@
                     </a>
 
 
-                    <!-- WHATSAPP -->
-
                     <a
                         href="https://wa.me/51925188802?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20n%C3%BAmero%2050%20de%20Enrique.%20%C2%A1Ah%C3%AD%20estar%C3%A9%21"
                         target="_blank"
@@ -2972,7 +2640,9 @@
                         💬 Confirmar asistencia
                     </a>
 
+
                 </div>
+
 
 
                 <div class="confirmacion">
@@ -2984,7 +2654,9 @@
                 </div>
 
 
+
                 <div class="grupo-botones">
+
 
                     <button
                         class="btn btn-principal"
@@ -3003,19 +2675,22 @@
                         Atrás
                     </button>
 
+
                 </div>
 
             </section>
 
 
+
             <!-- =================================================
-                 PÁGINA 4
+                 PÁGINA 4 - FINAL
             ================================================== -->
 
             <section
                 class="pantalla final"
                 id="pag4"
             >
+
 
                 <div class="final-corazones">
                     🥂
@@ -3036,21 +2711,16 @@
 
 
                 <p class="texto-italico">
-
                     Tu presencia es el mejor regalo
                     que le puedes dar a Enrique
                     en este día tan especial.
-
                 </p>
 
 
                 <p class="frase-final">
-
-                    Gracias por ser parte de su vida,
-                    por acompañarlo en este camino
-                    y por compartir con él este
-                    momento tan importante.
-
+                    Gracias por ser parte de su vida
+                    y por acompañarlo en este momento
+                    tan importante.
                 </p>
 
 
@@ -3061,6 +2731,7 @@
 
                 <div class="grupo-botones">
 
+
                     <button
                         class="btn btn-principal"
                         type="button"
@@ -3070,17 +2741,23 @@
                     </button>
 
 
+                    <!-- NUEVO:
+                         Permite volver a la carta inicial -->
+
                     <button
-                        class="btn btn-carta"
+                        class="btn btn-atras"
                         type="button"
-                        onclick="mostrarCartaNuevamente()"
+                        onclick="volverACarta()"
                     >
-                        💌 Ver la carta otra vez
+                        Volver a la carta 💌
                     </button>
+
 
                 </div>
 
+
             </section>
+
 
 
             <!-- =================================================
@@ -3094,8 +2771,11 @@
             >
 
                 <span class="indicador activo"></span>
+
                 <span class="indicador"></span>
+
                 <span class="indicador"></span>
+
                 <span class="indicador"></span>
 
             </div>
@@ -3106,9 +2786,10 @@
     </main>
 
 
-    <!-- =========================================================
-         MÚSICA
-    ========================================================== -->
+
+    <!-- =====================================================
+         AUDIO
+    ====================================================== -->
 
     <audio
         id="bgMusic"
@@ -3118,16 +2799,17 @@
     ></audio>
 
 
-    <!-- =========================================================
+
+    <!-- =====================================================
          JAVASCRIPT
-    ========================================================== -->
+    ====================================================== -->
 
     <script>
 
 
-        /* =========================================================
+        /* =====================================================
            VARIABLES
-        ========================================================== */
+        ====================================================== */
 
         const totalPaginas = 4;
 
@@ -3137,37 +2819,33 @@
 
         let intervaloGaleria = null;
 
-        let touchStartX = 0;
-
-        let touchEndX = 0;
-
-
-        const loader =
-            document.getElementById("loader");
-
 
         const intro =
             document.getElementById("intro");
-
-
-        const sobre =
-            document.getElementById("sobre");
 
 
         const btnAbrir =
             document.getElementById("btnAbrir");
 
 
-        const cartaMensaje =
-            document.getElementById("cartaMensaje");
-
-
         const btnContinuar =
             document.getElementById("btnContinuar");
 
 
-        const volverCarta =
-            document.getElementById("volverCarta");
+        const cartaEscena =
+            document.getElementById("cartaEscena");
+
+
+        const cartaMensaje =
+            document.getElementById("cartaMensaje");
+
+
+        const introTitulo =
+            document.getElementById("introTitulo");
+
+
+        const introSubtitulo =
+            document.getElementById("introSubtitulo");
 
 
         const musica =
@@ -3178,27 +2856,13 @@
             document.getElementById("musicToggle");
 
 
-        const invitacion =
-            document.querySelector(".invitacion");
+        const loader =
+            document.getElementById("loader");
 
 
-        const imagenes =
-            document.querySelectorAll(".slider-img");
-
-
-        const textoFoto =
-            document.getElementById("textoFoto");
-
-
-        const controlesGaleria =
-            document.getElementById(
-                "controlesGaleria"
-            );
-
-
-        /* =========================================================
+        /* =====================================================
            CARGA
-        ========================================================== */
+        ====================================================== */
 
         window.addEventListener(
             "load",
@@ -3212,9 +2876,8 @@
                         );
 
                     },
-                    450
+                    500
                 );
-
 
                 prepararGaleria();
 
@@ -3222,123 +2885,99 @@
         );
 
 
-        /* =========================================================
-           ABRIR LA CARTA
+        /* =====================================================
+           ABRIR CARTA
            
            IMPORTANTE:
-           Aquí NO iniciamos la música.
+           NO desaparece automáticamente.
            
-           Primero mostramos la carta.
-           El usuario debe pulsar "Continuar".
-        ========================================================== */
+           Primero aparece el mensaje.
+           Después el usuario decide continuar.
+        ====================================================== */
 
         btnAbrir.addEventListener(
             "click",
             () => {
 
-                sobre.classList.add(
-                    "abriendo"
-                );
+                cartaEscena.style.display =
+                    "none";
 
+                introTitulo.style.display =
+                    "none";
 
-                setTimeout(
-                    () => {
+                introSubtitulo.style.display =
+                    "none";
 
-                        cartaMensaje.classList.add(
-                            "visible"
-                        );
+                btnAbrir.style.display =
+                    "none";
 
-                        cartaMensaje.setAttribute(
-                            "aria-hidden",
-                            "false"
-                        );
-
-                    },
-                    500
+                cartaMensaje.classList.add(
+                    "visible"
                 );
 
             }
         );
 
 
-        /* =========================================================
-           CONTINUAR CON LA INVITACIÓN
-           
-           Como este botón fue presionado por el usuario,
-           aquí podemos iniciar la música.
-        ========================================================== */
+        /* =====================================================
+           CONTINUAR DESDE LA CARTA
+        ====================================================== */
 
         btnContinuar.addEventListener(
             "click",
             () => {
 
-                cartaMensaje.classList.remove(
-                    "visible"
+                intro.classList.add(
+                    "oculta"
                 );
 
+                iniciarMusica();
 
-                cartaMensaje.setAttribute(
-                    "aria-hidden",
-                    "true"
-                );
-
-
-                setTimeout(
-                    () => {
-
-                        intro.classList.add(
-                            "oculta"
-                        );
-
-
-                        iniciarMusica();
-
-                    },
-                    400
-                );
+                irAPagina(1);
 
             }
         );
 
 
-        /* =========================================================
-           VOLVER A MOSTRAR LA CARTA
-        ========================================================== */
+        /* =====================================================
+           VOLVER A LA CARTA
+        ====================================================== */
 
-        volverCarta.addEventListener(
-            "click",
-            mostrarCartaNuevamente
-        );
+        function volverACarta() {
 
-
-        function mostrarCartaNuevamente() {
+            detenerGaleria();
 
             intro.classList.remove(
                 "oculta"
             );
 
+            cartaEscena.style.display =
+                "block";
+
+            introTitulo.style.display =
+                "block";
+
+            introSubtitulo.style.display =
+                "block";
+
+            btnAbrir.style.display =
+                "flex";
 
             cartaMensaje.classList.remove(
                 "visible"
             );
 
-
-            sobre.classList.remove(
-                "abriendo"
-            );
-
-
-            cartaMensaje.setAttribute(
-                "aria-hidden",
-                "true"
+            window.scrollTo(
+                0,
+                0
             );
 
         }
 
 
-        /* =========================================================
+        /* =====================================================
            MÚSICA
-        ========================================================== */
+        ====================================================== */
 
         function iniciarMusica() {
 
@@ -3406,10 +3045,8 @@
 
                 musica.pause();
 
-
                 musicToggle.textContent =
                     "🎵";
-
 
                 musicToggle.classList.remove(
                     "playing"
@@ -3426,18 +3063,21 @@
         );
 
 
-        /* =========================================================
+        /* =====================================================
            CAMBIAR DE PÁGINA
-        ========================================================== */
+        ====================================================== */
 
         function irAPagina(numero) {
+
 
             if (
                 numero < 1 ||
                 numero > totalPaginas ||
                 numero === paginaActual
             ) {
+
                 return;
+
             }
 
 
@@ -3457,7 +3097,9 @@
                 !actual ||
                 !siguiente
             ) {
+
                 return;
+
             }
 
 
@@ -3478,7 +3120,8 @@
             actualizarIndicadores();
 
 
-            siguiente.scrollTop = 0;
+            siguiente.scrollTop =
+                0;
 
 
             if (
@@ -3498,9 +3141,9 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            INDICADORES
-        ========================================================== */
+        ====================================================== */
 
         function actualizarIndicadores() {
 
@@ -3528,25 +3171,47 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            GALERÍA
-        ========================================================== */
+        ====================================================== */
+
+        const imagenes =
+            document.querySelectorAll(
+                ".slider-img"
+            );
+
+
+        const textoFoto =
+            document.getElementById(
+                "textoFoto"
+            );
+
+
+        const controlesGaleria =
+            document.getElementById(
+                "controlesGaleria"
+            );
+
 
         function prepararGaleria() {
+
 
             if (
                 !imagenes ||
                 imagenes.length === 0
             ) {
+
                 return;
+
             }
 
 
             imagenes.forEach(
                 (
-                    _,
+                    imagen,
                     index
                 ) => {
+
 
                     const punto =
                         document.createElement(
@@ -3587,7 +3252,6 @@
                                 index
                             );
 
-
                             iniciarGaleria();
 
                         }
@@ -3609,11 +3273,14 @@
 
         function mostrarFoto(indice) {
 
+
             if (
                 !imagenes ||
                 imagenes.length === 0
             ) {
+
                 return;
+
             }
 
 
@@ -3621,7 +3288,8 @@
                 (
                     indice +
                     imagenes.length
-                ) %
+                )
+                %
                 imagenes.length;
 
 
@@ -3633,7 +3301,8 @@
 
                     imagen.classList.toggle(
                         "activa",
-                        index === indiceFoto
+                        index ===
+                        indiceFoto
                     );
 
                 }
@@ -3670,7 +3339,8 @@
 
                     punto.classList.toggle(
                         "activa",
-                        index === indiceFoto
+                        index ===
+                        indiceFoto
                     );
 
                 }
@@ -3712,7 +3382,6 @@
                     intervaloGaleria
                 );
 
-
                 intervaloGaleria =
                     null;
 
@@ -3721,9 +3390,20 @@
         }
 
 
-        /* =========================================================
-           SWIPE
-        ========================================================== */
+        /* =====================================================
+           SWIPE EN CELULAR
+        ====================================================== */
+
+        let touchStartX = 0;
+
+        let touchEndX = 0;
+
+
+        const invitacion =
+            document.querySelector(
+                ".invitacion"
+            );
+
 
         invitacion.addEventListener(
             "touchstart",
@@ -3748,7 +3428,6 @@
                     evento.changedTouches[0]
                     .screenX;
 
-
                 procesarSwipe();
 
             },
@@ -3766,7 +3445,8 @@
 
 
             if (
-                Math.abs(diferencia) < 60
+                Math.abs(diferencia) <
+                60
             ) {
 
                 return;
@@ -3776,7 +3456,8 @@
 
             if (
                 diferencia < 0 &&
-                paginaActual < totalPaginas
+                paginaActual <
+                totalPaginas
             ) {
 
                 irAPagina(
@@ -3800,23 +3481,13 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            TECLADO
-        ========================================================== */
+        ====================================================== */
 
         document.addEventListener(
             "keydown",
             (evento) => {
-
-                if (
-                    !intro.classList.contains(
-                        "oculta"
-                    )
-                ) {
-
-                    return;
-
-                }
 
 
                 if (
@@ -3848,7 +3519,9 @@
             }
         );
 
+
     </script>
+
 
 </body>
 
