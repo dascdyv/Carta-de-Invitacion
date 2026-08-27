@@ -116,26 +116,38 @@
     }
     @keyframes girar{to{transform:rotate(360deg)}}
 
-    /* ---------- INTRO / SOBRE ---------- */
+    
+    /* ---------- PORTADA / SOBRE ---------- */
     .intro{
       position:fixed;inset:0;z-index:5000;display:grid;place-items:center;
       padding:18px;
       background:
-        radial-gradient(circle at 50% 12%,#37668f 0%,#1a4268 38%,#071525 100%);
-      transition:opacity .8s var(--ease),visibility .8s ease;
+        radial-gradient(circle at 50% 8%,#3b6d97 0%,#1e4a72 40%,#071525 100%);
+      transition:opacity .7s var(--ease),visibility .7s ease;
+      overflow:hidden;
+      isolation:isolate;
     }
     .intro.oculta{opacity:0;visibility:hidden;pointer-events:none}
     .intro::before,.intro::after{
-      content:"";position:absolute;pointer-events:none;border:1px solid rgba(242,223,167,.10);
-      border-radius:50%;transform:translate(-50%,-50%);
+      content:"";position:absolute;pointer-events:none;border-radius:50%;
+      border:1px solid rgba(242,223,167,.10);
     }
-    .intro::before{left:12%;top:76%;width:160px;height:160px;box-shadow:0 0 0 24px rgba(242,223,167,.018),0 0 0 48px rgba(242,223,167,.012)}
-    .intro::after{left:88%;top:28%;width:110px;height:110px;box-shadow:0 0 0 18px rgba(242,223,167,.016),0 0 0 36px rgba(242,223,167,.010)}
+    .intro::before{
+      width:220px;height:220px;left:-90px;bottom:8%;
+      box-shadow:0 0 0 28px rgba(242,223,167,.018),0 0 0 56px rgba(242,223,167,.010);
+    }
+    .intro::after{
+      width:150px;height:150px;right:-55px;top:18%;
+      box-shadow:0 0 0 20px rgba(242,223,167,.015),0 0 0 40px rgba(242,223,167,.009);
+    }
+
     .intro-contenido{
-      position:relative;z-index:2;width:min(92vw,430px);display:flex;flex-direction:column;align-items:center;
-      text-align:center;animation:aparecer .85s var(--ease) both;
+      position:relative;z-index:5;width:min(92vw,430px);
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      animation:aparecer .85s var(--ease) both;
     }
-    @keyframes aparecer{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes aparecer{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
     .intro-superior{
       font:700 10px/1 Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;
       color:var(--gold-300);margin-bottom:12px;
@@ -148,144 +160,231 @@
       display:block;color:var(--gold-300);font-size:.56em;letter-spacing:2px;margin-top:11px;
     }
     .intro-frase{
-      max-width:310px;margin-bottom:12px;
-      font:14px/1.55 Arial,sans-serif;color:rgba(255,255,255,.77);
+      max-width:310px;margin-bottom:15px;
+      font:14px/1.55 Arial,sans-serif;color:rgba(255,255,255,.80);
     }
 
-    /* Sobre: pieza única y limpia. Los lazos quedan detrás y ya no cortan la tapa. */
+    /* Contenedor físico del sobre */
     .escenario-sobre{
-      position:relative;width:min(86vw,360px);height:208px;
-      display:flex;align-items:flex-end;justify-content:center;margin:2px auto 8px;
-      perspective:1000px;
+      position:relative;width:min(89vw,355px);height:214px;
+      display:flex;align-items:flex-end;justify-content:center;
+      margin:0 auto 10px;
     }
+
+    /* halo de luz detrás del sobre */
     .escenario-sobre::before{
-      content:"";position:absolute;left:50%;top:14px;transform:translateX(-50%);
-      width:280px;height:120px;border-radius:50%;
-      background:radial-gradient(circle,rgba(242,223,167,.13),rgba(242,223,167,0) 68%);
-      filter:blur(2px);pointer-events:none;
+      content:"";position:absolute;left:50%;top:22px;transform:translateX(-50%);
+      width:290px;height:145px;border-radius:50%;
+      background:radial-gradient(ellipse,rgba(245,218,145,.16) 0%,rgba(245,218,145,.05) 42%,transparent 72%);
+      filter:blur(5px);pointer-events:none;
     }
+
     .sobre{
-      position:relative;z-index:4;width:min(100%,340px);height:174px;cursor:pointer;outline:none;
-      filter:drop-shadow(0 22px 28px rgba(0,0,0,.28));
-      transition:transform .7s var(--ease),opacity .7s ease;
+      position:relative;width:min(100%,342px);height:168px;
+      cursor:pointer;outline:none;
+      filter:drop-shadow(0 24px 30px rgba(0,0,0,.28));
+      transition:transform .28s ease,opacity .55s ease;
+      transform:translateY(0);
+      z-index:4;
     }
-    .sobre::before{
-      content:"";position:absolute;z-index:7;left:50%;top:-7px;
-      width:18px;height:18px;transform:translateX(-50%) rotate(45deg);
-      border-radius:4px;background:linear-gradient(135deg,#f1d88f,#c39a50);
-      box-shadow:0 3px 9px rgba(0,0,0,.16);
-    }
-    .sobre::after{
-      content:"";position:absolute;z-index:6;left:50%;top:-3px;
-      width:9px;height:74px;transform:translateX(-50%);
-      border-radius:0 0 6px 6px;
-      background:linear-gradient(90deg,#b88c41,#efd485,#b4883f);
-      box-shadow:0 4px 10px rgba(0,0,0,.10);
-    }
+    .sobre:hover{transform:translateY(-2px)}
+    .sobre:focus-visible{outline:2px solid var(--gold-300);outline-offset:5px;border-radius:18px}
+
+    /* cuerpo del sobre: una sola pieza */
     .sobre-cuerpo{
-      position:absolute;left:0;right:0;bottom:0;height:142px;
-      border:1px solid rgba(201,164,92,.96);border-radius:13px 13px 20px 20px;
-      background:linear-gradient(150deg,#fffefa 0%,#f7f6f2 54%,#e9edf1 100%);
+      position:absolute;inset:auto 0 0;height:138px;
+      border:1px solid rgba(201,164,92,.96);
+      border-radius:15px 15px 21px 21px;
+      background:linear-gradient(145deg,#fffefa 0%,#f8f7f3 56%,#e9edf0 100%);
       overflow:hidden;z-index:2;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.9), inset 0 -10px 24px rgba(36,56,75,.035);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.95),
+        inset 0 -14px 26px rgba(24,43,60,.045);
     }
-    .sobre-cuerpo::before,.sobre-cuerpo::after{
-      content:"";position:absolute;top:-1px;width:72%;height:1px;background:rgba(201,164,92,.72);
+
+    /* pliegues inferiores, unidos y sin piezas cortantes */
+    .sobre-cuerpo::before,
+    .sobre-cuerpo::after{
+      content:"";position:absolute;top:-1px;width:75%;height:1.5px;
+      background:rgba(201,164,92,.65);
+      pointer-events:none;
     }
-    .sobre-cuerpo::before{left:-9%;transform:rotate(31deg);transform-origin:left top}
-    .sobre-cuerpo::after{right:-9%;transform:rotate(-31deg);transform-origin:right top}
+    .sobre-cuerpo::before{left:-10%;transform:rotate(30deg);transform-origin:left top}
+    .sobre-cuerpo::after{right:-10%;transform:rotate(-30deg);transform-origin:right top}
+
+    /* solapa frontal: limpia y separada del lazo */
     .sobre-solapa{
-      position:absolute;left:1px;right:1px;top:11px;height:108px;
-      background:linear-gradient(150deg,#fff 0%,#f8f9f8 58%,#e9edf0 100%);
+      position:absolute;left:1px;right:1px;top:0;height:93px;
+      background:linear-gradient(145deg,#ffffff 0%,#f7f8f7 70%,#e8edf0 100%);
       clip-path:polygon(0 0,100% 0,50% 100%);
-      border:1px solid rgba(201,164,92,.94);border-top-color:rgba(255,255,255,.92);
-      z-index:5;transform-origin:top center;
-      filter:drop-shadow(0 5px 7px rgba(19,37,55,.08));
-      transition:transform .8s var(--ease),opacity .5s ease;
+      z-index:5;
+      filter:drop-shadow(0 4px 5px rgba(18,36,52,.06));
+      transition:transform .7s var(--ease),opacity .45s ease;
+      transform-origin:top center;
     }
+
+    /* pequeño borde dorado de la solapa, sin triángulos exteriores */
+    .sobre-solapa::after{
+      content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+      width:1px;height:28px;background:rgba(201,164,92,.5);
+    }
+
     .sobre-nombre{
-      position:absolute;left:0;right:0;bottom:33px;z-index:8;
+      position:absolute;left:0;right:0;bottom:25px;z-index:8;
       color:var(--navy-700);font-size:20px;font-weight:700;letter-spacing:.35px;
       text-shadow:0 1px 0 #fff;
     }
+
+    /* sello */
     .sello{
-      position:absolute;z-index:10;left:50%;top:91px;transform:translate(-50%,-50%);
-      width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-      flex-direction:column;background:linear-gradient(145deg,#1b456c,#09213a);
+      position:absolute;z-index:10;left:50%;top:79px;
+      transform:translate(-50%,-50%);
+      width:68px;height:68px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;
+      background:linear-gradient(145deg,#1a466f,#0a243d);
       border:2px solid var(--gold-500);color:var(--gold-300);
-      box-shadow:0 10px 30px rgba(0,0,0,.26),0 0 0 5px rgba(242,223,167,.08);
-      transition:transform .6s var(--ease),opacity .45s;
+      box-shadow:0 10px 28px rgba(0,0,0,.24),0 0 0 5px rgba(242,223,167,.08);
+      transition:transform .55s var(--ease),opacity .35s ease;
     }
     .sello strong{font-size:22px;line-height:1}
     .sello small{font:700 7px/1 Arial,sans-serif;letter-spacing:2px;margin-top:3px}
 
-    /* Lazos: dos bucles laterales, sin colas oscuras ni cortes sobre el sobre. */
-    .liston{
-      position:absolute;z-index:3;top:0;width:58px;height:42px;opacity:.98;
-      background:linear-gradient(135deg,#a97d35 0%,#e7cb7c 45%,#b7893f 100%);
-      border:1px solid rgba(245,223,163,.55);
-      box-shadow:0 8px 14px rgba(0,0,0,.14);
-      filter:drop-shadow(0 4px 7px rgba(0,0,0,.10));
+    /*
+      LAZO REALISTA
+      La cinta rodea el sobre. El nudo y los dos bucles están arriba,
+      sin cruzar visualmente la solapa. Al abrir, el lazo se desata hacia los lados.
+    */
+    .cinta-vertical{
+      position:absolute;z-index:3;left:50%;top:35px;transform:translateX(-50%);
+      width:11px;height:127px;border-radius:0 0 7px 7px;
+      background:linear-gradient(90deg,#ad8138 0%,#f0d584 47%,#bc9148 100%);
+      box-shadow:0 4px 11px rgba(0,0,0,.14);
+      pointer-events:none;
+      transition:transform .85s var(--ease),opacity .55s ease;
     }
-    .liston.izq{left:calc(50% - 72px);transform:rotate(16deg);border-radius:72% 28% 72% 28%;clip-path:polygon(100% 7%,66% 18%,27% 6%,0 33%,31% 57%,0 100%,57% 79%,100% 91%)}
-    .liston.der{right:calc(50% - 72px);transform:rotate(-16deg);border-radius:28% 72% 28% 72%;clip-path:polygon(0 7%,34% 18%,73% 6%,100% 33%,69% 57%,100% 100%,43% 79%,0 91%)}
-    .sobre.abriendo{transform:translateY(-10px) scale(.96);opacity:0}
-    .sobre.abriendo .sobre-solapa{transform:rotateX(165deg) translateY(-4px);opacity:0}
-    .sobre.abriendo .sello{transform:translate(-50%,-50%) scale(.42);opacity:0}
+
+    .lazo{
+      position:absolute;z-index:8;left:50%;top:10px;transform:translateX(-50%);
+      width:126px;height:64px;pointer-events:none;
+      transition:transform .85s var(--ease),opacity .55s ease;
+    }
+
+    .lazo .nudo{
+      position:absolute;left:50%;top:30px;transform:translate(-50%,-50%) rotate(45deg);
+      width:19px;height:19px;border-radius:5px;
+      background:linear-gradient(135deg,#f0d686,#bf9346);
+      box-shadow:0 3px 9px rgba(0,0,0,.13);
+      z-index:4;
+    }
+
+    .lazo .asa{
+      position:absolute;top:17px;width:55px;height:33px;
+      background:linear-gradient(145deg,#b98d46,#efd684 54%,#b88a42);
+      border:1px solid rgba(247,225,165,.6);
+      filter:drop-shadow(0 5px 6px rgba(0,0,0,.10));
+    }
+    .lazo .asa.izq{
+      left:3px;border-radius:75% 28% 72% 28%;
+      transform:rotate(17deg);
+    }
+    .lazo .asa.der{
+      right:3px;border-radius:28% 75% 28% 72%;
+      transform:rotate(-17deg);
+    }
+
+    .lazo .cola{
+      position:absolute;top:25px;width:45px;height:24px;
+      background:linear-gradient(145deg,#a97c37,#e4c86f 55%,#b4883f);
+      border:1px solid rgba(247,225,165,.48);
+    }
+    .lazo .cola.izq{
+      left:-3px;transform:rotate(26deg);
+      clip-path:polygon(0 0,100% 18%,70% 100%,0 72%);
+    }
+    .lazo .cola.der{
+      right:-3px;transform:rotate(-26deg);
+      clip-path:polygon(0 18%,100% 0,100% 72%,30% 100%);
+    }
+
+    /* Papel interior: aparece desde dentro del sobre. */
+    .papel-salida{
+      position:absolute;z-index:1;left:50%;bottom:4px;
+      width:min(76%,245px);height:135px;
+      transform:translate(-50%,80px) scale(.98);
+      border-radius:10px 10px 5px 5px;
+      background:
+        linear-gradient(180deg,#fffef9 0%,#f7f0e3 100%);
+      border:1px solid rgba(201,164,92,.55);
+      box-shadow:0 8px 22px rgba(0,0,0,.14);
+      opacity:0;
+      pointer-events:none;
+      transition:
+        transform .95s var(--ease),
+        opacity .55s ease;
+      overflow:hidden;
+    }
+    .papel-salida::before{
+      content:"ENRIQUE · 50 AÑOS";
+      position:absolute;top:22px;left:18px;right:18px;
+      text-align:center;
+      font:700 8px/1 Arial,sans-serif;
+      letter-spacing:2px;color:#9e7837;
+    }
+    .papel-salida::after{
+      content:"Una noche especial";
+      position:absolute;top:45px;left:16px;right:16px;
+      text-align:center;
+      font:700 19px/1.1 Georgia,serif;color:var(--navy-700);
+    }
+
+    /* Estado de apertura: el lazo se desenvuelve hacia los lados y el papel sube */
+    .escenario-sobre.abriendo .sobre{
+      transform:translateY(7px);
+    }
+    .escenario-sobre.abriendo .sobre-solapa{
+      transform:rotateX(155deg) translateY(-5px);
+      opacity:.15;
+    }
+    .escenario-sobre.abriendo .sello{
+      transform:translate(-50%,-50%) scale(.68);
+      opacity:0;
+    }
+    .escenario-sobre.abriendo .cinta-vertical{
+      transform:translateX(-50%) translateY(120px);
+      opacity:0;
+    }
+    .escenario-sobre.abriendo .lazo{
+      transform:translateX(-50%) translateY(-5px) scale(.62);
+      opacity:0;
+    }
+    .escenario-sobre.abriendo .papel-salida{
+      z-index:6;
+      opacity:1;
+      transform:translate(-50%,-68px) scale(1);
+    }
 
     .btn-abrir{
+      position:relative;z-index:7;
       width:min(100%,320px);min-height:54px;border-radius:999px;
       border:1px solid var(--gold-500);cursor:pointer;color:#fff;
       background:linear-gradient(135deg,#183e65,#2a5d88);
-      font:700 14px Arial,sans-serif;box-shadow:0 14px 34px rgba(0,0,0,.24);
+      font:700 14px Arial,sans-serif;
+      box-shadow:0 14px 34px rgba(0,0,0,.24);
       transition:transform .22s ease,box-shadow .22s ease;
-      animation:botonFlota 3.3s ease-in-out infinite;
     }
     .btn-abrir:hover{transform:translateY(-3px);box-shadow:0 19px 40px rgba(0,0,0,.3)}
     @keyframes botonFlota{50%{box-shadow:0 18px 40px rgba(201,164,92,.14)}}
 
-    /* ---------- CARTA CORTA ---------- */
-    .carta-overlay{
-      position:fixed;inset:0;z-index:7000;display:grid;place-items:center;padding:18px;
-      background:rgba(3,12,23,.88);backdrop-filter:blur(10px);
-      opacity:0;visibility:hidden;pointer-events:none;
-      transition:opacity .45s ease,visibility .45s ease;
+    /* transición final de portada */
+    .intro.saliendo .intro-contenido{
+      animation:portadaSale .72s var(--ease) both;
     }
-    .carta-overlay.visible{opacity:1;visibility:visible;pointer-events:auto}
-    .carta{
-      position:relative;width:min(94vw,405px);padding:34px 28px 24px;
-      border-radius:24px;text-align:center;color:var(--ink);
-      background:
-        radial-gradient(circle at 12% 12%,rgba(201,164,92,.13),transparent 23%),
-        linear-gradient(145deg,#fffdf8,#f0e7d8);
-      border:1px solid rgba(201,164,92,.9);
-      box-shadow:0 30px 90px rgba(0,0,0,.48);
-      transform:translateY(42px) scale(.92) rotate(-1deg);
-      transition:transform .7s var(--ease);overflow:hidden;
+    .intro.saliendo{
+      opacity:0;
     }
-    .carta-overlay.visible .carta{transform:none}
-    .carta::before{
-      content:"";position:absolute;top:0;left:0;right:0;height:5px;
-      background:linear-gradient(90deg,#9b7435,#efd98e,#9b7435)
+    @keyframes portadaSale{
+      to{opacity:0;transform:translateY(-18px) scale(.985)}
     }
-    .cinta-carta{position:absolute;top:-18px;width:48px;height:96px;background:linear-gradient(90deg,#ae833b,#e7c66f,#b2843f);opacity:.95}
-    .cinta-carta.izquierda{left:30px;transform:rotate(-6deg)}
-    .cinta-carta.derecha{right:30px;transform:rotate(6deg)}
-    .carta-adornos{display:flex;align-items:center;justify-content:center;gap:9px;color:var(--gold-500);margin-bottom:12px}
-    .carta-adornos i{display:block;width:42px;height:1px;background:var(--gold-500)}
-    .carta-subtitulo{font:700 9px/1 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#aa813a;margin-bottom:8px}
-    .carta h2{font-size:clamp(1.8rem,8vw,2.25rem);line-height:1;color:var(--navy-700);margin-bottom:13px}
-    .carta-texto{max-width:325px;margin:0 auto 13px;font:14px/1.55 Arial,sans-serif;color:var(--ink-soft)}
-    .carta-frase{margin:14px 0;padding:11px 13px;border-top:1px solid rgba(201,164,92,.32);border-bottom:1px solid rgba(201,164,92,.32);font-size:15px;line-height:1.45;color:var(--navy-700);font-style:italic}
-    .firma{margin:12px 0 18px;color:var(--navy-700);font-size:17px}
-    .firma strong{color:#9d7738}
-    .btn-carta{
-      width:100%;min-height:50px;border-radius:999px;cursor:pointer;
-      background:linear-gradient(135deg,var(--navy-700),var(--navy-600));
-      color:#fff;border:1px solid var(--gold-500);font:700 13px Arial,sans-serif;
-      transition:transform .2s ease,box-shadow .2s ease;
-    }
-    .btn-carta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(23,57,87,.22)}
 
     /* ---------- APP / TARJETA ---------- */
     .app{
@@ -567,13 +666,16 @@
       .slider{aspect-ratio:4/4.9}
       .ribbon-tab{display:none}
       .foto-gala{width:min(52vw,195px)}
-      .escenario-sobre{width:min(90vw,350px);height:198px}
-      .sobre{width:min(100%,330px);height:166px}
-      .sobre-cuerpo{height:136px}
-      .sobre-solapa{top:10px;height:102px}
-      .liston{width:52px;height:38px}
-      .liston.izq{left:calc(50% - 64px)}
-      .liston.der{right:calc(50% - 64px)}
+      .escenario-sobre{width:min(92vw,355px);height:202px}
+      .sobre{width:min(100%,334px);height:162px}
+      .sobre-cuerpo{height:134px}
+      .sobre-solapa{height:90px}
+      .sello{top:76px;width:66px;height:66px}
+      .cinta-vertical{top:34px;height:124px;width:10px}
+      .lazo{top:8px;transform:translateX(-50%) scale(.94)}
+      .lazo .asa{width:51px;height:31px}
+      .lazo .cola{width:41px;height:22px}
+      .papel-salida{width:72%;height:128px}
     }
     @media (max-height:700px){
       .pagina{padding-top:63px;padding-bottom:72px}
@@ -583,12 +685,16 @@
       .texto-pagina{margin-bottom:7px}
       .slider{aspect-ratio:4/4.6}
       .galeria{max-width:295px}
-      .escenario-sobre{height:188px;margin-top:0}
-      .sobre{height:158px}
-      .sobre-cuerpo{height:130px}
-      .sobre-solapa{top:9px;height:96px}
-      .sello{top:83px;width:64px;height:64px}
-      .sobre-nombre{bottom:29px;font-size:18px}
+      .escenario-sobre{height:184px;margin-top:0}
+      .sobre{height:150px}
+      .sobre-cuerpo{height:124px}
+      .sobre-solapa{height:86px}
+      .sello{top:72px;width:62px;height:62px}
+      .sobre-nombre{bottom:25px;font-size:17px}
+      .cinta-vertical{top:31px;height:116px}
+      .lazo{top:5px;transform:translateX(-50%) scale(.82)}
+      .papel-salida{height:118px;transform:translate(-50%,74px) scale(.98)}
+      .escenario-sobre.abriendo .papel-salida{transform:translate(-50%,-58px) scale(1)}
       .detalle{padding:9px 11px}
       .detalle-icono{width:40px;height:40px}
       .boton{min-height:40px;padding:8px 14px}
@@ -614,20 +720,35 @@
     </div>
   </div>
 
-  <!-- PORTADA CON SOBRE -->
+
+  <!-- PORTADA CON SOBRE FÍSICO -->
   <section class="intro" id="intro" aria-label="Portada de la invitación">
     <div class="intro-contenido">
       <div class="intro-superior">Una celebración especial</div>
+
       <h1 class="intro-titulo">
         Enrique
         <span>cumple 50 años</span>
       </h1>
+
       <p class="intro-frase">Una noche para celebrar, recordar y compartir.</p>
 
-      <div class="escenario-sobre">
-        <div class="liston izq"></div>
-        <div class="liston der"></div>
+      <div class="escenario-sobre" id="escenarioSobre">
+        <!-- El papel está detrás del sobre y sale al tirar del lazo -->
+        <div class="papel-salida" aria-hidden="true"></div>
 
+        <!-- Lazo central -->
+        <div class="lazo" aria-hidden="true">
+          <div class="cola izq"></div>
+          <div class="cola der"></div>
+          <div class="asa izq"></div>
+          <div class="asa der"></div>
+          <div class="nudo"></div>
+        </div>
+
+        <div class="cinta-vertical" aria-hidden="true"></div>
+
+        <!-- Sobre -->
         <div class="sobre" id="sobre" tabindex="0" role="button" aria-label="Abrir invitación">
           <div class="sobre-cuerpo"></div>
           <div class="sobre-solapa"></div>
@@ -638,32 +759,6 @@
 
       <button class="btn-abrir" id="btnAbrir" type="button">💌 Abrir invitación</button>
     </div>
-  </section>
-
-  <!-- CARTA BREVE -->
-  <section class="carta-overlay" id="cartaOverlay" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="tituloCarta">
-    <article class="carta">
-      <div class="cinta-carta izquierda"></div>
-      <div class="cinta-carta derecha"></div>
-
-      <div class="carta-adornos"><i></i><span>✦</span><span>🥂</span><span>✦</span><i></i></div>
-      <div class="carta-subtitulo">Una invitación especial</div>
-
-      <h2 id="tituloCarta">Una noche para celebrar</h2>
-
-      <p class="carta-texto">
-        Hoy celebro 50 años de historias, aprendizajes y momentos compartidos.
-        Quiero disfrutar esta noche con las personas que hacen especial mi camino.
-      </p>
-
-      <div class="carta-frase">“Los mejores recuerdos se construyen juntos.”</div>
-
-      <div class="firma">Con cariño,<br><strong>Enrique</strong></div>
-
-      <button class="btn-carta" id="btnContinuarCarta" type="button">
-        Continuar con la invitación ✨
-      </button>
-    </article>
   </section>
 
   <main class="app">
@@ -810,7 +905,6 @@
 
         <div class="botones">
           <button class="boton boton-atras anterior" data-pagina="3" type="button">← Volver a los detalles</button>
-          <button class="boton boton-secundario" id="btnCartaNuevamente" type="button">💌 Ver la carta</button>
           <button class="boton boton-principal" id="btnReiniciar" type="button">Volver al inicio ✦</button>
         </div>
       </section>
@@ -837,10 +931,7 @@
       const intro = $("#intro");
       const sobre = $("#sobre");
       const btnAbrir = $("#btnAbrir");
-      const cartaOverlay = $("#cartaOverlay");
-      const btnContinuarCarta = $("#btnContinuarCarta");
       const btnInicio = $("#btnInicio");
-      const btnCartaNuevamente = $("#btnCartaNuevamente");
       const btnReiniciar = $("#btnReiniciar");
       const btnMusica = $("#btnMusica");
       const musica = $("#musica");
@@ -861,7 +952,6 @@
       let musicaIniciada = false;
       let inicioX = 0;
       let inicioY = 0;
-      let cartaAbierta = false;
 
       function actualizarNavegacion() {
         navPuntos.forEach((punto, i) => punto.classList.toggle("activo", i === paginaActual - 1));
@@ -932,38 +1022,38 @@
         else detenerGaleria();
       }
 
-      function abrirCarta() {
-        cartaAbierta = true;
-        sobre.classList.add("abriendo");
+      let aperturaEnCurso = false;
 
+      function abrirInvitacion() {
+        if (aperturaEnCurso) return;
+        aperturaEnCurso = true;
+
+        const escenario = document.querySelector("#escenarioSobre");
+        sobre.setAttribute("aria-busy", "true");
+        escenario.classList.add("abriendo");
+        btnAbrir.disabled = true;
+
+        /* Primero se desata el lazo; luego el papel sale del sobre. */
         window.setTimeout(() => {
-          cartaOverlay.classList.add("visible");
-          cartaOverlay.setAttribute("aria-hidden", "false");
-        }, 360);
-      }
-
-      function cerrarCarta() {
-        cartaAbierta = false;
-        cartaOverlay.classList.remove("visible");
-        cartaOverlay.setAttribute("aria-hidden", "true");
-      }
-
-      function continuar() {
-        cerrarCarta();
+          intro.classList.add("saliendo");
+        }, 1050);
 
         window.setTimeout(() => {
           intro.classList.add("oculta");
+          sobre.setAttribute("aria-busy", "false");
+          btnAbrir.disabled = false;
+          aperturaEnCurso = false;
           reproducirMusica();
           celebrar();
-        }, 300);
+        }, 1350);
       }
 
       function volverAlInicio() {
-        cerrarCarta();
         detenerGaleria();
 
-        sobre.classList.remove("abriendo");
-        intro.classList.remove("oculta");
+        const escenario = document.querySelector("#escenarioSobre");
+        escenario.classList.remove("abriendo");
+        intro.classList.remove("saliendo","oculta");
 
         paginas.forEach((pagina, i) => {
           pagina.classList.toggle("activa", i === 0);
@@ -974,6 +1064,7 @@
         paginaActual = 1;
         actualizarNavegacion();
       }
+
 
       function reproducirMusica() {
         if (musicaIniciada) return;
@@ -1015,21 +1106,14 @@
       }
 
       /* Eventos */
-      btnAbrir.addEventListener("click", abrirCarta);
-      sobre.addEventListener("click", abrirCarta);
+      btnAbrir.addEventListener("click", abrirInvitacion);
+      sobre.addEventListener("click", abrirInvitacion);
 
       sobre.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          abrirCarta();
+          abrirInvitacion();
         }
-      });
-
-      btnContinuarCarta.addEventListener("click", continuar);
-      btnCartaNuevamente.addEventListener("click", () => {
-        cartaAbierta = true;
-        cartaOverlay.classList.add("visible");
-        cartaOverlay.setAttribute("aria-hidden", "false");
       });
 
       btnInicio.addEventListener("click", volverAlInicio);
@@ -1086,20 +1170,12 @@
       });
 
       document.addEventListener("keydown", (event) => {
-        if (cartaAbierta && event.key === "Escape") {
-          cerrarCarta();
-          return;
-        }
-
-        if (!intro.classList.contains("oculta") || cartaAbierta) return;
+        if (!intro.classList.contains("oculta")) return;
 
         if (event.key === "ArrowRight") irAPagina(paginaActual + 1);
         if (event.key === "ArrowLeft") irAPagina(paginaActual - 1);
       });
 
-      cartaOverlay.addEventListener("click", (event) => {
-        if (event.target === cartaOverlay) cerrarCarta();
-      });
 
       window.addEventListener("load", () => {
         crearPuntosGaleria();
