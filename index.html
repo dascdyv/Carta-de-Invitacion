@@ -1,3976 +1,5417 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
+    <meta charset="UTF-8">
 
-  <meta name="theme-color" content="#07111f">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
 
-  <meta
-    name="description"
-    content="Invitación especial para celebrar los 50 años de Enrique Cisneros."
-  >
+    <meta
+        name="theme-color"
+        content="#071525"
+    >
 
-  <!-- =========================================================
-       VISTA PREVIA PARA WHATSAPP / FACEBOOK
-       Más adelante reemplazaremos INVITACION_URL por tu URL real.
-  ========================================================== -->
+    <meta
+        name="description"
+        content="Invitación especial para celebrar los 50 años de Enrique Cisneros."
+    >
 
-  <meta property="og:type" content="website">
+    <!-- =====================================================
+         PREVISUALIZACIÓN PARA WHATSAPP
+    ====================================================== -->
 
-  <meta
-    property="og:title"
-    content="Enrique cumple 50 años 🎉"
-  >
+    <meta
+        property="og:type"
+        content="website"
+    >
 
-  <meta
-    property="og:description"
-    content="Una celebración, una vida y muchos recuerdos."
-  >
+    <meta
+        property="og:title"
+        content="Enrique cumple 50 años 🎉"
+    >
 
-  <meta
-    property="og:url"
-    content="INVITACION_URL"
-  >
+    <meta
+        property="og:description"
+        content="Una noche especial para celebrar una vida llena de momentos."
+    >
 
-  <meta
-    property="og:image"
-    content="INVITACION_URL/Enrique.cumple.png"
-  >
+    <!--
+        Cuando tengamos tu URL definitiva reemplazaremos
+        estos valores por la dirección real.
+    -->
 
-  <meta
-    property="og:image:alt"
-    content="Enrique celebrando sus 50 años"
-  >
+    <meta
+        property="og:url"
+        content="https://TU-USUARIO.github.io/Carta-de-Invitacion/"
+    >
 
-  <meta name="twitter:card" content="summary_large_image">
+    <meta
+        property="og:image"
+        content="https://TU-USUARIO.github.io/Carta-de-Invitacion/Enrique.cumple.png"
+    >
 
-  <title>Enrique · 50 años</title>
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
 
+    <title>
+        Enrique · 50 años
+    </title>
 
-  <style>
 
-    /* =========================================================
-       VARIABLES
-    ========================================================== */
+    <style>
 
-    :root {
+        /* =====================================================
+           VARIABLES
+        ====================================================== */
 
-      --navy: #07111f;
-      --navy-2: #0d1d32;
+        :root {
 
-      --blue: #17365d;
-      --blue-2: #234b78;
+            --azul-noche: #06111f;
+            --azul-profundo: #0b1c31;
+            --azul: #15375c;
+            --azul-medio: #24527e;
 
-      --gold: #d4b46a;
-      --gold-light: #f0d995;
+            --oro: #c9a45c;
+            --oro-claro: #ecd79b;
+            --oro-brillo: #f7e8b8;
 
-      --cream: #fffdf7;
-      --paper: #f7f3e8;
+            --marfil: #fffdf7;
+            --papel: #f7f1e5;
+            --champagne: #eee2ca;
 
-      --ink: #243047;
-      --muted: #667085;
+            --texto: #26364a;
+            --texto-suave: #687486;
 
-      --white: #ffffff;
+            --blanco: #ffffff;
 
-      --green: #25d366;
+            --verde: #25d366;
 
-      --shadow:
-        0 25px 70px rgba(0, 0, 0, 0.35);
+            --sombra:
+                0 30px 80px rgba(0,0,0,.35);
 
-      --ease:
-        cubic-bezier(.2, .8, .2, 1);
-    }
+            --transicion:
+                cubic-bezier(.2,.8,.2,1);
+        }
 
 
-    /* =========================================================
-       RESET
-    ========================================================== */
+        /* =====================================================
+           RESET
+        ====================================================== */
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
 
+            box-sizing:
+                border-box;
 
-    html {
+            margin:
+                0;
 
-      background: var(--navy);
+            padding:
+                0;
+        }
 
-      scroll-behavior: smooth;
-    }
 
+        html {
 
-    body {
+            width:
+                100%;
 
-      width: 100%;
-      min-height: 100vh;
-      min-height: 100dvh;
+            min-height:
+                100%;
 
-      overflow: hidden;
+            scroll-behavior:
+                smooth;
+        }
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
 
-      color: var(--white);
+        body {
 
-      background:
+            width:
+                100%;
 
-        radial-gradient(
-          circle at 50% 10%,
-          #2d507c 0,
-          #17365d 32%,
-          #07111f 78%
-        );
-    }
+            min-height:
+                100vh;
 
+            min-height:
+                100dvh;
 
-    button,
-    a {
+            overflow:
+                hidden;
 
-      font: inherit;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      -webkit-tap-highlight-color:
-        transparent;
-    }
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #274d73 0%,
+                    #102b49 35%,
+                    #06111f 100%
+                );
 
+            color:
+                var(--blanco);
+        }
 
-    button {
 
-      border: none;
-    }
+        button,
+        a {
 
+            -webkit-tap-highlight-color:
+                transparent;
+        }
 
-    a {
 
-      text-decoration: none;
-    }
+        button {
 
+            border:
+                0;
 
-    /* =========================================================
-       FONDO ANIMADO
-    ========================================================== */
+            font-family:
+                inherit;
+        }
 
-    .background {
 
-      position: fixed;
+        a {
 
-      inset: 0;
+            text-decoration:
+                none;
+        }
 
-      overflow: hidden;
 
-      pointer-events: none;
+        /* =====================================================
+           FONDO
+        ====================================================== */
 
-      z-index: 0;
-    }
+        .fondo {
 
+            position:
+                fixed;
 
-    .background::before {
+            inset:
+                0;
 
-      content: "";
+            overflow:
+                hidden;
 
-      position: absolute;
+            pointer-events:
+                none;
 
-      inset: -20%;
+            z-index:
+                1;
+        }
 
-      background:
 
-        radial-gradient(
-          circle at 20% 30%,
-          rgba(240, 217, 149, .08),
-          transparent 22%
-        ),
+        .fondo::before {
 
-        radial-gradient(
-          circle at 80% 65%,
-          rgba(255, 255, 255, .06),
-          transparent 24%
-        );
+            content:
+                "";
 
-      animation:
-        ambient 12s ease-in-out infinite alternate;
-    }
+            position:
+                absolute;
 
+            inset:
+                -20%;
 
-    .orb {
+            background:
 
-      position: absolute;
+                radial-gradient(
+                    circle at 20% 25%,
+                    rgba(236,215,155,.08),
+                    transparent 23%
+                ),
 
-      border-radius: 50%;
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(255,255,255,.05),
+                    transparent 25%
+                );
 
-      filter: blur(2px);
+            animation:
+                respirar
+                12s ease-in-out infinite alternate;
+        }
 
-      background:
-        rgba(240, 217, 149, .08);
 
-      animation:
-        float 9s ease-in-out infinite;
-    }
+        .luz {
 
+            position:
+                absolute;
 
-    .orb:nth-child(1) {
+            border-radius:
+                50%;
 
-      width: 170px;
-      height: 170px;
+            background:
+                rgba(236,215,155,.06);
 
-      left: -70px;
-      top: 14%;
+            filter:
+                blur(2px);
 
-      animation-delay: -2s;
-    }
+            animation:
+                flotar
+                8s ease-in-out infinite;
+        }
 
 
-    .orb:nth-child(2) {
+        .luz:nth-child(1) {
 
-      width: 230px;
-      height: 230px;
+            width:
+                220px;
 
-      right: -110px;
-      top: 54%;
+            height:
+                220px;
 
-      animation-delay: -5s;
-    }
+            left:
+                -100px;
 
+            top:
+                15%;
+        }
 
-    .orb:nth-child(3) {
 
-      width: 90px;
-      height: 90px;
+        .luz:nth-child(2) {
 
-      left: 22%;
-      bottom: -40px;
+            width:
+                280px;
 
-      animation-delay: -7s;
-    }
+            height:
+                280px;
 
+            right:
+                -140px;
 
-    .spark {
+            bottom:
+                10%;
 
-      position: absolute;
+            animation-delay:
+                -4s;
+        }
 
-      color:
-        rgba(240, 217, 149, .7);
 
-      font-size: 16px;
+        .luz:nth-child(3) {
 
-      animation:
-        sparkle 4s ease-in-out infinite;
-    }
+            width:
+                100px;
 
+            height:
+                100px;
 
-    .spark:nth-child(4) {
+            left:
+                45%;
 
-      left: 9%;
-      top: 17%;
+            bottom:
+                -50px;
 
-      animation-delay: 0s;
-    }
+            animation-delay:
+                -2s;
+        }
 
 
-    .spark:nth-child(5) {
+        .estrella {
 
-      right: 12%;
-      top: 22%;
+            position:
+                absolute;
 
-      animation-delay: 1.2s;
-    }
+            color:
+                rgba(240,218,160,.65);
 
+            font-size:
+                15px;
 
-    .spark:nth-child(6) {
+            animation:
+                brillo
+                4s ease-in-out infinite;
+        }
 
-      left: 13%;
-      bottom: 19%;
 
-      animation-delay: 2.2s;
-    }
+        .estrella:nth-child(4) {
 
+            left:
+                8%;
 
-    .spark:nth-child(7) {
+            top:
+                17%;
+        }
 
-      right: 9%;
-      bottom: 13%;
 
-      animation-delay: .7s;
-    }
+        .estrella:nth-child(5) {
 
+            right:
+                10%;
 
-    .spark:nth-child(8) {
+            top:
+                20%;
 
-      left: 48%;
-      top: 7%;
+            animation-delay:
+                1s;
+        }
 
-      animation-delay: 1.8s;
-    }
 
+        .estrella:nth-child(6) {
 
-    @keyframes ambient {
+            left:
+                12%;
 
-      to {
+            bottom:
+                20%;
 
-        transform:
-          scale(1.08)
-          translate(1%, -1%);
-      }
-    }
+            animation-delay:
+                2s;
+        }
 
 
-    @keyframes float {
+        .estrella:nth-child(7) {
 
-      50% {
+            right:
+                9%;
 
-        transform:
-          translateY(-22px)
-          scale(1.05);
-      }
-    }
+            bottom:
+                16%;
 
+            animation-delay:
+                .6s;
+        }
 
-    @keyframes sparkle {
 
-      0%,
-      100% {
+        .estrella:nth-child(8) {
 
-        opacity: .25;
+            left:
+                50%;
 
-        transform:
-          scale(.75)
-          rotate(0deg);
-      }
+            top:
+                7%;
 
-      50% {
+            animation-delay:
+                1.8s;
+        }
 
-        opacity: 1;
 
-        transform:
-          scale(1.15)
-          rotate(12deg);
-      }
-    }
+        @keyframes respirar {
 
+            to {
 
-    /* =========================================================
-       LOADER
-    ========================================================== */
+                transform:
+                    scale(1.08)
+                    translate(1%,-1%);
+            }
+        }
 
-    #loader {
 
-      position: fixed;
+        @keyframes flotar {
 
-      inset: 0;
+            50% {
 
-      z-index: 99999;
+                transform:
+                    translateY(-22px)
+                    scale(1.04);
+            }
+        }
 
-      display: grid;
 
-      place-items: center;
+        @keyframes brillo {
 
-      background: var(--navy);
+            0%,
+            100% {
 
-      transition:
-        .6s ease;
-    }
+                opacity:
+                    .25;
 
+                transform:
+                    scale(.7)
+                    rotate(0deg);
+            }
 
-    #loader.hide {
+            50% {
 
-      opacity: 0;
+                opacity:
+                    1;
 
-      visibility: hidden;
-    }
+                transform:
+                    scale(1.2)
+                    rotate(12deg);
+            }
+        }
 
 
-    .loader-box {
+        /* =====================================================
+           LOADER
+        ====================================================== */
 
-      text-align: center;
-    }
+        #loader {
 
+            position:
+                fixed;
 
-    .loader-ring {
+            inset:
+                0;
 
-      width: 48px;
-      height: 48px;
+            z-index:
+                99999;
 
-      border-radius: 50%;
+            display:
+                flex;
 
-      margin:
-        auto auto 16px;
+            align-items:
+                center;
 
-      border:
-        2px solid rgba(212, 180, 106, .2);
+            justify-content:
+                center;
 
-      border-top-color:
-        var(--gold);
+            background:
+                radial-gradient(
+                    circle at center,
+                    #294d73,
+                    #102b49 45%,
+                    #06111f 100%
+                );
 
-      animation:
-        spin 1s linear infinite;
-    }
+            transition:
+                opacity .7s ease,
+                visibility .7s ease;
+        }
 
 
-    .loader-box span {
+        #loader.oculto {
 
-      font:
-        700 11px/1 Arial, sans-serif;
+            opacity:
+                0;
 
-      letter-spacing: 4px;
+            visibility:
+                hidden;
 
-      color:
-        var(--gold-light);
+            pointer-events:
+                none;
+        }
 
-      text-transform:
-        uppercase;
-    }
 
+        .loader-contenido {
 
-    @keyframes spin {
+            text-align:
+                center;
+        }
 
-      to {
 
-        transform:
-          rotate(360deg);
-      }
-    }
+        .loader-anillo {
 
+            width:
+                48px;
 
-    /* =========================================================
-       INTRO
-    ========================================================== */
+            height:
+                48px;
 
-    .intro {
+            margin:
+                0 auto 17px;
 
-      position: fixed;
+            border-radius:
+                50%;
 
-      inset: 0;
+            border:
+                2px solid
+                rgba(236,215,155,.2);
 
-      z-index: 5000;
+            border-top-color:
+                var(--oro-claro);
 
-      display: grid;
+            animation:
+                girar
+                1s linear infinite;
+        }
 
-      place-items: center;
 
-      padding: 22px;
+        .loader-texto {
 
-      background:
+            font-family:
+                Arial,
+                sans-serif;
 
-        radial-gradient(
-          circle at 50% 12%,
-          rgba(54, 91, 135, .9),
-          transparent 35%
-        ),
+            font-size:
+                10px;
 
-        linear-gradient(
-          145deg,
-          #102b4c,
-          #07111f 70%
-        );
+            font-weight:
+                700;
 
-      transition:
+            letter-spacing:
+                4px;
 
-        opacity .8s var(--ease),
-        visibility .8s;
-    }
+            text-transform:
+                uppercase;
 
+            color:
+                var(--oro-claro);
+        }
 
-    .intro.hidden {
 
-      opacity: 0;
+        @keyframes girar {
 
-      visibility: hidden;
+            to {
 
-      pointer-events: none;
-    }
+                transform:
+                    rotate(360deg);
+            }
+        }
 
 
-    .intro-inner {
+        /* =====================================================
+           INTRO
+        ====================================================== */
 
-      width:
-        min(92vw, 440px);
+        .intro {
 
-      text-align: center;
+            position:
+                fixed;
 
-      position: relative;
+            inset:
+                0;
 
-      animation:
-        introIn 1s var(--ease) both;
-    }
+            z-index:
+                5000;
 
+            display:
+                flex;
 
-    @keyframes introIn {
+            align-items:
+                center;
 
-      from {
+            justify-content:
+                center;
 
-        opacity: 0;
+            padding:
+                20px;
 
-        transform:
-          translateY(24px);
-      }
+            background:
 
-      to {
+                radial-gradient(
+                    circle at 50% 15%,
+                    #315b85 0%,
+                    #163b61 37%,
+                    #071525 100%
+                );
 
-        opacity: 1;
+            transition:
+                opacity .8s var(--transicion),
+                visibility .8s;
+        }
 
-        transform:
-          none;
-      }
-    }
 
+        .intro.oculta {
 
-    .eyebrow {
+            opacity:
+                0;
 
-      font:
-        700 11px/1 Arial, sans-serif;
+            visibility:
+                hidden;
 
-      letter-spacing: 4px;
+            pointer-events:
+                none;
+        }
 
-      color:
-        var(--gold-light);
 
-      text-transform:
-        uppercase;
+        .intro-contenido {
 
-      margin-bottom: 14px;
-    }
+            width:
+                min(92vw,440px);
 
+            text-align:
+                center;
 
-    .intro-title {
+            display:
+                flex;
 
-      font-size:
-        clamp(2rem, 9vw, 3rem);
+            flex-direction:
+                column;
 
-      line-height:
-        1.02;
+            align-items:
+                center;
 
-      color:
-        var(--cream);
+            justify-content:
+                center;
 
-      margin-bottom: 8px;
+            animation:
+                aparecer
+                1s var(--transicion) both;
+        }
 
-      text-shadow:
-        0 8px 35px rgba(0, 0, 0, .25);
-    }
 
+        @keyframes aparecer {
 
-    .intro-sub {
+            from {
 
-      color:
-        rgba(255, 255, 255, .78);
+                opacity:
+                    0;
 
-      font:
-        15px/1.55 Arial, sans-serif;
+                transform:
+                    translateY(25px);
+            }
 
-      max-width:
-        340px;
+            to {
 
-      margin:
-        0 auto 22px;
-    }
+                opacity:
+                    1;
 
+                transform:
+                    none;
+            }
+        }
 
-    /* =========================================================
-       SOBRE
-    ========================================================== */
 
-    .envelope-wrap {
+        .intro-superior {
 
-      height: 230px;
+            font-family:
+                Arial,
+                sans-serif;
 
-      display: grid;
+            font-size:
+                10px;
 
-      place-items: center;
+            font-weight:
+                700;
 
-      margin-bottom: 12px;
-    }
+            letter-spacing:
+                4px;
 
+            text-transform:
+                uppercase;
 
-    .envelope {
+            color:
+                var(--oro-claro);
 
-      width:
-        min(88vw, 350px);
+            margin-bottom:
+                13px;
+        }
 
-      height: 205px;
 
-      position: relative;
+        .intro-titulo {
 
-      cursor: pointer;
+            font-size:
+                clamp(2.25rem,10vw,3.6rem);
 
-      filter:
-        drop-shadow(
-          0 24px 25px rgba(0, 0, 0, .3)
-        );
+            line-height:
+                .95;
 
-      animation:
-        envelopeFloat 4s ease-in-out infinite;
+            color:
+                #fff;
 
-      transform-origin:
-        center;
-    }
+            margin-bottom:
+                8px;
 
+            text-shadow:
+                0 10px 35px rgba(0,0,0,.25);
+        }
 
-    @keyframes envelopeFloat {
 
-      0%,
-      100% {
+        .intro-titulo span {
 
-        transform:
-          translateY(0);
-      }
+            display:
+                block;
 
-      50% {
+            color:
+                var(--oro-brillo);
 
-        transform:
-          translateY(-8px);
-      }
-    }
+            font-size:
+                .63em;
 
+            letter-spacing:
+                2px;
 
-    .env-back {
+            margin-top:
+                8px;
+        }
 
-      position: absolute;
 
-      inset:
-        18px 0 0;
+        .intro-frase {
 
-      border:
-        1px solid rgba(212, 180, 106, .8);
+            font-family:
+                Arial,
+                sans-serif;
 
-      border-radius:
-        10px 10px 17px 17px;
+            font-size:
+                14px;
 
-      background:
-        linear-gradient(
-          145deg,
-          #fff,
-          #e9edf2
-        );
+            line-height:
+                1.55;
 
-      overflow: hidden;
-    }
+            color:
+                rgba(255,255,255,.78);
 
+            max-width:
+                320px;
 
-    .env-back::before,
-    .env-back::after {
+            margin:
+                0 auto 20px;
+        }
 
-      content: "";
 
-      position: absolute;
+        /* =====================================================
+           SOBRE
+        ====================================================== */
 
-      bottom: -4px;
+        .escenario-sobre {
 
-      width: 72%;
+            position:
+                relative;
 
-      height: 2px;
+            width:
+                min(88vw,350px);
 
-      background:
-        var(--gold);
-    }
+            height:
+                220px;
 
+            display:
+                flex;
 
-    .env-back::before {
+            align-items:
+                center;
 
-      left: -17%;
+            justify-content:
+                center;
 
-      transform:
-        rotate(31deg);
-    }
+            margin:
+                2px auto 8px;
+        }
 
 
-    .env-back::after {
+        .sobre {
 
-      right: -17%;
+            position:
+                relative;
 
-      transform:
-        rotate(-31deg);
-    }
+            width:
+                100%;
 
+            height:
+                185px;
 
-    .env-flap {
+            cursor:
+                pointer;
 
-      position: absolute;
+            filter:
+                drop-shadow(
+                    0 25px 28px
+                    rgba(0,0,0,.3)
+                );
 
-      left: 0;
+            transition:
+                transform .7s var(--transicion),
+                opacity .7s ease;
+        }
 
-      top: 18px;
 
-      width: 100%;
+        .sobre-cuerpo {
 
-      height: 112px;
+            position:
+                absolute;
 
-      background:
-        linear-gradient(
-          145deg,
-          #fff,
-          #edf0f4
-        );
+            left:
+                0;
 
-      clip-path:
-        polygon(
-          0 0,
-          100% 0,
-          50% 100%
-        );
+            right:
+                0;
 
-      border:
-        1px solid rgba(212, 180, 106, .85);
+            bottom:
+                0;
 
-      transform-origin:
-        top;
+            height:
+                145px;
 
-      z-index: 3;
+            border:
+                1px solid
+                rgba(201,164,92,.9);
 
-      transition:
-        transform .75s var(--ease),
-        opacity .55s;
-    }
+            border-radius:
+                8px 8px 17px 17px;
 
+            background:
+                linear-gradient(
+                    145deg,
+                    #fff,
+                    #e8edf2
+                );
 
-    .seal {
+            overflow:
+                hidden;
 
-      position: absolute;
+            z-index:
+                2;
+        }
 
-      z-index: 5;
 
-      left: 50%;
-      top: 91px;
+        .sobre-cuerpo::before,
+        .sobre-cuerpo::after {
 
-      transform:
-        translate(-50%, -50%);
+            content:
+                "";
 
-      width: 66px;
-      height: 66px;
+            position:
+                absolute;
 
-      border-radius: 50%;
+            bottom:
+                -2px;
 
-      display: grid;
+            width:
+                68%;
 
-      place-items: center;
+            height:
+                2px;
 
-      background:
-        var(--navy-2);
+            background:
+                var(--oro);
+        }
 
-      border:
-        2px solid var(--gold);
 
-      color:
-        var(--gold-light);
+        .sobre-cuerpo::before {
 
-      font-size: 24px;
+            left:
+                -12%;
 
-      box-shadow:
-        0 10px 28px rgba(0, 0, 0, .28);
+            transform:
+                rotate(31deg);
+        }
 
-      transition:
-        .55s var(--ease);
-    }
 
+        .sobre-cuerpo::after {
 
-    .env-name {
+            right:
+                -12%;
 
-      position: absolute;
+            transform:
+                rotate(-31deg);
+        }
 
-      z-index: 4;
 
-      left: 0;
-      right: 0;
+        .sobre-solapa {
 
-      bottom: 48px;
+            position:
+                absolute;
 
-      color:
-        var(--blue);
+            left:
+                0;
 
-      font-size: 21px;
+            top:
+                20px;
 
-      font-weight: bold;
+            width:
+                100%;
 
-      letter-spacing: .5px;
-    }
+            height:
+                108px;
 
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #edf1f5
+                );
 
-    .envelope.opened {
+            clip-path:
+                polygon(
+                    0 0,
+                    100% 0,
+                    50% 100%
+                );
 
-      animation: none;
+            border:
+                1px solid
+                rgba(201,164,92,.9);
 
-      transform:
-        translateY(12px)
-        scale(.96);
+            z-index:
+                5;
 
-      opacity: 0;
+            transform-origin:
+                top center;
 
-      transition:
-        1s var(--ease);
-    }
+            transition:
+                transform .7s var(--transicion),
+                opacity .5s ease;
+        }
 
 
-    .envelope.opened .env-flap {
+        .sobre-nombre {
 
-      transform:
-        rotateX(160deg);
+            position:
+                absolute;
 
-      opacity: 0;
-    }
+            left:
+                0;
 
+            right:
+                0;
 
-    .envelope.opened .seal {
+            bottom:
+                39px;
 
-      transform:
-        translate(-50%, -50%)
-        scale(.2);
+            z-index:
+                4;
 
-      opacity: 0;
-    }
+            color:
+                var(--azul);
 
+            font-size:
+                20px;
 
-    .open-btn {
+            font-weight:
+                bold;
 
-      width:
-        min(100%, 315px);
+            letter-spacing:
+                .5px;
+        }
 
-      min-height: 54px;
 
-      padding:
-        0 24px;
+        .sello {
 
-      border-radius: 999px;
+            position:
+                absolute;
 
-      color:
-        #fff;
+            z-index:
+                10;
 
-      cursor: pointer;
+            left:
+                50%;
 
-      font:
-        700 15px/1 Arial, sans-serif;
+            top:
+                91px;
 
-      background:
+            transform:
+                translate(-50%,-50%);
 
-        linear-gradient(
-          135deg,
-          var(--blue),
-          var(--blue-2)
-        );
+            width:
+                68px;
 
-      border:
-        1px solid rgba(212, 180, 106, .9);
+            height:
+                68px;
 
-      box-shadow:
-        0 14px 32px rgba(0, 0, 0, .28);
+            border-radius:
+                50%;
 
-      transition:
-        .25s ease;
-    }
+            display:
+                flex;
 
+            align-items:
+                center;
 
-    .open-btn:hover {
+            justify-content:
+                center;
 
-      transform:
-        translateY(-2px);
+            flex-direction:
+                column;
 
-      box-shadow:
-        0 18px 38px rgba(0, 0, 0, .34);
-    }
+            background:
+                linear-gradient(
+                    145deg,
+                    #17385c,
+                    #092039
+                );
 
+            border:
+                2px solid
+                var(--oro);
 
-    .open-btn:active {
+            color:
+                var(--oro-brillo);
 
-      transform:
-        scale(.97);
-    }
+            box-shadow:
+                0 10px 28px
+                rgba(0,0,0,.25);
 
+            transition:
+                transform .6s var(--transicion),
+                opacity .45s;
+        }
 
-    /* =========================================================
-       CARTA
-    ========================================================== */
 
-    .letter-modal {
+        .sello strong {
 
-      position: fixed;
+            font-size:
+                22px;
 
-      inset: 0;
+            line-height:
+                1;
+        }
 
-      z-index: 6000;
 
-      display: grid;
+        .sello small {
 
-      place-items: center;
+            font-family:
+                Arial,
+                sans-serif;
 
-      padding: 20px;
+            font-size:
+                7px;
 
-      background:
-        rgba(2, 9, 17, .88);
+            letter-spacing:
+                2px;
 
-      backdrop-filter:
-        blur(8px);
+            margin-top:
+                3px;
+        }
 
-      opacity: 0;
 
-      visibility: hidden;
+        /* =====================================================
+           LISTONES DEL SOBRE
+        ====================================================== */
 
-      pointer-events: none;
+        .liston {
 
-      transition:
-        .45s ease;
-    }
+            position:
+                absolute;
 
+            z-index:
+                1;
 
-    .letter-modal.show {
+            width:
+                62px;
 
-      opacity: 1;
+            height:
+                125px;
 
-      visibility: visible;
+            background:
+                linear-gradient(
+                    90deg,
+                    #a9823e,
+                    #e7c875,
+                    #b88e43
+                );
 
-      pointer-events: auto;
-    }
+            opacity:
+                .9;
 
+            filter:
+                drop-shadow(
+                    0 5px 8px
+                    rgba(0,0,0,.15)
+                );
+        }
 
-    .letter {
 
-      width:
-        min(94vw, 430px);
+        .liston.izq {
 
-      max-height:
-        min(88dvh, 720px);
+            left:
+                25px;
 
-      overflow:
-        auto;
+            top:
+                -18px;
 
-      background:
+            transform:
+                rotate(-7deg);
+        }
 
-        radial-gradient(
-          circle at 15% 10%,
-          rgba(212, 180, 106, .11),
-          transparent 20%
-        ),
 
-        linear-gradient(
-          145deg,
-          #fffef9,
-          #f3f0e7
-        );
+        .liston.der {
 
-      color:
-        var(--ink);
+            right:
+                25px;
 
-      border:
-        1px solid rgba(212, 180, 106, .85);
+            top:
+                -18px;
 
-      border-radius:
-        24px;
+            transform:
+                rotate(7deg);
+        }
 
-      padding:
-        34px 27px 28px;
 
-      box-shadow:
-        0 35px 90px rgba(0, 0, 0, .48);
+        .liston::after {
 
-      transform:
-        translateY(40px)
-        scale(.93)
-        rotateX(4deg);
+            content:
+                "";
 
-      transition:
-        .7s var(--ease);
+            position:
+                absolute;
 
-      scrollbar-width:
-        none;
-    }
+            bottom:
+                -1px;
 
+            left:
+                0;
 
-    .letter::-webkit-scrollbar {
+            width:
+                0;
 
-      display:
-        none;
-    }
+            height:
+                0;
 
+            border-left:
+                31px solid transparent;
 
-    .letter-modal.show .letter {
+            border-right:
+                31px solid transparent;
 
-      transform:
-        none;
-    }
+            border-bottom:
+                22px solid
+                var(--azul-profundo);
+        }
 
 
-    .letter-top {
+        .sobre.abriendo {
 
-      display:
-        flex;
+            transform:
+                translateY(-10px)
+                scale(.9);
 
-      align-items:
-        center;
+            opacity:
+                0;
+        }
 
-      justify-content:
-        center;
 
-      gap: 10px;
+        .sobre.abriendo .sobre-solapa {
 
-      color:
-        var(--gold);
+            transform:
+                rotateX(150deg);
 
-      margin-bottom:
-        15px;
-    }
+            opacity:
+                0;
+        }
 
 
-    .letter-top i {
+        .sobre.abriendo .sello {
 
-      width:
-        52px;
+            transform:
+                translate(-50%,-50%)
+                scale(.35);
 
-      height:
-        1px;
+            opacity:
+                0;
+        }
 
-      background:
-        var(--gold);
-    }
 
+        /* =====================================================
+           BOTÓN INICIAL
+        ====================================================== */
 
-    .letter h2 {
+        .btn-abrir {
 
-      text-align:
-        center;
+            width:
+                min(100%,315px);
 
-      color:
-        var(--blue);
+            min-height:
+                53px;
 
-      font-size:
-        clamp(1.7rem, 7vw, 2.15rem);
+            border-radius:
+                999px;
 
-      line-height:
-        1.1;
+            border:
+                1px solid
+                var(--oro);
 
-      margin-bottom:
-        8px;
-    }
+            background:
+                linear-gradient(
+                    135deg,
+                    #173b62,
+                    #244e79
+                );
 
+            color:
+                white;
 
-    .letter .mini {
+            cursor:
+                pointer;
 
-      text-align:
-        center;
+            font-family:
+                Arial,
+                sans-serif;
 
-      font:
-        700 10px/1 Arial, sans-serif;
+            font-size:
+                14px;
 
-      letter-spacing:
-        3px;
+            font-weight:
+                700;
 
-      color:
-        #b18b3d;
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,.25);
 
-      text-transform:
-        uppercase;
+            transition:
+                .25s ease;
 
-      margin-bottom:
-        20px;
-    }
+            animation:
+                botonFlota
+                3s ease-in-out infinite;
+        }
 
 
-    .letter p {
+        .btn-abrir:hover {
 
-      font:
-        15px/1.75 Arial, sans-serif;
+            transform:
+                translateY(-3px);
 
-      color:
-        #586274;
+            box-shadow:
+                0 20px 42px
+                rgba(0,0,0,.32);
+        }
 
-      margin-bottom:
-        14px;
 
-      text-align:
-        center;
-    }
+        @keyframes botonFlota {
 
+            50% {
 
-    .letter .highlight {
+                box-shadow:
+                    0 18px 40px
+                    rgba(201,164,92,.15);
+            }
+        }
 
-      padding:
-        15px 16px;
 
-      border:
-        1px solid rgba(212, 180, 106, .3);
+        /* =====================================================
+           CARTA CORTA
+        ====================================================== */
 
-      border-radius:
-        15px;
+        .carta-overlay {
 
-      background:
-        rgba(212, 180, 106, .09);
+            position:
+                fixed;
 
-      font:
-        italic 16px/1.6 Georgia, serif;
+            inset:
+                0;
 
-      color:
-        var(--blue);
+            z-index:
+                7000;
 
-      margin:
-        18px 0;
-    }
+            display:
+                flex;
 
+            align-items:
+                center;
 
-    .signature {
+            justify-content:
+                center;
 
-      margin:
-        20px 0 22px;
+            padding:
+                20px;
 
-      text-align:
-        center;
+            background:
+                rgba(3,12,23,.9);
 
-      color:
-        var(--blue);
+            backdrop-filter:
+                blur(9px);
 
-      font-size:
-        19px;
-    }
+            opacity:
+                0;
 
+            visibility:
+                hidden;
 
-    .letter-close {
+            pointer-events:
+                none;
 
-      width:
-        100%;
+            transition:
+                opacity .45s ease,
+                visibility .45s ease;
+        }
 
-      min-height:
-        50px;
 
-      border-radius:
-        999px;
+        .carta-overlay.visible {
 
-      cursor:
-        pointer;
+            opacity:
+                1;
 
-      background:
-        var(--navy-2);
+            visibility:
+                visible;
 
-      color:
-        white;
+            pointer-events:
+                auto;
+        }
 
-      font:
-        700 14px Arial, sans-serif;
 
-      border:
-        1px solid var(--gold);
+        .carta {
 
-      transition:
-        .2s;
-    }
+            position:
+                relative;
 
+            width:
+                min(94vw,420px);
 
-    .letter-close:hover {
+            padding:
+                36px 27px 28px;
 
-      background:
-        var(--blue-2);
-    }
+            border-radius:
+                24px;
 
+            text-align:
+                center;
 
-    /* =========================================================
-       APLICACIÓN
-    ========================================================== */
+            color:
+                var(--texto);
 
-    .app {
+            background:
 
-      position:
-        relative;
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(201,164,92,.14),
+                    transparent 22%
+                ),
 
-      z-index:
-        10;
+                linear-gradient(
+                    145deg,
+                    #fffef9,
+                    #f1eadc
+                );
 
-      width:
-        100vw;
+            border:
+                1px solid
+                rgba(201,164,92,.85);
 
-      height:
-        100dvh;
+            box-shadow:
+                0 35px 90px
+                rgba(0,0,0,.5);
 
-      display:
-        grid;
+            transform:
+                translateY(45px)
+                scale(.9)
+                rotate(-1deg);
 
-      place-items:
-        center;
+            transition:
+                .7s var(--transicion);
 
-      padding:
-        16px;
-    }
+            overflow:
+                hidden;
+        }
 
 
-    .card {
+        .carta-overlay.visible .carta {
 
-      width:
-        min(100%, 520px);
+            transform:
+                none;
+        }
 
-      height:
-        min(94dvh, 820px);
 
-      position:
-        relative;
+        /* =====================================================
+           DECORACIÓN DE LA CARTA
+        ====================================================== */
 
-      border-radius:
-        30px;
+        .carta::before {
 
-      overflow:
-        hidden;
+            content:
+                "";
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.98),
-          rgba(245,248,251,.98)
-        );
+            position:
+                absolute;
 
-      color:
-        var(--ink);
+            top:
+                0;
 
-      box-shadow:
-        var(--shadow);
+            left:
+                0;
 
-      border:
-        1px solid rgba(255,255,255,.55);
-    }
+            right:
+                0;
 
+            height:
+                6px;
 
-    /* =========================================================
-       BARRA SUPERIOR
-    ========================================================== */
+            background:
+                linear-gradient(
+                    90deg,
+                    #9b7435,
+                    #efd98e,
+                    #9b7435
+                );
+        }
 
-    .topbar {
 
-      position:
-        absolute;
+        .cinta-carta {
 
-      z-index:
-        30;
+            position:
+                absolute;
 
-      top:
-        15px;
+            top:
+                -18px;
 
-      left:
-        15px;
+            width:
+                54px;
 
-      right:
-        15px;
+            height:
+                105px;
 
-      display:
-        flex;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ad823b,
+                    #e5c66f,
+                    #b1843d
+                );
 
-      justify-content:
-        space-between;
+            opacity:
+                .95;
+        }
 
-      align-items:
-        center;
-    }
 
+        .cinta-carta.izquierda {
 
-    .brand {
+            left:
+                32px;
 
-      font:
-        700 10px/1 Arial, sans-serif;
+            transform:
+                rotate(-6deg);
+        }
 
-      letter-spacing:
-        2px;
 
-      text-transform:
-        uppercase;
+        .cinta-carta.derecha {
 
-      color:
-        rgba(255,255,255,.75);
+            right:
+                32px;
 
-      text-shadow:
-        0 2px 8px #000;
-    }
+            transform:
+                rotate(6deg);
+        }
 
 
-    .music {
+        .carta-adornos {
 
-      width:
-        40px;
+            display:
+                flex;
 
-      height:
-        40px;
+            justify-content:
+                center;
 
-      border-radius:
-        50%;
+            align-items:
+                center;
 
-      cursor:
-        pointer;
+            gap:
+                9px;
 
-      display:
-        grid;
+            color:
+                var(--oro);
 
-      place-items:
-        center;
+            margin-bottom:
+                14px;
+        }
 
-      background:
-        rgba(7,17,31,.58);
 
-      color:
-        var(--gold-light);
+        .carta-adornos i {
 
-      border:
-        1px solid rgba(240,217,149,.55);
+            display:
+                block;
 
-      backdrop-filter:
-        blur(7px);
+            width:
+                48px;
 
-      transition:
-        .2s;
-    }
+            height:
+                1px;
 
+            background:
+                var(--oro);
+        }
 
-    .music.playing {
 
-      animation:
-        pulse 1.8s ease-in-out infinite;
-    }
+        .carta-subtitulo {
 
+            font-family:
+                Arial,
+                sans-serif;
 
-    @keyframes pulse {
+            font-size:
+                9px;
 
-      50% {
+            font-weight:
+                700;
 
-        box-shadow:
-          0 0 0 7px
-          rgba(212,180,106,.08);
-      }
-    }
+            letter-spacing:
+                3px;
 
+            text-transform:
+                uppercase;
 
-    /* =========================================================
-       PÁGINAS
-    ========================================================== */
+            color:
+                #aa813a;
 
-    .page {
+            margin-bottom:
+                9px;
+        }
 
-      position:
-        absolute;
 
-      inset:
-        0;
+        .carta h2 {
 
-      padding:
-        70px 25px 78px;
+            font-size:
+                clamp(1.8rem,8vw,2.3rem);
 
-      overflow-y:
-        auto;
+            line-height:
+                1.05;
 
-      display:
-        flex;
+            color:
+                var(--azul);
 
-      flex-direction:
-        column;
+            margin-bottom:
+                14px;
+        }
 
-      align-items:
-        center;
 
-      text-align:
-        center;
+        .carta-texto {
 
-      opacity:
-        0;
+            font-family:
+                Arial,
+                sans-serif;
 
-      visibility:
-        hidden;
+            font-size:
+                14px;
 
-      transform:
-        translateX(30px)
-        scale(.985);
+            line-height:
+                1.65;
 
-      transition:
-        .65s var(--ease);
+            color:
+                var(--texto-suave);
 
-      scrollbar-width:
-        none;
-    }
+            max-width:
+                340px;
 
+            margin:
+                0 auto 12px;
+        }
 
-    .page::-webkit-scrollbar {
 
-      display:
-        none;
-    }
+        .carta-frase {
 
+            margin:
+                16px 0;
 
-    .page.active {
+            padding:
+                13px 15px;
 
-      opacity:
-        1;
+            border-top:
+                1px solid
+                rgba(201,164,92,.35);
 
-      visibility:
-        visible;
+            border-bottom:
+                1px solid
+                rgba(201,164,92,.35);
 
-      transform:
-        none;
-    }
+            color:
+                var(--azul);
 
+            font-style:
+                italic;
 
-    .page.exit-left {
+            font-size:
+                15px;
 
-      transform:
-        translateX(-30px)
-        scale(.985);
-    }
+            line-height:
+                1.5;
+        }
 
 
-    .page.portada {
+        .firma {
 
-      color:
-        white;
+            margin:
+                14px 0 20px;
 
-      background:
+            color:
+                var(--azul);
 
-        linear-gradient(
-          180deg,
-          rgba(7,17,31,.06),
-          rgba(7,17,31,.22)
-        ),
+            font-size:
+                18px;
+        }
 
-        radial-gradient(
-          circle at 50% 15%,
-          #41658e,
-          #17365d 45%,
-          #07111f
-        );
-    }
 
+        .firma strong {
 
-    .page h1 {
+            color:
+                #9d7738;
+        }
 
-      font-size:
-        clamp(2.35rem, 10vw, 3.55rem);
 
-      line-height:
-        .98;
+        .btn-carta {
 
-      margin:
-        8px 0 20px;
+            width:
+                100%;
 
-      color:
-        #fff;
-    }
+            min-height:
+                50px;
 
+            border-radius:
+                999px;
 
-    .page h2 {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--azul),
+                    var(--azul-medio)
+                );
 
-      font-size:
-        clamp(1.8rem, 8vw, 2.45rem);
+            color:
+                white;
 
-      line-height:
-        1.08;
+            cursor:
+                pointer;
 
-      color:
-        var(--blue);
+            font-family:
+                Arial,
+                sans-serif;
 
-      margin:
-        7px 0 12px;
-    }
+            font-size:
+                13px;
 
+            font-weight:
+                700;
 
-    .gold-label {
+            border:
+                1px solid
+                var(--oro);
 
-      font:
-        700 10px/1 Arial, sans-serif;
+            transition:
+                .25s;
+        }
 
-      letter-spacing:
-        3px;
 
-      text-transform:
-        uppercase;
+        .btn-carta:hover {
 
-      color:
-        var(--gold);
+            transform:
+                translateY(-2px);
+        }
 
-      margin-bottom:
-        7px;
-    }
 
+        /* =====================================================
+           APLICACIÓN
+        ====================================================== */
 
-    .portada .gold-label {
+        .app {
 
-      color:
-        var(--gold-light);
-    }
+            position:
+                relative;
 
+            z-index:
+                10;
 
-    /* =========================================================
-       FOTO PRINCIPAL
-    ========================================================== */
+            width:
+                100vw;
 
-    .gala-photo {
+            height:
+                100dvh;
 
-      width:
-        min(78vw, 290px);
+            display:
+                flex;
 
-      aspect-ratio:
-        1 / 1;
+            align-items:
+                center;
 
-      object-fit:
-        cover;
+            justify-content:
+                center;
 
-      border-radius:
-        50%;
+            padding:
+                12px;
+        }
 
-      padding:
-        7px;
 
-      background:
-        rgba(255,255,255,.96);
+        .tarjeta {
 
-      border:
-        2px solid var(--gold);
+            position:
+                relative;
 
-      box-shadow:
-        0 18px 45px rgba(0,0,0,.3);
+            width:
+                min(100%,530px);
 
-      margin-bottom:
-        18px;
+            height:
+                min(96dvh,840px);
 
-      animation:
-        photoIn 1s var(--ease) .2s both;
-    }
+            border-radius:
+                30px;
 
+            overflow:
+                hidden;
 
-    @keyframes photoIn {
+            box-shadow:
+                var(--sombra);
 
-      from {
+            background:
+                var(--marfil);
 
-        opacity:
-          0;
+            border:
+                1px solid
+                rgba(255,255,255,.5);
+        }
 
-        transform:
-          scale(.8)
-          rotate(-4deg);
-      }
 
-      to {
+        /* =====================================================
+           BARRA SUPERIOR
+        ====================================================== */
 
-        opacity:
-          1;
+        .barra {
 
-        transform:
-          none;
-      }
-    }
+            position:
+                absolute;
 
+            z-index:
+                100;
 
-    .quote {
+            top:
+                13px;
 
-      max-width:
-        410px;
+            left:
+                13px;
 
-      color:
-        rgba(255,255,255,.86);
+            right:
+                13px;
 
-      font-size:
-        16px;
+            display:
+                flex;
 
-      line-height:
-        1.65;
+            justify-content:
+                space-between;
 
-      font-style:
-        italic;
+            align-items:
+                center;
+        }
 
-      margin-bottom:
-        20px;
-    }
 
+        .boton-inicio {
 
-    .text {
+            width:
+                39px;
 
-      max-width:
-        430px;
+            height:
+                39px;
 
-      color:
-        var(--muted);
+            border-radius:
+                50%;
 
-      font:
-        14px/1.7 Arial, sans-serif;
-    }
+            display:
+                flex;
 
+            align-items:
+                center;
 
-    .divider {
+            justify-content:
+                center;
 
-      width:
-        70px;
+            background:
+                rgba(5,17,31,.68);
 
-      height:
-        1px;
+            border:
+                1px solid
+                rgba(236,215,155,.6);
 
-      background:
-        var(--gold);
+            color:
+                var(--oro-claro);
 
-      margin:
-        10px auto 18px;
-    }
+            cursor:
+                pointer;
 
+            backdrop-filter:
+                blur(8px);
 
-    /* =========================================================
-       GALERÍA
-    ========================================================== */
+            transition:
+                .25s;
+        }
 
-    .gallery {
 
-      width:
-        100%;
+        .boton-inicio:hover {
 
-      margin:
-        14px 0 18px;
-    }
+            transform:
+                scale(1.08);
+        }
 
 
-    .slider {
+        .mini-sobre {
 
-      width:
-        100%;
+            width:
+                20px;
 
-      aspect-ratio:
-        4 / 5;
+            height:
+                15px;
 
-      position:
-        relative;
+            position:
+                relative;
 
-      border-radius:
-        22px;
+            border:
+                1px solid
+                var(--oro-claro);
 
-      overflow:
-        hidden;
+            border-radius:
+                3px;
+        }
 
-      background:
-        #dfe5eb;
 
-      box-shadow:
-        0 18px 40px rgba(17,31,50,.15);
+        .mini-sobre::before {
 
-      touch-action:
-        pan-y;
-    }
+            content:
+                "";
 
+            position:
+                absolute;
 
-    .slide {
+            left:
+                2px;
 
-      position:
-        absolute;
+            right:
+                2px;
 
-      inset:
-        0;
+            top:
+                2px;
 
-      width:
-        100%;
+            height:
+                9px;
 
-      height:
-        100%;
+            border-bottom:
+                1px solid
+                var(--oro-claro);
 
-      object-fit:
-        cover;
+            transform:
+                skewY(-28deg);
+        }
 
-      opacity:
-        0;
 
-      transform:
-        scale(1.06);
+        .marca {
 
-      transition:
-        opacity .65s ease,
-        transform 4.2s ease;
-    }
+            font-family:
+                Arial,
+                sans-serif;
 
+            font-size:
+                9px;
 
-    .slide.active {
+            font-weight:
+                700;
 
-      opacity:
-        1;
+            letter-spacing:
+                2px;
 
-      transform:
-        scale(1);
-    }
+            text-transform:
+                uppercase;
 
+            color:
+                rgba(255,255,255,.8);
 
-    .caption {
+            text-shadow:
+                0 2px 7px #000;
+        }
 
-      margin:
-        12px auto 10px;
 
-      min-height:
-        45px;
+        .musica {
 
-      display:
-        grid;
+            width:
+                39px;
 
-      place-items:
-        center;
+            height:
+                39px;
 
-      max-width:
-        400px;
+            border-radius:
+                50%;
 
-      color:
-        #586274;
+            display:
+                flex;
 
-      font:
-        14px/1.55 Arial, sans-serif;
-    }
+            align-items:
+                center;
 
+            justify-content:
+                center;
 
-    .dots {
+            background:
+                rgba(5,17,31,.68);
 
-      display:
-        flex;
+            border:
+                1px solid
+                rgba(236,215,155,.6);
 
-      justify-content:
-        center;
+            color:
+                var(--oro-claro);
 
-      gap:
-        7px;
-    }
+            cursor:
+                pointer;
 
+            backdrop-filter:
+                blur(8px);
 
-    .dot {
+            transition:
+                .25s;
+        }
 
-      width:
-        8px;
 
-      height:
-        8px;
+        .musica.reproduciendo {
 
-      border-radius:
-        50%;
+            animation:
+                pulsoMusica
+                1.7s ease-in-out infinite;
+        }
 
-      padding:
-        0;
 
-      background:
-        #cbd2dc;
+        @keyframes pulsoMusica {
 
-      cursor:
-        pointer;
+            50% {
 
-      transition:
-        .25s;
-    }
+                box-shadow:
+                    0 0 0 7px
+                    rgba(201,164,92,.09);
+            }
+        }
 
 
-    .dot.active {
+        /* =====================================================
+           PÁGINAS
+        ====================================================== */
 
-      width:
-        24px;
+        .pagina {
 
-      border-radius:
-        8px;
+            position:
+                absolute;
 
-      background:
-        var(--gold);
-    }
+            inset:
+                0;
 
+            padding:
+                72px 25px 83px;
 
-    /* =========================================================
-       INFORMACIÓN
-    ========================================================== */
+            overflow-y:
+                auto;
 
-    .info-grid {
+            display:
+                flex;
 
-      width:
-        100%;
+            flex-direction:
+                column;
 
-      display:
-        grid;
+            align-items:
+                center;
 
-      gap:
-        10px;
+            text-align:
+                center;
 
-      margin:
-        15px 0 18px;
-    }
+            opacity:
+                0;
 
+            visibility:
+                hidden;
 
-    .info {
+            transform:
+                translateX(35px)
+                scale(.98);
 
-      padding:
-        15px 16px;
+            transition:
+                opacity .55s ease,
+                transform .65s var(--transicion),
+                visibility .55s;
 
-      border-radius:
-        18px;
+            scrollbar-width:
+                none;
+        }
 
-      text-align:
-        left;
 
-      background:
-        #fff;
+        .pagina::-webkit-scrollbar {
 
-      border:
-        1px solid #e6e9ee;
+            display:
+                none;
+        }
 
-      box-shadow:
-        0 8px 22px rgba(18,34,55,.06);
 
-      display:
-        grid;
+        .pagina.activa {
 
-      grid-template-columns:
-        46px 1fr;
+            opacity:
+                1;
 
-      align-items:
-        center;
+            visibility:
+                visible;
 
-      gap:
-        11px;
-    }
+            transform:
+                none;
+        }
 
 
-    .icon {
+        .pagina.saliente {
 
-      width:
-        46px;
+            transform:
+                translateX(-35px)
+                scale(.98);
+        }
 
-      height:
-        46px;
 
-      border-radius:
-        14px;
+        /* =====================================================
+           DECORACIONES DE PÁGINAS
+        ====================================================== */
 
-      display:
-        grid;
+        .pagina::before {
 
-      place-items:
-        center;
+            content:
+                "";
 
-      background:
-        rgba(212,180,106,.13);
+            position:
+                absolute;
 
-      font-size:
-        20px;
-    }
+            top:
+                54px;
 
+            left:
+                18px;
 
-    .info strong {
+            right:
+                18px;
 
-      display:
-        block;
+            bottom:
+                18px;
 
-      font:
-        700 11px/1 Arial, sans-serif;
+            border:
+                1px solid
+                rgba(201,164,92,.25);
 
-      letter-spacing:
-        1px;
+            border-radius:
+                22px;
 
-      text-transform:
-        uppercase;
+            pointer-events:
+                none;
+        }
 
-      color:
-        #9b7934;
 
-      margin-bottom:
-        6px;
-    }
+        .esquina {
 
+            position:
+                absolute;
 
-    .info span {
+            width:
+                55px;
 
-      font:
-        15px/1.45 Arial, sans-serif;
+            height:
+                55px;
 
-      color:
-        var(--ink);
-    }
+            pointer-events:
+                none;
 
+            opacity:
+                .7;
+        }
 
-    /* =========================================================
-       BOTONES
-    ========================================================== */
 
-    .actions {
+        .esquina::before,
+        .esquina::after {
 
-      width:
-        100%;
+            content:
+                "";
 
-      display:
-        grid;
+            position:
+                absolute;
 
-      gap:
-        10px;
-    }
+            background:
+                var(--oro);
+        }
 
 
-    .btn {
+        .esquina::before {
 
-      min-height:
-        50px;
+            width:
+                40px;
 
-      padding:
-        12px 18px;
+            height:
+                1px;
+        }
 
-      border-radius:
-        999px;
 
-      display:
-        flex;
+        .esquina::after {
 
-      justify-content:
-        center;
+            width:
+                1px;
 
-      align-items:
-        center;
+            height:
+                40px;
+        }
 
-      gap:
-        8px;
 
-      cursor:
-        pointer;
+        .esquina.sup-izq {
 
-      font:
-        700 14px Arial, sans-serif;
+            top:
+                57px;
 
-      transition:
-        .22s;
-    }
+            left:
+                20px;
+        }
 
 
-    .btn:hover {
+        .esquina.sup-der {
 
-      transform:
-        translateY(-2px);
-    }
+            top:
+                57px;
 
+            right:
+                20px;
 
-    .primary {
+            transform:
+                rotate(90deg);
+        }
 
-      background:
-        linear-gradient(
-          135deg,
-          var(--blue),
-          var(--blue-2)
-        );
 
-      color:
-        #fff;
+        .esquina.inf-izq {
 
-      box-shadow:
-        0 10px 22px rgba(23,54,93,.18);
-    }
+            bottom:
+                20px;
 
+            left:
+                20px;
 
-    .secondary {
+            transform:
+                rotate(-90deg);
+        }
 
-      background:
-        #fff;
 
-      color:
-        var(--blue);
+        .esquina.inf-der {
 
-      border:
-        1px solid #dfe4eb;
-    }
+            bottom:
+                20px;
 
+            right:
+                20px;
 
-    .maps {
+            transform:
+                rotate(180deg);
+        }
 
-      background:
-        #17365d;
 
-      color:
-        #fff;
-    }
+        /* =====================================================
+           PÁGINA 1
+        ====================================================== */
 
+        .pagina-1 {
 
-    .whatsapp {
+            color:
+                white;
 
-      background:
-        var(--green);
+            background:
 
-      color:
-        #fff;
-    }
+                radial-gradient(
+                    circle at 50% 16%,
+                    #315d88,
+                    #183b61 42%,
+                    #071525 100%
+                );
+        }
 
 
-    .back {
+        .pagina-1::after {
 
-      background:
-        #eef1f5;
+            content:
+                "";
 
-      color:
-        #4e5c70;
-    }
+            position:
+                absolute;
 
+            width:
+                210px;
 
-    /* =========================================================
-       PÁGINA FINAL
-    ========================================================== */
+            height:
+                210px;
 
-    .final {
+            border-radius:
+                50%;
 
-      justify-content:
-        center;
+            border:
+                1px solid
+                rgba(236,215,155,.18);
 
-      background:
+            top:
+                28%;
 
-        radial-gradient(
-          circle at 50% 25%,
-          rgba(212,180,106,.16),
-          transparent 30%
-        ),
+            left:
+                50%;
 
-        linear-gradient(
-          145deg,
-          #fffdf8,
-          #f1f4f7
-        );
-    }
+            transform:
+                translateX(-50%);
 
+            box-shadow:
+                0 0 0 18px
+                rgba(236,215,155,.025),
+                0 0 0 37px
+                rgba(236,215,155,.018);
 
-    .final .big-icon {
+            pointer-events:
+                none;
+        }
 
-      font-size:
-        52px;
 
-      margin-bottom:
-        12px;
+        .etiqueta {
 
-      animation:
-        float 3s ease-in-out infinite;
-    }
+            position:
+                relative;
 
+            z-index:
+                2;
 
-    .final p {
+            font-family:
+                Arial,
+                sans-serif;
 
-      max-width:
-        390px;
+            font-size:
+                9px;
 
-      color:
-        #606b7c;
+            font-weight:
+                700;
 
-      font:
-        15px/1.7 Arial, sans-serif;
-    }
+            letter-spacing:
+                4px;
 
+            text-transform:
+                uppercase;
 
-    .final .gold-line {
+            color:
+                var(--oro-claro);
 
-      width:
-        90px;
+            margin-bottom:
+                8px;
+        }
 
-      height:
-        1px;
 
-      background:
-        var(--gold);
+        .numero-50 {
 
-      margin:
-        16px auto;
-    }
+            position:
+                relative;
 
+            z-index:
+                2;
 
-    /* =========================================================
-       NAVEGACIÓN
-    ========================================================== */
+            font-size:
+                clamp(6.5rem,30vw,10rem);
 
-    .nav {
+            line-height:
+                .78;
 
-      position:
-        absolute;
+            color:
+                rgba(236,215,155,.13);
 
-      z-index:
-        40;
+            font-weight:
+                bold;
 
-      bottom:
-        14px;
+            margin:
+                8px 0 -67px;
 
-      left:
-        50%;
+            user-select:
+                none;
+        }
 
-      transform:
-        translateX(-50%);
 
-      display:
-        flex;
+        .nombre-principal {
 
-      align-items:
-        center;
+            position:
+                relative;
 
-      gap:
-        7px;
+            z-index:
+                3;
 
-      padding:
-        7px 10px;
+            font-size:
+                clamp(2.6rem,12vw,4rem);
 
-      border-radius:
-        999px;
+            line-height:
+                .92;
 
-      background:
-        rgba(7,17,31,.76);
+            color:
+                white;
 
-      backdrop-filter:
-        blur(10px);
+            text-shadow:
+                0 8px 25px
+                rgba(0,0,0,.3);
 
-      border:
-        1px solid rgba(240,217,149,.25);
-    }
+            margin-bottom:
+                6px;
+        }
 
 
-    .nav-dot {
+        .nombre-principal span {
 
-      width:
-        7px;
+            display:
+                block;
 
-      height:
-        7px;
+            color:
+                var(--oro-brillo);
 
-      border-radius:
-        50%;
+            font-size:
+                .48em;
 
-      background:
-        rgba(255,255,255,.3);
+            letter-spacing:
+                5px;
 
-      transition:
-        .3s;
-    }
+            text-transform:
+                uppercase;
 
+            margin-top:
+                11px;
+        }
 
-    .nav-dot.active {
 
-      width:
-        24px;
+        .foto-gala {
 
-      border-radius:
-        10px;
+            position:
+                relative;
 
-      background:
-        var(--gold-light);
-    }
+            z-index:
+                3;
 
+            width:
+                min(68vw,255px);
 
-    /* =========================================================
-       CONFETI
-    ========================================================== */
+            aspect-ratio:
+                1;
 
-    .confetti {
+            object-fit:
+                cover;
 
-      position:
-        fixed;
+            border-radius:
+                50%;
 
-      inset:
-        0;
+            padding:
+                6px;
 
-      pointer-events:
-        none;
+            background:
+                rgba(255,255,255,.96);
 
-      z-index:
-        10000;
+            border:
+                2px solid
+                var(--oro);
 
-      overflow:
-        hidden;
-    }
+            box-shadow:
+                0 20px 45px
+                rgba(0,0,0,.3);
 
+            margin:
+                21px 0 16px;
 
-    .confetti i {
+            animation:
+                fotoEntrada
+                1s var(--transicion) .15s both;
+        }
 
-      position:
-        absolute;
 
-      top:
-        -20px;
+        @keyframes fotoEntrada {
 
-      width:
-        7px;
+            from {
 
-      height:
-        12px;
+                opacity:
+                    0;
 
-      animation:
-        fall 3.8s linear forwards;
-    }
+                transform:
+                    scale(.78)
+                    rotate(-5deg);
+            }
 
+            to {
 
-    @keyframes fall {
+                opacity:
+                    1;
 
-      to {
+                transform:
+                    none;
+            }
+        }
 
-        transform:
-          translate3d(var(--x), 110vh, 0)
-          rotate(720deg);
 
-        opacity:
-          0;
-      }
-    }
+        .frase-portada {
 
+            position:
+                relative;
 
-    /* =========================================================
-       RESPONSIVE
-    ========================================================== */
+            z-index:
+                3;
 
-    @media(max-height:650px) {
+            max-width:
+                400px;
 
-      .app {
+            font-size:
+                15px;
 
-        padding:
-          8px;
-      }
+            line-height:
+                1.65;
 
+            color:
+                rgba(255,255,255,.82);
 
-      .card {
+            font-style:
+                italic;
 
-        height:
-          98dvh;
+            margin-bottom:
+                19px;
+        }
 
-        border-radius:
-          22px;
-      }
 
+        /* =====================================================
+           PÁGINA 2
+        ====================================================== */
 
-      .page {
+        .pagina-2 {
 
-        padding:
-          58px 22px 65px;
-      }
+            background:
 
+                radial-gradient(
+                    circle at 85% 10%,
+                    rgba(201,164,92,.17),
+                    transparent 25%
+                ),
 
-      .gala-photo {
+                linear-gradient(
+                    145deg,
+                    #fffdf8,
+                    #eee9de
+                );
 
-        width:
-          190px;
+            color:
+                var(--texto);
+        }
 
-        margin-bottom:
-          12px;
-      }
 
+        .pagina-2::before {
 
-      .page h1 {
+            border-color:
+                rgba(201,164,92,.38);
+        }
 
-        font-size:
-          2.5rem;
 
-        margin-bottom:
-          12px;
-      }
+        .pagina-2 .etiqueta {
 
+            color:
+                #9f7938;
+        }
 
-      .quote {
 
-        font-size:
-          14px;
+        .titulo-pagina {
 
-        margin-bottom:
-          10px;
-      }
+            position:
+                relative;
 
+            z-index:
+                2;
 
-      .envelope-wrap {
+            font-size:
+                clamp(2rem,9vw,2.75rem);
 
-        height:
-          190px;
-      }
+            line-height:
+                1.02;
 
+            color:
+                var(--azul);
 
-      .envelope {
+            max-width:
+                380px;
 
-        height:
-          175px;
-      }
+            margin-bottom:
+                10px;
+        }
 
 
-      .env-back {
+        .titulo-pagina span {
 
-        inset:
-          10px 0 0;
-      }
+            display:
+                block;
 
+            color:
+                #a67d36;
 
-      .env-flap {
+            font-size:
+                .48em;
 
-        top:
-          10px;
+            letter-spacing:
+                3px;
 
-        height:
-          95px;
-      }
+            text-transform:
+                uppercase;
 
+            margin-top:
+                9px;
+        }
 
-      .seal {
 
-        top:
-          78px;
-      }
-    }
+        .linea-oro {
 
+            width:
+                70px;
 
-    @media(prefers-reduced-motion:reduce) {
+            height:
+                1px;
 
-      *,
-      *::before,
-      *::after {
+            background:
+                var(--oro);
 
-        animation-duration:
-          .01ms !important;
+            margin:
+                7px auto 13px;
+        }
 
-        animation-iteration-count:
-          1 !important;
 
-        transition-duration:
-          .01ms !important;
+        .texto-pagina {
 
-        scroll-behavior:
-          auto !important;
-      }
-    }
+            position:
+                relative;
 
-  </style>
+            z-index:
+                2;
+
+            max-width:
+                405px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.65;
+
+            color:
+                var(--texto-suave);
+
+            margin-bottom:
+                14px;
+        }
+
+
+        /* =====================================================
+           GALERÍA
+        ====================================================== */
+
+        .galeria {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            width:
+                100%;
+
+            max-width:
+                410px;
+        }
+
+
+        .slider {
+
+            width:
+                100%;
+
+            aspect-ratio:
+                4 / 5;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            border-radius:
+                22px;
+
+            background:
+                #dfe4e8;
+
+            border:
+                5px solid
+                #fff;
+
+            box-shadow:
+                0 17px 35px
+                rgba(17,35,55,.15);
+
+            touch-action:
+                pan-y;
+        }
+
+
+        .slider-img {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            opacity:
+                0;
+
+            transform:
+                scale(1.07);
+
+            transition:
+                opacity .65s ease,
+                transform 4.5s ease;
+        }
+
+
+        .slider-img.activa {
+
+            opacity:
+                1;
+
+            transform:
+                scale(1);
+        }
+
+
+        .texto-foto {
+
+            min-height:
+                42px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                8px 14px 3px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.5;
+
+            color:
+                var(--texto-suave);
+        }
+
+
+        .puntos {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                7px;
+
+            margin-top:
+                2px;
+        }
+
+
+        .punto {
+
+            width:
+                7px;
+
+            height:
+                7px;
+
+            padding:
+                0;
+
+            border-radius:
+                50%;
+
+            background:
+                #c8ced6;
+
+            cursor:
+                pointer;
+
+            transition:
+                .25s;
+        }
+
+
+        .punto.activo {
+
+            width:
+                24px;
+
+            border-radius:
+                8px;
+
+            background:
+                var(--oro);
+        }
+
+
+        /* =====================================================
+           PÁGINA 3
+        ====================================================== */
+
+        .pagina-3 {
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(201,164,92,.2),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(21,55,92,.1),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    145deg,
+                    #f3ead7,
+                    #e7dfcf
+                );
+
+            color:
+                var(--texto);
+        }
+
+
+        .pagina-3 .etiqueta {
+
+            color:
+                #987235;
+        }
+
+
+        .pagina-3 .titulo-pagina {
+
+            font-size:
+                clamp(1.95rem,9vw,2.6rem);
+        }
+
+
+        .detalles {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            width:
+                100%;
+
+            max-width:
+                410px;
+
+            display:
+                grid;
+
+            gap:
+                11px;
+
+            margin:
+                11px 0 16px;
+        }
+
+
+        .detalle {
+
+            position:
+                relative;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                49px 1fr;
+
+            gap:
+                12px;
+
+            align-items:
+                center;
+
+            text-align:
+                left;
+
+            padding:
+                13px 15px;
+
+            background:
+                rgba(255,255,255,.68);
+
+            border:
+                1px solid
+                rgba(201,164,92,.35);
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                0 7px 20px
+                rgba(35,48,65,.06);
+
+            overflow:
+                hidden;
+        }
+
+
+        .detalle::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            top:
+                0;
+
+            bottom:
+                0;
+
+            width:
+                4px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #a77e38,
+                    #e7cd83
+                );
+        }
+
+
+        .detalle-icono {
+
+            width:
+                49px;
+
+            height:
+                49px;
+
+            border-radius:
+                15px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                rgba(201,164,92,.14);
+
+            font-size:
+                21px;
+        }
+
+
+        .detalle strong {
+
+            display:
+                block;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #9c7535;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .detalle span {
+
+            display:
+                block;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                14px;
+
+            line-height:
+                1.45;
+
+            color:
+                var(--texto);
+        }
+
+
+        .nota {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            max-width:
+                370px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.55;
+
+            color:
+                #717b88;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        /* =====================================================
+           PÁGINA 4
+        ====================================================== */
+
+        .pagina-4 {
+
+            color:
+                white;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 22%,
+                    #2e567d,
+                    #173957 45%,
+                    #071525 100%
+                );
+        }
+
+
+        .pagina-4 .etiqueta {
+
+            color:
+                var(--oro-claro);
+        }
+
+
+        .final-icono {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            width:
+                88px;
+
+            height:
+                88px;
+
+            border-radius:
+                50%;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-size:
+                38px;
+
+            background:
+                rgba(255,255,255,.06);
+
+            border:
+                1px solid
+                rgba(236,215,155,.55);
+
+            box-shadow:
+                0 0 0 12px
+                rgba(236,215,155,.04);
+
+            margin:
+                10px 0 18px;
+
+            animation:
+                flotarIcono
+                3s ease-in-out infinite;
+        }
+
+
+        @keyframes flotarIcono {
+
+            50% {
+
+                transform:
+                    translateY(-7px);
+            }
+        }
+
+
+        .pagina-4 .titulo-pagina {
+
+            color:
+                white;
+
+            font-size:
+                clamp(2rem,9vw,2.8rem);
+        }
+
+
+        .pagina-4 .titulo-pagina span {
+
+            color:
+                var(--oro-brillo);
+        }
+
+
+        .final-texto {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            max-width:
+                380px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                14px;
+
+            line-height:
+                1.7;
+
+            color:
+                rgba(255,255,255,.8);
+
+            margin:
+                0 auto 18px;
+        }
+
+
+        .final-firma {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            color:
+                var(--oro-brillo);
+
+            font-size:
+                18px;
+
+            margin:
+                5px 0 20px;
+        }
+
+
+        /* =====================================================
+           BOTONES
+        ====================================================== */
+
+        .botones {
+
+            position:
+                relative;
+
+            z-index:
+                3;
+
+            width:
+                100%;
+
+            max-width:
+                410px;
+
+            display:
+                grid;
+
+            gap:
+                9px;
+
+            margin-top:
+                auto;
+        }
+
+
+        .boton {
+
+            min-height:
+                49px;
+
+            padding:
+                11px 17px;
+
+            border-radius:
+                999px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                7px;
+
+            cursor:
+                pointer;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            transition:
+                .23s ease;
+        }
+
+
+        .boton:hover {
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .boton-principal {
+
+            color:
+                white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #173a61,
+                    #28547f
+                );
+
+            border:
+                1px solid
+                var(--oro);
+
+            box-shadow:
+                0 10px 23px
+                rgba(13,37,61,.16);
+        }
+
+
+        .boton-secundario {
+
+            color:
+                var(--azul);
+
+            background:
+                rgba(255,255,255,.8);
+
+            border:
+                1px solid
+                rgba(201,164,92,.38);
+        }
+
+
+        .boton-mapa {
+
+            color:
+                white;
+
+            background:
+                #17385c;
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+        }
+
+
+        .boton-whatsapp {
+
+            color:
+                white;
+
+            background:
+                var(--verde);
+        }
+
+
+        .boton-atras {
+
+            color:
+                #657184;
+
+            background:
+                rgba(255,255,255,.72);
+
+            border:
+                1px solid
+                rgba(100,115,135,.16);
+        }
+
+
+        .pagina-1 .boton-atras,
+        .pagina-4 .boton-atras {
+
+            color:
+                rgba(255,255,255,.9);
+
+            background:
+                rgba(255,255,255,.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,.16);
+        }
+
+
+        /* =====================================================
+           NAVEGACIÓN INFERIOR
+        ====================================================== */
+
+        .navegacion {
+
+            position:
+                absolute;
+
+            z-index:
+                120;
+
+            left:
+                50%;
+
+            bottom:
+                13px;
+
+            transform:
+                translateX(-50%);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                7px;
+
+            padding:
+                7px 11px;
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(5,17,31,.72);
+
+            border:
+                1px solid
+                rgba(236,215,155,.22);
+
+            backdrop-filter:
+                blur(10px);
+        }
+
+
+        .nav-punto {
+
+            width:
+                7px;
+
+            height:
+                7px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,255,255,.3);
+
+            transition:
+                .3s;
+        }
+
+
+        .nav-punto.activo {
+
+            width:
+                23px;
+
+            border-radius:
+                10px;
+
+            background:
+                var(--oro-claro);
+        }
+
+
+        /* =====================================================
+           CONFETI
+        ====================================================== */
+
+        .confeti {
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            z-index:
+                15000;
+
+            pointer-events:
+                none;
+
+            overflow:
+                hidden;
+        }
+
+
+        .confeti span {
+
+            position:
+                absolute;
+
+            top:
+                -20px;
+
+            width:
+                7px;
+
+            height:
+                12px;
+
+            animation:
+                caer
+                4s linear forwards;
+        }
+
+
+        @keyframes caer {
+
+            to {
+
+                transform:
+                    translate3d(
+                        var(--x),
+                        110vh,
+                        0
+                    )
+                    rotate(720deg);
+
+                opacity:
+                    0;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media(max-height:700px) {
+
+            .tarjeta {
+
+                height:
+                    98dvh;
+
+                border-radius:
+                    23px;
+            }
+
+
+            .pagina {
+
+                padding:
+                    66px 21px 76px;
+            }
+
+
+            .foto-gala {
+
+                width:
+                    185px;
+
+                margin:
+                    12px 0;
+            }
+
+
+            .numero-50 {
+
+                font-size:
+                    7rem;
+
+                margin-bottom:
+                    -53px;
+            }
+
+
+            .nombre-principal {
+
+                font-size:
+                    2.65rem;
+            }
+
+
+            .slider {
+
+                aspect-ratio:
+                    5 / 5;
+            }
+
+
+            .escenario-sobre {
+
+                height:
+                    190px;
+            }
+
+
+            .sobre {
+
+                height:
+                    165px;
+            }
+
+
+            .sobre-solapa {
+
+                top:
+                    10px;
+
+                height:
+                    94px;
+            }
+
+
+            .sello {
+
+                top:
+                    78px;
+            }
+
+
+            .sobre-cuerpo {
+
+                height:
+                    130px;
+            }
+        }
+
+
+        @media(max-width:380px) {
+
+            .pagina {
+
+                padding-left:
+                    18px;
+
+                padding-right:
+                    18px;
+            }
+
+
+            .titulo-pagina {
+
+                font-size:
+                    1.8rem;
+            }
+
+
+            .detalle {
+
+                padding:
+                    11px 12px;
+            }
+
+
+            .detalle-icono {
+
+                width:
+                    43px;
+
+                height:
+                    43px;
+            }
+
+
+            .detalle {
+
+                grid-template-columns:
+                    43px 1fr;
+            }
+        }
+
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
+
+                scroll-behavior:
+                    auto !important;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- =========================================================
-       LOADER
-  ========================================================== -->
+    <!-- =====================================================
+         FONDO
+    ====================================================== -->
 
-  <div id="loader">
-
-    <div class="loader-box">
-
-      <div class="loader-ring"></div>
-
-      <span>
-        Preparando la invitación
-      </span>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================================================
-       FONDO
-  ========================================================== -->
-
-  <div
-    class="background"
-    aria-hidden="true"
-  >
-
-    <div class="orb"></div>
-    <div class="orb"></div>
-    <div class="orb"></div>
-
-    <div class="spark">✦</div>
-    <div class="spark">✧</div>
-    <div class="spark">✦</div>
-    <div class="spark">✧</div>
-    <div class="spark">✦</div>
-
-  </div>
-
-
-  <!-- =========================================================
-       INTRODUCCIÓN
-  ========================================================== -->
-
-  <section
-    class="intro"
-    id="intro"
-    aria-label="Abrir invitación"
-  >
-
-    <div class="intro-inner">
-
-      <div class="eyebrow">
-        Una celebración especial
-      </div>
-
-
-      <h1 class="intro-title">
-
-        Enrique cumple<br>
-
-        50 años
-
-      </h1>
-
-
-      <p class="intro-sub">
-
-        Una vida, muchos recuerdos y una noche
-        para celebrar juntos.
-
-      </p>
-
-
-      <!-- SOBRE -->
-
-      <div class="envelope-wrap">
-
-        <div
-          class="envelope"
-          id="envelope"
-          role="button"
-          tabindex="0"
-          aria-label="Abrir invitación"
-        >
-
-          <div class="env-back"></div>
-
-          <div class="env-flap"></div>
-
-          <div class="env-name">
-            Enrique Cisneros
-          </div>
-
-          <div class="seal">
-            50
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <button
-        class="open-btn"
-        id="openLetter"
-        type="button"
-      >
-
-        💌 Abrir mi invitación
-
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       CARTA
-  ========================================================== -->
-
-  <div
-    class="letter-modal"
-    id="letterModal"
-    aria-hidden="true"
-  >
-
-    <article
-      class="letter"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="letterTitle"
+    <div
+        class="fondo"
+        aria-hidden="true"
     >
 
-      <div class="letter-top">
-
-        <i></i>
-
-        <span>✦</span>
-
-        <i></i>
-
-      </div>
-
-
-      <h2 id="letterTitle">
-        Una carta para ti
-      </h2>
-
-
-      <div class="mini">
-        Mis 50 años
-      </div>
-
-
-      <p>
-
-        Enrique, gracias por permitirnos
-        compartir contigo este momento tan especial.
-
-      </p>
-
-
-      <p>
-
-        Hay fechas que merecen celebrarse
-        de una manera diferente. Cincuenta años
-        representan historias, aprendizajes,
-        sueños cumplidos y, sobre todo,
-        personas que han dejado una huella
-        en el camino.
-
-      </p>
-
-
-      <div class="highlight">
-
-        “La vida se construye con momentos,
-        caminos y personas que dejan huella.”
-
-      </div>
-
-
-      <p>
-
-        Por eso quiero invitarte a compartir
-        conmigo una noche especial, llena de
-        alegría, recuerdos y buenos momentos.
-
-      </p>
-
-
-      <p>
-
-        Será una alegría enorme contar con tu
-        presencia en esta celebración.
-
-      </p>
-
-
-      <div class="signature">
-
-        Con cariño,<br>
-
-        <strong>
-          Enrique
-        </strong>
-
-      </div>
-
-
-      <button
-        class="letter-close"
-        id="continue"
-        type="button"
-      >
-
-        Continuar con la invitación ✨
-
-      </button>
-
-    </article>
-
-  </div>
-
-
-  <!-- =========================================================
-       APLICACIÓN PRINCIPAL
-  ========================================================== -->
-
-  <main
-    class="app"
-    aria-label="Invitación de cumpleaños"
-  >
-
-    <div class="card">
-
-
-      <!-- BARRA SUPERIOR -->
-
-      <div class="topbar">
-
-        <span class="brand">
-          Enrique · 50 años
-        </span>
-
-
-        <button
-          class="music"
-          id="musicToggle"
-          type="button"
-          aria-label="Activar o pausar música"
-        >
-
-          🎵
-
-        </button>
-
-      </div>
-
-
-      <!-- =====================================================
-           PÁGINA 1
-      ====================================================== -->
-
-      <section
-        class="page portada active"
-        id="page1"
-      >
-
-        <div class="gold-label">
-          Mis 50 años
-        </div>
-
-
-        <h1>
-
-          Enrique<br>
-          Cisneros
-
-        </h1>
-
-
-        <img
-          class="gala-photo"
-          src="foto_gala.png"
-          alt="Enrique Cisneros"
-          fetchpriority="high"
-        >
-
-
-        <p class="quote">
-
-          “La vida se construye con momentos,
-          caminos y personas que dejan huella.
-          Hoy quiero celebrar medio siglo de
-          recuerdos y agradecer a quienes han
-          sido parte de este hermoso camino.”
-
-        </p>
-
-
-        <button
-          class="btn primary next"
-          data-page="2"
-          type="button"
-        >
-
-          Continuar ✨
-
-        </button>
-
-      </section>
-
-
-      <!-- =====================================================
-           PÁGINA 2
-      ====================================================== -->
-
-      <section
-        class="page"
-        id="page2"
-      >
-
-        <div class="gold-label">
-
-          Un viaje en el tiempo
-
-        </div>
-
-
-        <h2>
-
-          Una vida,
-          muchos momentos
-
-        </h2>
-
-
-        <div class="divider"></div>
-
-
-        <p class="text">
-
-          Cada fotografía guarda una etapa,
-          un recuerdo y una parte de la historia
-          que hoy celebramos.
-
-        </p>
-
-
-        <div class="gallery">
-
-
-          <div
-            class="slider"
-            id="slider"
-          >
-
-            <img
-              class="slide active"
-              src="foto1.png"
-              alt="Enrique durante su juventud"
-              data-caption="Desde joven, construyendo sueños y dejando huella."
-              loading="lazy"
-            >
-
-
-            <img
-              class="slide"
-              src="foto2.png"
-              alt="Enrique en una etapa de su juventud"
-              data-caption="Los años fueron pasando y la vida se fue llenando de nuevos caminos y momentos compartidos."
-              loading="lazy"
-            >
-
-
-            <img
-              class="slide"
-              src="foto3.png"
-              alt="Enrique en una celebración especial"
-              data-caption="Acompañando y compartiendo momentos importantes que hicieron especial cada etapa."
-              loading="lazy"
-            >
-
-
-            <img
-              class="slide"
-              src="foto4.png"
-              alt="Enrique en una etapa más reciente"
-              data-caption="Una nueva etapa, nuevas experiencias y la misma esencia de siempre."
-              loading="lazy"
-            >
-
-
-            <img
-              class="slide"
-              src="Enrique.cumple.png"
-              alt="Enrique compartiendo un cumpleaños"
-              data-caption="Y hoy celebramos todo lo vivido y todos los momentos que aún están por venir."
-              loading="lazy"
-            >
-
-          </div>
-
-
-          <div
-            class="caption"
-            id="caption"
-          >
-
-            Desde joven,
-            construyendo sueños y dejando huella.
-
-          </div>
-
-
-          <div
-            class="dots"
-            id="dots"
-            aria-label="Seleccionar fotografía"
-          ></div>
-
-        </div>
-
-
-        <div class="actions">
-
-          <button
-            class="btn primary next"
-            data-page="3"
-            type="button"
-          >
-
-            Ver los detalles 📍
-
-          </button>
-
-
-          <button
-            class="btn back prev"
-            data-page="1"
-            type="button"
-          >
-
-            ← Atrás
-
-          </button>
-
-        </div>
-
-      </section>
-
-
-      <!-- =====================================================
-           PÁGINA 3
-      ====================================================== -->
-
-      <section
-        class="page"
-        id="page3"
-      >
-
-        <div class="gold-label">
-
-          Celebración de gala
-
-        </div>
-
-
-        <h2>
-
-          Nos vemos para celebrar
-
-        </h2>
-
-
-        <div class="divider"></div>
-
-
-        <div class="info-grid">
-
-
-          <!-- FECHA -->
-
-          <div class="info">
-
-            <div class="icon">
-              📅
-            </div>
-
-
-            <div>
-
-              <strong>
-                Cuándo
-              </strong>
-
-              <span>
-                Sábado, 24 de octubre
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <!-- HORA -->
-
-          <div class="info">
-
-            <div class="icon">
-              🕘
-            </div>
-
-
-            <div>
-
-              <strong>
-                Hora
-              </strong>
-
-              <span>
-                La celebración iniciará
-                a las 9:00 PM
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <!-- LUGAR -->
-
-          <div class="info">
-
-            <div class="icon">
-              📍
-            </div>
-
-
-            <div>
-
-              <strong>
-                Lugar
-              </strong>
-
-              <span>
-
-                Calle 14 n.º 133<br>
-
-                Coop. Primavera · Comas
-
-              </span>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-        <div class="actions">
-
-
-          <!-- GOOGLE MAPS -->
-
-          <a
-            class="btn maps"
-            href="https://maps.app.goo.gl/RvSGJH6SDPLaYZ889"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            📍 Ver ubicación en Google Maps
-
-          </a>
-
-
-          <!-- WHATSAPP -->
-
-          <a
-            class="btn whatsapp"
-            href="https://wa.me/51925188802?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20n%C3%BAmero%2050%20de%20Enrique.%20%C2%A1Ah%C3%AD%20estar%C3%A9%21"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            💬 Confirmar asistencia
-
-          </a>
-
-
-          <button
-            class="btn primary next"
-            data-page="4"
-            type="button"
-          >
-
-            Continuar ✨
-
-          </button>
-
-
-          <button
-            class="btn back prev"
-            data-page="2"
-            type="button"
-          >
-
-            ← Atrás
-
-          </button>
-
-        </div>
-
-      </section>
-
-
-      <!-- =====================================================
-           PÁGINA 4
-      ====================================================== -->
-
-      <section
-        class="page final"
-        id="page4"
-      >
-
-        <div class="big-icon">
-          🥂
-        </div>
-
-
-        <div class="gold-label">
-          Con cariño
-        </div>
-
-
-        <h2>
-          ¡Nos vemos pronto!
-        </h2>
-
-
-        <div class="gold-line"></div>
-
-
-        <p>
-
-          Tu presencia es el mejor regalo
-          que le puedes dar a Enrique en
-          este día tan especial.
-
-        </p>
-
-
-        <br>
-
-
-        <p>
-
-          Gracias por ser parte de su vida,
-          por acompañarlo en este camino
-          y por compartir con él este momento
-          tan importante.
-
-        </p>
-
-
-        <div class="signature">
-
-          Enrique · 50 años
-
-        </div>
-
-
-        <div class="actions">
-
-
-          <button
-            class="btn primary"
-            id="restart"
-            type="button"
-          >
-
-            Volver al inicio ✦
-
-          </button>
-
-
-          <button
-            class="btn secondary"
-            id="showLetter"
-            type="button"
-          >
-
-            💌 Ver la carta otra vez
-
-          </button>
-
-        </div>
-
-      </section>
-
-
-      <!-- =====================================================
-           INDICADORES DE PÁGINA
-      ====================================================== -->
-
-      <nav
-        class="nav"
-        aria-label="Páginas de la invitación"
-      >
-
-        <span class="nav-dot active"></span>
-
-        <span class="nav-dot"></span>
-
-        <span class="nav-dot"></span>
-
-        <span class="nav-dot"></span>
-
-      </nav>
+        <div class="luz"></div>
+        <div class="luz"></div>
+        <div class="luz"></div>
+
+        <span class="estrella">✦</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
 
     </div>
 
-  </main>
 
-
-  <!-- =========================================================
-       CONFETI
-  ========================================================== -->
-
-  <div
-    class="confetti"
-    id="confetti"
-  ></div>
-
-
-  <!-- =========================================================
-       MÚSICA
-  ========================================================== -->
-
-  <audio
-    id="bgMusic"
-    src="musica.mp3"
-    loop
-    preload="metadata"
-  ></audio>
-
-
-  <!-- =========================================================
-       JAVASCRIPT
-  ========================================================== -->
-
-  <script>
-
-    (() => {
-
-
-      /* =======================================================
-         SELECTORES
-      ======================================================== */
-
-      const $ = (selector) =>
-        document.querySelector(selector);
-
-
-      const $$ = (selector) =>
-        [...document.querySelectorAll(selector)];
-
-
-      const loader =
-        $('#loader');
-
-
-      const intro =
-        $('#intro');
-
-
-      const envelope =
-        $('#envelope');
-
-
-      const openLetter =
-        $('#openLetter');
-
-
-      const letterModal =
-        $('#letterModal');
-
-
-      const continueBtn =
-        $('#continue');
-
-
-      const showLetter =
-        $('#showLetter');
-
-
-      const restart =
-        $('#restart');
-
-
-      const music =
-        $('#bgMusic');
-
-
-      const musicToggle =
-        $('#musicToggle');
-
-
-      const pages =
-        $$('.page');
-
-
-      const navDots =
-        $$('.nav-dot');
-
-
-      const slides =
-        $$('.slide');
-
-
-      const caption =
-        $('#caption');
-
-
-      const dots =
-        $('#dots');
-
-
-      const card =
-        $('.card');
-
-
-      /* =======================================================
-         VARIABLES
-      ======================================================== */
-
-      let currentPage = 1;
-
-      let musicStarted = false;
-
-      let slideIndex = 0;
-
-      let galleryTimer = null;
-
-      let touchStartX = 0;
-
-      let touchStartY = 0;
-
-
-      /* =======================================================
+    <!-- =====================================================
          LOADER
-      ======================================================== */
+    ====================================================== -->
 
-      window.addEventListener(
-        'load',
-        () => {
+    <div id="loader">
 
-          setTimeout(
-            () => {
+        <div class="loader-contenido">
 
-              loader.classList.add(
-                'hide'
-              );
+            <div class="loader-anillo"></div>
 
-            },
-            500
-          );
+            <div class="loader-texto">
+                Preparando la invitación
+            </div>
 
+        </div>
 
-          buildDots();
-
-        }
-      );
+    </div>
 
 
-      /* =======================================================
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section
+        class="intro"
+        id="intro"
+    >
+
+        <div class="intro-contenido">
+
+
+            <div class="intro-superior">
+                Una celebración especial
+            </div>
+
+
+            <h1 class="intro-titulo">
+
+                Enrique
+
+                <span>
+                    cumple 50 años
+                </span>
+
+            </h1>
+
+
+            <p class="intro-frase">
+
+                Una noche para celebrar,
+                recordar y compartir.
+
+            </p>
+
+
+            <!-- SOBRE -->
+
+            <div class="escenario-sobre">
+
+
+                <div class="liston izq"></div>
+
+                <div class="liston der"></div>
+
+
+                <div
+                    class="sobre"
+                    id="sobre"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Abrir invitación"
+                >
+
+                    <div class="sobre-cuerpo"></div>
+
+                    <div class="sobre-solapa"></div>
+
+
+                    <div class="sobre-nombre">
+                        Enrique Cisneros
+                    </div>
+
+
+                    <div class="sello">
+
+                        <strong>
+                            50
+                        </strong>
+
+                        <small>
+                            AÑOS
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn-abrir"
+                id="btnAbrir"
+                type="button"
+            >
+
+                💌 Abrir invitación
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
          CARTA
-      ======================================================== */
+    ====================================================== -->
 
-      function openTheLetter() {
+    <section
+        class="carta-overlay"
+        id="cartaOverlay"
+        aria-hidden="true"
+    >
 
-        envelope.classList.add(
-          'opened'
-        );
-
-
-        setTimeout(
-          () => {
-
-            letterModal.classList.add(
-              'show'
-            );
+        <article class="carta">
 
 
-            letterModal.setAttribute(
-              'aria-hidden',
-              'false'
-            );
+            <div class="cinta-carta izquierda"></div>
 
-          },
-          450
-        );
-
-      }
+            <div class="cinta-carta derecha"></div>
 
 
-      openLetter.addEventListener(
-        'click',
-        openTheLetter
-      );
+            <div class="carta-adornos">
+
+                <i></i>
+
+                <span>✦</span>
+
+                <span>🥂</span>
+
+                <span>✦</span>
+
+                <i></i>
+
+            </div>
 
 
-      envelope.addEventListener(
-        'click',
-        openTheLetter
-      );
+            <div class="carta-subtitulo">
+                Una invitación especial
+            </div>
 
 
-      envelope.addEventListener(
-        'keydown',
-        (event) => {
-
-          if (
-            event.key === 'Enter' ||
-            event.key === ' '
-          ) {
-
-            event.preventDefault();
-
-            openTheLetter();
-
-          }
-
-        }
-      );
+            <h2>
+                Un día para celebrar
+            </h2>
 
 
-      function closeLetter() {
+            <p class="carta-texto">
 
-        letterModal.classList.remove(
-          'show'
-        );
+                Cincuenta años de historias,
+                recuerdos y momentos que merecen
+                ser celebrados.
 
-
-        letterModal.setAttribute(
-          'aria-hidden',
-          'true'
-        );
+            </p>
 
 
-        setTimeout(
-          () => {
+            <div class="carta-frase">
 
-            intro.classList.add(
-              'hidden'
-            );
+                “Hay momentos que se vuelven
+                recuerdos para toda la vida.”
 
-
-            startMusic();
-
-            celebrate();
-
-          },
-          350
-        );
-
-      }
+            </div>
 
 
-      continueBtn.addEventListener(
-        'click',
-        closeLetter
-      );
+            <p class="carta-texto">
+
+                Gracias por ser parte de este
+                camino. Me encantaría compartir
+                esta noche contigo.
+
+            </p>
 
 
-      letterModal.addEventListener(
-        'click',
-        (event) => {
+            <div class="firma">
 
-          if (
-            event.target === letterModal
-          ) {
+                Con cariño,<br>
 
-            closeLetter();
+                <strong>
+                    Enrique
+                </strong>
 
-          }
-
-        }
-      );
+            </div>
 
 
-      function showLetterAgain() {
+            <button
+                class="btn-carta"
+                id="btnContinuarCarta"
+                type="button"
+            >
 
-        letterModal.classList.add(
-          'show'
-        );
+                Continuar con la invitación ✨
 
-
-        letterModal.setAttribute(
-          'aria-hidden',
-          'false'
-        );
-
-      }
+            </button>
 
 
-      showLetter.addEventListener(
-        'click',
-        showLetterAgain
-      );
+        </article>
+
+    </section>
 
 
-      /* =======================================================
+    <!-- =====================================================
+         APLICACIÓN
+    ====================================================== -->
+
+    <main class="app">
+
+
+        <div class="tarjeta">
+
+
+            <!-- =================================================
+                 BARRA SUPERIOR
+            ================================================== -->
+
+            <div class="barra">
+
+
+                <!-- MINI SOBRE PARA VOLVER AL INICIO -->
+
+                <button
+                    class="boton-inicio"
+                    id="btnInicio"
+                    type="button"
+                    aria-label="Volver al inicio"
+                    title="Volver al inicio"
+                >
+
+                    <span class="mini-sobre"></span>
+
+                </button>
+
+
+                <span class="marca">
+                    Enrique · 50 años
+                </span>
+
+
+                <!-- MÚSICA -->
+
+                <button
+                    class="musica"
+                    id="btnMusica"
+                    type="button"
+                    aria-label="Reproducir música"
+                >
+
+                    🎵
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 PÁGINA 1
+            ================================================== -->
+
+            <section
+                class="pagina pagina-1 activa"
+                id="pag1"
+            >
+
+
+                <span class="esquina sup-izq"></span>
+                <span class="esquina sup-der"></span>
+                <span class="esquina inf-izq"></span>
+                <span class="esquina inf-der"></span>
+
+
+                <div class="etiqueta">
+                    Mis 50 años
+                </div>
+
+
+                <div class="numero-50">
+                    50
+                </div>
+
+
+                <h1 class="nombre-principal">
+
+                    Enrique
+
+                    <span>
+                        Cisneros
+                    </span>
+
+                </h1>
+
+
+                <img
+                    src="foto_gala.png"
+                    alt="Enrique Cisneros"
+                    class="foto-gala"
+                    loading="eager"
+                >
+
+
+                <p class="frase-portada">
+
+                    “La vida se construye con momentos,
+                    caminos y personas que dejan huella.”
+
+                </p>
+
+
+                <div class="botones">
+
+
+                    <button
+                        class="boton boton-principal siguiente"
+                        data-pagina="2"
+                        type="button"
+                    >
+
+                        Comenzar celebración ✨
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PÁGINA 2
+            ================================================== -->
+
+            <section
+                class="pagina pagina-2"
+                id="pag2"
+            >
+
+
+                <span class="esquina sup-izq"></span>
+                <span class="esquina sup-der"></span>
+                <span class="esquina inf-izq"></span>
+                <span class="esquina inf-der"></span>
+
+
+                <div class="etiqueta">
+                    Un viaje en el tiempo
+                </div>
+
+
+                <h2 class="titulo-pagina">
+
+                    Una vida,
+                    muchos momentos
+
+                    <span>
+                        Recuerdos que permanecen
+                    </span>
+
+                </h2>
+
+
+                <div class="linea-oro"></div>
+
+
+                <p class="texto-pagina">
+
+                    Cada fotografía guarda una etapa,
+                    un recuerdo y una parte de la historia
+                    que hoy celebramos.
+
+                </p>
+
+
+                <!-- GALERÍA -->
+
+                <div class="galeria">
+
+
+                    <div
+                        class="slider"
+                        id="slider"
+                    >
+
+
+                        <img
+                            src="foto1.png"
+                            class="slider-img activa"
+                            alt="Enrique durante su juventud"
+                            data-texto="Desde joven, construyendo sueños y dejando huella."
+                            loading="lazy"
+                        >
+
+
+                        <img
+                            src="foto2.png"
+                            class="slider-img"
+                            alt="Enrique en una etapa de su juventud"
+                            data-texto="Los años fueron pasando y la vida se fue llenando de nuevos caminos y momentos compartidos."
+                            loading="lazy"
+                        >
+
+
+                        <img
+                            src="foto3.png"
+                            class="slider-img"
+                            alt="Enrique en una celebración"
+                            data-texto="Compartiendo momentos importantes que hicieron especial cada etapa."
+                            loading="lazy"
+                        >
+
+
+                        <img
+                            src="foto4.png"
+                            class="slider-img"
+                            alt="Enrique en una etapa reciente"
+                            data-texto="Una nueva etapa, nuevas experiencias y la misma esencia de siempre."
+                            loading="lazy"
+                        >
+
+
+                        <img
+                            src="Enrique.cumple.png"
+                            class="slider-img"
+                            alt="Enrique celebrando"
+                            data-texto="Y hoy celebramos todo lo vivido y todo lo que aún está por venir."
+                            loading="lazy"
+                        >
+
+
+                    </div>
+
+
+                    <div
+                        class="texto-foto"
+                        id="textoFoto"
+                    >
+                        Desde joven,
+                        construyendo sueños y dejando huella.
+                    </div>
+
+
+                    <div
+                        class="puntos"
+                        id="puntos"
+                    ></div>
+
+
+                </div>
+
+
+                <div class="botones">
+
+
+                    <button
+                        class="boton boton-principal siguiente"
+                        data-pagina="3"
+                        type="button"
+                    >
+
+                        Ver los detalles 📍
+
+                    </button>
+
+
+                    <button
+                        class="boton boton-atras anterior"
+                        data-pagina="1"
+                        type="button"
+                    >
+
+                        ← Atrás
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PÁGINA 3
+            ================================================== -->
+
+            <section
+                class="pagina pagina-3"
+                id="pag3"
+            >
+
+
+                <span class="esquina sup-izq"></span>
+                <span class="esquina sup-der"></span>
+                <span class="esquina inf-izq"></span>
+                <span class="esquina inf-der"></span>
+
+
+                <div class="etiqueta">
+                    La celebración
+                </div>
+
+
+                <h2 class="titulo-pagina">
+
+                    Nos vemos
+                    para celebrar
+
+                    <span>
+                        Una noche especial
+                    </span>
+
+                </h2>
+
+
+                <div class="linea-oro"></div>
+
+
+                <p class="texto-pagina">
+
+                    Guarda esta fecha y acompáñanos
+                    a celebrar los 50 años de Enrique.
+
+                </p>
+
+
+                <div class="detalles">
+
+
+                    <!-- FECHA -->
+
+                    <div class="detalle">
+
+                        <div class="detalle-icono">
+                            📅
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Fecha
+                            </strong>
+
+                            <span>
+                                Sábado, 24 de octubre
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HORA -->
+
+                    <div class="detalle">
+
+                        <div class="detalle-icono">
+                            🕘
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Hora
+                            </strong>
+
+                            <span>
+                                La celebración iniciará
+                                a las 9:00 PM
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LUGAR -->
+
+                    <div class="detalle">
+
+                        <div class="detalle-icono">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Lugar
+                            </strong>
+
+                            <span>
+
+                                Calle 14 n.º 133<br>
+
+                                Coop. Primavera · Comas
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <p class="nota">
+
+                    Tu presencia será parte de este
+                    momento tan especial.
+
+                </p>
+
+
+                <div class="botones">
+
+
+                    <!-- GOOGLE MAPS -->
+
+                    <a
+                        class="boton boton-mapa"
+                        href="https://maps.app.goo.gl/RvSGJH6SDPLaYZ889"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        📍 Ver ubicación
+
+                    </a>
+
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        class="boton boton-whatsapp"
+                        href="https://wa.me/51925188802?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20n%C3%BAmero%2050%20de%20Enrique.%20%C2%A1Ah%C3%AD%20estar%C3%A9%21"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        💬 Confirmar asistencia
+
+                    </a>
+
+
+                    <button
+                        class="boton boton-principal siguiente"
+                        data-pagina="4"
+                        type="button"
+                    >
+
+                        Continuar ✨
+
+                    </button>
+
+
+                    <button
+                        class="boton boton-atras anterior"
+                        data-pagina="2"
+                        type="button"
+                    >
+
+                        ← Atrás
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PÁGINA 4
+            ================================================== -->
+
+            <section
+                class="pagina pagina-4"
+                id="pag4"
+            >
+
+
+                <span class="esquina sup-izq"></span>
+                <span class="esquina sup-der"></span>
+                <span class="esquina inf-izq"></span>
+                <span class="esquina inf-der"></span>
+
+
+                <div class="final-icono">
+                    🥂
+                </div>
+
+
+                <div class="etiqueta">
+                    Gracias por acompañarme
+                </div>
+
+
+                <h2 class="titulo-pagina">
+
+                    ¡Nos vemos
+                    pronto!
+
+                    <span>
+                        Enrique · 50 años
+                    </span>
+
+                </h2>
+
+
+                <div class="linea-oro"></div>
+
+
+                <p class="final-texto">
+
+                    Tu presencia será uno de los
+                    mejores recuerdos de esta
+                    celebración.
+
+                </p>
+
+
+                <p class="final-texto">
+
+                    Gracias por compartir conmigo
+                    esta noche tan especial.
+
+                </p>
+
+
+                <div class="final-firma">
+                    Con cariño, Enrique
+                </div>
+
+
+                <div class="botones">
+
+
+                    <button
+                        class="boton boton-atras anterior"
+                        data-pagina="3"
+                        type="button"
+                    >
+
+                        ← Volver a los detalles
+
+                    </button>
+
+
+                    <button
+                        class="boton boton-secundario"
+                        id="btnCartaNuevamente"
+                        type="button"
+                    >
+
+                        💌 Ver la carta
+
+                    </button>
+
+
+                    <button
+                        class="boton boton-principal"
+                        id="btnReiniciar"
+                        type="button"
+                    >
+
+                        Volver al inicio ✦
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <nav
+                class="navegacion"
+                aria-label="Navegación de la invitación"
+            >
+
+                <span class="nav-punto activo"></span>
+
+                <span class="nav-punto"></span>
+
+                <span class="nav-punto"></span>
+
+                <span class="nav-punto"></span>
+
+            </nav>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         CONFETI
+    ====================================================== -->
+
+    <div
+        class="confeti"
+        id="confeti"
+    ></div>
+
+
+    <!-- =====================================================
          MÚSICA
-      ======================================================== */
+    ====================================================== -->
 
-      function startMusic() {
-
-        if (
-          musicStarted
-        ) {
-
-          return;
-
-        }
+    <audio
+        id="musica"
+        src="musica.mp3"
+        loop
+        preload="metadata"
+    ></audio>
 
 
-        musicStarted = true;
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-        music.volume = .45;
+    <script>
 
-
-        music
-          .play()
-          .then(
-            () => {
-
-              setMusicUI(true);
-
-            }
-          )
-          .catch(
-            () => {
-
-              setMusicUI(false);
-
-            }
-          );
-
-      }
+        (() => {
 
 
-      function setMusicUI(
-        playing
-      ) {
+            /* =================================================
+               ELEMENTOS
+            ================================================== */
 
-        musicToggle.textContent =
-          playing
-            ? '⏸️'
-            : '🎵';
+            const intro =
+                document.getElementById("intro");
+
+            const sobre =
+                document.getElementById("sobre");
+
+            const btnAbrir =
+                document.getElementById("btnAbrir");
+
+            const cartaOverlay =
+                document.getElementById("cartaOverlay");
+
+            const btnContinuarCarta =
+                document.getElementById(
+                    "btnContinuarCarta"
+                );
+
+            const btnInicio =
+                document.getElementById("btnInicio");
+
+            const btnCartaNuevamente =
+                document.getElementById(
+                    "btnCartaNuevamente"
+                );
+
+            const btnReiniciar =
+                document.getElementById(
+                    "btnReiniciar"
+                );
+
+            const musica =
+                document.getElementById("musica");
+
+            const btnMusica =
+                document.getElementById("btnMusica");
+
+            const paginas =
+                document.querySelectorAll(".pagina");
+
+            const navPuntos =
+                document.querySelectorAll(
+                    ".nav-punto"
+                );
+
+            const slides =
+                document.querySelectorAll(
+                    ".slider-img"
+                );
+
+            const textoFoto =
+                document.getElementById(
+                    "textoFoto"
+                );
+
+            const puntos =
+                document.getElementById("puntos");
+
+            const confeti =
+                document.getElementById("confeti");
+
+            const loader =
+                document.getElementById("loader");
 
 
-        musicToggle.classList.toggle(
-          'playing',
-          playing
-        );
+            /* =================================================
+               VARIABLES
+            ================================================== */
+
+            let paginaActual = 1;
+
+            let indiceFoto = 0;
+
+            let temporizadorGaleria = null;
+
+            let musicaIniciada = false;
+
+            let inicioX = 0;
+
+            let inicioY = 0;
 
 
-        musicToggle.setAttribute(
-          'aria-label',
-          playing
-            ? 'Pausar música'
-            : 'Reproducir música'
-        );
+            /* =================================================
+               LOADER
+            ================================================== */
 
-      }
-
-
-      musicToggle.addEventListener(
-        'click',
-        () => {
-
-          if (
-            music.paused
-          ) {
-
-            music
-              .play()
-              .then(
+            window.addEventListener(
+                "load",
                 () => {
 
-                  setMusicUI(true);
+                    setTimeout(
+                        () => {
+
+                            loader.classList.add(
+                                "oculto"
+                            );
+
+                        },
+                        500
+                    );
+
+                    crearPuntosGaleria();
 
                 }
-              )
-              .catch(
-                () => {}
-              );
-
-          }
-
-          else {
-
-            music.pause();
-
-            setMusicUI(false);
-
-          }
-
-        }
-      );
-
-
-      /* =======================================================
-         CAMBIO DE PÁGINAS
-      ======================================================== */
-
-      function goTo(
-        pageNumber
-      ) {
-
-        if (
-          pageNumber < 1 ||
-          pageNumber > pages.length ||
-          pageNumber === currentPage
-        ) {
-
-          return;
-
-        }
-
-
-        const oldPage =
-          $('#page' + currentPage);
-
-
-        const newPage =
-          $('#page' + pageNumber);
-
-
-        const forward =
-          pageNumber > currentPage;
-
-
-        oldPage.classList.remove(
-          'active'
-        );
-
-
-        oldPage.classList.toggle(
-          'exit-left',
-          forward
-        );
-
-
-        newPage.classList.remove(
-          'exit-left'
-        );
-
-
-        newPage.classList.add(
-          'active'
-        );
-
-
-        newPage.scrollTop = 0;
-
-
-        currentPage =
-          pageNumber;
-
-
-        navDots.forEach(
-          (dot, index) => {
-
-            dot.classList.toggle(
-              'active',
-              index === pageNumber - 1
-            );
-
-          }
-        );
-
-
-        if (
-          pageNumber === 2
-        ) {
-
-          startGallery();
-
-        }
-
-        else {
-
-          stopGallery();
-
-        }
-
-      }
-
-
-      $$('.next, .prev')
-        .forEach(
-          button => {
-
-            button.addEventListener(
-              'click',
-              () => {
-
-                goTo(
-                  Number(
-                    button.dataset.page
-                  )
-                );
-
-              }
-            );
-
-          }
-        );
-
-
-      restart.addEventListener(
-        'click',
-        () => {
-
-          goTo(1);
-
-          celebrate();
-
-        }
-      );
-
-
-      /* =======================================================
-         GALERÍA
-      ======================================================== */
-
-      function buildDots() {
-
-        slides.forEach(
-          (_, index) => {
-
-            const dot =
-              document.createElement(
-                'button'
-              );
-
-
-            dot.className =
-              'dot' +
-              (
-                index === 0
-                  ? ' active'
-                  : ''
-              );
-
-
-            dot.type =
-              'button';
-
-
-            dot.setAttribute(
-              'aria-label',
-              'Ver fotografía ' +
-              (index + 1)
             );
 
 
-            dot.addEventListener(
-              'click',
-              () => {
+            /* =================================================
+               ABRIR CARTA
+            ================================================== */
 
-                showSlide(
-                  index
+            function abrirCarta() {
+
+                sobre.classList.add(
+                    "abriendo"
                 );
 
 
-                startGallery();
+                setTimeout(
+                    () => {
 
-              }
-            );
+                        cartaOverlay.classList.add(
+                            "visible"
+                        );
 
+                        cartaOverlay.setAttribute(
+                            "aria-hidden",
+                            "false"
+                        );
 
-            dots.appendChild(
-              dot
-            );
-
-          }
-        );
-
-      }
-
-
-      function showSlide(
-        index
-      ) {
-
-        slideIndex =
-          (
-            index +
-            slides.length
-          ) %
-          slides.length;
-
-
-        slides.forEach(
-          (image, number) => {
-
-            image.classList.toggle(
-              'active',
-              number === slideIndex
-            );
-
-          }
-        );
-
-
-        $$('.dot')
-          .forEach(
-            (dot, number) => {
-
-              dot.classList.toggle(
-                'active',
-                number === slideIndex
-              );
+                    },
+                    420
+                );
 
             }
-          );
 
 
-        caption.textContent =
-          slides[
-            slideIndex
-          ].dataset.caption || '';
-
-      }
+            btnAbrir.addEventListener(
+                "click",
+                abrirCarta
+            );
 
 
-      function nextSlide() {
-
-        showSlide(
-          slideIndex + 1
-        );
-
-      }
+            sobre.addEventListener(
+                "click",
+                abrirCarta
+            );
 
 
-      function startGallery() {
+            sobre.addEventListener(
+                "keydown",
+                (evento) => {
 
-        stopGallery();
+                    if (
+                        evento.key === "Enter" ||
+                        evento.key === " "
+                    ) {
 
+                        evento.preventDefault();
 
-        galleryTimer =
-          setInterval(
-            nextSlide,
-            4500
-          );
+                        abrirCarta();
 
-      }
+                    }
 
-
-      function stopGallery() {
-
-        if (
-          galleryTimer
-        ) {
-
-          clearInterval(
-            galleryTimer
-          );
+                }
+            );
 
 
-          galleryTimer =
-            null;
+            /* =================================================
+               CERRAR CARTA Y ENTRAR
+            ================================================== */
 
-        }
+            function continuar() {
 
-      }
-
-
-      /* =======================================================
-         SWIPE EN CELULAR
-      ======================================================== */
-
-      card.addEventListener(
-        'touchstart',
-        event => {
-
-          touchStartX =
-            event.changedTouches[0]
-              .screenX;
+                cartaOverlay.classList.remove(
+                    "visible"
+                );
 
 
-          touchStartY =
-            event.changedTouches[0]
-              .screenY;
-
-        },
-        {
-          passive: true
-        }
-      );
+                cartaOverlay.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
 
 
-      card.addEventListener(
-        'touchend',
-        event => {
+                setTimeout(
+                    () => {
 
-          const dx =
-            event.changedTouches[0]
-              .screenX -
-            touchStartX;
+                        intro.classList.add(
+                            "oculta"
+                        );
 
 
-          const dy =
-            event.changedTouches[0]
-              .screenY -
-            touchStartY;
+                        reproducirMusica();
+
+                        celebrar();
+
+                    },
+                    350
+                );
+
+            }
 
 
-          if (
-            Math.abs(dx) < 70 ||
-            Math.abs(dx) <
-              Math.abs(dy) * 1.25
-          ) {
-
-            return;
-
-          }
+            btnContinuarCarta.addEventListener(
+                "click",
+                continuar
+            );
 
 
-          if (
-            currentPage === 2
-          ) {
+            /* =================================================
+               MOSTRAR CARTA NUEVAMENTE
+            ================================================== */
 
-            if (
-              dx < 0
+            btnCartaNuevamente.addEventListener(
+                "click",
+                () => {
+
+                    cartaOverlay.classList.add(
+                        "visible"
+                    );
+
+
+                    cartaOverlay.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                }
+            );
+
+
+            /* =================================================
+               VOLVER AL SOBRE INICIAL
+            ================================================== */
+
+            function volverAlInicio() {
+
+                cartaOverlay.classList.remove(
+                    "visible"
+                );
+
+
+                intro.classList.remove(
+                    "oculta"
+                );
+
+
+                sobre.classList.remove(
+                    "abriendo"
+                );
+
+
+                irAPagina(1);
+
+
+                window.scrollTo(
+                    0,
+                    0
+                );
+
+            }
+
+
+            btnInicio.addEventListener(
+                "click",
+                volverAlInicio
+            );
+
+
+            btnReiniciar.addEventListener(
+                "click",
+                volverAlInicio
+            );
+
+
+            /* =================================================
+               NAVEGACIÓN
+            ================================================== */
+
+            function irAPagina(
+                numero
             ) {
 
-              showSlide(
-                slideIndex + 1
-              );
+                if (
+                    numero < 1 ||
+                    numero > paginas.length
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    numero === paginaActual
+                ) {
+
+                    return;
+
+                }
+
+
+                const paginaVieja =
+                    document.getElementById(
+                        "pag" +
+                        paginaActual
+                    );
+
+
+                const paginaNueva =
+                    document.getElementById(
+                        "pag" +
+                        numero
+                    );
+
+
+                const haciaAdelante =
+                    numero > paginaActual;
+
+
+                paginaVieja.classList.remove(
+                    "activa"
+                );
+
+
+                paginaVieja.classList.toggle(
+                    "saliente",
+                    haciaAdelante
+                );
+
+
+                paginaNueva.classList.remove(
+                    "saliente"
+                );
+
+
+                paginaNueva.classList.add(
+                    "activa"
+                );
+
+
+                paginaNueva.scrollTop =
+                    0;
+
+
+                paginaActual =
+                    numero;
+
+
+                navPuntos.forEach(
+                    (
+                        punto,
+                        indice
+                    ) => {
+
+                        punto.classList.toggle(
+                            "activo",
+                            indice ===
+                            numero - 1
+                        );
+
+                    }
+                );
+
+
+                if (
+                    numero === 2
+                ) {
+
+                    iniciarGaleria();
+
+                }
+
+                else {
+
+                    detenerGaleria();
+
+                }
 
             }
 
-            else {
 
-              showSlide(
-                slideIndex - 1
-              );
+            document
+                .querySelectorAll(
+                    ".siguiente, .anterior"
+                )
+                .forEach(
+                    boton => {
+
+                        boton.addEventListener(
+                            "click",
+                            () => {
+
+                                irAPagina(
+                                    Number(
+                                        boton.dataset.pagina
+                                    )
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+            /* =================================================
+               GALERÍA
+            ================================================== */
+
+            function crearPuntosGaleria() {
+
+                slides.forEach(
+                    (
+                        slide,
+                        indice
+                    ) => {
+
+                        const punto =
+                            document.createElement(
+                                "button"
+                            );
+
+
+                        punto.className =
+                            "punto" +
+                            (
+                                indice === 0
+                                    ? " activo"
+                                    : ""
+                            );
+
+
+                        punto.type =
+                            "button";
+
+
+                        punto.setAttribute(
+                            "aria-label",
+                            "Fotografía " +
+                            (
+                                indice + 1
+                            )
+                        );
+
+
+                        punto.addEventListener(
+                            "click",
+                            () => {
+
+                                mostrarFoto(
+                                    indice
+                                );
+
+                                iniciarGaleria();
+
+                            }
+                        );
+
+
+                        puntos.appendChild(
+                            punto
+                        );
+
+                    }
+                );
 
             }
 
 
-            startGallery();
-
-          }
-
-
-          else {
-
-            if (
-              dx < 0
+            function mostrarFoto(
+                indice
             ) {
 
-              goTo(
-                currentPage + 1
-              );
+                indiceFoto =
+                    (
+                        indice +
+                        slides.length
+                    ) %
+                    slides.length;
+
+
+                slides.forEach(
+                    (
+                        slide,
+                        numero
+                    ) => {
+
+                        slide.classList.toggle(
+                            "activa",
+                            numero ===
+                            indiceFoto
+                        );
+
+                    }
+                );
+
+
+                document
+                    .querySelectorAll(
+                        ".punto"
+                    )
+                    .forEach(
+                        (
+                            punto,
+                            numero
+                        ) => {
+
+                            punto.classList.toggle(
+                                "activo",
+                                numero ===
+                                indiceFoto
+                            );
+
+                        }
+                    );
+
+
+                textoFoto.textContent =
+                    slides[
+                        indiceFoto
+                    ].dataset.texto || "";
 
             }
 
-            else {
 
-              goTo(
-                currentPage - 1
-              );
+            function siguienteFoto() {
+
+                mostrarFoto(
+                    indiceFoto + 1
+                );
 
             }
 
-          }
 
-        },
-        {
-          passive: true
-        }
-      );
+            function iniciarGaleria() {
+
+                detenerGaleria();
 
 
-      /* =======================================================
-         TECLADO
-      ======================================================== */
+                temporizadorGaleria =
+                    setInterval(
+                        siguienteFoto,
+                        4800
+                    );
 
-      document.addEventListener(
-        'keydown',
-        event => {
-
-          if (
-            !intro.classList.contains(
-              'hidden'
-            )
-          ) {
-
-            return;
-
-          }
+            }
 
 
-          if (
-            event.key ===
-            'ArrowRight'
-          ) {
+            function detenerGaleria() {
 
-            goTo(
-              currentPage + 1
-            );
+                if (
+                    temporizadorGaleria
+                ) {
 
-          }
+                    clearInterval(
+                        temporizadorGaleria
+                    );
 
+                    temporizadorGaleria =
+                        null;
 
-          if (
-            event.key ===
-            'ArrowLeft'
-          ) {
+                }
 
-            goTo(
-              currentPage - 1
-            );
-
-          }
+            }
 
 
-          if (
-            event.key ===
-            'Escape' &&
-            letterModal.classList.contains(
-              'show'
-            )
-          ) {
+            /* =================================================
+               SWIPE
+            ================================================== */
 
-            letterModal.classList.remove(
-              'show'
-            );
+            const slider =
+                document.getElementById(
+                    "slider"
+                );
 
 
-            letterModal.setAttribute(
-              'aria-hidden',
-              'true'
-            );
+            slider.addEventListener(
+                "touchstart",
+                evento => {
 
-          }
+                    inicioX =
+                        evento
+                            .changedTouches[0]
+                            .screenX;
 
-        }
-      );
+                    inicioY =
+                        evento
+                            .changedTouches[0]
+                            .screenY;
 
-
-      /* =======================================================
-         CONFETI
-      ======================================================== */
-
-      function celebrate() {
-
-        const box =
-          $('#confetti');
-
-
-        box.innerHTML =
-          '';
-
-
-        for (
-          let i = 0;
-          i < 55;
-          i++
-        ) {
-
-          const piece =
-            document.createElement(
-              'i'
+                },
+                {
+                    passive: true
+                }
             );
 
 
-          piece.style.left =
-            (
-              Math.random() * 100
-            ) + '%';
+            slider.addEventListener(
+                "touchend",
+                evento => {
+
+                    const finalX =
+                        evento
+                            .changedTouches[0]
+                            .screenX;
 
 
-          piece.style.setProperty(
-            '--x',
-            (
-              (Math.random() - .5) *
-              240
-            ) + 'px'
-          );
+                    const finalY =
+                        evento
+                            .changedTouches[0]
+                            .screenY;
 
 
-          piece.style.animationDelay =
-            (
-              Math.random() * .65
-            ) + 's';
+                    const diferenciaX =
+                        finalX - inicioX;
 
 
-          piece.style.animationDuration =
-            (
-              2.7 +
-              Math.random() * 2.2
-            ) + 's';
+                    const diferenciaY =
+                        finalY - inicioY;
 
 
-          piece.style.transform =
-            `rotate(${Math.random() * 360}deg)`;
+                    if (
+                        Math.abs(
+                            diferenciaX
+                        ) < 60
+                    ) {
+
+                        return;
+
+                    }
 
 
-          /*
-            Colores del confeti:
-            dorado, blanco y azul.
-          */
+                    if (
+                        Math.abs(
+                            diferenciaX
+                        ) <
+                        Math.abs(
+                            diferenciaY
+                        )
+                    ) {
 
-          piece.style.background =
-            i % 3 === 0
-              ? '#d4b46a'
-              : i % 3 === 1
-                ? '#ffffff'
-                : '#234b78';
+                        return;
 
-
-          box.appendChild(
-            piece
-          );
-
-        }
+                    }
 
 
-        setTimeout(
-          () => {
+                    if (
+                        diferenciaX < 0
+                    ) {
 
-            box.innerHTML =
-              '';
+                        mostrarFoto(
+                            indiceFoto + 1
+                        );
 
-          },
-          5200
-        );
+                    }
 
-      }
+                    else {
+
+                        mostrarFoto(
+                            indiceFoto - 1
+                        );
+
+                    }
 
 
-    })();
+                    iniciarGaleria();
 
-  </script>
+                },
+                {
+                    passive: true
+                }
+            );
+
+
+            /* =================================================
+               MÚSICA
+            ================================================== */
+
+            function reproducirMusica() {
+
+                if (
+                    musicaIniciada
+                ) {
+
+                    return;
+
+                }
+
+
+                musicaIniciada =
+                    true;
+
+
+                musica.volume =
+                    .38;
+
+
+                musica
+                    .play()
+                    .then(
+                        () => {
+
+                            actualizarBotonMusica(
+                                true
+                            );
+
+                        }
+                    )
+                    .catch(
+                        () => {
+
+                            actualizarBotonMusica(
+                                false
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            function actualizarBotonMusica(
+                reproduciendo
+            ) {
+
+                btnMusica.textContent =
+                    reproduciendo
+                        ? "⏸️"
+                        : "🎵";
+
+
+                btnMusica.classList.toggle(
+                    "reproduciendo",
+                    reproduciendo
+                );
+
+
+                btnMusica.setAttribute(
+                    "aria-label",
+                    reproduciendo
+                        ? "Pausar música"
+                        : "Reproducir música"
+                );
+
+            }
+
+
+            btnMusica.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        musica.paused
+                    ) {
+
+                        musica
+                            .play()
+                            .then(
+                                () => {
+
+                                    actualizarBotonMusica(
+                                        true
+                                    );
+
+                                }
+                            )
+                            .catch(
+                                () => {}
+                            );
+
+                    }
+
+                    else {
+
+                        musica.pause();
+
+                        actualizarBotonMusica(
+                            false
+                        );
+
+                    }
+
+                }
+            );
+
+
+            /* =================================================
+               CONFETI
+            ================================================== */
+
+            function celebrar() {
+
+                confeti.innerHTML =
+                    "";
+
+
+                for (
+                    let i = 0;
+                    i < 65;
+                    i++
+                ) {
+
+                    const pieza =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    pieza.style.left =
+                        (
+                            Math.random() *
+                            100
+                        ) +
+                        "%";
+
+
+                    pieza.style.setProperty(
+                        "--x",
+                        (
+                            (
+                                Math.random() -
+                                .5
+                            ) *
+                            260
+                        ) +
+                        "px"
+                    );
+
+
+                    pieza.style.animationDelay =
+                        (
+                            Math.random() *
+                            .7
+                        ) +
+                        "s";
+
+
+                    pieza.style.animationDuration =
+                        (
+                            2.8 +
+                            Math.random() *
+                            2
+                        ) +
+                        "s";
+
+
+                    pieza.style.background =
+                        [
+                            "#c9a45c",
+                            "#ecd79b",
+                            "#ffffff",
+                            "#24527e"
+                        ][
+                            i % 4
+                        ];
+
+
+                    pieza.style.transform =
+                        `rotate(
+                            ${Math.random() * 360}deg
+                        )`;
+
+
+                    confeti.appendChild(
+                        pieza
+                    );
+
+                }
+
+
+                setTimeout(
+                    () => {
+
+                        confeti.innerHTML =
+                            "";
+
+                    },
+                    5500
+                );
+
+            }
+
+
+            /* =================================================
+               TECLADO
+            ================================================== */
+
+            document.addEventListener(
+                "keydown",
+                evento => {
+
+                    if (
+                        !intro.classList.contains(
+                            "oculta"
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    if (
+                        evento.key ===
+                        "ArrowRight"
+                    ) {
+
+                        irAPagina(
+                            paginaActual + 1
+                        );
+
+                    }
+
+
+                    if (
+                        evento.key ===
+                        "ArrowLeft"
+                    ) {
+
+                        irAPagina(
+                            paginaActual - 1
+                        );
+
+                    }
+
+
+                    if (
+                        evento.key ===
+                        "Escape"
+                    ) {
+
+                        cartaOverlay.classList.remove(
+                            "visible"
+                        );
+
+                    }
+
+                }
+            );
+
+
+        })();
+
+    </script>
 
 </body>
+
 </html>
