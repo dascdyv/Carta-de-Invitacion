@@ -548,6 +548,82 @@
       .carta-texto{font-size:15px}
     }
 
+    /* ===== AJUSTE FINAL DE TIPOGRAFÍA: estilo clásico de la versión original ===== */
+    .pagina-1 .etiqueta{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:9px;
+      letter-spacing:4px;
+    }
+    .pagina-1 .nombre-principal{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2.85rem,12vw,4.25rem);
+      line-height:.88;
+      font-weight:700;
+      letter-spacing:-.4px;
+      margin-bottom:0;
+    }
+    .pagina-1 .nombre-principal span{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.42em;
+      letter-spacing:5px;
+      font-style:normal;
+      font-weight:700;
+      text-transform:uppercase;
+      margin-top:12px;
+    }
+    .pagina-1 .hero-badge{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:9px;
+      letter-spacing:2px;
+      margin:13px 0 9px;
+    }
+    .pagina-1 .frase-portada{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:15px;
+      line-height:1.65;
+      font-style:italic;
+      max-width:390px;
+      margin:0 auto 16px;
+    }
+
+    /* Última página: recupera el acabado clásico y aireado de la versión original. */
+    .pagina-4 .final-icono{
+      width:88px;
+      height:88px;
+      font-size:38px;
+      margin:10px 0 18px;
+    }
+    .pagina-4 .titulo-pagina{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2rem,9vw,2.8rem);
+      line-height:1.02;
+      font-weight:700;
+    }
+    .pagina-4 .titulo-pagina span{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.48em;
+      letter-spacing:3px;
+      font-style:normal;
+      margin-top:10px;
+    }
+    .pagina-4 .final-texto{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:14px;
+      line-height:1.7;
+      max-width:380px;
+      margin:0 auto 10px;
+    }
+    .pagina-4 .final-firma{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:18px;
+      font-style:normal;
+      font-weight:400;
+      margin:5px 0 18px;
+    }
+    .pagina-4 .boton{
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
     @media (prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
