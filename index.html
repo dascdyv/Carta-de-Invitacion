@@ -125,8 +125,14 @@
       transition:opacity .8s var(--ease),visibility .8s ease;
     }
     .intro.oculta{opacity:0;visibility:hidden;pointer-events:none}
+    .intro::before,.intro::after{
+      content:"";position:absolute;pointer-events:none;border:1px solid rgba(242,223,167,.10);
+      border-radius:50%;transform:translate(-50%,-50%);
+    }
+    .intro::before{left:12%;top:76%;width:160px;height:160px;box-shadow:0 0 0 24px rgba(242,223,167,.018),0 0 0 48px rgba(242,223,167,.012)}
+    .intro::after{left:88%;top:28%;width:110px;height:110px;box-shadow:0 0 0 18px rgba(242,223,167,.016),0 0 0 36px rgba(242,223,167,.010)}
     .intro-contenido{
-      width:min(92vw,430px);display:flex;flex-direction:column;align-items:center;
+      position:relative;z-index:2;width:min(92vw,430px);display:flex;flex-direction:column;align-items:center;
       text-align:center;animation:aparecer .85s var(--ease) both;
     }
     @keyframes aparecer{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
@@ -146,63 +152,86 @@
       font:14px/1.55 Arial,sans-serif;color:rgba(255,255,255,.77);
     }
 
+    /* Sobre: pieza única y limpia. Los lazos quedan detrás y ya no cortan la tapa. */
     .escenario-sobre{
-      position:relative;width:min(86vw,360px);height:205px;
-      display:flex;align-items:center;justify-content:center;margin:0 auto 6px;
-      perspective:900px;
+      position:relative;width:min(86vw,360px);height:208px;
+      display:flex;align-items:flex-end;justify-content:center;margin:2px auto 8px;
+      perspective:1000px;
+    }
+    .escenario-sobre::before{
+      content:"";position:absolute;left:50%;top:14px;transform:translateX(-50%);
+      width:280px;height:120px;border-radius:50%;
+      background:radial-gradient(circle,rgba(242,223,167,.13),rgba(242,223,167,0) 68%);
+      filter:blur(2px);pointer-events:none;
     }
     .sobre{
-      position:relative;width:100%;height:174px;cursor:pointer;
-      filter:drop-shadow(0 25px 26px rgba(0,0,0,.28));
+      position:relative;z-index:4;width:min(100%,340px);height:174px;cursor:pointer;outline:none;
+      filter:drop-shadow(0 22px 28px rgba(0,0,0,.28));
       transition:transform .7s var(--ease),opacity .7s ease;
-      outline:none;
+    }
+    .sobre::before{
+      content:"";position:absolute;z-index:7;left:50%;top:-7px;
+      width:18px;height:18px;transform:translateX(-50%) rotate(45deg);
+      border-radius:4px;background:linear-gradient(135deg,#f1d88f,#c39a50);
+      box-shadow:0 3px 9px rgba(0,0,0,.16);
+    }
+    .sobre::after{
+      content:"";position:absolute;z-index:6;left:50%;top:-3px;
+      width:9px;height:74px;transform:translateX(-50%);
+      border-radius:0 0 6px 6px;
+      background:linear-gradient(90deg,#b88c41,#efd485,#b4883f);
+      box-shadow:0 4px 10px rgba(0,0,0,.10);
     }
     .sobre-cuerpo{
-      position:absolute;left:0;right:0;bottom:0;height:139px;
-      border:1px solid rgba(201,164,92,.95);border-radius:12px 12px 19px 19px;
-      background:linear-gradient(145deg,#fffefa,#e9edf2);overflow:hidden;z-index:2;
+      position:absolute;left:0;right:0;bottom:0;height:142px;
+      border:1px solid rgba(201,164,92,.96);border-radius:13px 13px 20px 20px;
+      background:linear-gradient(150deg,#fffefa 0%,#f7f6f2 54%,#e9edf1 100%);
+      overflow:hidden;z-index:2;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.9), inset 0 -10px 24px rgba(36,56,75,.035);
     }
     .sobre-cuerpo::before,.sobre-cuerpo::after{
-      content:"";position:absolute;bottom:-3px;width:69%;height:2px;background:var(--gold-500)
+      content:"";position:absolute;top:-1px;width:72%;height:1px;background:rgba(201,164,92,.72);
     }
-    .sobre-cuerpo::before{left:-12%;transform:rotate(31deg)}
-    .sobre-cuerpo::after{right:-12%;transform:rotate(-31deg)}
+    .sobre-cuerpo::before{left:-9%;transform:rotate(31deg);transform-origin:left top}
+    .sobre-cuerpo::after{right:-9%;transform:rotate(-31deg);transform-origin:right top}
     .sobre-solapa{
-      position:absolute;left:0;top:17px;width:100%;height:105px;
-      background:linear-gradient(145deg,#fff,#edf1f5);
+      position:absolute;left:1px;right:1px;top:11px;height:108px;
+      background:linear-gradient(150deg,#fff 0%,#f8f9f8 58%,#e9edf0 100%);
       clip-path:polygon(0 0,100% 0,50% 100%);
-      border:1px solid rgba(201,164,92,.95);z-index:5;
-      transform-origin:top center;transition:transform .8s var(--ease),opacity .5s ease;
+      border:1px solid rgba(201,164,92,.94);border-top-color:rgba(255,255,255,.92);
+      z-index:5;transform-origin:top center;
+      filter:drop-shadow(0 5px 7px rgba(19,37,55,.08));
+      transition:transform .8s var(--ease),opacity .5s ease;
     }
     .sobre-nombre{
-      position:absolute;left:0;right:0;bottom:35px;z-index:4;
-      color:var(--navy-700);font-size:20px;font-weight:700;letter-spacing:.4px;
+      position:absolute;left:0;right:0;bottom:33px;z-index:8;
+      color:var(--navy-700);font-size:20px;font-weight:700;letter-spacing:.35px;
+      text-shadow:0 1px 0 #fff;
     }
     .sello{
-      position:absolute;z-index:10;left:50%;top:88px;transform:translate(-50%,-50%);
+      position:absolute;z-index:10;left:50%;top:91px;transform:translate(-50%,-50%);
       width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;
       flex-direction:column;background:linear-gradient(145deg,#1b456c,#09213a);
       border:2px solid var(--gold-500);color:var(--gold-300);
-      box-shadow:0 10px 30px rgba(0,0,0,.26);
+      box-shadow:0 10px 30px rgba(0,0,0,.26),0 0 0 5px rgba(242,223,167,.08);
       transition:transform .6s var(--ease),opacity .45s;
     }
     .sello strong{font-size:22px;line-height:1}
     .sello small{font:700 7px/1 Arial,sans-serif;letter-spacing:2px;margin-top:3px}
+
+    /* Lazos: dos bucles laterales, sin colas oscuras ni cortes sobre el sobre. */
     .liston{
-      position:absolute;z-index:1;top:-15px;width:59px;height:118px;opacity:.95;
-      background:linear-gradient(90deg,#aa8137,#e7ca79,#b48b42);
-      filter:drop-shadow(0 5px 8px rgba(0,0,0,.15));
+      position:absolute;z-index:3;top:0;width:58px;height:42px;opacity:.98;
+      background:linear-gradient(135deg,#a97d35 0%,#e7cb7c 45%,#b7893f 100%);
+      border:1px solid rgba(245,223,163,.55);
+      box-shadow:0 8px 14px rgba(0,0,0,.14);
+      filter:drop-shadow(0 4px 7px rgba(0,0,0,.10));
     }
-    .liston.izq{left:24px;transform:rotate(-7deg)}
-    .liston.der{right:24px;transform:rotate(7deg)}
-    .liston::after{
-      content:"";position:absolute;left:0;bottom:-1px;width:0;height:0;
-      border-left:29px solid transparent;border-right:29px solid transparent;
-      border-bottom:22px solid var(--navy-900);
-    }
-    .sobre.abriendo{transform:translateY(-12px) scale(.9);opacity:0}
-    .sobre.abriendo .sobre-solapa{transform:rotateX(150deg);opacity:0}
-    .sobre.abriendo .sello{transform:translate(-50%,-50%) scale(.35);opacity:0}
+    .liston.izq{left:calc(50% - 72px);transform:rotate(16deg);border-radius:72% 28% 72% 28%;clip-path:polygon(100% 7%,66% 18%,27% 6%,0 33%,31% 57%,0 100%,57% 79%,100% 91%)}
+    .liston.der{right:calc(50% - 72px);transform:rotate(-16deg);border-radius:28% 72% 28% 72%;clip-path:polygon(0 7%,34% 18%,73% 6%,100% 33%,69% 57%,100% 100%,43% 79%,0 91%)}
+    .sobre.abriendo{transform:translateY(-10px) scale(.96);opacity:0}
+    .sobre.abriendo .sobre-solapa{transform:rotateX(165deg) translateY(-4px);opacity:0}
+    .sobre.abriendo .sello{transform:translate(-50%,-50%) scale(.42);opacity:0}
 
     .btn-abrir{
       width:min(100%,320px);min-height:54px;border-radius:999px;
@@ -538,6 +567,13 @@
       .slider{aspect-ratio:4/4.9}
       .ribbon-tab{display:none}
       .foto-gala{width:min(52vw,195px)}
+      .escenario-sobre{width:min(90vw,350px);height:198px}
+      .sobre{width:min(100%,330px);height:166px}
+      .sobre-cuerpo{height:136px}
+      .sobre-solapa{top:10px;height:102px}
+      .liston{width:52px;height:38px}
+      .liston.izq{left:calc(50% - 64px)}
+      .liston.der{right:calc(50% - 64px)}
     }
     @media (max-height:700px){
       .pagina{padding-top:63px;padding-bottom:72px}
@@ -547,6 +583,12 @@
       .texto-pagina{margin-bottom:7px}
       .slider{aspect-ratio:4/4.6}
       .galeria{max-width:295px}
+      .escenario-sobre{height:188px;margin-top:0}
+      .sobre{height:158px}
+      .sobre-cuerpo{height:130px}
+      .sobre-solapa{top:9px;height:96px}
+      .sello{top:83px;width:64px;height:64px}
+      .sobre-nombre{bottom:29px;font-size:18px}
       .detalle{padding:9px 11px}
       .detalle-icono{width:40px;height:40px}
       .boton{min-height:40px;padding:8px 14px}
