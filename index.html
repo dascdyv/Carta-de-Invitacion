@@ -6,11 +6,29 @@
   <meta name="theme-color" content="#050f1d">
   <meta name="description" content="Invitación especial para celebrar los 50 años de Enrique Cisneros.">
 
+  <!-- ============================================================
+       VISTA PREVIA EN WHATSAPP / REDES (Open Graph)
+       Usa vista-previa-whatsapp.jpg (1200×630) — sube ese archivo a la
+       raíz del repo junto al index.html para que la tarjeta se vea bien.
+  ============================================================= -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Enrique · 50 años">
   <meta property="og:title" content="Enrique cumple 50 años 🎉">
-  <meta property="og:description" content="Una noche especial para celebrar una vida llena de momentos.">
-  <meta property="og:url" content="https://TU-USUARIO.github.io/Carta-de-Invitacion/">
-  <meta property="og:image" content="https://TU-USUARIO.github.io/Carta-de-Invitacion/Enrique.cumple.png">
+  <meta property="og:description" content="Una noche especial para celebrar. Toca para abrir tu invitación ✨">
+  <meta property="og:url" content="https://dascdyv.github.io/Carta-de-Invitacion/">
+  <meta property="og:image" content="https://dascdyv.github.io/Carta-de-Invitacion/vista-previa-whatsapp.jpg">
+  <meta property="og:image:secure_url" content="https://dascdyv.github.io/Carta-de-Invitacion/vista-previa-whatsapp.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Invitación al cumpleaños número 50 de Enrique Cisneros">
+
+  <!-- Respaldo para Twitter/X, Telegram, etc. -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enrique cumple 50 años 🎉">
+  <meta name="twitter:description" content="Una noche especial para celebrar. Toca para abrir tu invitación ✨">
+  <meta name="twitter:image" content="https://dascdyv.github.io/Carta-de-Invitacion/vista-previa-whatsapp.jpg">
 
   <title>Enrique · 50 años</title>
 
@@ -101,6 +119,9 @@
     .estrella:nth-child(10){right:9%;bottom:17%;animation-delay:.5s}
     .estrella:nth-child(11){left:50%;top:6%;animation-delay:1.7s}
     .estrella:nth-child(12){right:22%;top:44%;animation-delay:2.6s;font-size:9px}
+    .estrella:nth-child(13){left:28%;top:34%;font-size:8px;animation-delay:.9s}
+    .estrella:nth-child(14){right:34%;bottom:30%;font-size:10px;animation-delay:2.1s}
+    .estrella:nth-child(15){left:6%;top:48%;font-size:7px;animation-delay:3.2s}
 
     @keyframes respirar{to{transform:scale(1.08) translate(1%,-1%)}}
     @keyframes flotar{50%{transform:translateY(-18px) scale(1.04)}}
@@ -152,13 +173,33 @@
       text-shadow:0 12px 32px rgba(0,0,0,.3);margin-bottom:9px;
     }
     .intro-titulo span{
-      display:block;color:var(--gold-300);font-style:italic;font-weight:600;
+      display:block;font-style:italic;font-weight:600;
       font-size:.52em;letter-spacing:1px;margin-top:9px;
+      color:var(--gold-300); /* respaldo si el navegador no soporta el brillo de abajo */
+    }
+    @supports ((-webkit-background-clip:text) or (background-clip:text)){
+      .intro-titulo span{
+        background:linear-gradient(100deg,var(--gold-300) 28%,#fff8e0 42%,var(--gold-300) 56%);
+        background-size:240% 100%;
+        -webkit-background-clip:text;background-clip:text;color:transparent;
+        animation:barridoOro 5.5s ease-in-out infinite;
+      }
     }
     .intro-frase{
       max-width:300px;margin-bottom:18px;
       font:italic 15px/1.55 var(--font-body);color:rgba(255,255,255,.78);
     }
+
+    @keyframes barridoOro{0%,100%{background-position:130% 0}50%{background-position:-30% 0}}
+
+    /* chispas junto al sobre */
+    .chispa{
+      position:absolute;color:rgba(243,221,160,.75);font-size:11px;pointer-events:none;
+      animation:brillo 3.6s ease-in-out infinite;
+    }
+    .chispa.uno{left:2%;top:2%;animation-delay:.4s}
+    .chispa.dos{right:3%;top:14%;font-size:8px;animation-delay:1.6s}
+    .chispa.tres{left:10%;bottom:4%;font-size:9px;animation-delay:2.5s}
 
     /* ---------- SOBRE (SVG, pieza única) ---------- */
     .escenario-sobre{
@@ -374,7 +415,7 @@
       text-shadow:0 10px 26px rgba(0,0,0,.3);margin-bottom:0;
     }
     .nombre-principal span{
-      display:block;color:var(--gold-300);font-style:italic;font-weight:600;
+      display:block;font-style:italic;font-weight:600;
       font-size:.46em;letter-spacing:2px;margin-top:9px;
     }
     .hero-badge{
@@ -564,6 +605,7 @@
     }
     .pagina-1 .nombre-principal span{
       font-family:Arial,Helvetica,sans-serif;
+      color:var(--gold-300);
       font-size:.42em;
       letter-spacing:5px;
       font-style:normal;
@@ -638,6 +680,7 @@
     <span class="luz"></span><span class="luz"></span><span class="luz"></span>
     <span class="estrella">✦</span><span class="estrella">✦</span><span class="estrella">✦</span>
     <span class="estrella">✦</span><span class="estrella">✦</span><span class="estrella">✧</span>
+    <span class="estrella">✦</span><span class="estrella">✧</span><span class="estrella">✦</span>
   </div>
 
   <div id="loader" aria-live="polite">
@@ -660,6 +703,10 @@
       <p class="intro-frase">Una noche para celebrar, recordar y compartir.</p>
 
       <div class="escenario-sobre" id="escenarioSobre">
+        <span class="chispa uno" aria-hidden="true">✦</span>
+        <span class="chispa dos" aria-hidden="true">✧</span>
+        <span class="chispa tres" aria-hidden="true">✦</span>
+
         <div class="papel-salida" aria-hidden="true"></div>
 
         <div class="sobre-visual" id="sobre" tabindex="0" role="button" aria-label="Abrir invitación">
@@ -747,7 +794,7 @@
         Hoy celebro 50 años de historias, aprendizajes y momentos compartidos.
         Quiero disfrutar esta noche con las personas que hacen especial mi camino.
       </p>
-      <div class="carta-frase">“Los mejores recuerdos se construyen juntos.”</div>
+      <div class="carta-frase">"Los mejores recuerdos se construyen juntos."</div>
       <div class="firma">Con cariño,<br><strong>Enrique</strong></div>
       <button class="btn-carta" id="btnContinuarCarta" type="button">Continuar con la invitación ✨</button>
     </article>
@@ -852,7 +899,7 @@
 
           <div class="detalle">
             <div class="detalle-icono">🕘</div>
-            <div><strong>Hora</strong><span>La celebración iniciará a las 9:00 PM</span></div>
+            <div><strong>Hora</strong><span>La celebración iniciará a las 8:00 PM</span></div>
           </div>
 
           <div class="detalle">
