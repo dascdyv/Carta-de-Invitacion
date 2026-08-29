@@ -6,11 +6,29 @@
   <meta name="theme-color" content="#050f1d">
   <meta name="description" content="Invitación especial para celebrar los 50 años de Enrique Cisneros.">
 
+  <!-- ============================================================
+       VISTA PREVIA EN WHATSAPP / REDES (Open Graph)
+       Usa vista-previa-whatsapp.jpg (1200×630) — sube ese archivo a la
+       raíz del repo junto al index.html para que la tarjeta se vea bien.
+  ============================================================= -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Enrique · 50 años">
   <meta property="og:title" content="Enrique cumple 50 años 🎉">
-  <meta property="og:description" content="Una noche especial para celebrar una vida llena de momentos.">
-  <meta property="og:url" content="https://TU-USUARIO.github.io/Carta-de-Invitacion/">
-  <meta property="og:image" content="https://TU-USUARIO.github.io/Carta-de-Invitacion/Enrique.cumple.png">
+  <meta property="og:description" content="Una noche especial para celebrar. Toca para abrir tu invitación ✨">
+  <meta property="og:url" content="https://dascdyv.github.io/Carta-de-Invitacion/">
+  <meta property="og:image" content="https://dascdyv.github.io/Carta-de-Invitacion/vista-previa-whatsapp.jpg">
+  <meta property="og:image:secure_url" content="https://dascdyv.github.io/Carta-de-Invitacion/vista-previa-whatsapp.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Invitación al cumpleaños número 50 de Enrique Cisneros">
+
+  <!-- Respaldo para Twitter/X, Telegram, etc. -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enrique cumple 50 años 🎉">
+  <meta name="twitter:description" content="Una noche especial para celebrar. Toca para abrir tu invitación ✨">
+  <meta name="twitter:image" content="https://dascdyv.github.io/Carta-de-Invitacion/vista-previa-whatsapp.jpg">
 
   <title>Enrique · 50 años</title>
 
@@ -244,60 +262,6 @@
     .intro.saliendo .intro-contenido{animation:portadaSale .7s var(--ease) both}
     .intro.saliendo{opacity:0}
     @keyframes portadaSale{to{opacity:0;transform:translateY(-16px) scale(.985)}}
-
-    /* ---------- CARTA INTERMEDIA ---------- */
-    .carta-overlay{
-      position:fixed;inset:0;z-index:7000;display:grid;place-items:center;padding:18px;
-      background:rgba(4,13,24,.88);backdrop-filter:blur(10px);
-      opacity:0;visibility:hidden;pointer-events:none;
-      transition:opacity .5s ease,visibility .5s ease;
-      isolation:isolate;
-    }
-    .carta-overlay::before{
-      content:"";position:absolute;inset:0;pointer-events:none;
-      background:
-        radial-gradient(circle at 20% 20%,rgba(243,221,160,.10),transparent 25%),
-        radial-gradient(circle at 80% 80%,rgba(44,98,145,.10),transparent 28%);
-    }
-    .carta-overlay.visible{opacity:1;visibility:visible;pointer-events:auto}
-    .carta{
-      position:relative;z-index:1;width:min(92vw,420px);padding:34px 28px 26px;
-      border-radius:26px;text-align:center;color:var(--ink);overflow:hidden;
-      background:
-        radial-gradient(circle at 12% 10%,rgba(201,164,92,.13),transparent 23%),
-        linear-gradient(145deg,#fffdf8,#f1e7d7 100%);
-      border:1px solid rgba(201,164,92,.88);
-      box-shadow:0 32px 90px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.9);
-      transform:translateY(34px) scale(.9) rotate(-.8deg);
-      opacity:.2;
-      transition:transform .72s var(--ease),opacity .5s ease;
-    }
-    .carta::before{
-      content:"";position:absolute;top:0;left:0;right:0;height:5px;
-      background:linear-gradient(90deg,#9b7435,#efd98e,#9b7435);
-    }
-    .carta::after{
-      content:"50";position:absolute;right:-12px;bottom:-22px;
-      font:700 120px/1 var(--font-display);color:rgba(201,164,92,.055);pointer-events:none;
-    }
-    .carta-overlay.visible .carta{transform:none;opacity:1}
-    .carta-adornos{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:13px;color:var(--gold-500)}
-    .carta-adornos i{width:44px;height:1px;background:var(--gold-500);display:block}
-    .carta-subtitulo{font:700 9px/1 var(--font-label);letter-spacing:3px;text-transform:uppercase;color:#a47b35;margin-bottom:9px}
-    .carta h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.95rem,8vw,2.45rem);line-height:.98;color:var(--navy-700);margin-bottom:14px}
-    .carta-texto{max-width:330px;margin:0 auto 14px;font:16px/1.5 var(--font-body);color:var(--ink-soft)}
-    .carta-frase{margin:15px 0;padding:12px 14px;border-top:1px solid rgba(201,164,92,.34);border-bottom:1px solid rgba(201,164,92,.34);font:italic 16px/1.45 var(--font-body);color:var(--navy-700)}
-    .firma{margin:13px 0 18px;font:16px/1.45 var(--font-body);color:var(--navy-700)}
-    .firma strong{font-family:var(--font-display);font-size:20px;color:#9c7434}
-    .btn-carta{
-      width:100%;min-height:50px;border-radius:999px;cursor:pointer;
-      color:#fff;border:1px solid var(--gold-500);
-      background:linear-gradient(135deg,#173a61,#295985);
-      font:700 13px/1 var(--font-label);letter-spacing:.15px;
-      box-shadow:0 10px 24px rgba(23,57,87,.16);
-      transition:transform .2s ease,box-shadow .2s ease;
-    }
-    .btn-carta:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(23,57,87,.2)}
 
     /* ---------- APP / TARJETA ---------- */
     .app{position:relative;z-index:10;width:100vw;height:100dvh;display:grid;place-items:center;padding:10px}
@@ -542,88 +506,6 @@
       .detalle-icono{width:40px;height:40px}
       .boton{min-height:40px;padding:8px 14px}
     }
-    @media (max-width:560px){
-      .carta{width:min(92vw,390px);padding:30px 22px 22px}
-      .carta h2{font-size:clamp(1.8rem,8vw,2.25rem)}
-      .carta-texto{font-size:15px}
-    }
-
-    /* ===== AJUSTE FINAL DE TIPOGRAFÍA: estilo clásico de la versión original ===== */
-    .pagina-1 .etiqueta{
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:9px;
-      letter-spacing:4px;
-    }
-    .pagina-1 .nombre-principal{
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(2.85rem,12vw,4.25rem);
-      line-height:.88;
-      font-weight:700;
-      letter-spacing:-.4px;
-      margin-bottom:0;
-    }
-    .pagina-1 .nombre-principal span{
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:.42em;
-      letter-spacing:5px;
-      font-style:normal;
-      font-weight:700;
-      text-transform:uppercase;
-      margin-top:12px;
-    }
-    .pagina-1 .hero-badge{
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:9px;
-      letter-spacing:2px;
-      margin:13px 0 9px;
-    }
-    .pagina-1 .frase-portada{
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:15px;
-      line-height:1.65;
-      font-style:italic;
-      max-width:390px;
-      margin:0 auto 16px;
-    }
-
-    /* Última página: recupera el acabado clásico y aireado de la versión original. */
-    .pagina-4 .final-icono{
-      width:88px;
-      height:88px;
-      font-size:38px;
-      margin:10px 0 18px;
-    }
-    .pagina-4 .titulo-pagina{
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(2rem,9vw,2.8rem);
-      line-height:1.02;
-      font-weight:700;
-    }
-    .pagina-4 .titulo-pagina span{
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:.48em;
-      letter-spacing:3px;
-      font-style:normal;
-      margin-top:10px;
-    }
-    .pagina-4 .final-texto{
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:14px;
-      line-height:1.7;
-      max-width:380px;
-      margin:0 auto 10px;
-    }
-    .pagina-4 .final-firma{
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:18px;
-      font-style:normal;
-      font-weight:400;
-      margin:5px 0 18px;
-    }
-    .pagina-4 .boton{
-      font-family:Arial,Helvetica,sans-serif;
-    }
-
     @media (prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -735,24 +617,6 @@
     </div>
   </section>
 
-  <!-- CARTA INTERMEDIA: se muestra después de desatar el lazo -->
-  <section class="carta-overlay" id="cartaOverlay" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="tituloCarta">
-    <article class="carta">
-      <div class="carta-adornos" aria-hidden="true">
-        <i></i><span>✦</span><span>🥂</span><span>✦</span><i></i>
-      </div>
-      <div class="carta-subtitulo">Una invitación especial</div>
-      <h2 id="tituloCarta">Una noche para celebrar</h2>
-      <p class="carta-texto">
-        Hoy celebro 50 años de historias, aprendizajes y momentos compartidos.
-        Quiero disfrutar esta noche con las personas que hacen especial mi camino.
-      </p>
-      <div class="carta-frase">“Los mejores recuerdos se construyen juntos.”</div>
-      <div class="firma">Con cariño,<br><strong>Enrique</strong></div>
-      <button class="btn-carta" id="btnContinuarCarta" type="button">Continuar con la invitación ✨</button>
-    </article>
-  </section>
-
   <main class="app">
     <div class="tarjeta">
       <div class="barra">
@@ -852,7 +716,7 @@
 
           <div class="detalle">
             <div class="detalle-icono">🕘</div>
-            <div><strong>Hora</strong><span>La celebración iniciará a las 9:00 PM</span></div>
+            <div><strong>Hora</strong><span>La celebración iniciará a las 8:00 PM</span></div>
           </div>
 
           <div class="detalle">
@@ -918,8 +782,6 @@
       const escenario = $("#escenarioSobre");
       const sobre = $("#sobre");
       const btnAbrir = $("#btnAbrir");
-      const cartaOverlay = $("#cartaOverlay");
-      const btnContinuarCarta = $("#btnContinuarCarta");
       const btnInicio = $("#btnInicio");
       const btnReiniciar = $("#btnReiniciar");
       const btnMusica = $("#btnMusica");
@@ -1008,17 +870,6 @@
 
       let aperturaEnCurso = false;
 
-      function mostrarCarta() {
-        cartaOverlay.classList.add("visible");
-        cartaOverlay.setAttribute("aria-hidden", "false");
-        window.setTimeout(() => btnContinuarCarta.focus(), 180);
-      }
-
-      function cerrarCarta() {
-        cartaOverlay.classList.remove("visible");
-        cartaOverlay.setAttribute("aria-hidden", "true");
-      }
-
       function abrirInvitacion() {
         if (aperturaEnCurso) return;
         aperturaEnCurso = true;
@@ -1027,15 +878,10 @@
         escenario.classList.add("abriendo");
         btnAbrir.disabled = true;
 
-        /* Primero se desata el lazo. La portada permanece para que la transición se entienda. */
+        /* El lazo se desata primero; el papel emerge del sobre después. */
         window.setTimeout(() => {
-          mostrarCarta();
-        }, 980);
-      }
-
-      function continuarDesdeCarta() {
-        cerrarCarta();
-        intro.classList.add("saliendo");
+          intro.classList.add("saliendo");
+        }, 1150);
 
         window.setTimeout(() => {
           intro.classList.add("oculta");
@@ -1044,18 +890,14 @@
           aperturaEnCurso = false;
           reproducirMusica();
           celebrar();
-        }, 520);
+        }, 1500);
       }
 
       function volverAlInicio() {
         detenerGaleria();
-        cerrarCarta();
 
         escenario.classList.remove("abriendo");
         intro.classList.remove("saliendo", "oculta");
-        sobre.setAttribute("aria-busy", "false");
-        btnAbrir.disabled = false;
-        aperturaEnCurso = false;
 
         paginas.forEach((pagina, i) => {
           pagina.classList.toggle("activa", i === 0);
@@ -1109,11 +951,6 @@
       /* Eventos */
       btnAbrir.addEventListener("click", abrirInvitacion);
       sobre.addEventListener("click", abrirInvitacion);
-      btnContinuarCarta.addEventListener("click", continuarDesdeCarta);
-
-      cartaOverlay.addEventListener("click", (event) => {
-        if (event.target === cartaOverlay) continuarDesdeCarta();
-      });
 
       sobre.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -1176,10 +1013,6 @@
       });
 
       document.addEventListener("keydown", (event) => {
-        if (cartaOverlay.classList.contains("visible") && event.key === "Escape") {
-          continuarDesdeCarta();
-          return;
-        }
         if (!intro.classList.contains("oculta")) return;
 
         if (event.key === "ArrowRight") irAPagina(paginaActual + 1);
